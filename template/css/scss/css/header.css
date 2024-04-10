@@ -1,0 +1,26 @@
+.headerStyle01 {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  z-index: 90;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+}
+.headerStyle01 .navMenu .shopCar-icon {
+  position: relative;
+}
+.headerStyle01 .navMenu .shopCar-icon .prodNum {
+  width: 1.5rem;
+  font-size: 0.8rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  justify-content: center;
+  margin-top: -12px;
+  margin-left: -12px;
+  display: flex;
+  align-items: center;
+  background-color: var(--btn-mainlink);
+  color: var(--bs-white);
+}/*# sourceMappingURL=header.css.map */

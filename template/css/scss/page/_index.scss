@@ -1,0 +1,215 @@
+@media (min-width: 1400px) {
+  .container-xx-1200 {
+    max-width: 1200px;
+  }
+}
+
+// 產品
+.product-display-block {
+  margin: 0;
+  padding: 50px 0;
+  position: relative;
+  overflow: hidden;
+
+  .remind-area {
+    span {
+      color: $mark;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+  }
+
+  .product-list {
+    .item {
+      margin: 20px 20px 40px 20px;
+      border-radius: 20px;
+      background: $white;
+      box-shadow: 0 0 15px #00509657;
+      transition: all 0.5s ease-in-out;
+
+      .img-box {
+        width: 100%;
+        padding-bottom: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-bottom: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 25px;
+
+        @media (max-width: $viewM) {
+          padding-bottom: 80%;
+        }
+
+        @media (max-width: $viewMobile) {
+          width: 90%;
+          padding-bottom: 100%;
+          margin: 0 auto;
+        }
+      }
+      .text-box {
+        padding: 0.5rem 1.25rem 1.5rem;
+
+        &-title {
+          @include hideLongTexts(2);
+        }
+
+        .price-box {
+          margin-bottom: 1.5rem;
+        }
+
+        .add-shop-cart {
+          background-color: $black;
+          color: $white;
+          text-align: center;
+          margin-bottom: -2.5rem;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+          width: 12.5rem;
+          padding: 1rem;
+          border-radius: 25px;
+          font-size: 1rem;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background-color: $mark;
+          }
+        }
+      }
+
+      &:hover {
+        transform: translateY(-12px);
+      }
+    }
+  }
+
+  .leaf {
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+}
+
+// 產品一
+.product-display-block-1 {
+  background: url("/template/images/index/bg.png") center center no-repeat;
+  clip-path: polygon(0 0%, 100% 0%, 100% 95%, 50% 100%, 0 95%);
+
+  @media (min-width: 992px) {
+    padding: 3rem 0 9rem;
+    clip-path: polygon(0 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
+  }
+
+  .leaf-1 {
+    background-image: url("/template/images/index/leaf1.png");
+    left: -5%;
+    top: -3%;
+    padding-bottom: 45%;
+    width: 36%;
+
+    @media (min-width: 992px) {
+      width: 23%;
+    }
+  }
+
+  .leaf-2 {
+    background-image: url("/template/images/index/leaf2.png");
+    right: -5%;
+    top: 5%;
+    padding-bottom: 18%;
+    width: 26%;
+
+    @media (min-width: 992px) {
+      right: -5%;
+      top: 0;
+      padding-bottom: 14%;
+      width: 22%;
+    }
+  }
+
+  .leaf-3 {
+    background-image: url("/template/images/index/leaf3.png");
+    left: 30%;
+    top: -8%;
+    padding-bottom: 14%;
+    width: 12%;
+  }
+}
+
+// 產品二
+.product-display-block-2 {
+  .leaf-4 {
+    background-image: url("/template/images/index/leaf4.png");
+    left: 0;
+    top: 0;
+    padding-bottom: 39%;
+    width: 25%;
+
+    @media (min-width: 992px) {
+      padding-bottom: 25%;
+      width: 12%;
+      top: -12%;
+    }
+  }
+
+  .leaf-5 {
+    background-image: url("/template/images/index/leaf5.png");
+    right: 0;
+    top: 12%;
+    padding-bottom: 40%;
+    width: 24%;
+
+    @media (min-width: 992px) {
+      padding-bottom: 25%;
+      width: 15%;
+    }
+  }
+}
+
+// 產品三
+.product-display-block-3 {
+  background: url("/template/images/index/bg2.png") no-repeat top center / cover;
+  position: relative;
+
+  .leaf-6 {
+    background-image: url("/template/images/index/leaf6.png");
+    left: 22%;
+    top: -3%;
+    padding-bottom: 18%;
+    width: 22%;
+
+    @media (min-width: 992px) {
+      padding-bottom: 15%;
+      width: 18%;
+      top: -8%;
+    }
+  }
+
+  .leaf-7 {
+    background-image: url("/template/images/index/leaf7.png");
+    left: -8%;
+    top: -8%;
+    padding-bottom: 26%;
+    width: 47%;
+
+    @media (min-width: 992px) {
+      padding-bottom: 25%;
+      width: 27%;
+    }
+  }
+
+  .leaf-8 {
+    background-image: url("/template/images/index/leaf8.png");
+    right: -6%;
+    bottom: 0;
+    padding-bottom: 15%;
+    width: 24%;
+
+    @media (min-width: 992px) {
+      padding-bottom: 15%;
+      width: 24%;
+    }
+  }
+}

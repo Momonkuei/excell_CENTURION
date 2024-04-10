@@ -1,0 +1,158 @@
+.headerStyle01 {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  transition: all 0.3s ease-in;
+  z-index: 9;
+
+  .navbar {
+    .header-link {
+      text-decoration: none;
+    }
+    .main-menu {
+      li {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  // 首頁選單按鈕
+  .btn-list {
+    position: relative;
+    .slide-menu-control {
+      cursor: pointer;
+      border: 0;
+      background-color: transparent;
+      width: 27px;
+      height: 30px;
+      outline: 0;
+
+      .line {
+        background-color: $primary;
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        width: 27px;
+
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          background-color: inherit;
+          height: 2px;
+          position: absolute;
+          transition: all 0.3s ease-in-out;
+          width: 27px;
+          box-sizing: border-box;
+          outline: 0;
+        }
+
+        &::before {
+          top: -8px;
+        }
+
+        &::after {
+          bottom: -8px;
+        }
+      }
+    }
+  }
+
+  // 首頁選單
+  .fullMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: height 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    z-index: 10;
+
+    &-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+
+      .close-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+
+        position: absolute;
+        right: 5%;
+        top: 5%;
+
+        i {
+        }
+      }
+    }
+
+    &-nav {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 auto;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      max-width: 700px;
+      width: 100%;
+      .navMenu {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        li {
+          width: 100%;
+          transition: all 0.3s ease-in;
+
+          a {
+            text-decoration: none;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+          }
+        }
+      }
+    }
+  }
+
+  &.scroll {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid $secondary;
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px 0;
+    height: auto;
+
+    .logo-box {
+      max-width: 30vw;
+    }
+  }
+}
+
+.open-menu {
+  .headerStyle01 {
+    .fullMenu {
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+}
