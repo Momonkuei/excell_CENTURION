@@ -1,26 +1,86 @@
 .footerStyle01 {
-  overflow: hidden;
-  background-color: #2a2a2a;
+  background: #edebe8;
+  color: #222;
 
-  a {
-    text-decoration: none;
-    color: $white;
-    transition: all 0.5s ease-in;
+  .footer-content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+    margin: auto;
+    padding-top: 60px;
 
-    &:hover {
-      color: $mark;
+    @media (max-width: $viewMobile) {
+      max-width: 360px;
     }
-  }
 
-  .footer-box {
-    font-size: 14px;
-    @media (max-width: $viewS) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    .footer-title {
+      @media (min-width: $viewM) {
+        margin-bottom: 15px;
+      }
+    }
 
-      .copyright-box {
-        text-align: center;
+    .footer-list {
+      max-width: 100%;
+      min-width: 180px;
+      margin-bottom: 40px;
+
+      @media (min-width: $viewM) {
+        width: 230px;
+      }
+
+      .linklist {
+        padding-left: 0;
+      }
+
+      .linklist-item {
+        position: relative;
+        display: block;
+        margin-bottom: 12px;
+        padding: 0 20px;
+        line-height: 1.5;
+        text-align: left;
+        transition: all 0.2s ease-in-out;
+
+        @media (min-width: $viewM) {
+          padding: 5px 10px 0 0;
+        }
+
+        a {
+          display: block;
+          width: 100%;
+          text-align: inherit;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+
+    .footer-social {
+      @media (min-width: $viewM) {
+        width: 290px;
+      }
+
+      .mailmagazine-area {
+        a {
+          position: relative;
+          padding: 0 10px 0 0;
+          color: #222;
+          margin: 0 0 0 auto;
+          vertical-align: baseline;
+
+          &::after {
+            display: block;
+            position: absolute;
+            top: 7px;
+            right: 0;
+            width: 6px;
+            height: 6px;
+            border-top: 1px solid #222222;
+            border-right: 1px solid #222222;
+            transform: rotate(45deg);
+            content: "";
+          }
+        }
       }
     }
   }

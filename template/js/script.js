@@ -11,8 +11,14 @@ $(function () {
 			$('body').addClass('open-menu');
 		});
 
+		// 首頁關閉按鈕
 		$('.fullMenu .close-btn').click(function () {
 			$('body').removeClass('open-menu');
+		});
+
+		// header 搜尋按鈕
+		$('.searchToggle').click(function () {
+			$('.searchBox').toggleClass('open');
 		});
 	}
 });

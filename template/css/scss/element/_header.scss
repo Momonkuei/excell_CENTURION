@@ -132,6 +132,110 @@
     }
   }
 
+  // 搜尋選單
+  .searchBox {
+    border-radius: 5px;
+    position: relative;
+    height: 35px;
+    width: 35px;
+    pointer-events: auto;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+
+    .searchToggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      padding: 9px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+
+      i {
+        transition: all 0.3s ease;
+      }
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid #4c5e81;
+      color: #4c5e81;
+      width: calc(100% - 40px);
+      height: 25px;
+      padding: 0 30px 0 0px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      opacity: 0;
+      pointer-events: none;
+      background-color: transparent;
+
+      &:focus-visible {
+        outline: 0;
+      }
+    }
+
+    .search-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      opacity: 0;
+      pointer-events: none;
+      border: none;
+      background-color: transparent;
+    }
+
+    &.open {
+      width: 220px;
+      background-color: transparent;
+
+      input {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .searchToggle {
+        i {
+          opacity: 0;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          width: 20px;
+          height: 1px;
+          display: block;
+          background-color: #4c5e81;
+          position: absolute;
+          top: calc(50% - 0.5px);
+          left: calc(50% - 10px);
+        }
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+
+      .search-btn {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
   &.scroll {
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);

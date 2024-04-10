@@ -20,6 +20,21 @@
     content="yes"
   >
 
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
   <!-- JQuery -->
   <script src="/template/node_modules/jquery/jquery-3.7.1.min.js"></script>
 
@@ -78,13 +93,18 @@
                   </div>
                 </li>
                 <li>
-                  <a
-                    href="JavaScript:;"
-                    class="header-link"
-                  >
-                    <i class="bi bi-search"></i>
-                    搜尋
-                  </a>
+                  <div class="searchBox ">
+                    <form action="">
+                      <div class="searchToggle">
+                        <i class="bi bi-search"></i>
+                      </div>
+
+                      <input type="text">
+                      <button class="search-btn">
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </form>
+                  </div>
                 </li>
               </ul>
 
@@ -160,7 +180,6 @@
 
   </header>
 
-  <!-- banner -->
 
 
   <div class="body-content mt-3">
@@ -169,6 +188,173 @@
       <div class="h4 text-center">
         購物清單
       </div>
+
+      <div class="page-content">
+        <form
+          action=""
+          class=""
+        >
+          <div class="cart-itemList fz-14">
+
+            <div class="cart-head">
+              <div class="cart-head-item  mini heading">
+                商品
+              </div>
+              <div class="cart-head-item"></div>
+              <div class="cart-head-item mini heading text-center">
+                數量
+              </div>
+              <div class="cart-head-item mini heading text-end">
+                小計
+              </div>
+            </div>
+
+            <div class="cart-item">
+
+              <div class="cart-item-imageWrapper aspect-ratio">
+                <div class="aspect-ratio aspect-ratio-1">
+                  <img
+                    class="CartItem__Image"
+                    src="//cdn.shopify.com/s/files/1/0046/5918/3662/products/me-fastener-long-purse_s_nv_240x.jpg?v=1664239446"
+                    alt="深墨藍色 / 內裝 深藍色"
+                  >
+                </div>
+              </div>
+
+              <div class="cart-item-info">
+                <div class="cart-item-title heading fz-12">
+                  <a href="JavaScript:;">Nume plus 拉鍊長夾</a>
+                </div>
+                <div class="cart-item-txt fz-12">
+                  <div class="cart-item-productName heading">
+                    深墨藍色
+                  </div>
+                  <div class="cart-item-priceList">
+                    <div class="cart-item-price heading fz-12">
+                      $11,500
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart-item-adjustment heading text-center">
+                <div class="cart-item-QTY-selector-box">
+                  <div class="QTY-selector">
+                    <a
+                      href="javaScript:;"
+                      class="QTY-selector-btn"
+                    >
+                      <i class="bi bi-dash"></i>
+                    </a>
+                    <input
+                      type="text"
+                      class="QTY-selector-currentNum fz-12"
+                      value="2"
+                    >
+                    <a
+                      href="javaScript:;"
+                      class="QTY-selector-btn"
+                    >
+                      <i class="bi bi-plus"></i>
+                    </a>
+                  </div>
+
+                </div>
+                <a
+                  href="javaScript:;"
+                  class=" cart-item-remove link-underline heading"
+                >移除</a>
+
+              </div>
+
+              <div class="cart-item-priceList heading text-end">
+                <div class="cart-item-price heading">
+                  $23,000
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+          <div class="cart-footer fz-12">
+
+            <div class="cart-note-container">
+              <div class="cart-note-label heading">
+                新增訂單備註
+              </div>
+              <textarea
+                class="cart-note"
+                name=""
+                id=""
+                rows="4"
+                placeholder="請留下您的訊息"
+              ></textarea>
+            </div>
+
+            <div class="cart-sum">
+              <div class="cart-total heading">合計:
+                <span class="cart-total-price fz-14">$23,000.00 TWD</span>
+              </div>
+
+              <p class="cart-taxes">
+                結帳時將計算您的的運費
+              </p>
+
+              <button class="cart-chcekout-btn btn-full">
+                前往結帳
+              </button>
+
+            </div>
+
+          </div>
+        </form>
+
+        <div class="cart-info fz-14">
+          <div class="cart-info-label heading">
+            購物須知
+          </div>
+
+          <div class="shopping-notes-box">
+            <!-- 服務條款 -->
+            <div class="terms-service-area ">
+              <div class="heading shopping-notes-box-title">購物條款</div>
+
+              <ol class="shop-terms-lists fz-12">
+                <li class="">
+                  請注意！本商城商品數量眾多，多少會產生缺貨或停售之情況！
+                </li>
+                <li class="">
+                  下標成功或匯款成功不代表實質交易完成。我們保有保留接受訂單與否的權利！
+                </li>
+                <li class="">沒出貨前，您也有決定是否購買的權利。</li>
+                <li class="">每台電腦因螢幕解析度不同，多少會有些許色差，物品皆以實品顏色為標準，若您是對顏色標準相當嚴格之買家，請不要下標購買。</li>
+                <li class="">下標前請慎選款式及顏色並仔細詳閱商品、價格、運費等相關事宜。</li>
+                <li class="">依動產交易法第三條之規定，買賣同意在商品未出貨前，貨品之所有權仍屬於賣方。</li>
+              </ol>
+            </div>
+
+            <!-- 退換貨須知 -->
+            <div class=" terms-returned-or-exchanged-area ">
+              <div class="heading shopping-notes-box-title">退換貨須知</div>
+
+              <ol class="shop-terms-lists fz-12">
+                <li class="">
+                  退換貨及訂單相關問題請先聊聊，我們將在第一時間協助後續處理。
+                </li>
+                <li class="">
+                  一般商品若非 品質/瑕疵問題/寄錯商品 而要求退換貨，運費需由購買方負擔。
+                </li>
+                <li class="">原廠外盒及原廠包裝都屬於商品的一部分，遺失、毀損或缺件，都可能影響您退貨的權益，也將依損毀程度扣除所需之整新費用。</li>
+                <li class="">每台電腦因螢幕解析度不同，多少會有些許色差，物品皆以實品顏色為標準，若您是對顏色標準相當嚴格之買家，請不要下標購買。</li>
+                <li class="">「猶豫期」非「試用期」，在您還不確定是否要辦理退貨以前，請勿拆封！一經拆封則依消費者保護法之規定，無法享有七天猶豫期之權益且不得辦理退貨。</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
 
@@ -176,21 +362,74 @@
 
 
   <!-- 頁尾 -->
-  <!-- <footer class="footerStyle01">
+  <footer class="footerStyle01">
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="footer-box text-white d-flex gap-2 py-3">
-            <div class="copyright-box">Copyright © 2023 CENTURION® 百夫長®旅行箱 ,Ltd. All rights reserved</div>
-            <a
-              class=""
-              href="privacy_rule.html"
-            >隱私政策</a>
+      <div class="footer-content">
+        <div class="footer-list fz-14">
+          <div class="footer-title fw-bolder">
+            客服中心
+          </div>
+          <ul class="linklist">
+            <li class="linklist-item">
+              <a href="javaScript:;">常見問題</a>
+            </li>
+            <li class="linklist-item">
+              <a href="javaScript:;">連絡我們</a>
+            </li>
+          </ul>
+
+
+        </div>
+
+        <div class="footer-list fz-14">
+          <div class="footer-title fw-bolder">
+            關於
+          </div>
+          <ul class="linklist">
+            <li class="linklist-item">
+              <a href="javaScript:;">關於我們</a>
+            </li>
+            <li class="linklist-item">
+              <a href="javaScript:;">最新消息</a>
+            </li>
+          </ul>
+
+
+        </div>
+
+        <div class="footer-list fz-14">
+          <div class="footer-title fw-bolder">
+            會員
+          </div>
+          <ul class="linklist">
+            <li class="linklist-item">
+              <a href="javaScript:;">會員資訊</a>
+            </li>
+            <li class="linklist-item">
+              <a href="javaScript:;">訂單列表</a>
+            </li>
+          </ul>
+
+
+        </div>
+
+        <div class="footer-social">
+          <div class="footer-subscribe-newsletter-box">
+            <div class="mailmagazine-area">
+              <div class="d-flex justify-content-between">
+                <span class="fz-14">訂閱電子報</span>
+                <a
+                  href="javaScript:;"
+                  class="fz-12"
+                >了解詳情</a>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
-  </footer> -->
+  </footer>
 
 
   <a

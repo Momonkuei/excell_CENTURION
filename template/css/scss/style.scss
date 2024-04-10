@@ -29,18 +29,21 @@
 
 // basic
 @import "basic/basic";
+@import "basic/effects";
+@import "basic/font";
 
 // function
 @import "function/text";
 
 // elements
-@import "element/header";
 @import "element/banner";
-@import "element/title";
+@import "element/button";
 @import "element/footer";
 @import "element/gotop";
+@import "element/header";
+@import "element/title";
 
 // page
-@import "page/index";
 @import "page/cart";
+@import "page/index";
 @import "page/privacy_rule";
