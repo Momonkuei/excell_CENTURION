@@ -3,7 +3,6 @@
 }
 
 .cart-chcekout-btn {
-  margin-top: 16px;
   margin-left: auto;
   display: inline-flex;
   align-items: center;
@@ -44,8 +43,10 @@
     transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
 
-  @media (min-width: 641px) {
-    width: auto;
+  @media (min-width: $viewS) {
+    &.cart1 {
+      width: auto;
+    }
   }
 
   &:hover {
@@ -55,6 +56,55 @@
     &::before {
       transform-origin: right center;
       transform: scaleX(0);
+    }
+  }
+}
+
+// cart2
+.discount-btn {
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgb(207, 207, 207);
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+.order-content-btn {
+  color: rgb(12, 12, 12);
+  background: #f5f5f5;
+  position: relative;
+  z-index: 2;
+  border: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  &-area {
+    max-width: 37.5rem;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+
+    .icon {
+      i {
+        &::before {
+          transform: rotate(0deg);
+          transition: all 0.3s ease-in;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .icon {
+      i {
+        &::before {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="format-detection"
+    content="telephone=no"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- JQuery -->
+  <script src="/template/node_modules/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link
+    rel="stylesheet"
+    href="/template/css/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- TWzipcode -->
+  <script src="/template/node_modules/jQuery-TWzipcode-master/jquery.twzipcode.min.js"></script>
+
+  <!-- slick css -->
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/slick-1.8.1/slick/slick.css"
+  >
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
+  >
+
+
+  <!-- Swiper css -->
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.css"
+  >
+
+  <!-- 客製css -->
+  <link
+    rel="stylesheet"
+    href="/template/css/css/style.css?v=1.1"
+  >
+
+  <title>百夫長旅行箱CENTURION</title>
+</head>
+
+<body class="">
+
+  <!-- header -->
+
+  <header
+    id="header"
+    class="headerStyle01 "
+  >
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="primary-nav col-md-5 col-sm-4 col">
+          <div class="navbar">
+            <div class="main-menu">
+              <ul class="menu-list mb-0 d-flex gap-3">
+                <li>
+                  <div class="btn-list">
+                    <button class="mobile-menu-btn slide-menu-control">
+                      <span class="line"></span>
+
+                    </button>
+                    <span class="txt">目錄</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="searchBox ">
+                    <form action="">
+                      <div class="searchToggle">
+                        <i class="bi bi-search"></i>
+                      </div>
+
+                      <input type="text">
+                      <button class="search-btn">
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </form>
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-sm-4 brand-block col">
+          <a href="/">
+            <img
+              src="/template/images/centurion_logo.png"
+              alt="logo"
+              class="brand-image"
+            >
+          </a>
+        </div>
+
+        <div class="right-block col-md-5 col-sm-4 col">
+          <div class="navbar justify-content-end">
+            <div class="user-items">
+              <ul class="mb-0 d-flex gap-3">
+                <li>
+                  <a
+                    href="JavaScript:;"
+                    class="header-link"
+                  >
+                    <i class="bi bi-person"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="JavaScript:;"
+                    class="header-link"
+                  >
+                    <i class="bi bi-bag"></i>
+                    <span>0</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="fullMenu">
+      <div class="fullMenu-inner">
+        <button class="close-btn">
+          <i class="bi bi-x-lg h5"></i>
+        </button>
+        <div class="fullMenu-nav">
+          <ul class="navMenu">
+            <li>
+              <a href="JavaScript:;">
+                <span class="h3">首頁</span>
+              </a>
+            </li>
+            <li>
+              <a href="JavaScript:;">
+                <span class="h3">會員資料</span>
+              </a>
+            </li>
+            <li>
+              <a href="JavaScript:;">
+                <span class="h3">購物車</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+
+
+  <div class="body-content mt-3">
+
+    <div class="page-cart2">
+
+      <!-- left-box -->
+      <div class="left-box fz-14">
+        <div class="left-box-area"></div>
+        <div class="left-box-header">
+
+
+
+        </div>
+
+        <div class="left-box-body">
+
+          <form
+            action=""
+            id=""
+            class="twzipcode cart-form"
+          >
+            <!-- 聯絡資訊 -->
+            <div class="contact-information-area mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="h4 ">
+                  聯絡資訊
+                </div>
+
+                <a href="javaScript:;">登入</a>
+              </div>
+
+              <div class="form-group">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="電子郵件"
+                  class="form-input"
+                >
+                <label
+                  for="email"
+                  class="form-label"
+                >電子郵件</label>
+              </div>
+              <div class="form-check mt-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="marketing_opt_in"
+                  checked
+                >
+                <label
+                  class="form-check-label"
+                  for="marketing_opt_in"
+                >
+                  以電子郵件傳送最新消息和優惠活動給我
+                </label>
+              </div>
+            </div>
+
+            <!-- 運送 -->
+            <div class="transport-area">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="h4 ">
+                  運送
+                </div>
+              </div>
+
+              <div class="row ">
+                <div class="col-12 mb-3">
+                  <div class="form-group">
+                    <label
+                      for="name"
+                      class="form-label"
+                    >姓名 / Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="姓名 / Name"
+                      class="form-input"
+                    >
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <div
+                    data-role="zipcode"
+                    data-style="form-control"
+                    data-name="zipcode"
+                    data-value="郵遞區號"
+                    class="form-group "
+                  >
+
+                    <label
+                      for="name"
+                      class="form-label"
+                    >郵遞區號</label>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="form-group ">
+                    <label
+                      for="county"
+                      class="form-label"
+                    >縣市 / county</label>
+
+                    <div
+                      data-role="county"
+                      data-style="form-control"
+                      data-name="county"
+                      data-value="請選擇縣市"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <div class="form-group">
+                    <label
+                      for="district"
+                      class="form-label"
+                    >鄉鎮市區 / district</label>
+                    <div
+                      data-role="district"
+                      data-style="form-control"
+                      data-name="district"
+                      data-value="請選擇鄉鎮區"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="col-12 mb-3">
+                  <div class="form-group">
+                    <label
+                      for="name"
+                      class="form-label"
+                    >地址 / address</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="請輸入地址"
+                      class="form-input"
+                    >
+                  </div>
+                </div>
+
+                <div class="col-12 mb-3">
+                  <div class="form-group">
+                    <label
+                      for="name"
+                      class="form-label"
+                    >電話 / phone</label>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      placeholder="請輸入電話"
+                      class="form-input"
+                    >
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="save_shipping_information"
+                    >
+                    <label
+                      class="form-check-label"
+                      for="save_shipping_information"
+                    >
+                      儲存此資訊供下次使用
+                    </label>
+                  </div>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div class="fz-16 fw-400">
+                    運送方式
+                  </div>
+                </div>
+
+                <div class="col-12 mb-3">
+                  <div class="form-group">
+                    <!-- <label
+                                      for="name"
+                                      class="form-label"
+                                    >運送方式</label> -->
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      class="form-input"
+                      value="宅配"
+                      disabled
+                    >
+                  </div>
+                </div>
+
+                <div class="col-12 mb-3">
+                  <button class="cart-chcekout-btn btn-full">
+                    完成並檢視訂單
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </form>
+
+
+        </div>
+
+        <div class="left-box-footer mt-3">
+          <div class="left-box-footer-area">
+            <ul class="pay-attention-lists">
+              <li>
+                <a href="javaScript:;">退款政策</a>
+              </li>
+
+              <li>
+                <a href="javaScript:;">運送政策</a>
+              </li>
+
+              <li>
+                <a href="javaScript:;">隱私政策</a>
+              </li>
+              <li>
+                <a href="javaScript:;">服務政策</a>
+              </li>
+
+              <li>
+                <a href="javaScript:;">法律聲明</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="right-box fz-14">
+
+        <div class="right-box-area">
+          <div class="right-box-header">
+          </div>
+          <div class="right-box-body">
+            <div class="shopping-list-cart">
+              <div class="product-list">
+                <div class="item">
+                  <div class="item-thumbnail-box">
+
+                    <img
+                      src="https://centurionbuy.wacocolife.com/public/static/index/upload/productinfo_pic7_0_eRa.jpg?1436656884"
+                      alt=""
+                    >
+                    <div class="count">
+                      <span class="fz-12 count-num">1</span>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="item-info">
+                      <div class="item-name">
+                        Nume 鑰匙圈
+                      </div>
+                      <div class="item-category">
+                        棕色
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item-price">
+                    <span>$1,278.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="discount-code-area">
+                <form
+                  action=""
+                  class="cart-form"
+                >
+                  <div class="discount-code-area-box">
+                    <div class="form-group form-group-cart-discount">
+                      <label
+                        for="cart-discount-code"
+                        class="form-label"
+                      >折扣碼 / discount code</label>
+                      <input
+                        id="cart-discount-code"
+                        type="text"
+                        name="name"
+                        placeholder="請輸入折扣碼"
+                        class="form-input"
+                      >
+                    </div>
+                    <button class="discount-btn">
+                      <span>使用</span>
+                    </button>
+                  </div>
+
+                </form>
+
+              </div>
+
+              <div class="total-area">
+                <div class="total-box">
+                  <div class="total-box-title">
+                    <span>小計</span>
+                  </div>
+                  <div class="total-box-txt">
+                    <span class="fw-bold">$1,278.00</span>
+                  </div>
+                </div>
+
+                <div class="total-box">
+                  <div class="total-box-title">
+                    <span>運送
+                    </span>
+                  </div>
+                  <div class="total-box-txt">
+                    <span>免費</span>
+                  </div>
+                </div>
+
+                <div class="total-box">
+                  <div class="total-box-title">
+                    <span class="h5">總計
+                    </span>
+                  </div>
+                  <div class="total-box-txt">
+                    <span class="currency ">TWD</span>
+                    <span class="h5">$1,278.00</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+    <!-- 頁尾 -->
+    <footer class="footerStyle01">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-list fz-14">
+            <div class="footer-title fw-bolder">
+              客服中心
+            </div>
+            <ul class="linklist">
+              <li class="linklist-item">
+                <a href="javaScript:;">常見問題</a>
+              </li>
+              <li class="linklist-item">
+                <a href="javaScript:;">連絡我們</a>
+              </li>
+            </ul>
+
+
+          </div>
+
+          <div class="footer-list fz-14">
+            <div class="footer-title fw-bolder">
+              關於
+            </div>
+            <ul class="linklist">
+              <li class="linklist-item">
+                <a href="javaScript:;">關於我們</a>
+              </li>
+              <li class="linklist-item">
+                <a href="javaScript:;">最新消息</a>
+              </li>
+            </ul>
+
+
+          </div>
+
+          <div class="footer-list fz-14">
+            <div class="footer-title fw-bolder">
+              會員
+            </div>
+            <ul class="linklist">
+              <li class="linklist-item">
+                <a href="javaScript:;">會員資訊</a>
+              </li>
+              <li class="linklist-item">
+                <a href="javaScript:;">訂單列表</a>
+              </li>
+            </ul>
+
+
+          </div>
+
+          <div class="footer-social">
+            <div class="footer-subscribe-newsletter-box ">
+              <div class="mailmagazine-area">
+                <div class="d-flex justify-content-between mb-3">
+                  <span class="fz-14">訂閱電子報</span>
+                  <a
+                    href="javaScript:;"
+                    class="fz-12 side-arrow"
+                  >了解詳情</a>
+                </div>
+
+
+                <form
+                  action=""
+                  class="subscription-form"
+                >
+                  <div class="subscription-form-group">
+                    <input
+                      type="email"
+                      placeholder="電子郵件"
+                    >
+                    <div class="subscription-form-group-btnBox">
+                      <button>訂閱</button>
+                    </div>
+                  </div>
+                </form>
+                <div class="subscription-privacy fz-10">
+                  透過訂閱電子報，即代表您同意土屋鞄製造所的
+                  <a href="javaScript:;">隱私政策 </a>
+                </div>
+              </div>
+
+              <div class="social-area">
+                <ul class="footer-social d-flex gap-3 mt-2">
+                  <li class="footer-social-item">
+                    <a
+                      href="javaScript:;"
+                      class=""
+                    >
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                  </li>
+
+                  <li class="footer-social-item">
+                    <a
+                      href="javaScript:;"
+                      class=""
+                    >
+                      <i class="bi bi-instagram"></i>
+                    </a>
+                  </li>
+
+                  <li class="footer-social-item">
+                    <a
+                      href="javaScript:;"
+                      class=""
+                    >
+                      <i class="bi bi-youtube"></i>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+
+    <a
+      href="#"
+      class="goTop"
+    >
+      <i class="bi bi-chevron-up"></i>
+    </a>
+
+    <!-- popper -->
+    <script
+      type="text/javascript"
+      src="/template/node_modules/popper/popper.min.js"
+    ></script>
+
+    <!-- bootstrap -->
+    <script
+      type="text/javascript"
+      src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
+    ></script>
+
+    <!-- slick -->
+    <script
+      type="text/javascript"
+      src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
+    ></script>
+
+    <!-- swiper -->
+    <script
+      type="text/javascript"
+      src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
+    ></script>
+
+    <!-- 自定義JS -->
+
+    <script
+      type="module"
+      type="text/javascript"
+      src="/template/js/script.js"
+    >
+    </script>
+
+
+    <script
+      type="module"
+      type="text/javascript"
+      src="/template/js/cart.js"
+    >
+    </script>
+
+</body>
+
+</html>

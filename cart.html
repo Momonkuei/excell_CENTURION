@@ -81,7 +81,7 @@
     <div class="container">
       <div class="row align-items-center">
 
-        <div class="primary-nav col-md-5 col-sm-2">
+        <div class="primary-nav col-md-5 col-sm-4 col">
           <div class="navbar">
             <div class="main-menu">
               <ul class="menu-list mb-0 d-flex gap-3">
@@ -89,7 +89,9 @@
                   <div class="btn-list">
                     <button class="mobile-menu-btn slide-menu-control">
                       <span class="line"></span>
+
                     </button>
+                    <span class="txt">目錄</span>
                   </div>
                 </li>
                 <li>
@@ -112,7 +114,7 @@
           </div>
         </div>
 
-        <div class="col-md-2 col-sm-4 brand-block">
+        <div class="col-md-2 col-sm-4 brand-block col">
           <a href="/">
             <img
               src="/template/images/centurion_logo.png"
@@ -122,7 +124,7 @@
           </a>
         </div>
 
-        <div class="right-block col-md-5 col-sm-4">
+        <div class="right-block col-md-5 col-sm-4 col">
           <div class="navbar justify-content-end">
             <div class="user-items">
               <ul class="mb-0 d-flex gap-3">
@@ -189,7 +191,7 @@
         購物清單
       </div>
 
-      <div class="page-content">
+      <div class="page-cart">
         <form
           action=""
           class=""
@@ -294,15 +296,18 @@
             </div>
 
             <div class="cart-sum">
-              <div class="cart-total heading">合計:
-                <span class="cart-total-price fz-14">$23,000.00 TWD</span>
+              <div class="cart-total-area">
+                <div class="cart-total heading">合計:
+                  <span class="cart-total-price fz-14">$23,000.00 TWD</span>
+                </div>
+
+                <p class="cart-taxes">
+                  結帳時將計算您的的運費
+                </p>
               </div>
 
-              <p class="cart-taxes">
-                結帳時將計算您的的運費
-              </p>
 
-              <button class="cart-chcekout-btn btn-full">
+              <button class="cart-chcekout-btn cart1 btn-full">
                 前往結帳
               </button>
 
@@ -414,15 +419,68 @@
         </div>
 
         <div class="footer-social">
-          <div class="footer-subscribe-newsletter-box">
+          <div class="footer-subscribe-newsletter-box ">
             <div class="mailmagazine-area">
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between mb-3">
                 <span class="fz-14">訂閱電子報</span>
                 <a
                   href="javaScript:;"
-                  class="fz-12"
+                  class="fz-12 side-arrow"
                 >了解詳情</a>
               </div>
+
+
+              <form
+                action=""
+                class="subscription-form"
+              >
+                <div class="subscription-form-group">
+                  <input
+                    type="email"
+                    placeholder="電子郵件"
+                  >
+                  <div class="subscription-form-group-btnBox">
+                    <button>訂閱</button>
+                  </div>
+                </div>
+              </form>
+              <div class="subscription-privacy fz-10">
+                透過訂閱電子報，即代表您同意土屋鞄製造所的
+                <a href="javaScript:;">隱私政策 </a>
+              </div>
+            </div>
+
+            <div class="social-area">
+              <ul class="footer-social d-flex gap-3 mt-2">
+                <li class="footer-social-item">
+                  <a
+                    href="javaScript:;"
+                    class=""
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                </li>
+
+                <li class="footer-social-item">
+                  <a
+                    href="javaScript:;"
+                    class=""
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                </li>
+
+                <li class="footer-social-item">
+                  <a
+                    href="javaScript:;"
+                    class=""
+                  >
+                    <i class="bi bi-youtube"></i>
+                  </a>
+                </li>
+
+              </ul>
+
             </div>
           </div>
         </div>

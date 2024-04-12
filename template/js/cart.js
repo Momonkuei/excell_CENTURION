@@ -1,34 +1,40 @@
 $(function () {
-	if ($('#twzipcode').length) {
-		$('#twzipcode').twzipcode({
+	if ($('.twzipcode').length) {
+		$('.twzipcode').twzipcode({
 			zipcodeIntoDistrict: false, // 郵遞區號自動顯示在區別選單中
 			county: {
 				value: '請選擇縣市',
+				label: '郵遞區號',
 			},
-			css: [
-				'city form-control col-md-4',
-				'town form-control col-md-4',
-				'townNum form-control col-md-4',
-			], // 自訂 "城市"、"地別" class 名稱
+
+			district: {},
+			zipcode: {
+				css: 'townNum',
+			},
 			countyName: 'city', // 自訂城市 select 標籤的 name 值
 			districtName: 'town', // 自訂區別 select 標籤的 name 值
 		});
+		$('input[name="zipcode"]').addClass('form-input');
+		$('select[name="county"],select[name="district"]').addClass(
+			'form-select'
+		);
 	}
+});
 
-	if ($('#cart_table').length) {
-		// $('#cart_table').DataTable({
-		// 	searching: false,
-		// 	paging: false,
-		// 	columns: [
-		// 		{ title: '圖片' },
-		// 		{ title: '品名' },
-		// 		{ title: '編號' },
-		// 		{ title: '數量' },
-		// 		{ title: '單價' },
-		// 		{ title: '總價' },
-		// 		{ title: '刪除' },
-		// 	],
-		// });
-		// $('#cart_table thead').addClass('table-dark');
+// cart2
+
+$(function () {
+	if ($('.order-content-btn').length) {
+		$('.order-content-btn').click(function () {
+			if ($(this).hasClass('active')) {
+				$('.right-box-area').slideUp();
+				$('.order-content-btn').removeClass('active');
+				$(this).find('.txt').text('顯示訂單內容');
+			} else {
+				$('.right-box-area').slideDown();
+				$('.order-content-btn').addClass('active');
+				$(this).find('.txt').text('隱藏訂單內容');
+			}
+		});
 	}
 });

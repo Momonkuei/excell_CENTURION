@@ -6,10 +6,26 @@ body {
   font-size: $font-size-base * 0.875;
 }
 
+.fz-10 {
+  font-size: $font-size-base * 0.625;
+}
+
 .fz-12 {
   font-size: $font-size-base * 0.75;
 }
 
 .fz-14 {
   font-size: $font-size-base * 0.875;
+}
+
+.fz-16 {
+  font-size: $font-size-base;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
 }

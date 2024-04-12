@@ -1,4 +1,4 @@
-.page-content {
+.page-cart {
   max-width: 1000px;
   margin: 35px auto;
 }
@@ -13,6 +13,7 @@
 }
 
 .cart-head {
+  display: none;
   @media (min-width: 641px) {
     display: table-header-group;
   }
@@ -55,6 +56,7 @@
     width: 90px;
     min-width: 90px;
     text-align: center;
+    grid-area: imageWrapper;
 
     @media (min-width: 641px) {
       width: 120px;
@@ -63,6 +65,7 @@
 
   &-info {
     padding-left: 25px;
+    grid-area: info;
 
     @media (min-width: 641px) {
       max-width: 300px;
@@ -79,15 +82,26 @@
     }
   }
 
+  &-priceList {
+    @media (max-width: $viewS) {
+      display: none;
+    }
+  }
+
   &-adjustment {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    grid-area: adjustment;
 
-    @media (min-width: 641px) {
+    @media (min-width: $viewS) {
       display: table-cell;
       vertical-align: middle;
+    }
+
+    @media (max-width: $viewS) {
+      padding-left: 25px;
     }
   }
 
@@ -128,17 +142,30 @@
       margin: 8px 0;
     }
   }
+
+  @media (max-width: $viewS) {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas:
+      "imageWrapper info"
+      "imageWrapper adjustment";
+  }
 }
 
 .cart-footer {
   padding-top: 25px;
   border-top: 1px solid #cccccc;
 
-  @media (min-width: 641px) {
+  @media (min-width: $viewS) {
     display: table;
     width: 100%;
     table-layout: fixed;
+    flex-direction: row;
   }
+
+  display: flex;
+  flex-direction: column;
 
   .cart-note-container,
   .cart-sum {
@@ -169,6 +196,17 @@
     width: 340px;
     padding-left: 20px;
     text-align: right;
+
+    @media (max-width: $viewS) {
+      margin-top: 15px;
+      width: 100%;
+      padding-left: 0;
+
+      .cart-taxes {
+        margin-top: 10px;
+        text-align: left;
+      }
+    }
   }
 
   .cart-info {
