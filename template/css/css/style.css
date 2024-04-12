@@ -11714,8 +11714,8 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: transparent;
-  -webkit-transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -webkit-transition: color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   z-index: 1;
   -webkit-tap-highlight-color: initial;
 }
@@ -11735,10 +11735,10 @@ body {
           transform-origin: left center;
   z-index: -1;
   background-color: #fb5830;
-  -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7), -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
 }
 @media (min-width: 768px) {
   .cart-chcekout-btn.cart1 {
@@ -11986,6 +11986,63 @@ body {
 }
 .footerStyle01 .footer-content .social-area .footer-social-item a:hover {
   opacity: 0.6;
+}
+
+.cart-form .form-group {
+  position: relative;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+}
+.cart-form .form-group .form-label {
+  font-size: 0.875rem;
+  margin-left: 0.8rem;
+  margin-bottom: 0;
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translateY(0rem);
+          transform: translateY(0rem);
+  position: absolute;
+  top: 0;
+}
+.cart-form .form-group .form-input,
+.cart-form .form-group .townNum input {
+  color: #333;
+  font-size: 0.875rem;
+  margin: 0 auto;
+  padding: 1.3rem 0.75rem 0.675rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 100%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.cart-form .form-group:has(.form-input:-moz-placeholder-shown) .form-label {
+  opacity: 0;
+  visibility: hidden;
+}
+.cart-form .form-group:has(.form-input:-ms-input-placeholder) .form-label {
+  opacity: 0;
+  visibility: hidden;
+}
+.cart-form .form-group:has(.form-input:placeholder-shown) .form-label {
+  opacity: 0;
+  visibility: hidden;
+}
+.cart-form .form-group .form-select,
+.cart-form .form-group .town select,
+.cart-form .form-group .city select {
+  color: #333;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  padding: 1.3rem 0.75rem 0.675rem;
+}
+.cart-form .form-group .form-control {
+  border: none;
 }
 
 .goTop {
@@ -12657,62 +12714,6 @@ body {
   display: flex;
   gap: 0.75rem;
 }
-.page-cart2 .cart-form .form-group {
-  position: relative;
-  border: 1px solid #dedede;
-  border-radius: 5px;
-}
-.page-cart2 .cart-form .form-group .form-label {
-  font-size: 0.875rem;
-  margin-left: 0.8rem;
-  margin-bottom: 0;
-  display: block;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: translateY(0rem);
-          transform: translateY(0rem);
-  position: absolute;
-  top: 0;
-}
-.page-cart2 .cart-form .form-group .form-input,
-.page-cart2 .cart-form .form-group .townNum input {
-  color: #333;
-  font-size: 0.875rem;
-  margin: 0 auto;
-  padding: 1.3rem 0.75rem 0.675rem;
-  border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
-  border: none;
-  width: 100%;
-  display: block;
-  border-bottom: 0.3rem solid transparent;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.page-cart2 .cart-form .form-group:has(.form-input:-moz-placeholder-shown) .form-label {
-  opacity: 0;
-  visibility: hidden;
-}
-.page-cart2 .cart-form .form-group:has(.form-input:-ms-input-placeholder) .form-label {
-  opacity: 0;
-  visibility: hidden;
-}
-.page-cart2 .cart-form .form-group:has(.form-input:placeholder-shown) .form-label {
-  opacity: 0;
-  visibility: hidden;
-}
-.page-cart2 .cart-form .form-group .form-select,
-.page-cart2 .cart-form .form-group .town select,
-.page-cart2 .cart-form .form-group .city select {
-  color: #333;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  outline: none;
-  padding: 1.3rem 0.75rem 0.675rem;
-}
-.page-cart2 .cart-form .form-group .form-control {
-  border: none;
-}
 .page-cart2 .right-box {
   background: rgb(239, 239, 239);
   width: 46%;
@@ -13050,4 +13051,53 @@ body {
     padding-bottom: 15%;
     width: 24%;
   }
+}
+
+.sectionblock-login .login-box {
+  max-width: 400px;
+  min-height: 45rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+.sectionblock-login .login-form,
+.sectionblock-login .forgot-password-form {
+  width: 100%;
+  letter-spacing: 0.2em;
+}
+.sectionblock-login .login-form .login-form-footer a,
+.sectionblock-login .forgot-password-form .login-form-footer a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.sectionblock-login .login-form .login-form-footer a::before,
+.sectionblock-login .forgot-password-form .login-form-footer a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -1px;
+  background: currentColor;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.sectionblock-login .login-form .login-form-footer a:hover::before,
+.sectionblock-login .forgot-password-form .login-form-footer a:hover::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
 }

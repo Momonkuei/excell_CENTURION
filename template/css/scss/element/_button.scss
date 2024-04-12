@@ -21,8 +21,8 @@
   font-style: normal;
   background-color: transparent;
   transition:
-    color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
+    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   z-index: 1;
   -webkit-tap-highlight-color: initial;
 
@@ -40,7 +40,7 @@
     transform-origin: left center;
     z-index: -1;
     background-color: $primary;
-    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   }
 
   @media (min-width: $viewS) {

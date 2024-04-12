@@ -1,0 +1,54 @@
+// 購物車表單格式
+.cart-form {
+  .form-group {
+    position: relative;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+
+    .form-label {
+      font-size: $font-size-base * 0.875;
+      margin-left: 0.8rem;
+      margin-bottom: 0;
+      display: block;
+      transition: all 0.3s;
+      transform: translateY(0rem);
+      position: absolute;
+      top: 0;
+    }
+
+    .form-input,
+    .townNum input {
+      color: #333;
+      font-size: $font-size-base * 0.875;
+      margin: 0 auto;
+      padding: 1.3rem 0.75rem 0.675rem;
+      border-radius: 0.2rem;
+      background-color: rgb(255, 255, 255);
+      border: none;
+      width: 100%;
+      display: block;
+      border-bottom: 0.3rem solid transparent;
+      transition: all 0.3s;
+    }
+
+    &:has(.form-input:placeholder-shown) {
+      .form-label {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    .form-select,
+    .town select,
+    .city select {
+      color: #333;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      outline: none;
+      padding: 1.3rem 0.75rem 0.675rem;
+    }
+
+    .form-control {
+      border: none;
+    }
+  }
+}
