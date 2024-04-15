@@ -4,13 +4,14 @@
 
 .cart-chcekout-btn {
   margin-left: auto;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   border-color: $primary;
   position: relative;
-  padding: 14px 28px;
+  padding: 1rem 1.5rem;
   line-height: normal;
   border: 1px solid transparent;
   border-radius: 0;
@@ -106,5 +107,29 @@
         }
       }
     }
+  }
+}
+
+// cart3
+
+.cart-continue-btn {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background-clip: border-box;
+  box-sizing: border-box;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    color: white;
   }
 }

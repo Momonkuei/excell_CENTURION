@@ -11692,6 +11692,7 @@ body {
 
 .cart-chcekout-btn {
   margin-left: auto;
+  text-decoration: none;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -11704,7 +11705,7 @@ body {
   color: #fff;
   border-color: #fb5830;
   position: relative;
-  padding: 14px 28px;
+  padding: 1rem 1.5rem;
   line-height: normal;
   border: 1px solid transparent;
   border-radius: 0;
@@ -11803,6 +11804,28 @@ body {
 .order-content-btn.active .icon i::before {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.cart-continue-btn {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background-clip: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  position: relative;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+.cart-continue-btn:hover {
+  color: white;
 }
 
 .footerStyle01 {
@@ -12369,6 +12392,22 @@ body {
   letter-spacing: 0.1em;
 }
 
+.cart-left-lead-title {
+  letter-spacing: 1px;
+  position: relative;
+  padding: 5px 0px 5px 0.5rem;
+}
+.cart-left-lead-title::before {
+  content: "";
+  width: 2px;
+  height: 75%;
+  display: block;
+  background-color: #343a40;
+  position: absolute;
+  left: 0;
+  top: 10%;
+}
+
 .page-cart {
   max-width: 1000px;
   margin: 35px auto;
@@ -12628,8 +12667,16 @@ body {
           flex-direction: column;
   padding: 15px 30px;
 }
+@media (max-width: 576px) {
+  .cart-info .shopping-notes-box {
+    padding: 15px;
+  }
+}
 .cart-info .shopping-notes-box-title {
   margin-bottom: 10px;
+}
+.cart-info .shopping-notes-box .shop-terms-lists {
+  padding-left: 1rem;
 }
 .cart-info .terms-returned-or-exchanged-area,
 .cart-info .terms-service-area {
@@ -12842,6 +12889,67 @@ body {
 }
 .page-cart2 .right-box .total-area .total-box .currency {
   color: #ccc;
+}
+
+.page-cart2 .left-box .comfirm-information-box .confirm-message {
+  display: inline-block;
+  max-width: 100%;
+  padding-left: 110px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.page-cart2 .left-box .comfirm-information-box .confirm-message .check-icon {
+  display: inline-block;
+  color: green;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 300;
+  border: 5px solid green;
+  line-height: 51px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+@media (max-width: 576px) {
+  .page-cart2 .left-box .comfirm-information-box {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .page-cart2 .left-box .comfirm-information-box .confirm-message {
+    padding-left: 0;
+  }
+  .page-cart2 .left-box .comfirm-information-box .confirm-message .check-icon {
+    position: relative;
+  }
+}
+.page-cart2 .left-box .content-box {
+  border-color: #d9d9d9;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.page-cart2 .left-box .content-box-content .info-box {
+  padding-left: 0.5rem;
+}
+.page-cart2 .left-box .content-box-content .info-box:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.page-cart2 .left-box .content-box-content .info-box-head {
+  font-weight: 500;
+}
+.page-cart2 .left-box .cart3-btn-group {
+  text-align: right;
+}
+@media (max-width: 576px) {
+  .page-cart2 .left-box .cart3-btn-group a {
+    display: block;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -13100,4 +13208,85 @@ body {
 .sectionblock-login .forgot-password-form .login-form-footer a:hover::before {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
+}
+
+.membership-application-box {
+  min-height: 37.5rem;
+  max-width: 40rem;
+  margin: 35px auto;
+}
+@media (min-width: 768px) {
+  .membership-application-box {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+.membership-application-form .form-input {
+  -webkit-appearance: none;
+  display: block;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  width: 100%;
+  line-height: normal;
+  resize: none;
+  -webkit-transition: border-color 0.1s ease-in-out;
+  transition: border-color 0.1s ease-in-out;
+  background: transparent;
+}
+.membership-application-form .radio-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.75rem 0.875rem;
+}
+.membership-application-form .radio-box .male-radio {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+.membership-application-form .radio-box .form-radio {
+  position: relative;
+  cursor: pointer;
+}
+.membership-application-form .radio-box .form-radio:before {
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #fb5830;
+  border-radius: 50%;
+  -webkit-transform: scale(0, 0), translate(-50%, -50%);
+          transform: scale(0, 0), translate(-50%, -50%);
+}
+.membership-application-form .radio-box .form-radio:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: #fff;
+  border: 2px solid #f2f2f2;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.membership-application-form .radio-box .form-radio:checked::before {
+  -webkit-transform: scale(1, 1) translate(-50%, -50%);
+          transform: scale(1, 1) translate(-50%, -50%);
 }

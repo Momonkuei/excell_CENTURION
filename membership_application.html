@@ -189,50 +189,121 @@
 
   <div class="body-content mt-3">
 
-    <section class="sectionblock-login">
+    <section class="sectionblock-membership-application">
       <div class="container">
-        <div class="login-box">
+        <div class="membership-application-box">
           <form
             action=""
-            class="login-form cart-form fz-14"
+            class="membership-application-form  fz-14"
           >
             <div class="h4 text-center">
-              會員登入
+              會員申請
             </div>
-            <p class="text-center">請輸入您的登入資訊</p>
+            <div class="row">
 
-            <div class="form-group mb-3">
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="電子郵件"
-                class="form-input"
-              >
-              <label
-                for="email"
-                class="form-label"
-              >電子郵件</label>
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="last_name"
+                    class="form-label"
+                  >姓*</label>
+                  <input
+                    id="last_name"
+                    type="text"
+                    name="last_name"
+                    placeholder="請輸入姓氏"
+                    class="form-input"
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="first_name"
+                    class="form-label"
+                  >名*</label>
+                  <input
+                    id="first_name"
+                    type="text"
+                    name="first_name"
+                    placeholder="請輸入名子"
+                    class="form-input"
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="first_name"
+                    class="form-label"
+                  >性別*</label>
+                  <div class="radio-box">
+
+                    <label
+                      for="male"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="male"
+                        name="gender"
+                        value="male"
+                        class="form-radio"
+                      >
+                      男性
+                    </label>
+
+                    <label
+                      for="female"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="female"
+                        name="gender"
+                        value="female"
+                        class="form-radio"
+                      >
+                      女性
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="custom_birthday"
+                    class="form-label"
+                  >生日*</label>
+                  <input
+                    id="first_name"
+                    type="date"
+                    name="custom_birthday"
+                    placeholder="birthday"
+                    class="form-input"
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="country"
+                    class="form-label"
+                  >居住地</label>
+
+                </div>
+              </div>
+
             </div>
 
-            <div class="form-group mb-1">
-              <input
-                id="password"
-                type="password"
-                name="password"
-                placeholder="密碼"
-                class="form-input"
-              >
-              <label
-                for="email"
-                class="form-label"
-              >密碼</label>
-            </div>
 
-            <a
-              href="javaScript:;"
-              class="text-end mb-3 d-block forgot-password-btn"
-            >忘記密碼</a>
+
+
 
             <button class="cart-chcekout-btn btn-full mb-3">
               登入
@@ -245,42 +316,7 @@
 
           </form>
 
-          <form
-            action=""
-            class="forgot-password-form cart-form fz-14"
-          >
-            <div class="h4 text-center mb-3">
-              忘記密碼
-            </div>
-            <p class="text-center">請輸入您登錄時的電郵地址，然後點擊「送出」。 Please enter your email address, and "Submit"</p>
 
-            <div class="form-group mb-3">
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="電子郵件"
-                class="form-input"
-              >
-              <label
-                for="email"
-                class="form-label"
-              >電子郵件</label>
-            </div>
-
-            <button class="cart-chcekout-btn btn-full mb-3">
-              送出
-            </button>
-
-            <div class="login-form-footer text-center">
-              <span>返回</span>
-              <a
-                href="javaScript:;"
-                class="return-login-btn"
-              >會員登入</a>
-            </div>
-
-          </form>
         </div>
 
 

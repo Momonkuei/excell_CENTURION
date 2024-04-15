@@ -228,8 +228,16 @@
     flex-direction: column;
     padding: 15px 30px;
 
+    @media (max-width: $viewMobile) {
+      padding: 15px;
+    }
+
     &-title {
       margin-bottom: 10px;
+    }
+
+    .shop-terms-lists {
+      padding-left: 1rem;
     }
   }
 

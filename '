@@ -1,0 +1,22 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   login.html
+	modified:   template/css/css/style.css
+	modified:   template/css/scss/element/_button.scss
+	modified:   template/css/scss/element/_title.scss
+	modified:   template/css/scss/page/_cart.scss
+	modified:   template/css/scss/style.scss
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	'
+	cart3.html
+	membership_application.html
+	template/css/scss/page/_cart3.scss
+	template/css/scss/page/_membership_application.scss
+
+no changes added to commit (use "git add" and/or "git commit -a")
