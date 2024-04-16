@@ -208,7 +208,7 @@
             <form
               action=""
               id=""
-              class="twzipcode cart-form"
+              class="cart-form"
             >
               <!-- 聯絡資訊 -->
               <div class="contact-information-area mb-3">
@@ -220,20 +220,123 @@
                   <a href="javaScript:;">登入</a>
                 </div>
 
-                <div class="form-group">
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="電子郵件"
-                    class="form-input"
-                  >
-                  <label
-                    for="email"
-                    class="form-label"
-                  >電子郵件</label>
-                </div>
 
+
+
+                <div class="row twzipcode1">
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="contact_email"
+                        type="email"
+                        name="email"
+                        placeholder="電子郵件"
+                        class="form-input"
+                      >
+                      <label
+                        for="contact_email"
+                        class="form-label"
+                      >電子郵件</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="contact_name"
+                        type="email"
+                        name="email"
+                        placeholder="姓名"
+                        class="form-input"
+                      >
+                      <label
+                        for="contact_name"
+                        class="form-label"
+                      >姓名</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group mb-3">
+                      <input
+                        id="contact_phone"
+                        type="email"
+                        name="email"
+                        placeholder="連絡電話"
+                        class="form-input"
+                      >
+                      <label
+                        for="contact_phone"
+                        class="form-label"
+                      >連絡電話</label>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4 mb-3">
+                    <div
+                      data-role="zipcode"
+                      data-style="form-control"
+                      data-name="zipcode"
+                      data-value="郵遞區號"
+                      class="form-group "
+                    >
+
+                      <label
+                        for="name"
+                        class="form-label"
+                      >郵遞區號</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group ">
+                      <label
+                        for="county"
+                        class="form-label"
+                      >縣市</label>
+
+                      <div
+                        data-role="county"
+                        data-style="form-control"
+                        data-name="county"
+                        data-value="請選擇縣市"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="district"
+                        class="form-label"
+                      >鄉鎮市區</label>
+                      <div
+                        data-role="district"
+                        data-style="form-control"
+                        data-name="district"
+                        data-value="請選擇鄉鎮區"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="name"
+                        class="form-label"
+                      >地址</label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="請輸入地址"
+                        class="form-input"
+                      >
+                    </div>
+                  </div>
+
+                </div>
 
               </div>
 
@@ -315,18 +418,34 @@
                   </div>
                 </div>
 
-                <div class="row ">
+                <div class="row twzipcode2">
                   <div class="col-12 mb-3">
                     <div class="form-group">
                       <label
                         for="name"
                         class="form-label"
-                      >姓名 / Name</label>
+                      >姓名</label>
                       <input
                         id="name"
                         type="text"
                         name="name"
-                        placeholder="姓名 / Name"
+                        placeholder="姓名"
+                        class="form-input"
+                      >
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="name"
+                        class="form-label"
+                      >電話</label>
+                      <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        placeholder="請輸入電話"
                         class="form-input"
                       >
                     </div>
@@ -352,7 +471,7 @@
                       <label
                         for="county"
                         class="form-label"
-                      >縣市 / county</label>
+                      >縣市</label>
 
                       <div
                         data-role="county"
@@ -368,7 +487,7 @@
                       <label
                         for="district"
                         class="form-label"
-                      >鄉鎮市區 / district</label>
+                      >鄉鎮市區</label>
                       <div
                         data-role="district"
                         data-style="form-control"
@@ -383,7 +502,7 @@
                       <label
                         for="name"
                         class="form-label"
-                      >地址 / address</label>
+                      >地址</label>
                       <input
                         id="name"
                         type="text"
@@ -394,23 +513,8 @@
                     </div>
                   </div>
 
-                  <div class="col-12 mb-3">
-                    <div class="form-group">
-                      <label
-                        for="name"
-                        class="form-label"
-                      >電話 / phone</label>
-                      <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        placeholder="請輸入電話"
-                        class="form-input"
-                      >
-                    </div>
-                  </div>
 
-                  <div class="col-12">
+                  <div class="col-12 mb-3">
                     <div class="form-check">
                       <input
                         class="form-check-input"
@@ -428,26 +532,15 @@
 
                   </div>
 
-                  <div class="d-flex justify-content-between align-items-center mb-2">
-                    <div class="fz-16 fw-400">
-                      運送方式
-                    </div>
-                  </div>
-
                   <div class="col-12 mb-3">
                     <div class="form-group">
-                      <!-- <label
-                                                                for="name"
-                                                                class="form-label"
-                                                              >運送方式</label> -->
-                      <input
-                        id="name"
-                        type="text"
-                        name="name"
-                        class="form-input"
-                        value="宅配"
-                        disabled
-                      >
+                      <select class="form-select">
+                        <option value="home_delivery">宅配</option>
+                      </select>
+                      <label
+                        for="email"
+                        class="form-label"
+                      >運送方式</label>
                     </div>
                   </div>
 

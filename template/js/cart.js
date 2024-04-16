@@ -20,8 +20,29 @@ $(function () {
 // cart2
 
 $(function () {
-	if ($('.twzipcode').length) {
-		$('.twzipcode').twzipcode({
+	if ($('.twzipcode1').length) {
+		$('.twzipcode1').twzipcode({
+			zipcodeIntoDistrict: false, // 郵遞區號自動顯示在區別選單中
+			county: {
+				value: '請選擇縣市',
+				label: '郵遞區號',
+			},
+
+			district: {},
+			zipcode: {
+				css: 'townNum',
+			},
+			countyName: 'city', // 自訂城市 select 標籤的 name 值
+			districtName: 'town', // 自訂區別 select 標籤的 name 值
+		});
+		$('input[name="zipcode"]').addClass('form-input');
+		$('select[name="county"],select[name="district"]').addClass(
+			'form-select'
+		);
+	}
+
+	if ($('.twzipcode2').length) {
+		$('.twzipcode2').twzipcode({
 			zipcodeIntoDistrict: false, // 郵遞區號自動顯示在區別選單中
 			county: {
 				value: '請選擇縣市',

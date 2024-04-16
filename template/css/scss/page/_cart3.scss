@@ -1,8 +1,13 @@
-.page-cart2 {
+.page-cart3 {
+  max-width: 1000px;
+  margin: 35px auto;
   .left-box {
     // 確認資訊
 
     .comfirm-information-box {
+      display: flex;
+      justify-content: center;
+
       .confirm-message {
         display: inline-block;
         max-width: 100%;
@@ -37,6 +42,9 @@
 
           .check-icon {
             position: relative;
+            top: 0;
+            transform: translateY(0%);
+            margin-bottom: 10px;
           }
         }
       }
@@ -68,6 +76,18 @@
       @media (max-width: $viewMobile) {
         a {
           display: block;
+        }
+      }
+    }
+    &-footer {
+      &-area {
+        border-top: 1px solid #ccc;
+        padding: min(1.4rem, 2.1rem) 0 0;
+
+        .pay-attention-lists {
+          padding-left: 0;
+          display: flex;
+          gap: 0.75rem;
         }
       }
     }
