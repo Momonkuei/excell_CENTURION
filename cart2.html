@@ -370,11 +370,14 @@
                 </div>
 
                 <div class="form-group mb-3">
-                  <select class="form-select">
-                    <option value="credit_card">個人發票</option>
+                  <select
+                    class="form-select"
+                    id="invoice_type"
+                  >
+                    <option value="invoice">個人發票</option>
                   </select>
                   <label
-                    for="email"
+                    for="invoice_type"
                     class="form-label"
                   >發票類型</label>
                 </div>
@@ -395,9 +398,9 @@
 
                 <div class="form-group">
                   <input
-                    id="Company_letterhead"
+                    id="company_letterhead"
                     type="text"
-                    name="Company_letterhead"
+                    name="company_letterhead"
                     placeholder="公司抬頭"
                     class="form-input"
                   >
@@ -422,11 +425,11 @@
                   <div class="col-12 mb-3">
                     <div class="form-group">
                       <label
-                        for="name"
+                        for="transport_name"
                         class="form-label"
                       >姓名</label>
                       <input
-                        id="name"
+                        id="transport_name"
                         type="text"
                         name="name"
                         placeholder="姓名"
@@ -438,13 +441,13 @@
                   <div class="col-12 mb-3">
                     <div class="form-group">
                       <label
-                        for="name"
+                        for="transport_phone"
                         class="form-label"
                       >電話</label>
                       <input
-                        id="name"
+                        id="transport_phone"
                         type="text"
-                        name="name"
+                        name="transport_phone"
                         placeholder="請輸入電話"
                         class="form-input"
                       >
@@ -461,7 +464,7 @@
                     >
 
                       <label
-                        for="name"
+                        for="transport_postal_code"
                         class="form-label"
                       >郵遞區號</label>
                     </div>
@@ -469,7 +472,7 @@
                   <div class="col-md-4 mb-3">
                     <div class="form-group ">
                       <label
-                        for="county"
+                        for="transport_postal_county"
                         class="form-label"
                       >縣市</label>
 
@@ -485,7 +488,7 @@
                   <div class="col-md-4 mb-3">
                     <div class="form-group">
                       <label
-                        for="district"
+                        for="transport_postal_district"
                         class="form-label"
                       >鄉鎮市區</label>
                       <div
@@ -500,11 +503,11 @@
                   <div class="col-12 mb-3">
                     <div class="form-group">
                       <label
-                        for="name"
+                        for="transport_address_detail"
                         class="form-label"
                       >地址</label>
                       <input
-                        id="name"
+                        id="transport_address_detail"
                         type="text"
                         name="name"
                         placeholder="請輸入地址"
@@ -534,11 +537,14 @@
 
                   <div class="col-12 mb-3">
                     <div class="form-group">
-                      <select class="form-select">
+                      <select
+                        class="form-select"
+                        id="shipping_method"
+                      >
                         <option value="home_delivery">宅配</option>
                       </select>
                       <label
-                        for="email"
+                        for="shipping_method"
                         class="form-label"
                       >運送方式</label>
                     </div>
