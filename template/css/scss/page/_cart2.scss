@@ -50,6 +50,9 @@
       width: 100%;
       max-width: 550px;
       padding: 3rem;
+      position: sticky;
+      top: 0;
+      bottom: 0;
     }
 
     &-header {

@@ -4,7 +4,7 @@
 }
 
 .cart-itemList {
-  @media (min-width: 641px) {
+  @media (min-width: $viewS) {
     display: table;
     table-layout: auto;
     border-spacing: 0 30px;
@@ -14,7 +14,7 @@
 
 .cart-head {
   display: none;
-  @media (min-width: 641px) {
+  @media (min-width: $viewS) {
     display: table-header-group;
   }
 
@@ -41,7 +41,7 @@
     text-decoration: none;
   }
 
-  @media (min-width: 641px) {
+  @media (min-width: $viewS) {
     display: table-row;
   }
 
@@ -172,7 +172,7 @@
     display: table-cell;
   }
   .cart-note-container {
-    @media (min-width: 641px) {
+    @media (min-width: $viewS) {
       max-width: 340px;
     }
   }

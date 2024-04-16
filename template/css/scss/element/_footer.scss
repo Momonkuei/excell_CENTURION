@@ -4,15 +4,11 @@
 
   .footer-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
     padding-top: 60px;
     flex-wrap: wrap;
-
-    @media (min-width: $viewM) {
-      flex-direction: row;
-      max-width: 980px;
-      flex-wrap: nowrap;
-    }
 
     @media (min-width: $viewMobile) and (max-width: $viewM) {
       max-width: 600px;
@@ -30,6 +26,7 @@
       max-width: 100%;
       min-width: 180px;
       margin-bottom: 40px;
+      text-align: center;
 
       @media (min-width: $viewM) {
         width: 230px;
@@ -50,10 +47,7 @@
         line-height: 1.5;
         text-align: left;
         transition: all 0.2s ease-in-out;
-
-        @media (min-width: $viewM) {
-          padding: 5px 10px 0 0;
-        }
+        text-align: center;
 
         a {
           display: block;

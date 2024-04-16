@@ -20,6 +20,33 @@ $(function () {
 		$('.searchToggle').click(function () {
 			$('.searchBox').toggleClass('open');
 		});
+
+		// 滾動
+		const hdTop = $('header').outerHeight();
+
+		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
+
+		// $(window).scroll(function () {
+		// 	if ($(window).scrollTop() > hdTop) {
+		// 		if ($('body.cart').length) {
+		// 			$('body.cart').addClass('fake-title');
+		// 		}
+		// 	}
+		// 	if ($(window).scrollTop() === 0) {
+		// 		if ($('body.cart').length) {
+		// 			$('body.cart').removeClass('fake-title');
+		// 		}
+		// 	}
+		// });
+
+		// // scroll超過 header 高度就添加 'scroll'
+		// $(window).scroll(function () {
+		// 	if ($(window).scrollTop() > hdTop) {
+		// 		$('header').addClass('scroll');
+		// 	} else {
+		// 		$('header').removeClass('scroll');
+		// 	}
+		// });
 	}
 });
 
