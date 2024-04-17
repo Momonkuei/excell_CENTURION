@@ -38,7 +38,8 @@ $(function () {
 		$('.twzipcode1 input[name="zipcode"]')
 			.addClass('form-input')
 			.attr('required', true)
-			.prop('required', true);
+			.prop('required', true)
+			.attr('placeholder', '郵遞區號*');
 		$(
 			'.twzipcode1 select[name="county"],.twzipcode1 select[name="district"]'
 		)
@@ -65,7 +66,8 @@ $(function () {
 		$('.twzipcode2 input[name="zipcode"]')
 			.addClass('form-input')
 			.attr('required', true)
-			.prop('required', true);
+			.prop('required', true)
+			.attr('placeholder', '郵遞區號*');
 		$(
 			'.twzipcode2 select[name="county"],.twzipcode2 select[name="district"]'
 		)
