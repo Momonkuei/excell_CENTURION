@@ -245,8 +245,8 @@
                     <div class="form-group ">
                       <input
                         id="contact_name"
-                        type="email"
-                        name="email"
+                        type="text"
+                        name="contact_name"
                         placeholder="姓名"
                         class="form-input"
                       >
@@ -261,8 +261,8 @@
                     <div class="form-group mb-3">
                       <input
                         id="contact_phone"
-                        type="email"
-                        name="email"
+                        type="tel"
+                        name="contact_phone"
                         placeholder="連絡電話"
                         class="form-input"
                       >
@@ -323,13 +323,13 @@
                   <div class="col-12 mb-3">
                     <div class="form-group">
                       <label
-                        for="name"
+                        for="contact_address_detail"
                         class="form-label"
                       >地址</label>
                       <input
-                        id="name"
+                        id="contact_address_detail"
                         type="text"
-                        name="name"
+                        name="contact_address_detail"
                         placeholder="請輸入地址"
                         class="form-input"
                       >
@@ -349,11 +349,14 @@
                 </div>
 
                 <div class="form-group">
-                  <select class="form-select">
+                  <select
+                    class="form-select"
+                    id="payment_method"
+                  >
                     <option value="credit_card">信用卡</option>
                   </select>
                   <label
-                    for="email"
+                    for="payment_method"
                     class="form-label"
                   >付款方式</label>
                 </div>
@@ -405,7 +408,7 @@
                     class="form-input"
                   >
                   <label
-                    for="tax_ID_number"
+                    for="company_letterhead"
                     class="form-label"
                   >公司抬頭</label>
                 </div>
@@ -446,7 +449,7 @@
                       >電話</label>
                       <input
                         id="transport_phone"
-                        type="text"
+                        type="tel"
                         name="transport_phone"
                         placeholder="請輸入電話"
                         class="form-input"
@@ -472,7 +475,7 @@
                   <div class="col-md-4 mb-3">
                     <div class="form-group ">
                       <label
-                        for="transport_postal_county"
+                        for="county"
                         class="form-label"
                       >縣市</label>
 
@@ -488,7 +491,7 @@
                   <div class="col-md-4 mb-3">
                     <div class="form-group">
                       <label
-                        for="transport_postal_district"
+                        for="district"
                         class="form-label"
                       >鄉鎮市區</label>
                       <div
@@ -658,11 +661,11 @@
                   <div class="discount-code-area-box">
                     <div class="form-group form-group-cart-discount">
                       <label
-                        for="cart-discount-code"
+                        for="cart_discount_code"
                         class="form-label"
                       >折扣碼 / discount code</label>
                       <input
-                        id="cart-discount-code"
+                        id="cart_discount_code"
                         type="text"
                         name="name"
                         placeholder="請輸入折扣碼"
