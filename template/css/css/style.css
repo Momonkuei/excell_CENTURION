@@ -11844,7 +11844,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
-  padding-top: 60px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -11875,6 +11874,7 @@ body {
 @media (min-width: 576px) and (max-width: 992px) {
   .footerStyle01 .footer-content .footer-list {
     width: 50%;
+    margin: 0 auto;
   }
 }
 .footerStyle01 .footer-content .footer-list .linklist {
@@ -11896,6 +11896,9 @@ body {
   text-align: inherit;
   text-decoration: none;
   color: inherit;
+}
+.footerStyle01 .footer-content .footer-social {
+  padding: 2rem 0;
 }
 @media (min-width: 992px) {
   .footerStyle01 .footer-content .footer-social {
@@ -11928,62 +11931,6 @@ body {
           transform: rotate(45deg);
   content: "";
 }
-.footerStyle01 .footer-content .subscription-form .subscription-form-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 8px;
-}
-.footerStyle01 .footer-content .subscription-form .subscription-form-group input {
-  border: solid 1px #ccc;
-  border-radius: 3px;
-  padding: 7px 9px;
-  width: 100%;
-  height: 34px;
-  color: #909090;
-  font-size: 14px;
-  line-height: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.footerStyle01 .footer-content .subscription-form .subscription-form-group-btnBox {
-  width: 100px;
-  text-align: left;
-}
-.footerStyle01 .footer-content .subscription-form .subscription-form-group-btnBox button {
-  background-color: #222;
-  width: 100%;
-  cursor: pointer;
-  padding: 10px 18px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1;
-  height: 34px;
-  border: none;
-  color: #fff;
-  font-weight: 400;
-  border-radius: 0;
-  position: relative;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  display: inline-block;
-  -webkit-transition: background-color 0.2s ease-out;
-  transition: background-color 0.2s ease-out;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-.footerStyle01 .footer-content .subscription-form .subscription-form-group-btnBox button:hover {
-  background-color: #909090;
-}
-.footerStyle01 .footer-content .subscription-privacy {
-  padding-left: 0.25rem;
-}
-.footerStyle01 .footer-content .subscription-privacy a {
-  color: inherit;
-  background-color: transparent;
-}
 .footerStyle01 .footer-content .social-area .footer-social {
   padding-left: 0;
 }
@@ -12002,6 +11949,32 @@ body {
 }
 .footerStyle01 .footer-content .social-area .footer-social-item a:hover {
   opacity: 0.6;
+}
+.footerStyle01 .footer-content .footer-copyright {
+  padding-bottom: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.footerStyle01 .footer-content .footer-copyright-txt a {
+  text-decoration: none;
+}
+@media (max-width: 576px) {
+  .footerStyle01 .footer-content .footer-copyright-txt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .cart-form .form-group {
@@ -12108,6 +12081,7 @@ body {
   padding: 0 35px;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  position: relative;
   z-index: 9;
 }
 .headerStyle01 .navbar .header-link {
@@ -12120,6 +12094,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.headerStyle01 .centurion_logo {
+  max-width: 9.625rem;
+}
+@media (min-width: 768px) {
+  .headerStyle01 .centurion_logo {
+    max-width: 14rem;
+  }
 }
 @media (max-width: 768px) {
   .headerStyle01 .main-menu .menu-list {
@@ -12150,7 +12132,7 @@ body {
   gap: 10px;
 }
 .headerStyle01 .main-menu .btn-list .slide-menu-control .line {
-  background-color: #35286d;
+  background-color: #000;
   display: block;
   height: 2px;
   -webkit-transition: all 0.3s ease-in-out;
@@ -12181,6 +12163,9 @@ body {
   .headerStyle01 .main-menu .btn-list .txt {
     display: none;
   }
+}
+.headerStyle01 .user-items ul {
+  padding-left: 0;
 }
 .headerStyle01 .fullMenu-mask {
   opacity: 0;
@@ -12293,6 +12278,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.headerStyle01 .fullMenu-nav .navMenu li a .txt {
+  margin-bottom: 0;
+}
 .headerStyle01 .fullMenu-nav .navMenu li:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
@@ -12399,6 +12387,10 @@ body {
 .headerStyle01 .searchBox.open .search-btn {
   opacity: 1;
   pointer-events: auto;
+}
+.headerStyle01 .mb-header-search {
+  position: absolute;
+  top: 90px;
 }
 .headerStyle01.scroll {
   background-color: #fff;

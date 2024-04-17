@@ -20,6 +20,7 @@ $(function () {
 // cart2
 
 $(function () {
+	// 聯絡資訊
 	if ($('.twzipcode1').length) {
 		$('.twzipcode1').twzipcode({
 			zipcodeIntoDistrict: false, // 郵遞區號自動顯示在區別選單中
@@ -48,6 +49,7 @@ $(function () {
 			.prop('required', true);
 	}
 
+	// 運送
 	if ($('.twzipcode2').length) {
 		$('.twzipcode2').twzipcode({
 			zipcodeIntoDistrict: false, // 郵遞區號自動顯示在區別選單中

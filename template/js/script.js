@@ -18,7 +18,9 @@ $(function () {
 
 		// header 搜尋按鈕
 		$('.searchToggle').click(function () {
-			$('.searchBox').toggleClass('open');
+			if ($(window).innerWidth() > 992) {
+				$('.searchBox').toggleClass('open');
+			}
 		});
 
 		// 滾動
