@@ -311,7 +311,43 @@
   // 平板搜尋選單
   .mb-header-search {
     position: absolute;
-    top: 90px;
+    left: 0;
+    top: 0px;
+    padding: 0 15px;
+    height: 4.5rem;
+    width: 100vw;
+    background-color: $white;
+    display: none;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    &-form {
+      width: 100%;
+    }
+
+    .search-input-box {
+      display: flex;
+      position: relative;
+      width: 100%;
+
+      .icon-box {
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        padding: 0 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      input {
+        background-color: #f8f8f8;
+        padding: 0 1rem 0 2.75rem;
+        border: none;
+        width: 100%;
+        line-height: 2.2rem;
+      }
+    }
   }
 
   &.scroll {
@@ -354,6 +390,23 @@
       @media (min-width: $viewS) {
         transform: translateX(0%);
       }
+    }
+  }
+}
+
+// mb-search
+.open-search {
+  .headerStyle01 {
+    .mb-header-search {
+      opacity: 1;
+      display: flex;
+      z-index: 9;
+    }
+
+    .fullMenu-mask {
+      opacity: 1;
+      height: 100vh;
+      transform: translateX(0%);
     }
   }
 }
