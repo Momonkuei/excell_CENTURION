@@ -60,8 +60,9 @@
       }
     }
 
-    .footer-social {
+    .footer-social-box {
       padding: 2rem 0;
+      width: 40vw;
 
       @media (min-width: $viewM) {
         width: 290px;
@@ -69,30 +70,6 @@
 
       @media (min-width: $viewMobile) and (max-width: $viewM) {
         width: 50%;
-      }
-
-      .mailmagazine-area {
-        .side-arrow {
-          position: relative;
-          padding: 0 10px 0 0;
-          color: #222;
-          margin: 0 0 0 auto;
-          vertical-align: baseline;
-          text-decoration: none;
-
-          &::after {
-            display: block;
-            position: absolute;
-            top: 7px;
-            right: 0;
-            width: 6px;
-            height: 6px;
-            border-top: 1px solid #222222;
-            border-right: 1px solid #222222;
-            transform: rotate(45deg);
-            content: "";
-          }
-        }
       }
     }
 

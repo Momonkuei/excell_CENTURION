@@ -6,9 +6,19 @@ document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
 
 // header
 $(function () {
+	// 取得header 高度
+	const hdTop = $('header').outerHeight();
+
+	// 移除 header 搜尋按鈕
+	const removeMbHeaderSearch = function () {
+		$('body').removeClass('open-search');
+		$('.mb-header-search').css('transform', `translate(0, -100%)`);
+	};
+
 	if ($('header').length) {
 		$('.slide-menu-control').click(function () {
 			$('body').addClass('open-menu');
+			removeMbHeaderSearch();
 		});
 
 		// 首頁關閉按鈕
@@ -18,13 +28,22 @@ $(function () {
 
 		// header 搜尋按鈕
 		$('.searchToggle').click(function () {
-			if ($(window).innerWidth() > 992) {
+			if ($(window).innerWidth() > 1200) {
 				$('.searchBox').toggleClass('open');
+			} else {
+				if (!$('body').hasClass('open-search')) {
+					$('body').addClass('open-search');
+					$('.mb-header-search').css(
+						'transform',
+						`translate(0, ${hdTop}px)`
+					);
+				} else {
+					removeMbHeaderSearch();
+				}
 			}
 		});
 
 		// 滾動
-		const hdTop = $('header').outerHeight();
 
 		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
 

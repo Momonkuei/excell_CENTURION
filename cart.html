@@ -44,13 +44,6 @@
     href="/template/css/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
   >
 
-  <!-- fancybox3 -->
-
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/fancybox3/jquery.fancybox.min.css"
-  >
-
   <!-- slick css -->
   <link
     rel="stylesheet"
@@ -208,33 +201,32 @@
         id=""
         class="mb-header-search-form"
       >
-        <div class="row">
-          <div class="col-12 ">
-            <div class="search-input-box ">
+        <div class="search-input-box ">
 
-              <button class="icon-box">
-                <i class="bi bi-search"></i>
-              </button>
-              <input
-                id="mb_search_name"
-                type="text"
-                name="mb_search_name"
-                placeholder="搜索內容"
-                class="form-input"
-                required
-              >
-              <label
-                for="mb_search_name"
-                class="form-label"
-              ></label>
-            </div>
-          </div>
+          <button class="icon-box">
+            <i class="bi bi-search"></i>
+          </button>
+          <input
+            id="mb_search_name"
+            type="text"
+            name="mb_search_name"
+            placeholder="搜索內容"
+            class="form-input"
+            required
+          >
+          <label
+            for="mb_search_name"
+            class="form-label"
+          ></label>
         </div>
 
       </form>
     </div>
 
   </header>
+
+  <!-- 平板以下搜尋欄的遮色片 -->
+  <div class="header-fullMenu-mask"></div>
 
 
 
@@ -247,6 +239,7 @@
       </div>
 
       <div class="page-cart">
+
         <form
           action=""
           class=""
@@ -280,13 +273,13 @@
 
               <div class="cart-item-info">
                 <div class="cart-item-title heading fz-14">
-                  <a href="JavaScript:;">紫色: CENTURION 百夫長 28吋 頭等艙系列 旅行箱</a>
+                  <a href="JavaScript:;">CENTURION 百夫長 28吋 頭等艙系列 旅行箱</a>
                 </div>
                 <div class="cart-item-txt fz-14">
                   <div class="cart-item-productName heading">
-                    大海魚
+
                   </div>
-                  <div class="cart-item-priceList">
+                  <div class="cart-item-priceList ">
                     <div class="cart-item-price heading fz-14">
                       $9,000
                     </div>
@@ -324,7 +317,7 @@
 
               </div>
 
-              <div class="cart-item-priceList heading text-end">
+              <div class="cart-item-priceList cart-item-priceList-total heading text-end">
                 <div class="cart-item-price heading">
                   $18,000
                 </div>
@@ -371,8 +364,9 @@
           </div>
         </form>
 
-        <div class="cart-info fz-14">
-          <div class="cart-info-label heading">
+        <div class="cart-footer-info fz-14 mt-3">
+
+          <div class="cart-footer-info-label heading">
             購物須知
           </div>
 
@@ -577,14 +571,6 @@
     type="text/javascript"
     src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
   ></script>
-
-  <!-- fancybox3 -->
-
-  <script
-    type="text/javascript"
-    src="/template/node_modules/fancybox3/jquery.fancybox.min.js"
-  ></script>
-
 
   <!-- 自定義JS -->
 

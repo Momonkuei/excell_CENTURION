@@ -79,10 +79,12 @@
 
     .cart-item-title {
       margin-bottom: 0.45em;
+      color: $primary;
+      @include hideLongTexts(2);
     }
   }
 
-  &-priceList {
+  &-priceList-total {
     @media (max-width: $viewS) {
       display: none;
     }
@@ -215,9 +217,8 @@
 }
 
 // 購物須知
-.cart-info {
-  margin-top: 30px;
-  .cart-info-label {
+.cart-footer-info {
+  &-label {
     font-weight: 400;
   }
 

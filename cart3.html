@@ -84,7 +84,7 @@
     <div class="container">
       <div class="row align-items-center">
 
-        <div class="primary-nav col-md-5 col-sm-4 col">
+        <div class="primary-nav  col-md-4 col-sm-4 col">
           <div class="navbar">
             <div class="main-menu">
               <ul class="menu-list mb-0 d-flex gap-3">
@@ -107,7 +107,10 @@
                         <i class="bi bi-search"></i>
                       </div>
 
-                      <input type="text">
+                      <input
+                        type="text"
+                        id="web_search_name"
+                      >
                       <button class="search-btn">
                         <i class="bi bi-search"></i>
                       </button>
@@ -120,17 +123,20 @@
           </div>
         </div>
 
-        <div class="col-md-2 col-sm-4 brand-block col">
-          <a href="/">
+        <div class=" col-md-4 col-sm-4 brand-block col">
+          <a
+            href="/"
+            class="d-flex justify-content-center"
+          >
             <img
               src="/template/images/centurion_logo.png"
               alt="logo"
-              class="brand-image"
+              class="centurion_logo"
             >
           </a>
         </div>
 
-        <div class="right-block col-md-5 col-sm-4 col">
+        <div class="right-block  col-md-4 col-sm-4 col">
           <div class="navbar justify-content-end">
             <div class="user-items">
               <ul class="mb-0 d-flex gap-3">
@@ -170,17 +176,17 @@
           <ul class="navMenu">
             <li>
               <a href="JavaScript:;">
-                <span class="h3">首頁</span>
+                <span class="h4 txt">首頁</span>
               </a>
             </li>
             <li>
               <a href="JavaScript:;">
-                <span class="h3">會員資料</span>
+                <span class="h4 txt">會員資料</span>
               </a>
             </li>
             <li>
               <a href="JavaScript:;">
-                <span class="h3">購物車</span>
+                <span class="h4 txt">購物車</span>
               </a>
             </li>
           </ul>
@@ -188,7 +194,42 @@
       </div>
     </div>
 
+    <!-- header 彈跳搜尋 -->
+    <div
+      id=""
+      class="mb-header-search"
+    >
+      <form
+        action=""
+        id=""
+        class="mb-header-search-form"
+      >
+        <div class="search-input-box ">
+
+          <button class="icon-box">
+            <i class="bi bi-search"></i>
+          </button>
+          <input
+            id="mb_search_name"
+            type="text"
+            name="mb_search_name"
+            placeholder="搜索內容"
+            class="form-input"
+            required
+          >
+          <label
+            for="mb_search_name"
+            class="form-label"
+          ></label>
+        </div>
+
+      </form>
+    </div>
+
   </header>
+
+  <!-- 平板以下搜尋欄的遮色片 -->
+  <div class="header-fullMenu-mask"></div>
 
 
 
@@ -211,7 +252,7 @@
                   <i class="bi bi-check-lg check-icon"></i>
                   <div class="h5 fw-bolder">謝謝您！您的訂單已經成立！</div>
                   <p>訂單號碼 20240408010854982</p>
-                  <div class="h6">訂單確認電郵已經發送到您的電子郵箱:</div>
+                  <div class="h6">已將訂單明細發送至您的電子信箱 :</div>
                   <p class="fw-bolder">XXXXX@icloud.com</p>
                 </div>
               </div>
@@ -283,10 +324,7 @@
 
                       <div class="info-box">
                         <div class="info-box-head">地址</div>
-                        <div>台灣 </div>
-                        <div>429</div>
-                        <div>台中市 神岡區</div>
-                        <div>中山路171號</div>
+                        <div>台中市神岡區中山路1438號</div>
                       </div>
 
                     </div>
@@ -296,11 +334,6 @@
                     <div class="col-6 mb-3">
                       <div class="cart-left-lead-title fw-bolder">
                         發票資訊
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">發票狀態</div>
-                        <div>處理中</div>
                       </div>
 
                       <div class="info-box">
@@ -346,16 +379,9 @@
                       </div>
 
                       <div class="info-box">
-                        <div class="info-box-head">送貨狀態</div>
-                        <div>備貨中</div>
-                      </div>
-
-                      <div class="info-box">
                         <div class="info-box-head">地址</div>
-                        <div>台灣 </div>
-                        <div>429</div>
-                        <div>台中市 神岡區</div>
-                        <div>中山路171號</div>
+                        <div>台中市神岡區中山路1438號</div>
+
                       </div>
 
                     </div>
@@ -433,7 +459,7 @@
 
         <div class="footer-social-box">
           <div class="social-area">
-            <ul class="footer-social d-flex justify-content-between  gap-3 mt-2">
+            <ul class="footer-social-list d-flex justify-content-between  gap-3 mt-2">
               <li class="footer-social-item">
                 <a
                   href="https://www.facebook.com/people/%E7%99%BE%E5%A4%AB%E9%95%B7%E8%8A%B1%E7%AE%B1-Centuriontw/100095176839902/"
