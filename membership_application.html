@@ -44,9 +44,6 @@
     href="/template/css/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
   >
 
-  <!-- TWzipcode -->
-  <script src="/template/node_modules/jQuery-TWzipcode-master/jquery.twzipcode.min.js"></script>
-
   <!-- slick css -->
   <link
     rel="stylesheet"
@@ -67,7 +64,7 @@
   <!-- 客製css -->
   <link
     rel="stylesheet"
-    href="/template/css/css/style.css?v=1.1"
+    href="/template/css/css/style.css"
   >
 
   <title>百夫長旅行箱CENTURION</title>
@@ -84,7 +81,7 @@
     <div class="container">
       <div class="row align-items-center">
 
-        <div class="primary-nav col-md-5 col-sm-4 col">
+        <div class="primary-nav  col-md-4 col-sm-4 col">
           <div class="navbar">
             <div class="main-menu">
               <ul class="menu-list mb-0 d-flex gap-3">
@@ -93,8 +90,11 @@
                     <button class="mobile-menu-btn slide-menu-control">
                       <span class="line"></span>
 
+                      <span class="txt">
+                        <div class="txt-menu">目錄</div>
+                        <!-- <div class="txt-close">關閉</div> -->
+                      </span>
                     </button>
-                    <span class="txt">目錄</span>
                   </div>
                 </li>
                 <li>
@@ -104,7 +104,10 @@
                         <i class="bi bi-search"></i>
                       </div>
 
-                      <input type="text">
+                      <input
+                        type="text"
+                        id="web_search_name"
+                      >
                       <button class="search-btn">
                         <i class="bi bi-search"></i>
                       </button>
@@ -117,23 +120,26 @@
           </div>
         </div>
 
-        <div class="col-md-2 col-sm-4 brand-block col">
-          <a href="/">
+        <div class=" col-md-4 col-sm-4 brand-block col">
+          <a
+            href="/"
+            class="d-flex justify-content-center"
+          >
             <img
               src="/template/images/centurion_logo.png"
               alt="logo"
-              class="brand-image"
+              class="centurion_logo"
             >
           </a>
         </div>
 
-        <div class="right-block col-md-5 col-sm-4 col">
+        <div class="right-block  col-md-4 col-sm-4 col">
           <div class="navbar justify-content-end">
             <div class="user-items">
               <ul class="mb-0 d-flex gap-3">
                 <li>
                   <a
-                    href="JavaScript:;"
+                    href="javascript:void(0);"
                     class="header-link"
                   >
                     <i class="bi bi-person"></i>
@@ -141,7 +147,7 @@
                 </li>
                 <li>
                   <a
-                    href="JavaScript:;"
+                    href="javascript:void(0);"
                     class="header-link"
                   >
                     <i class="bi bi-bag"></i>
@@ -156,26 +162,28 @@
       </div>
     </div>
 
+    <div class="fullMenu-mask"></div>
     <div class="fullMenu">
       <div class="fullMenu-inner">
         <button class="close-btn">
-          <i class="bi bi-x-lg h5"></i>
+          <i class="bi bi-x-lg "></i>
+          <span class="txt-close">關閉</span>
         </button>
         <div class="fullMenu-nav">
           <ul class="navMenu">
             <li>
-              <a href="JavaScript:;">
-                <span class="h3">首頁</span>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">首頁</span>
               </a>
             </li>
             <li>
-              <a href="JavaScript:;">
-                <span class="h3">會員資料</span>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">會員資料</span>
               </a>
             </li>
             <li>
-              <a href="JavaScript:;">
-                <span class="h3">購物車</span>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">購物車</span>
               </a>
             </li>
           </ul>
@@ -183,7 +191,42 @@
       </div>
     </div>
 
+    <!-- header 彈跳搜尋 -->
+    <div
+      id=""
+      class="mb-header-search"
+    >
+      <form
+        action=""
+        id=""
+        class="mb-header-search-form"
+      >
+        <div class="search-input-box ">
+
+          <button class="icon-box">
+            <i class="bi bi-search"></i>
+          </button>
+          <input
+            id="mb_search_name"
+            type="text"
+            name="mb_search_name"
+            placeholder="搜索內容"
+            class="form-input"
+            required
+          >
+          <label
+            for="mb_search_name"
+            class="form-label"
+          ></label>
+        </div>
+
+      </form>
+    </div>
+
   </header>
+
+  <!-- 平板以下搜尋欄的遮色片 -->
+  <div class="header-fullMenu-mask"></div>
 
 
 
@@ -196,7 +239,7 @@
             action=""
             class="membership-application-form  fz-14"
           >
-            <div class="h4 text-center">
+            <div class="h4 text-center mb-3">
               會員申請
             </div>
             <div class="row">
@@ -204,15 +247,16 @@
               <div class="col-lg-6">
                 <div class="form-group mb-3">
                   <label
-                    for="last_name"
+                    for="member_name"
                     class="form-label"
-                  >姓*</label>
+                  >姓名*</label>
                   <input
-                    id="last_name"
+                    id="member_name"
                     type="text"
-                    name="last_name"
-                    placeholder="請輸入姓氏"
+                    name="member_name"
+                    placeholder="姓名"
                     class="form-input"
+                    required
                   >
                 </div>
               </div>
@@ -220,15 +264,33 @@
               <div class="col-lg-6">
                 <div class="form-group mb-3">
                   <label
-                    for="first_name"
+                    for="member_phone"
                     class="form-label"
-                  >名*</label>
+                  >電話*</label>
                   <input
-                    id="first_name"
-                    type="text"
-                    name="first_name"
-                    placeholder="請輸入名子"
+                    id="member_phone"
+                    type="tel"
+                    name="member_phone"
+                    placeholder="連絡電話"
                     class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_email"
+                    class="form-label"
+                  >信箱*</label>
+                  <input
+                    id="member_email"
+                    type="email"
+                    name="member_email"
+                    placeholder="電子郵件"
+                    class="form-input"
+                    required
                   >
                 </div>
               </div>
@@ -236,7 +298,41 @@
               <div class="col-lg-6">
                 <div class="form-group mb-3">
                   <label
-                    for="first_name"
+                    for="member_password"
+                    class="form-label"
+                  >密碼*</label>
+                  <input
+                    id="member_password"
+                    type="password"
+                    name="member_password"
+                    placeholder="密碼"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_password_check"
+                    class="form-label"
+                  >再次輸入密碼*</label>
+                  <input
+                    id="member_password_check"
+                    type="password"
+                    name="member_password_check"
+                    placeholder="密碼"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_gender"
                     class="form-label"
                   >性別*</label>
                   <div class="radio-box">
@@ -247,7 +343,7 @@
                     >
                       <input
                         type="radio"
-                        id="male"
+                        id="member_male"
                         name="gender"
                         value="male"
                         class="form-radio"
@@ -261,7 +357,7 @@
                     >
                       <input
                         type="radio"
-                        id="female"
+                        id="member_female"
                         name="gender"
                         value="female"
                         class="form-radio"
@@ -289,213 +385,286 @@
                 </div>
               </div>
 
-              <div class="col-lg-6">
+            </div>
+
+            <div class="row twzipcode-member mb-3">
+              <div class="col-lg-4">
                 <div class="form-group mb-3">
-                  <label
-                    for="country"
-                    class="form-label"
-                  >居住地</label>
+                  <div
+                    data-role="zipcode"
+                    data-style="form-control"
+                    data-name="zipcode"
+                    data-value="郵遞區號"
+                    class="form-group "
+                  >
+
+                    <label
+                      for="transport_postal_code"
+                      class="form-label"
+                    >郵遞區號</label>
+                  </div>
 
                 </div>
               </div>
 
+              <div class="col-lg-4">
+
+                <div class="form-group ">
+                  <label
+                    for="county"
+                    class="form-label"
+                  >縣市*</label>
+
+                  <div
+                    data-role="county"
+                    data-style="form-control"
+                    data-name="county"
+                    data-value="請選擇縣市"
+                  ></div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-4">
+
+                <div class="form-group">
+                  <label
+                    for="district"
+                    class="form-label"
+                  >鄉鎮市區*</label>
+                  <div
+                    data-role="district"
+                    data-style="form-control"
+                    data-name="district"
+                    data-value="請選擇鄉鎮區"
+                  ></div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label
+                    for="member_address_detail"
+                    class="form-label"
+                  >地址*</label>
+                  <input
+                    id="member_address_detail"
+                    type="text"
+                    name="name"
+                    placeholder="請輸入地址*"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+
             </div>
 
-
-
-
-
             <button class="cart-chcekout-btn btn-full mb-3">
-              登入
+              註冊
             </button>
 
             <div class="login-form-footer text-center">
-              <span>立即成為會員</span>
-              <a href="javaScript:;">會員申請</a>
+              <span>請仔細閱讀並同意<a href="javascript:void(0);">服務條款</a>，然後點擊「會員申請」。</span>
+
             </div>
-
-          </form>
-
 
         </div>
 
 
 
+        </form>
+
+
       </div>
-    </section>
 
 
-    <!-- 頁尾 -->
-    <footer class="footerStyle01">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-list fz-14">
-            <div class="footer-title fw-bolder">
-              客服中心
-            </div>
-            <ul class="linklist">
-              <li class="linklist-item">
-                <a href="javaScript:;">常見問題</a>
-              </li>
-              <li class="linklist-item">
-                <a href="javaScript:;">連絡我們</a>
-              </li>
-            </ul>
+
+  </div>
+  </section>
 
 
-          </div>
+  <!-- 頁尾 -->
+  <footer class="footerStyle01">
+    <div class="container">
+      <div class="footer-content">
 
-          <div class="footer-list fz-14">
-            <div class="footer-title fw-bolder">
-              關於
-            </div>
-            <ul class="linklist">
-              <li class="linklist-item">
-                <a href="javaScript:;">關於我們</a>
-              </li>
-              <li class="linklist-item">
-                <a href="javaScript:;">最新消息</a>
-              </li>
-            </ul>
-
-
-          </div>
-
-          <div class="footer-list fz-14">
-            <div class="footer-title fw-bolder">
-              會員
-            </div>
-            <ul class="linklist">
-              <li class="linklist-item">
-                <a href="javaScript:;">會員資訊</a>
-              </li>
-              <li class="linklist-item">
-                <a href="javaScript:;">訂單列表</a>
-              </li>
-            </ul>
-
-
-          </div>
-
-          <div class="footer-social">
-            <div class="footer-subscribe-newsletter-box ">
-              <div class="mailmagazine-area">
-                <div class="d-flex justify-content-between mb-3">
-                  <span class="fz-14">訂閱電子報</span>
-                  <a
-                    href="javaScript:;"
-                    class="fz-12 side-arrow"
-                  >了解詳情</a>
-                </div>
-
-
-                <form
-                  action=""
-                  class="subscription-form"
+        <div class="footer-social-box">
+          <div class="social-area">
+            <ul class="footer-social d-flex justify-content-between  gap-3 mt-2">
+              <li class="footer-social-item">
+                <a
+                  href="https://www.facebook.com/people/%E7%99%BE%E5%A4%AB%E9%95%B7%E8%8A%B1%E7%AE%B1-Centuriontw/100095176839902/"
+                  target="_blank"
+                  class=""
                 >
-                  <div class="subscription-form-group">
-                    <input
-                      type="email"
-                      placeholder="電子郵件"
-                    >
-                    <div class="subscription-form-group-btnBox">
-                      <button>訂閱</button>
-                    </div>
-                  </div>
-                </form>
-                <div class="subscription-privacy fz-10">
-                  透過訂閱電子報，即代表您同意土屋鞄製造所的
-                  <a href="javaScript:;">隱私政策 </a>
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </li>
+
+              <li class="footer-social-item">
+                <a
+                  href="https://www.instagram.com/centurion.lounge/"
+                  target="_blank"
+                  class=""
+                >
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </li>
+
+              <li class="footer-social-item">
+                <a
+                  href="https://lin.ee/iiH80gs6"
+                  target="_blank"
+                  class=""
+                >
+                  <i class="bi bi-line"></i>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="footer-map">
+          <div class="row">
+
+            <div class="col-lg-3 col-6">
+              <div class="footer-list fz-14">
+                <div class="footer-title fw-bolder">
+                  客服中心
                 </div>
+                <ul class="linklist">
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">常見問題</a>
+                  </li>
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">連絡我們</a>
+                  </li>
+                </ul>
               </div>
+            </div>
 
-              <div class="social-area">
-                <ul class="footer-social d-flex gap-3 mt-2">
-                  <li class="footer-social-item">
-                    <a
-                      href="javaScript:;"
-                      class=""
-                    >
-                      <i class="bi bi-facebook"></i>
-                    </a>
+
+            <div class="col-lg-3 col-6">
+              <div class="footer-list fz-14">
+                <div class="footer-title fw-bolder">
+                  關於
+                </div>
+                <ul class="linklist">
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">關於我們</a>
                   </li>
-
-                  <li class="footer-social-item">
-                    <a
-                      href="javaScript:;"
-                      class=""
-                    >
-                      <i class="bi bi-instagram"></i>
-                    </a>
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">最新消息</a>
                   </li>
+                </ul>
+              </div>
+            </div>
 
-                  <li class="footer-social-item">
-                    <a
-                      href="javaScript:;"
-                      class=""
-                    >
-                      <i class="bi bi-youtube"></i>
-                    </a>
+            <div class="col-lg-3 col-6">
+              <div class="footer-list fz-14">
+                <div class="footer-title fw-bolder">
+                  會員
+                </div>
+                <ul class="linklist">
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">會員中心</a>
                   </li>
-
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">訂單列表</a>
+                  </li>
                 </ul>
 
               </div>
             </div>
+
+            <div class="col-lg-3 col-6">
+              <div class="footer-list fz-14">
+                <div class="footer-title fw-bolder">
+                  產品
+                </div>
+                <ul class="linklist">
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">產品列表</a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+
           </div>
-
         </div>
+
+        <div class="footer-copyright">
+          <div class="footer-copyright-txt fz-14">
+            <span>
+
+              Copyright © 2024 CENTURION® 百夫長旅行箱,
+            </span>
+            <span>
+              Ltd. All Rights Reserved. <a href="javascript:void(0);">隱私政策</a>
+            </span>
+          </div>
+        </div>
+
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
-    <a
-      href="#"
-      class="goTop"
-    >
-      <i class="bi bi-chevron-up"></i>
-    </a>
+  <a
+    href="#"
+    class="goTop"
+  >
+    <i class="bi bi-chevron-up"></i>
+  </a>
 
-    <!-- popper -->
-    <script
-      type="text/javascript"
-      src="/template/node_modules/popper/popper.min.js"
-    ></script>
+  <!-- popper -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/popper/popper.min.js"
+  ></script>
 
-    <!-- bootstrap -->
-    <script
-      type="text/javascript"
-      src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
-    ></script>
+  <!-- bootstrap -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
+  ></script>
 
-    <!-- slick -->
-    <script
-      type="text/javascript"
-      src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
-    ></script>
+  <!-- slick -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
+  ></script>
 
-    <!-- swiper -->
-    <script
-      type="text/javascript"
-      src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
-    ></script>
+  <!-- swiper -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
+  ></script>
 
-    <!-- 自定義JS -->
+  <!-- TWzipcode -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/TWzipcode/jquery.twzipcode.min.js"
+  ></script>
 
-    <script
-      type="module"
-      type="text/javascript"
-      src="/template/js/script.js"
-    >
-    </script>
+  <!-- 自定義JS -->
 
+  <script
+    type="text/javascript"
+    src="/template/js/script.js"
+  ></script>
 
-    <script
-      type="module"
-      type="text/javascript"
-      src="/template/js/member.js"
-    >
-    </script>
+  <script
+    type="text/javascript"
+    src="/template/js/member.js"
+  ></script>
 
 </body>
 

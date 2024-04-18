@@ -133,3 +133,26 @@
     color: white;
   }
 }
+
+// style01
+.btn-style01 {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background-clip: border-box;
+  box-sizing: border-box;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+}

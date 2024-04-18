@@ -11828,6 +11828,28 @@ body {
   color: white;
 }
 
+.btn-style01 {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background-clip: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  position: relative;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+.btn-style01:hover {
+  color: white;
+}
+
 .footerStyle01 {
   background: #edebe8;
   color: #222;
@@ -12515,6 +12537,37 @@ body {
   top: 10%;
 }
 
+.member-title {
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 1.5rem;
+}
+
+.sectionblock-account .order-table {
+  width: 100%;
+}
+.sectionblock-account .order-table th,
+.sectionblock-account .order-table td {
+  border-bottom: 1px solid #cccccc;
+}
+.sectionblock-account .order-table th {
+  padding-bottom: 0.625rem;
+  text-align: left;
+}
+.sectionblock-account .order-table td {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+@media (min-width: 1200px) {
+  .sectionblock-account .order-table td {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+.sectionblock-account .member-personal-box-content .info-box:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
 .page-cart {
   max-width: 1000px;
   margin: 35px auto;
@@ -13080,6 +13133,9 @@ body {
 .page-cart3 .left-box .content-box-content .info-box-head {
   font-weight: 500;
 }
+.page-cart3 .left-box .content-box-content .info-box-note {
+  max-width: 80%;
+}
 .page-cart3 .left-box .cart3-btn-group {
   text-align: right;
 }
@@ -13385,6 +13441,15 @@ body {
   -webkit-transition: border-color 0.1s ease-in-out;
   transition: border-color 0.1s ease-in-out;
   background: transparent;
+}
+.membership-application-form .form-select {
+  display: block;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #cccccc;
+  width: 100%;
+  line-height: normal;
+  -webkit-transition: border-color 0.1s ease-in-out;
+  transition: border-color 0.1s ease-in-out;
 }
 .membership-application-form .radio-box {
   display: -webkit-box;

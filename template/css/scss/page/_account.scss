@@ -1,0 +1,42 @@
+.sectionblock-account {
+  .order-table {
+    width: 100%;
+
+    th,
+    td {
+      border-bottom: 1px solid #cccccc;
+    }
+
+    th {
+      padding-bottom: 0.625rem;
+      text-align: left;
+    }
+
+    td {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+
+      @media (min-width: $viewL) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  // member-address
+  .member-address-box {
+    &-content {
+    }
+  }
+
+  // member-personal
+  .member-personal-box {
+    &-content {
+      .info-box {
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
