@@ -54,12 +54,6 @@
     href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
   >
 
-  <!-- datatables -->
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/datatables/datatables.min.css"
-  >
-
 
   <!-- Swiper css -->
   <link
@@ -237,196 +231,291 @@
 
   <div class="body-content mt-3">
 
-    <section class="sectionblock-account">
-
+    <section class="sectionblock-order-detail">
       <div class="container">
 
-        <div class="page-account">
-          <div class="sectionblock-account-header mb-5">
+        <div class="page-order_detail">
+          <div class="sectionblock-order-detail-header mb-5">
             <a
               href="javascript:void(0);"
               class="mb-3 d-block fz-14 text-decoration-none"
-            >登出</a>
+            >
+              <span class="icon-box"><i class="bi bi-chevron-left"></i></span>
+              返回我的帳戶
+            </a>
 
             <div class="h4 fw-normal">
-              會員中心
+              訂單編號
+              <span class="order-number ">
+                #20240409050316524
+              </span>
             </div>
 
-            <div class="description">
-              <span>使用者</span>，歡迎您。
+            <div class="description fz-14">
+              訂單於
+              <span class="order-date">2024年4月15日 </span>
+              <span class="order-time">上午9:06</span>
+              成立
             </div>
           </div>
 
-          <div class="sectionblock-account-content">
+          <div class="sectionblock-order-detail">
             <div class="row">
-              <div class="col-lg-12 mb-5">
-                <div class="order-table-box">
-                  <div class="member-title heading mb-4">
-                    訂單資訊
-                  </div>
-                  <div class="table-responsive">
-                    <table
-                      class="table order-table fz-14"
-                      id="account_table"
-                    >
-                      <thead>
-                        <tr>
-                          <th>訂單編號</th>
-                          <th>日期</th>
-                          <th>付款方式</th>
-                          <th>訂單狀態</th>
-                          <th>配送查詢</th>
-                          <th class="text-end">合計</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <a href="javascript:void(0);">20240409050316524</a>
-                          </td>
-                          <td>
-                            <div>2024/4/15</div>
-                          </td>
+              <div class="col-lg-12 mb-5 ">
+                <div class="order-detail-box">
 
-                          <td>
-                            <div>已付款</div>
-                          </td>
+                  <!-- 列表來自cart  -->
+                  <div class="cart-itemList fz-14">
 
-                          <td>
-                            <div>已完成</div>
-                          </td>
+                    <div class="cart-head">
+                      <div class="cart-head-item  mini heading">
+                        商品
+                      </div>
+                      <div class="cart-head-item"></div>
+                      <div class="cart-head-item mini heading text-center">
+                        數量
+                      </div>
+                      <div class="cart-head-item mini heading text-end">
+                        小計
+                      </div>
+                    </div>
 
-                          <td>
-                            <a
-                              href="javascript:void(0);"
-                              target="_blank"
-                            >查詢</a>
-                          </td>
+                    <div class="cart-item">
 
-                          <td class="text-end">
-                            $18,300
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            <a href="javascript:void(0);">20240409050316524</a>
-                          </td>
-                          <td>
-                            <div>2024/4/15</div>
-                          </td>
-
-                          <td>
-                            <div>已付款</div>
-                          </td>
-
-                          <td>
-                            <div>已完成</div>
-                          </td>
-
-                          <td>
-                            <a
-                              href="javascript:void(0);"
-                              target="_blank"
-                            >查詢</a>
-                          </td>
-
-                          <td class="text-end">
-                            $18,300
-                          </td>
-                        </tr>
-
-                      </tbody>
-
-                    </table>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <div class="col-12 mb-3">
-                <div class="member-personal-box">
-                  <div class="member-title heading mb-4">
-                    個人資訊
-                  </div>
-                  <div class="member-personal-box-content fz-14">
-
-                    <div class="row">
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          姓名
-                        </div>
-                        <div class="info-box-txt">
-                          陳小明
+                      <div class="cart-item-imageWrapper aspect-ratio">
+                        <div class="aspect-ratio aspect-ratio-1">
+                          <img
+                            class="cartItem__Image"
+                            src="/template/images/big_sea_fish.webp"
+                            alt="大海魚"
+                          >
                         </div>
                       </div>
 
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          電話
+                      <div class="cart-item-info">
+                        <div class="cart-item-title heading fz-14">
+                          <a href="javascript:void(0);">CENTURION 百夫長 28吋 頭等艙系列 旅行箱</a>
                         </div>
-                        <div class="info-box-txt">
-                          0915243003
+                        <div class="cart-item-txt fz-14">
+                          <div class="cart-item-productName heading">
+
+                          </div>
+                          <div class="cart-item-priceList ">
+                            <div class="cart-item-price heading fz-14">
+                              $9,000
+                            </div>
+                          </div>
                         </div>
                       </div>
 
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          信箱
+                      <div class="cart-item-adjustment heading text-center">
+                        <div class="cart-item-QTY-selector-box">
+                          <div class="item-order-quantity">
+                            x
+                            <span class="quantity-num">2</span>
+                          </div>
                         </div>
-                        <div class="info-box-txt">
-                          XXXX@icloud.com
+
+                      </div>
+
+                      <div class="cart-item-priceList cart-item-priceList-total heading text-end">
+                        <div class="cart-item-price heading">
+                          $18,000
                         </div>
                       </div>
 
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          性別
-                        </div>
-                        <div class="info-box-txt">
-                          男性
-                        </div>
-                      </div>
-
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          生日
-                        </div>
-                        <div class="info-box-txt">
-                          1999-09-18
-                        </div>
-                      </div>
-
-                      <div class="info-box col-lg-4">
-                        <div class="info-box-head heading">
-                          地址
-                        </div>
-                        <div class="info-box-txt">
-                          台中市神岡區中山路1438號
-                        </div>
-                      </div>
                     </div>
 
                   </div>
 
-                  <div class="member-personal-box-btn-groups mt-5">
-                    <a
-                      href="javascript:void(0);"
-                      class="btn-style02   btn"
-                    >
-                      修改會員資料
-                    </a>
+                  <div class="cart-footer order-footer  fz-12">
 
-                    <a
-                      href="javascript:void(0);"
-                      class="btn-style02  btn"
-                    >
-                      修改密碼
-                    </a>
+                    <div class="order-footer-info order-detail-subtotal fz-14">
+                      <div class="space"></div>
+                      <div class="space"></div>
+                      <div class="title">
+                        小計
+                      </div>
+                      <div class="txt">
+                        $18,000
+                      </div>
+
+                    </div>
+
+                    <div class="order-footer-info order-detail-freight fz-14">
+                      <div class="space"></div>
+                      <div class="space"></div>
+                      <div class="title">
+                        運費
+                      </div>
+                      <div class="txt">
+                        $300
+                      </div>
+                    </div>
+
+                    <div class="order-footer-info order-detail-sum fz-14">
+                      <div class="space"></div>
+                      <div class="space"></div>
+                      <div class="title">
+                        合計
+                      </div>
+                      <div class="txt">
+                        $18,300
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="content-box mb-3">
+                  <div class="content-box-title">
+                    <div class="h6">
+                      訂單詳細資訊
+                    </div>
+                  </div>
+                  <div class="content-box-content">
+                    <div class="row">
+
+                      <div class="col-6 mb-3">
+                        <div class="cart-left-lead-title fw-bolder">
+                          訂單資訊
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">訂單日期</div>
+                          <div>2024-04-08 09:08AM</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">訂單狀態</div>
+                          <div>訂單處理中</div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-6 mb-3">
+                        <div class="cart-left-lead-title fw-bolder">
+                          付款資訊
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">付款方式</div>
+                          <div>信用卡</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">付款狀態</div>
+                          <div>已付款</div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-6 mb-3">
+                        <div class="cart-left-lead-title fw-bolder">
+                          聯絡資訊
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">名稱</div>
+                          <div>陳小明</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">電子信箱</div>
+                          <div>XXXXX@icloud.com</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">電話號碼</div>
+                          <div>0919***454</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">地址</div>
+                          <div>台中市神岡區中山路1438號</div>
+                        </div>
+
+                      </div>
+
+
+
+                      <div class="col-6 mb-3">
+                        <div class="cart-left-lead-title fw-bolder">
+                          發票資訊
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">發票申請類型</div>
+                          <div>雲端發票</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">發票載具類型</div>
+                          <div>會員載具 (XXXXX@icloud.com)</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">統一編號</div>
+                          <div></div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">公司抬頭</div>
+                          <div></div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-6 mb-3">
+                        <div class="cart-left-lead-title fw-bolder">
+                          運送資訊
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">收件人名稱</div>
+                          <div>陳小明</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">收件人電話號碼</div>
+                          <div>0919***454</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">送貨方式</div>
+                          <div>新竹物流 - 常溫</div>
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">地址</div>
+                          <div>台中市神岡區中山路1438號</div>
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-12 col-lg-6 mb-3">
+                        <div class="cart-left-lead-title fw-bolder">
+                          訂單備註
+                        </div>
+
+                        <div class="info-box">
+                          <div class="info-box-head">備註訊息</div>
+                          <div class="info-box-note">備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -590,12 +679,6 @@
   <script
     type="text/javascript"
     src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
-  ></script>
-
-  <!-- datatables -->
-  <script
-    type="text/javascript"
-    src="/template/node_modules/datatables/datatables.min.js"
   ></script>
 
   <!-- swiper -->

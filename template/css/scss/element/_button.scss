@@ -143,8 +143,33 @@
   box-sizing: border-box;
   border: 1px transparent solid;
   border-radius: 5px;
+  background-color: $primary;
   color: white;
   padding: 1rem 1.5rem;
+  text-align: center;
+  position: relative;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+}
+
+// style02
+.btn-style02 {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background-clip: border-box;
+  box-sizing: border-box;
+  border: 1px transparent solid;
+  border-radius: 5px;
+  background-color: $primary;
+  color: white;
+  padding: 0.5rem 1rem;
   text-align: center;
   position: relative;
   transition:

@@ -2,24 +2,22 @@
 $(function () {
 	if ($('.cart-item').length) {
 		$('.cart-item').each(function () {
-			let product_QTY = $(this).find('.QTY-selector-currentNum').val();
-			console.log(product_QTY);
-			$(this)
-				.find('.QTY-reduce')
-				.click(function () {
-					product_QTY--;
-					if (product_QTY <= 0) {
-						return (product_QTY = 1);
-					}
-					$('.QTY-selector-currentNum').val(product_QTY);
-				});
+			let $item = $(this);
+			let product_QTY = parseInt(
+				$item.find('.QTY-selector-currentNum').val()
+			);
+			$item.find('.QTY-reduce').click(function () {
+				product_QTY--;
+				if (product_QTY <= 0) {
+					return (product_QTY = 1);
+				}
+				$item.find('.QTY-selector-currentNum').val(product_QTY);
+			});
 
-			$(this)
-				.find('.QTY-plus')
-				.click(function () {
-					product_QTY++;
-					$('.QTY-selector-currentNum').val(product_QTY);
-				});
+			$item.find('.QTY-plus').click(function () {
+				product_QTY++;
+				$item.find('.QTY-selector-currentNum').val(product_QTY);
+			});
 		});
 	}
 });

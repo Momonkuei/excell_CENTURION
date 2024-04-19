@@ -1,6 +1,11 @@
+.page-account {
+  max-width: 1000px;
+  margin: 35px auto;
+}
 .sectionblock-account {
   .order-table {
     width: 100%;
+    white-space: nowrap;
 
     th,
     td {

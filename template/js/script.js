@@ -12,17 +12,17 @@ $(function () {
 	// 移除 header 搜尋按鈕
 	const removeMbHeaderSearch = function () {
 		$('body').removeClass('open-search');
-		$('.mb-header-search').css('transform', `translate(0, -100%)`);
 	};
 
 	if ($('header').length) {
 		$('.slide-menu-control').click(function () {
 			$('body').addClass('open-menu');
+			$('.searchBox').remove('open');
 			removeMbHeaderSearch();
 		});
 
 		// 首頁關閉按鈕
-		$('.fullMenu .close-btn').click(function () {
+		$('.fullMenu .close-btn, header .fullMenu-mask').click(function () {
 			$('body').removeClass('open-menu');
 		});
 
@@ -33,14 +33,14 @@ $(function () {
 			} else {
 				if (!$('body').hasClass('open-search')) {
 					$('body').addClass('open-search');
-					$('.mb-header-search').css(
-						'transform',
-						`translate(0, ${hdTop}px)`
-					);
 				} else {
 					removeMbHeaderSearch();
 				}
 			}
+		});
+
+		$('.header-fullMenu-mask').click(function () {
+			removeMbHeaderSearch();
 		});
 
 		// 滾動

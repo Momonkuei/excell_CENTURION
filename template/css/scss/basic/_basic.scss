@@ -6,3 +6,9 @@ img {
 .sectionBlock {
   margin: 50px 0;
 }
+
+a {
+  &:hover {
+    color: $primary;
+  }
+}

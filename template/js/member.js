@@ -48,3 +48,17 @@ $(function () {
 			.prop('required', true);
 	}
 });
+
+// 會員中心
+
+$(function () {
+	var account_table = $('#account_table').DataTable({
+		language: {
+			url: '/template/node_modules/datatables/zh-HANT.json',
+		},
+		// scrollX: '100%',
+		info: false,
+		// searching: false,
+		fixedHeader: true,
+	});
+});

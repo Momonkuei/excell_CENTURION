@@ -58,7 +58,7 @@
     text-align: center;
     grid-area: imageWrapper;
 
-    @media (min-width: 641px) {
+    @media (min-width: $viewMobile) {
       width: 120px;
     }
   }
@@ -67,12 +67,12 @@
     padding-left: 25px;
     grid-area: info;
 
-    @media (min-width: 641px) {
+    @media (min-width: $viewMobile) {
       max-width: 300px;
       width: 300px;
     }
 
-    @media (min-width: 1240px) {
+    @media (min-width: $viewL) {
       max-width: 425px;
       width: 425px;
     }
@@ -133,7 +133,7 @@
       cursor: pointer;
       user-select: none;
 
-      @media (min-width: 641px) {
+      @media (min-width: $viewMobile) {
         padding: 8px 15px 8px;
       }
     }

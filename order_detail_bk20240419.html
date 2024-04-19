@@ -54,12 +54,6 @@
     href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
   >
 
-  <!-- datatables -->
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/datatables/datatables.min.css"
-  >
-
 
   <!-- Swiper css -->
   <link
@@ -238,103 +232,88 @@
   <div class="body-content mt-3">
 
     <section class="sectionblock-account">
-
       <div class="container">
 
-        <div class="page-account">
+        <div class="page-order_detail">
           <div class="sectionblock-account-header mb-5">
             <a
               href="javascript:void(0);"
               class="mb-3 d-block fz-14 text-decoration-none"
-            >登出</a>
+            >
+              <span class="icon-box"><i class="bi bi-chevron-left"></i></span>
+              返回我的帳戶
+            </a>
 
             <div class="h4 fw-normal">
-              會員中心
+              訂單編號
+              <span class="order-number ">
+                #20240409050316524
+              </span>
             </div>
 
-            <div class="description">
-              <span>使用者</span>，歡迎您。
+            <div class="description fz-14">
+              訂單於
+              <span class="order-date">2024年4月15日 </span>
+              <span class="order-time">上午9:06</span>
+              成立
             </div>
           </div>
 
-          <div class="sectionblock-account-content">
+          <div class="sectionblock-order-detail">
             <div class="row">
-              <div class="col-lg-12 mb-5">
-                <div class="order-table-box">
-                  <div class="member-title heading mb-4">
-                    訂單資訊
-                  </div>
+              <div class="col-lg-12 mb-3">
+                <div class="order-detail-box">
                   <div class="table-responsive">
-                    <table
-                      class="table order-table fz-14"
-                      id="account_table"
-                    >
+                    <table class="table order-detail-table fz-14">
                       <thead>
                         <tr>
-                          <th>訂單編號</th>
-                          <th>日期</th>
-                          <th>付款方式</th>
-                          <th>訂單狀態</th>
-                          <th>配送查詢</th>
+                          <th>商品</th>
+                          <th>數量</th>
                           <th class="text-end">合計</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr class="order-item">
                           <td>
-                            <a href="javascript:void(0);">20240409050316524</a>
-                          </td>
-                          <td>
-                            <div>2024/4/15</div>
-                          </td>
+                            <div class="poroduct-box">
+                              <div class="product-item-imageWrapper">
+                                <div class="aspect-ratio aspect-ratio-1">
+                                  <img
+                                    class="CartItem__Image"
+                                    src="/template/images/big_sea_fish.webp"
+                                    alt="大海魚"
+                                  >
+                                </div>
+                              </div>
 
-                          <td>
-                            <div>已付款</div>
-                          </td>
+                              <div class="poroduct-box-info">
+                                <div class="poroduct-box-info-title heading fz-14">
+                                  <a href="javascript:void(0);">CENTURION 百夫長 28吋 頭等艙系列 旅行箱</a>
+                                </div>
+                                <div class="poroduct-box-info-txt fz-14">
+                                  <div class="productName heading">
 
-                          <td>
-                            <div>已完成</div>
-                          </td>
+                                  </div>
+                                  <div class="poroduct-box-info-priceList ">
+                                    <div class="price heading fz-14">
+                                      $9,000
+                                    </div>
+                                  </div>
+                                </div>
 
-                          <td>
-                            <a
-                              href="javascript:void(0);"
-                              target="_blank"
-                            >查詢</a>
-                          </td>
-
-                          <td class="text-end">
-                            $18,300
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td>
-                            <a href="javascript:void(0);">20240409050316524</a>
+                              </div>
+                            </div>
                           </td>
                           <td>
-                            <div>2024/4/15</div>
-                          </td>
-
-                          <td>
-                            <div>已付款</div>
-                          </td>
-
-                          <td>
-                            <div>已完成</div>
-                          </td>
-
-                          <td>
-                            <a
-                              href="javascript:void(0);"
-                              target="_blank"
-                            >查詢</a>
+                            <div>1</div>
                           </td>
 
                           <td class="text-end">
-                            $18,300
+                            $1,278.00
                           </td>
                         </tr>
+
+
 
                       </tbody>
 
@@ -590,12 +569,6 @@
   <script
     type="text/javascript"
     src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
-  ></script>
-
-  <!-- datatables -->
-  <script
-    type="text/javascript"
-    src="/template/node_modules/datatables/datatables.min.js"
   ></script>
 
   <!-- swiper -->
