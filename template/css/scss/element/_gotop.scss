@@ -2,8 +2,7 @@
   position: fixed;
   bottom: 3.5rem;
   right: 0.6rem;
-  background-color: $secondary;
-  color: var(--white);
+  background-color: $primary;
   text-decoration: none;
   z-index: 99;
   font-size: 1.4rem;
@@ -11,12 +10,36 @@
   width: 50px;
   height: 50px;
   line-height: 50px;
-  border: 1px solid $gray-600;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: $white;
+
+  &:hover {
+    color: $white;
+    i {
+      animation: goTop-icon-upDown-move 0.6s ease-in-out infinite;
+    }
+  }
+}
+
+// 上下移動的動畫
+@keyframes goTop-icon-upDown-move {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+
+  80% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .open-menu {

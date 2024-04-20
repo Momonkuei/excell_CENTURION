@@ -32,6 +32,19 @@
       }
     }
 
+    // 個人發票
+    // 手機條碼
+
+    .invoice-area,
+    .mobileBarcode-area {
+      display: none;
+    }
+
+    //公司戶發票
+    .company-account-invoice-area {
+      display: none;
+    }
+
     &-footer {
       &-area {
         border-top: 1px solid #ccc;
@@ -76,6 +89,7 @@
       }
     }
 
+    // 產品細項
     .shopping-list-cart {
       display: flex;
       flex-direction: column;

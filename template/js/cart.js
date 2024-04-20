@@ -79,6 +79,48 @@ $(function () {
 		addtwzipcode(2);
 	}
 
+	// 發票類型
+	if ($('#invoice_type').length) {
+		$('#invoice_type').on('change', function () {
+			$('.invoice-area, .company-account-invoice-area').hide();
+
+			// 去除 required
+			$('.company-account-invoice-area input').each(function () {
+				$(this).prop('required', false);
+			});
+			const $invoiceType = $('#invoice_type option:selected').val();
+			$(`.${$invoiceType}`).show();
+
+			// 添加 required
+			if ($invoiceType === 'company-account-invoice-area') {
+				$(`.${$invoiceType} input`).each(function () {
+					$(this).prop('required', true);
+				});
+			}
+		});
+	}
+
+	// 載具類型
+	if ($('#vehicle_type').length) {
+		$('#vehicle_type').on('change', function () {
+			$('.mobileBarcode-area').hide();
+			// 去除 required
+
+			$('.mobileBarcode-area input').each(function () {
+				$(this).prop('required', false);
+			});
+
+			const $vehicleType = $('#vehicle_type option:selected').val();
+			$(`.${$vehicleType}`).show();
+
+			// 添加 required
+			if ($vehicleType === 'mobileBarcode-area') {
+				$('.mobileBarcode-area input').prop('required', true);
+			}
+		});
+	}
+
+	// 手機板收合訂單內容
 	if ($('.order-content-btn').length) {
 		$('.order-content-btn').click(function () {
 			if ($(this).hasClass('active')) {

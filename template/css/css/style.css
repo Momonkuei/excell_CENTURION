@@ -12070,7 +12070,6 @@ body {
   bottom: 3.5rem;
   right: 0.6rem;
   background-color: #35286d;
-  color: var(--white);
   text-decoration: none;
   z-index: 99;
   font-size: 1.4rem;
@@ -12078,7 +12077,6 @@ body {
   width: 50px;
   height: 50px;
   line-height: 50px;
-  border: 1px solid #6c757d;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12091,7 +12089,51 @@ body {
           justify-content: center;
   color: #fff;
 }
+.goTop:hover {
+  color: #fff;
+}
+.goTop:hover i {
+  -webkit-animation: goTop-icon-upDown-move 0.6s ease-in-out infinite;
+          animation: goTop-icon-upDown-move 0.6s ease-in-out infinite;
+}
 
+@-webkit-keyframes goTop-icon-upDown-move {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  80% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes goTop-icon-upDown-move {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+  }
+  80% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 .open-menu .goTop {
   z-index: 1;
 }
@@ -12964,6 +13006,13 @@ body {
   .page-cart2 .left-box-area {
     padding: 2rem 15px;
   }
+}
+.page-cart2 .left-box .invoice-area,
+.page-cart2 .left-box .mobileBarcode-area {
+  display: none;
+}
+.page-cart2 .left-box .company-account-invoice-area {
+  display: none;
 }
 .page-cart2 .left-box-footer-area {
   border-top: 1px solid #ccc;

@@ -253,7 +253,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="h4 ">
                     聯絡資訊
-                    <span class="fz-14 ">*為必填欄位</span>
+                    <span class="fz-12 ">*為必填欄位</span>
                   </div>
                   <a href="javascript:void(0);">登入</a>
                 </div>
@@ -416,7 +416,9 @@
                     class="form-select"
                     id="invoice_type"
                   >
-                    <option value="invoice">個人發票</option>
+                    <option selected>請選擇發票類型</option>
+                    <option value="invoice-area">個人發票</option>
+                    <option value="company-account-invoice-area">公司戶發票</option>
                   </select>
                   <label
                     for="invoice_type"
@@ -424,32 +426,84 @@
                   >發票類型</label>
                 </div>
 
-                <div class="form-group mb-3">
-                  <input
-                    id="tax_ID_number"
-                    type="text"
-                    name="tax_ID_number"
-                    placeholder="統一編號"
-                    class="form-input"
-                  >
-                  <label
-                    for="tax_ID_number"
-                    class="form-label"
-                  >統一編號</label>
+                <!-- 個人發票 -->
+                <div class="invoice-area">
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <select
+                        class="form-select"
+                        id="vehicle_type"
+                        aria-label="vehicle_type"
+                      >
+                        <option selected>請選擇載具類型</option>
+                        <option value="0">會員載具 (發票資訊會寄到您的電郵)</option>
+                        <option value="mobileBarcode-area">手機條碼</option>
+                      </select>
+                      <label
+                        for="payment_method"
+                        class="form-label"
+                      >付款方式</label>
+                    </div>
+
+                  </div>
+
                 </div>
 
-                <div class="form-group">
-                  <input
-                    id="company_letterhead"
-                    type="text"
-                    name="company_letterhead"
-                    placeholder="公司抬頭"
-                    class="form-input"
-                  >
-                  <label
-                    for="company_letterhead"
-                    class="form-label"
-                  >公司抬頭</label>
+                <!-- 手機條碼 -->
+                <div class="mobileBarcode-area">
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="contact_address_detail"
+                        class="form-label"
+                      >手機條碼*</label>
+                      <input
+                        id="mobileBarcode"
+                        type="text"
+                        name="mobileBarcode"
+                        placeholder="手機條碼*"
+                        class="form-input"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 公司戶發票 -->
+
+                <div class="company-account-invoice-area">
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="tax_ID_number"
+                        type="text"
+                        name="tax_ID_number"
+                        placeholder="統一編號"
+                        class="form-input"
+                      >
+                      <label
+                        for="tax_ID_number"
+                        class="form-label"
+                      >統一編號</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <input
+                        id="company_letterhead"
+                        type="text"
+                        name="company_letterhead"
+                        placeholder="公司抬頭"
+                        class="form-input"
+                      >
+                      <label
+                        for="company_letterhead"
+                        class="form-label"
+                      >公司抬頭</label>
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
@@ -460,7 +514,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="h4 ">
                     運送資訊
-                    <span class="fz-14 ">*為必填欄位</span>
+
                   </div>
                 </div>
 
