@@ -101,7 +101,9 @@
                   <div class="searchBox ">
                     <form action="">
                       <div class="searchToggle">
-                        <i class="bi bi-search"></i>
+                        <i class="bi bi-search search-icon"></i>
+                        <i class="bi bi-x-lg close-icon"></i>
+
                       </div>
 
                       <input
@@ -178,7 +180,84 @@
             </li>
             <li>
               <a href="javascript:void(0);">
-                <span class="h4 txt">會員資料</span>
+                <span class="h4 txt">關於我們</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">最新消息</span>
+                <div class="icon-box">
+                  <span class="plus-icon">
+
+                  </span>
+                </div>
+              </a>
+
+              <div class="second-menu">
+                <div class="second-menu-content">
+
+                  <ul class="navMenu-second">
+                    <li>
+                      <a href="javascript:void(0);">
+                        <span class="h5">全部文章</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);">
+                        <span class="h5">品牌快訊</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);">
+                        <span class="h5">媒體報導</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);">
+                        <span class="h5">心得分享</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">產品介紹</span>
+                <div class="icon-box">
+                  <span class="plus-icon">
+
+                  </span>
+                </div>
+              </a>
+              <div class="second-menu">
+                <div class="second-menu-content">
+
+                  <ul class="navMenu-second">
+                    <li>
+                      <a href="javascript:void(0);">
+                        <span class="h5">產品分類</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0);">
+                        <span class="h5">產品列表</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">客服中心</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0);">
+                <span class="h4 txt">會員專區</span>
               </a>
             </li>
             <li>
@@ -191,39 +270,41 @@
       </div>
     </div>
 
-    <!-- header 彈跳搜尋 -->
-    <div
-      id=""
-      class="mb-header-search"
-    >
-      <form
-        action=""
-        id=""
-        class="mb-header-search-form"
-      >
-        <div class="search-input-box ">
 
-          <button class="icon-box">
-            <i class="bi bi-search"></i>
-          </button>
-          <input
-            id="mb_search_name"
-            type="text"
-            name="mb_search_name"
-            placeholder="搜索內容"
-            class="form-input"
-            required
-          >
-          <label
-            for="mb_search_name"
-            class="form-label"
-          ></label>
-        </div>
-
-      </form>
-    </div>
 
   </header>
+
+  <!-- header 彈跳搜尋 -->
+  <div
+    id=""
+    class="mb-header-search"
+  >
+    <form
+      action=""
+      id=""
+      class="mb-header-search-form"
+    >
+      <div class="search-input-box ">
+
+        <button class="icon-box">
+          <i class="bi bi-search"></i>
+        </button>
+        <input
+          id="mb_search_name"
+          type="text"
+          name="mb_search_name"
+          placeholder="搜索內容"
+          class="form-input"
+          required
+        >
+        <label
+          for="mb_search_name"
+          class="form-label"
+        ></label>
+      </div>
+
+    </form>
+  </div>
 
   <!-- 平板以下搜尋欄的遮色片 -->
   <div class="header-fullMenu-mask"></div>
@@ -247,7 +328,7 @@
               <input
                 id="login_email"
                 type="email"
-                name="email"
+                name="login_email"
                 placeholder="電子郵件"
                 class="form-input"
               >
@@ -261,7 +342,7 @@
               <input
                 id="login_password"
                 type="password"
-                name="password"
+                name="login_password"
                 placeholder="密碼"
                 class="form-input"
               >
@@ -276,7 +357,7 @@
               class="text-end mb-3 d-block forgot-password-btn"
             >忘記密碼</a>
 
-            <button class="btn-style01 btn-primary btn-full mb-3">
+            <button class="btn-style01 btn-full mb-3">
               登入
             </button>
 
@@ -287,42 +368,7 @@
 
           </form>
 
-          <form
-            action=""
-            class="forgot-password-form cart-form fz-14"
-          >
-            <div class="h4 text-center mb-3">
-              忘記密碼
-            </div>
-            <p class="text-center">請輸入您登錄時的電郵地址，然後點擊「送出」。 Please enter your email address, and "Submit"</p>
 
-            <div class="form-group mb-3">
-              <input
-                id="forget_password_email"
-                type="email"
-                name="email"
-                placeholder="電子郵件"
-                class="form-input"
-              >
-              <label
-                for="forget_password_email"
-                class="form-label"
-              >電子郵件</label>
-            </div>
-
-            <button class="btn-style01 btn-primary btn-full mb-3">
-              送出
-            </button>
-
-            <div class="login-form-footer text-center">
-              <span>返回</span>
-              <a
-                href="javascript:void(0);"
-                class="return-login-btn"
-              >會員登入</a>
-            </div>
-
-          </form>
         </div>
 
 

@@ -9,6 +9,27 @@
     border: 1px solid;
     border-radius: 5px;
     padding: 1rem;
+
+    &-content {
+      .info-box {
+        padding-left: 0.5rem;
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+
+        &-head {
+          font-weight: 500;
+        }
+      }
+
+      .info-box-note {
+        max-width: 80%;
+
+        @media (max-width: $viewS) {
+          max-width: 90%;
+        }
+      }
+    }
   }
 
   .info-box-note {
@@ -58,11 +79,27 @@
       }
     }
   }
+
+  .info-box {
+    .title {
+      padding-bottom: 0.625rem;
+      border-bottom: 1px solid $gray-border;
+    }
+  }
 }
 
-.info-box {
-  .title {
-    padding-bottom: 0.625rem;
-    border-bottom: 1px solid $gray-border;
+// 匯款帳號
+#remittance_account_modal {
+  max-width: 500px;
+  display: none;
+
+  width: 80vw;
+
+  @media (min-width: $viewM) {
+    width: 50vw;
+  }
+
+  @media (max-width: $viewMobile) {
+    padding: 2rem 1rem;
   }
 }

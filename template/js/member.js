@@ -1,22 +1,22 @@
 // 登入頁面
-$(function () {
-	if ($('.login-box').length) {
-		$('.login-form ').show();
-		$('.forgot-password-form').hide();
+// $(function () {
+// 	if ($('.login-box').length) {
+// 		$('.login-form ').show();
+// 		$('.forgot-password-form').hide();
 
-		// 忘記密碼
-		$('.forgot-password-btn').click(function () {
-			$('.login-form ').hide();
-			$('.forgot-password-form').fadeIn(500);
-		});
+// 		// 忘記密碼
+// 		$('.forgot-password-btn').click(function () {
+// 			$('.login-form ').hide();
+// 			$('.forgot-password-form').fadeIn(500);
+// 		});
 
-		// 返回會員登入
-		$('.return-login-btn').click(function () {
-			$('.login-form ').fadeIn(500);
-			$('.forgot-password-form').hide();
-		});
-	}
-});
+// 		// 返回會員登入
+// 		$('.return-login-btn').click(function () {
+// 			$('.login-form ').fadeIn(500);
+// 			$('.forgot-password-form').hide();
+// 		});
+// 	}
+// });
 
 // 註冊畫面
 $(function () {
@@ -52,13 +52,15 @@ $(function () {
 // 會員中心
 
 $(function () {
-	var account_table = $('#account_table').DataTable({
-		language: {
-			url: '/template/node_modules/datatables/zh-HANT.json',
-		},
-		// scrollX: '100%',
-		info: false,
-		// searching: false,
-		fixedHeader: true,
-	});
+	if (typeof $.fn.DataTable === 'function') {
+		var account_table = $('#account_table').DataTable({
+			language: {
+				url: '/template/node_modules/datatables/zh-HANT.json',
+			},
+			// scrollX: '100%',
+			info: false,
+			// searching: false,
+			fixedHeader: true,
+		});
+	}
 });

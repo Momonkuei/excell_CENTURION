@@ -142,6 +142,7 @@
 
         &-content {
           flex-grow: 1;
+          @include hideLongTexts(2);
         }
       }
     }

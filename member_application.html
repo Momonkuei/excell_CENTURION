@@ -312,221 +312,258 @@
 
 
   <div class="body-content mt-3">
-    <div class="container">
-      <div class="page-cart3">
 
-        <!-- left-box -->
-        <div class="left-box fz-14">
-          <div class="left-box-area">
-            <div class="left-box-header">
-
+    <section class="sectionblock-member-application">
+      <div class="container">
+        <div class="member-application-box">
+          <form
+            action=""
+            class="member-application-form  fz-14"
+          >
+            <div class="h4 text-center mb-3">
+              會員申請
             </div>
+            <div class="row">
 
-            <div class="left-box-body">
-
-              <!-- 訂單完成資訊 -->
-              <div class="comfirm-information-box">
-                <div class="confirm-message ">
-                  <i class="bi bi-check-lg check-icon"></i>
-                  <div class="h5 fw-bolder">謝謝您！您的訂單已經成立！</div>
-                  <p>訂單號碼 20240408010854982</p>
-                  <div class="h6">已將訂單明細發送至您的電子信箱 :</div>
-                  <p class="fw-bolder">XXXXX@icloud.com</p>
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_name"
+                    class="form-label"
+                  >姓名*</label>
+                  <input
+                    id="member_name"
+                    type="text"
+                    name="member_name"
+                    placeholder="姓名"
+                    class="form-input"
+                    required
+                  >
                 </div>
               </div>
 
-              <!-- 訂單詳細資訊 -->
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_phone"
+                    class="form-label"
+                  >電話*</label>
+                  <input
+                    id="member_phone"
+                    type="tel"
+                    name="member_phone"
+                    placeholder="連絡電話"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
 
-              <div class="content-box mb-3">
-                <div class="content-box-title">
-                  <div class="h6">
-                    訂單詳細資訊
+              <div class="col-lg-12">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_email"
+                    class="form-label"
+                  >信箱*</label>
+                  <input
+                    id="member_email"
+                    type="email"
+                    name="member_email"
+                    placeholder="電子郵件"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_password"
+                    class="form-label"
+                  >密碼*</label>
+                  <input
+                    id="member_password"
+                    type="password"
+                    name="member_password"
+                    placeholder="密碼"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_password_check"
+                    class="form-label"
+                  >再次輸入密碼*</label>
+                  <input
+                    id="member_password_check"
+                    type="password"
+                    name="member_password_check"
+                    placeholder="密碼"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_gender"
+                    class="form-label"
+                  >性別*</label>
+                  <div class="radio-box">
+
+                    <label
+                      for="male"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="member_male"
+                        name="member_gender"
+                        value="male"
+                        class="form-radio"
+                      >
+                      男性
+                    </label>
+
+                    <label
+                      for="female"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="member_female"
+                        name="member_gender"
+                        value="female"
+                        class="form-radio"
+                      >
+                      女性
+                    </label>
                   </div>
+
                 </div>
-                <div class="content-box-content">
-                  <div class="row">
+              </div>
 
-                    <div class="col-6 mb-3">
-                      <div class="cart-left-lead-title fw-bolder">
-                        訂單資訊
-                      </div>
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_birthday"
+                    class="form-label"
+                  >生日*</label>
+                  <input
+                    id="member_birthday"
+                    type="date"
+                    name="member_birthday"
+                    placeholder="birthday"
+                    class="form-input"
+                  >
+                </div>
+              </div>
 
-                      <div class="info-box">
-                        <div class="info-box-head">訂單日期</div>
-                        <div>2024-04-08 09:08AM</div>
-                      </div>
+            </div>
 
-                      <div class="info-box">
-                        <div class="info-box-head">訂單狀態</div>
-                        <div>訂單處理中</div>
-                      </div>
+            <div class="row twzipcode-member mb-3">
+              <div class="col-lg-4">
+                <div class="form-group mb-3">
+                  <div
+                    data-role="zipcode"
+                    data-style="form-control"
+                    data-name="zipcode"
+                    data-value="郵遞區號"
+                    class="form-group "
+                  >
 
-                    </div>
-
-                    <div class="col-6 mb-3">
-                      <div class="cart-left-lead-title fw-bolder">
-                        付款資訊
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">付款方式</div>
-                        <div>信用卡</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">付款狀態</div>
-                        <div>已付款</div>
-                      </div>
-
-                    </div>
-
-                    <div class="col-6 mb-3">
-                      <div class="cart-left-lead-title fw-bolder">
-                        聯絡資訊
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">名稱</div>
-                        <div>陳小明</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">電子信箱</div>
-                        <div>XXXXX@icloud.com</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">電話號碼</div>
-                        <div>0919***454</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">地址</div>
-                        <div>台中市神岡區中山路1438號</div>
-                      </div>
-
-                    </div>
-
-
-
-                    <div class="col-6 mb-3">
-                      <div class="cart-left-lead-title fw-bolder">
-                        發票資訊
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">發票申請類型</div>
-                        <div>雲端發票</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">發票載具類型</div>
-                        <div>會員載具 (XXXXX@icloud.com)</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">統一編號</div>
-                        <div></div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">公司抬頭</div>
-                        <div></div>
-                      </div>
-
-                    </div>
-
-                    <div class="col-6 mb-3">
-                      <div class="cart-left-lead-title fw-bolder">
-                        運送資訊
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">收件人名稱</div>
-                        <div>陳小明</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">收件人電話號碼</div>
-                        <div>0919***454</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">送貨方式</div>
-                        <div>新竹物流 - 常溫</div>
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">地址</div>
-                        <div>台中市神岡區中山路1438號</div>
-
-                      </div>
-
-                    </div>
-
-                    <div class="col-12 col-lg-6 mb-3">
-                      <div class="cart-left-lead-title fw-bolder">
-                        訂單備註
-                      </div>
-
-                      <div class="info-box">
-                        <div class="info-box-head">備註訊息</div>
-                        <div class="info-box-note">備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息
-                        </div>
-                      </div>
-
-                    </div>
-
+                    <label
+                      for="transport_postal_code"
+                      class="form-label"
+                    >郵遞區號</label>
                   </div>
+
                 </div>
               </div>
 
-              <div class="cart3-btn-group">
-                <a
-                  href="javascript:void(0);"
-                  class="cart-continue-btn fz-14"
-                >
-                  繼續購物
-                </a>
+              <div class="col-lg-4">
+
+                <div class="form-group ">
+                  <label
+                    for="county"
+                    class="form-label"
+                  >縣市*</label>
+
+                  <div
+                    data-role="county"
+                    data-style="form-control"
+                    data-name="county"
+                    data-value="請選擇縣市"
+                  ></div>
+                </div>
+
               </div>
+
+              <div class="col-lg-4">
+
+                <div class="form-group">
+                  <label
+                    for="district"
+                    class="form-label"
+                  >鄉鎮市區*</label>
+                  <div
+                    data-role="district"
+                    data-style="form-control"
+                    data-name="district"
+                    data-value="請選擇鄉鎮區"
+                  ></div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label
+                    for="member_address_detail"
+                    class="form-label"
+                  >地址*</label>
+                  <input
+                    id="member_address_detail"
+                    type="text"
+                    name="name"
+                    placeholder="請輸入地址*"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
 
             </div>
 
-            <div class="left-box-footer mt-3">
-              <div class="left-box-footer-area">
-                <ul class="pay-attention-lists">
-                  <li>
-                    <a href="javascript:void(0);">退款政策</a>
-                  </li>
+            <button class="btn-style01 btn-full mb-3">
+              註冊
+            </button>
 
-                  <li>
-                    <a href="javascript:void(0);">運送政策</a>
-                  </li>
-
-                  <li>
-                    <a href="javascript:void(0);">隱私政策</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0);">服務政策</a>
-                  </li>
-
-                  <li>
-                    <a href="javascript:void(0);">法律聲明</a>
-                  </li>
-                </ul>
-              </div>
+            <div class="login-form-footer text-center">
+              <span>請仔細閱讀並同意<a href="javascript:void(0);">服務條款</a>，然後點擊「會員申請」。</span>
 
             </div>
 
-          </div>
         </div>
 
 
+
+        </form>
+
+
       </div>
-    </div>
 
 
 
+    </section>
   </div>
 
 
@@ -660,8 +697,9 @@
     </div>
   </footer>
 
+
   <a
-    href="javascript:void(0);"
+    href="#"
     class="goTop"
   >
     <i class="bi bi-chevron-up"></i>
@@ -691,20 +729,23 @@
     src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
   ></script>
 
+  <!-- TWzipcode -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/TWzipcode/jquery.twzipcode.min.js"
+  ></script>
+
   <!-- 自定義JS -->
 
   <script
     type="text/javascript"
     src="/template/js/script.js"
-  >
-  </script>
-
+  ></script>
 
   <script
     type="text/javascript"
-    src="/template/js/cart.js"
-  >
-  </script>
+    src="/template/js/member.js"
+  ></script>
 
 </body>
 

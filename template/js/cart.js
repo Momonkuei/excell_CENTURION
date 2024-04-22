@@ -82,12 +82,19 @@ $(function () {
 	// 發票類型
 	if ($('#invoice_type').length) {
 		$('#invoice_type').on('change', function () {
-			$('.invoice-area, .company-account-invoice-area').hide();
+			$(
+				'.invoice-area, .company-account-invoice-area,.mobileBarcode-area'
+			).hide();
 
 			// 去除 required
 			$('.company-account-invoice-area input').each(function () {
 				$(this).prop('required', false);
 			});
+
+			$('.mobileBarcode-area input').each(function () {
+				$(this).prop('required', false);
+			});
+
 			const $invoiceType = $('#invoice_type option:selected').val();
 			$(`.${$invoiceType}`).show();
 
@@ -96,6 +103,11 @@ $(function () {
 				$(`.${$invoiceType} input`).each(function () {
 					$(this).prop('required', true);
 				});
+			}
+
+			// 個人發票 載具類型歸位
+			if ($invoiceType === 'invoice-area') {
+				$(`.${$invoiceType} select`).val(0);
 			}
 		});
 	}
