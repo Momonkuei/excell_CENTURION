@@ -116,6 +116,99 @@
     a {
       color: $black;
     }
+
+    // 使用者功能選單
+    .member-function-box {
+      position: relative;
+      &-btn {
+        .close-icon {
+          display: none;
+        }
+      }
+
+      &-dropdown-menu {
+        position: absolute;
+        padding: 5px;
+        background-color: $header-member-dropdown-menu-bg;
+        top: 2.1rem;
+        left: -2rem;
+        width: 13.75rem;
+        border-radius: 4px;
+        display: block;
+        box-shadow:
+          rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: all 200ms linear;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -7px;
+          left: 2rem;
+          width: 0;
+          height: 0;
+          box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid $header-member-dropdown-menu-bg;
+          display: block;
+          z-index: 9;
+          transition: all 200ms linear;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          li {
+            padding: 0.5rem 1rem;
+            width: 100%;
+            text-align: center;
+            &:hover {
+              background-color: $header-member-dropdown-menu-li-hover-bg;
+            }
+          }
+        }
+
+        @media (max-width: $viewL) {
+          width: 10rem;
+        }
+
+        @media (max-width: $viewM) {
+          left: -8rem;
+          width: 10rem;
+
+          &::after {
+            left: auto;
+            right: 10%;
+          }
+        }
+      }
+
+      &.open {
+        .member-function-box-btn {
+          .person-icon {
+            display: none;
+          }
+
+          .close-icon {
+            display: block;
+          }
+        }
+        .member-function-box-dropdown-menu {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0px);
+        }
+      }
+    }
   }
 
   // 首頁選單
@@ -238,7 +331,6 @@
 
           &.open-secondMenu {
             .second-menu {
-              // max-height: 1000px;
               grid-template-rows: 1fr;
             }
 
@@ -264,7 +356,7 @@
     // 第二層menu
     .second-menu {
       width: 100%;
-      background-color: #e4e4e1;
+      background-color: $header-second-menu-bg;
       // max-height: 0;
       display: grid;
       grid-template-rows: 0fr;

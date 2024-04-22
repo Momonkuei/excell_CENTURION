@@ -50,6 +50,13 @@ $(function () {
 			}
 		});
 
+		// 會員選單
+		if ($('.member-function-box').length) {
+			$('.member-function-box-btn').click(function () {
+				$('.member-function-box').toggleClass('open');
+			});
+		}
+
 		// 滾動
 
 		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
