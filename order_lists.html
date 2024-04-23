@@ -54,6 +54,12 @@
     href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
   >
 
+  <!-- datatables -->
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/datatables/datatables.min.css"
+  >
+
 
   <!-- Swiper css -->
   <link
@@ -338,81 +344,117 @@
 
   <div class="body-content mt-3">
 
-    <section class="sectionblock-login">
+    <section class="sectionblock-account">
+
       <div class="container">
-        <div class="login-box">
 
-          <form
-            action=""
-            class="reset-password-form cart-form fz-14"
-          >
-            <div class="h4 text-center mb-3">
-              更改密碼
-            </div>
-            <p class="fz-12">*為必填欄位</p>
+        <div class="page-order_lists">
+          <div class="sectionblock-account-header mb-5">
 
-            <div class="form-group mb-3">
-              <input
-                id="old_password"
-                type="password"
-                name="old_password"
-                placeholder="請輸入舊密碼*"
-                class="form-input"
-              >
-              <label
-                for="old_password"
-                class="form-label"
-              >舊密碼*</label>
+            <div class="h4 fw-normal">
+              訂單列表
             </div>
 
-            <div class="form-group mb-3">
-              <input
-                id="new_password"
-                type="password"
-                name="new_password"
-                placeholder="設定新密碼*"
-                class="form-input"
-              >
-              <label
-                for="new_password"
-                class="form-label"
-              >新密碼*</label>
+            <div class="description">
             </div>
+          </div>
 
-            <div class="form-group mb-3">
-              <input
-                id="new_password_check"
-                type="password"
-                name="new_password_check"
-                placeholder="確認新密碼*"
-                class="form-input"
-              >
-              <label
-                for="new_password_check"
-                class="form-label"
-              >確認新密碼*</label>
+          <div class="sectionblock-account-content">
+            <div class="row">
+              <div class="col-lg-12 mb-5">
+                <div class="order-table-box">
+                  <div class="member-title heading mb-4">
+                    訂單資訊
+                  </div>
+                  <div class="table-responsive">
+                    <table
+                      class="table order-table fz-14"
+                      id="account_table"
+                    >
+                      <thead>
+                        <tr>
+                          <th>訂單編號</th>
+                          <th>日期</th>
+                          <th>付款方式</th>
+                          <th>訂單狀態</th>
+                          <th>配送查詢</th>
+                          <th class="text-end">合計</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a href="javascript:void(0);">20240409050316524</a>
+                          </td>
+                          <td>
+                            <div>2024/4/15</div>
+                          </td>
+
+                          <td>
+                            <div>已付款</div>
+                          </td>
+
+                          <td>
+                            <div>已完成</div>
+                          </td>
+
+                          <td>
+                            <a
+                              href="javascript:void(0);"
+                              target="_blank"
+                            >查詢</a>
+                          </td>
+
+                          <td class="text-end">
+                            $18,300
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <a href="javascript:void(0);">20240409050316524</a>
+                          </td>
+                          <td>
+                            <div>2024/4/15</div>
+                          </td>
+
+                          <td>
+                            <div>已付款</div>
+                          </td>
+
+                          <td>
+                            <div>已完成</div>
+                          </td>
+
+                          <td>
+                            <a
+                              href="javascript:void(0);"
+                              target="_blank"
+                            >查詢</a>
+                          </td>
+
+                          <td class="text-end">
+                            $18,300
+                          </td>
+                        </tr>
+
+                      </tbody>
+
+                    </table>
+                  </div>
+
+                </div>
+              </div>
+
+
+
             </div>
-
-            <button class="btn-style01 btn-full mb-3">
-              送出
-            </button>
-
-            <div class="login-form-footer text-center">
-              <span>返回</span>
-              <a
-                href="javascript:void(0);"
-                class="return-login-btn"
-              >會員中心</a>
-            </div>
-
-          </form>
+          </div>
         </div>
 
-
-
       </div>
-    </section>
 
+    </section>
   </div>
 
   <!-- 頁尾 -->
@@ -545,6 +587,7 @@
     </div>
   </footer>
 
+  </div>
 
   <a
     href="javascript:void(0);"
@@ -565,16 +608,11 @@
     src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
   ></script>
 
-  <!-- slick -->
-  <script
-    type="text/javascript"
-    src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
-  ></script>
 
-  <!-- swiper -->
+  <!-- datatables -->
   <script
     type="text/javascript"
-    src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
+    src="/template/node_modules/datatables/datatables.min.js"
   ></script>
 
   <!-- 自定義JS -->

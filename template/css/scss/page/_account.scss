@@ -2,46 +2,102 @@
   max-width: 1000px;
   margin: 35px auto;
 }
-.sectionblock-account {
-  .order-table {
+
+.member-modification-form {
+  .form-input {
+    -webkit-appearance: none;
+    display: block;
+    padding: 0.75rem 0.875rem;
+    border-radius: 0;
+    border: 1px solid $gray-border;
     width: 100%;
-    white-space: nowrap;
+    line-height: normal;
+    resize: none;
+    transition: border-color 0.1s ease-in-out;
+    background: transparent;
+  }
 
-    th,
-    td {
-      border-bottom: 1px solid #cccccc;
+  .form-select {
+    display: block;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid $gray-border;
+    width: 100%;
+    line-height: normal;
+    transition: border-color 0.1s ease-in-out;
+  }
+
+  .radio-box {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.75rem 0.875rem;
+
+    .male-radio {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    th {
-      padding-bottom: 0.625rem;
-      text-align: left;
-    }
+    .form-radio {
+      position: relative;
 
-    td {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      cursor: pointer;
 
-      @media (min-width: $viewL) {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+      &:before {
+        transform: scale(0, 0);
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: $primary;
+        border-radius: 50%;
+        transform: scale(0, 0), translate(-50%, -50%);
       }
-    }
-  }
 
-  // member-address
-  .member-address-box {
-    &-content {
-    }
-  }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1.3rem;
+        height: 1.3rem;
+        background: #fff;
+        border: 2px solid #f2f2f2;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-  // member-personal
-  .member-personal-box {
-    &-content {
-      .info-box {
-        &:not(:last-child) {
-          margin-bottom: 0.5rem;
+      &:checked {
+        &::before {
+          transform: scale(1, 1) translate(-50%, -50%);
         }
       }
+    }
+  }
+}
+
+.member-personal-box {
+  &-content {
+    margin: 0 2rem;
+
+    @media (max-width: $viewM) {
+      margin: 0 1rem;
+    }
+
+    @media (max-width: $viewMobile) {
+      margin: 0 0.5rem;
+    }
+  }
+
+  &-btn-groups {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    .btn {
+      min-width: 9.375rem;
     }
   }
 }

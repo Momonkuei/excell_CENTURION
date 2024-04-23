@@ -344,7 +344,7 @@
         <div class="member-application-box">
           <form
             action=""
-            class="member-application-form  fz-14"
+            class="member-form  fz-14"
           >
             <div class="h4 text-center mb-3">
               會員註冊
@@ -369,28 +369,74 @@
               </div>
 
               <div class="col-lg-6">
+                <div class="form-group telephone-form-group mb-3">
+                  <label
+                    for="member_telephone"
+                    class="form-label"
+                  >電話</label>
+
+                  <div class="row align-items-center">
+                    <div class="col-3">
+                      <input
+                        id="member_telephone_areaCode"
+                        type="tel"
+                        name="member_telephone_areaCode"
+                        placeholder="區碼"
+                        minlength="2"
+                        maxlength="3"
+                        class="form-input"
+                      >
+
+                    </div>
+
+                    <div class="col-1 dash-box">
+                      <span class="dash"></span>
+                    </div>
+
+                    <div class="col-8">
+                      <input
+                        id="member_telephone"
+                        type="tel"
+                        name="member_telephone"
+                        placeholder="連絡電話"
+                        class="form-input"
+                      >
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-lg-6">
                 <div class="form-group mb-3">
                   <label
                     for="member_phone"
                     class="form-label"
-                  >電話*</label>
+                  >手機*</label>
                   <input
                     id="member_phone"
                     type="tel"
                     name="member_phone"
-                    placeholder="連絡電話"
+                    placeholder="手機"
                     class="form-input"
                     required
                   >
                 </div>
               </div>
 
+            </div>
+
+            <div class="row">
+
+
               <div class="col-lg-12">
                 <div class="form-group mb-3">
                   <label
                     for="member_email"
                     class="form-label"
-                  >信箱*</label>
+                  >電子郵件*</label>
                   <input
                     id="member_email"
                     type="email"
@@ -438,14 +484,11 @@
 
               <div class="col-lg-6">
                 <div class="form-group mb-3">
-                  <label
-                    for="member_gender"
-                    class="form-label"
-                  >性別*</label>
+                  <label class="form-label">性別*</label>
                   <div class="radio-box">
 
                     <label
-                      for="male"
+                      for="member_male"
                       class="male-radio"
                     >
                       <input
@@ -459,7 +502,7 @@
                     </label>
 
                     <label
-                      for="female"
+                      for="member_female"
                       class="male-radio"
                     >
                       <input
@@ -491,7 +534,6 @@
                   >
                 </div>
               </div>
-
             </div>
 
             <div class="row twzipcode-member mb-3">
@@ -506,7 +548,7 @@
                   >
 
                     <label
-                      for="transport_postal_code"
+                      for=""
                       class="form-label"
                     >郵遞區號</label>
                   </div>
@@ -570,24 +612,22 @@
             </div>
 
             <button class="btn-style01 btn-full mb-3">
-              註冊
+              會員註冊
             </button>
 
             <div class="login-form-footer text-center">
-              <span>請仔細閱讀並同意<a href="javascript:void(0);">服務條款</a>，然後點擊「會員申請」。</span>
+              <span>請仔細閱讀並同意<a href="javascript:void(0);">服務條款</a>，然後點擊「會員註冊」。</span>
 
             </div>
 
+          </form>
+
         </div>
-
-
 
         </form>
 
 
       </div>
-
-
 
     </section>
   </div>
@@ -642,23 +682,6 @@
             <div class="col-lg-3 col-6">
               <div class="footer-list fz-14">
                 <div class="footer-title fw-bolder">
-                  客服中心
-                </div>
-                <ul class="linklist">
-                  <li class="linklist-item">
-                    <a href="javascript:void(0);">常見問題</a>
-                  </li>
-                  <li class="linklist-item">
-                    <a href="javascript:void(0);">連絡我們</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-
-            <div class="col-lg-3 col-6">
-              <div class="footer-list fz-14">
-                <div class="footer-title fw-bolder">
                   關於
                 </div>
                 <ul class="linklist">
@@ -669,6 +692,20 @@
                     <a href="javascript:void(0);">最新消息</a>
                   </li>
                 </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+              <div class="footer-list fz-14">
+                <div class="footer-title fw-bolder">
+                  產品
+                </div>
+                <ul class="linklist">
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">產品列表</a>
+                  </li>
+                </ul>
+
               </div>
             </div>
 
@@ -692,16 +729,22 @@
             <div class="col-lg-3 col-6">
               <div class="footer-list fz-14">
                 <div class="footer-title fw-bolder">
-                  產品
+                  客服中心
                 </div>
                 <ul class="linklist">
                   <li class="linklist-item">
-                    <a href="javascript:void(0);">產品列表</a>
+                    <a href="javascript:void(0);">常見問題</a>
+                  </li>
+                  <li class="linklist-item">
+                    <a href="javascript:void(0);">連絡我們</a>
                   </li>
                 </ul>
-
               </div>
             </div>
+
+
+
+
 
 
           </div>

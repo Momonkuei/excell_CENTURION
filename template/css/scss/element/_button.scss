@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+.mb-btn-full {
+  @media (max-width: $viewMobile) {
+    width: 100%;
+  }
+}
+
 .cart-chcekout-btn {
   margin-left: auto;
   text-decoration: none;

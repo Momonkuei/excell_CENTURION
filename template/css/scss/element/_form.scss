@@ -53,3 +53,193 @@
     }
   }
 }
+
+// 會員表單
+.member-form {
+  .form-input {
+    -webkit-appearance: none;
+    display: block;
+    padding: 0.75rem 0.875rem;
+    border-radius: 0;
+    border: 1px solid $gray-border;
+    width: 100%;
+    line-height: normal;
+    resize: none;
+    transition: border-color 0.1s ease-in-out;
+    background: transparent;
+  }
+
+  // 市話
+  .telephone-form-group {
+    .dash-box {
+      position: relative;
+
+      .dash {
+        height: 1px;
+        display: inline-block;
+        width: 100%;
+        background: #606060;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1rem;
+      }
+    }
+  }
+
+  .form-select {
+    display: block;
+    padding: 0.75rem 0.875rem;
+    border: 1px solid $gray-border;
+    width: 100%;
+    line-height: normal;
+    transition: border-color 0.1s ease-in-out;
+  }
+
+  // 文字簡述
+  .form-txt-box {
+    display: flex;
+    padding: 0.75rem 0.875rem;
+    border-radius: 0;
+    width: 100%;
+    line-height: normal;
+    resize: none;
+    transition: border-color 0.1s ease-in-out;
+    background: transparent;
+  }
+
+  // toggle-switch
+  .toggle-switch-box {
+    position: relative;
+    input[type="checkbox"] {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+
+    label {
+      cursor: pointer;
+      width: 4.5rem;
+      height: 2rem;
+      background: $toggle-switch-bg;
+      display: block;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 2.1rem;
+        height: 1.8rem;
+        background: #fff;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:active::after {
+        width: 0.7rem;
+      }
+    }
+
+    .switch-txt {
+      height: 100%;
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-around;
+      align-items: center;
+
+      &::before,
+      &::after {
+        display: block;
+        color: $white;
+        font-weight: bold;
+        box-sizing: border-box;
+      }
+
+      &::before {
+        content: attr(turnOn);
+        color: #fff;
+      }
+
+      &::after {
+        content: attr(turnOff);
+        color: #ccc;
+      }
+    }
+
+    input {
+      &:checked + label {
+        background: $primary;
+      }
+
+      &:checked + label::after {
+        left: calc(100% - 1px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  // 郵遞區號
+  input[name="zipcode"] {
+    color: $zipcode-txt-color;
+    background-color: $zipcode-bg;
+    pointer-events: none;
+  }
+
+  .radio-box {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.75rem 0.875rem;
+
+    .male-radio {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-radio {
+      position: relative;
+
+      cursor: pointer;
+
+      &:before {
+        transform: scale(0, 0);
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1;
+        width: 0.75rem;
+        height: 0.75rem;
+        background: $primary;
+        border-radius: 50%;
+        transform: scale(0, 0), translate(-50%, -50%);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1.3rem;
+        height: 1.3rem;
+        background: #fff;
+        border: 2px solid #f2f2f2;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:checked {
+        &::before {
+          transform: scale(1, 1) translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

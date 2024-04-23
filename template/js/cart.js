@@ -29,14 +29,13 @@ $(function () {
 	const addtwzipcode = function (num) {
 		$(`.twzipcode${num} input[name="zipcode"]`)
 			.addClass('form-input')
-			.attr('required', true)
 			.prop('required', true)
+			.prop('readonly', true)
 			.attr('placeholder', '郵遞區號');
 		$(
 			`.twzipcode${num} select[name="county"],.twzipcode${num} select[name="district"]`
 		)
 			.addClass('form-select')
-			.attr('required', true)
 			.prop('required', true);
 	};
 

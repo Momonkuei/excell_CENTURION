@@ -336,84 +336,219 @@
   <div class="header-fullMenu-mask"></div>
 
 
+
   <div class="body-content mt-3">
 
-    <section class="sectionblock-login">
+    <section class="sectionblock-member-modification">
       <div class="container">
-        <div class="login-box">
 
+
+        <div class="member-modification-box">
           <form
             action=""
-            class="reset-password-form cart-form fz-14"
+            class="member-application-form  fz-14"
           >
             <div class="h4 text-center mb-3">
-              更改密碼
+              會員資料修改
             </div>
-            <p class="fz-12">*為必填欄位</p>
+            <div class="row">
 
-            <div class="form-group mb-3">
-              <input
-                id="old_password"
-                type="password"
-                name="old_password"
-                placeholder="請輸入舊密碼*"
-                class="form-input"
-              >
-              <label
-                for="old_password"
-                class="form-label"
-              >舊密碼*</label>
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_name"
+                    class="form-label"
+                  >姓名*</label>
+                  <input
+                    id="member_name"
+                    type="text"
+                    name="member_name"
+                    placeholder="姓名"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_phone"
+                    class="form-label"
+                  >電話*</label>
+                  <input
+                    id="member_phone"
+                    type="tel"
+                    name="member_phone"
+                    placeholder="連絡電話"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_email"
+                    class="form-label"
+                  >信箱*</label>
+                  <input
+                    id="member_email"
+                    type="email"
+                    name="member_email"
+                    placeholder="電子郵件"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_gender"
+                    class="form-label"
+                  >性別*</label>
+                  <div class="radio-box">
+
+                    <label
+                      for="male"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="member_male"
+                        name="member_gender"
+                        value="male"
+                        class="form-radio"
+                      >
+                      男性
+                    </label>
+
+                    <label
+                      for="female"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="member_female"
+                        name="member_gender"
+                        value="female"
+                        class="form-radio"
+                      >
+                      女性
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_birthday"
+                    class="form-label"
+                  >生日*</label>
+                  <input
+                    id="member_birthday"
+                    type="date"
+                    name="member_birthday"
+                    placeholder="birthday"
+                    class="form-input"
+                  >
+                </div>
+              </div>
+
             </div>
 
-            <div class="form-group mb-3">
-              <input
-                id="new_password"
-                type="password"
-                name="new_password"
-                placeholder="設定新密碼*"
-                class="form-input"
-              >
-              <label
-                for="new_password"
-                class="form-label"
-              >新密碼*</label>
-            </div>
+            <div class="row twzipcode-member mb-3">
+              <div class="col-lg-4">
+                <div class="form-group mb-3">
+                  <div
+                    data-role="zipcode"
+                    data-style="form-control"
+                    data-name="zipcode"
+                    data-value="郵遞區號"
+                    class="form-group "
+                  >
 
-            <div class="form-group mb-3">
-              <input
-                id="new_password_check"
-                type="password"
-                name="new_password_check"
-                placeholder="確認新密碼*"
-                class="form-input"
-              >
-              <label
-                for="new_password_check"
-                class="form-label"
-              >確認新密碼*</label>
+                    <label
+                      for="transport_postal_code"
+                      class="form-label"
+                    >郵遞區號</label>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+
+                <div class="form-group ">
+                  <label
+                    for="county"
+                    class="form-label"
+                  >縣市*</label>
+
+                  <div
+                    data-role="county"
+                    data-style="form-control"
+                    data-name="county"
+                    data-value="請選擇縣市"
+                  ></div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-4">
+
+                <div class="form-group">
+                  <label
+                    for="district"
+                    class="form-label"
+                  >鄉鎮市區*</label>
+                  <div
+                    data-role="district"
+                    data-style="form-control"
+                    data-name="district"
+                    data-value="請選擇鄉鎮區"
+                  ></div>
+                </div>
+
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label
+                    for="member_address_detail"
+                    class="form-label"
+                  >地址*</label>
+                  <input
+                    id="member_address_detail"
+                    type="text"
+                    name="name"
+                    placeholder="請輸入地址*"
+                    class="form-input"
+                    required
+                  >
+                </div>
+              </div>
+
+
             </div>
 
             <button class="btn-style01 btn-full mb-3">
-              送出
+              確認修改
             </button>
-
-            <div class="login-form-footer text-center">
-              <span>返回</span>
-              <a
-                href="javascript:void(0);"
-                class="return-login-btn"
-              >會員中心</a>
-            </div>
-
           </form>
         </div>
 
-
-
       </div>
-    </section>
 
+    </section>
   </div>
+
 
   <!-- 頁尾 -->
   <footer class="footerStyle01">
@@ -547,7 +682,7 @@
 
 
   <a
-    href="javascript:void(0);"
+    href="#"
     class="goTop"
   >
     <i class="bi bi-chevron-up"></i>
@@ -575,6 +710,12 @@
   <script
     type="text/javascript"
     src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
+  ></script>
+
+  <!-- TWzipcode -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/TWzipcode/jquery.twzipcode.min.js"
   ></script>
 
   <!-- 自定義JS -->

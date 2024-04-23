@@ -32,6 +32,13 @@
       }
     }
 
+    // 郵遞區號
+    input[name="zipcode"] {
+      color: $zipcode-txt-color;
+      background-color: $zipcode-bg;
+      pointer-events: none;
+    }
+
     // 個人發票
     // 手機條碼
 

@@ -371,6 +371,17 @@
 
       .navMenu-second {
         padding-left: 0;
+
+        li {
+          a {
+            span {
+              font-size: 1.125rem;
+              font-weight: 500;
+              line-height: 1.2;
+              color: $header-second-menu-txt-color;
+            }
+          }
+        }
       }
     }
   }

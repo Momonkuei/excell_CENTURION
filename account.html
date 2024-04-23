@@ -44,27 +44,10 @@
     href="/template/css/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
   >
 
-  <!-- slick css -->
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/slick-1.8.1/slick/slick.css"
-  >
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
-  >
-
   <!-- datatables -->
   <link
     rel="stylesheet"
     href="/template/node_modules/datatables/datatables.min.css"
-  >
-
-
-  <!-- Swiper css -->
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.css"
   >
 
   <!-- 客製css -->
@@ -350,190 +333,449 @@
 
         <div class="page-account">
           <div class="sectionblock-account-header mb-5">
-            <a
-              href="javascript:void(0);"
-              class="mb-3 d-block fz-14 text-decoration-none"
-            >登出</a>
 
             <div class="h4 fw-normal">
               會員中心
             </div>
 
             <div class="description">
-              <span>使用者</span>，歡迎您。
             </div>
+          </div>
+
+          <div class="account-btn-groups mb-5">
+            <a
+              href="javascript:void(0);"
+              class="btn-style02   btn"
+            >
+              訂單查詢
+            </a>
+
+            <a
+              href="javascript:void(0);"
+              class="btn-style02  btn"
+            >
+              登出
+            </a>
           </div>
 
           <div class="sectionblock-account-content">
             <div class="row">
+              <!-- 會員資料 -->
               <div class="col-lg-12 mb-5">
-                <div class="order-table-box">
+                <div class="member-box">
                   <div class="member-title heading mb-4">
-                    訂單資訊
+                    會員資料
                   </div>
-                  <div class="table-responsive">
-                    <table
-                      class="table order-table fz-14"
-                      id="account_table"
+
+                  <div class="member-modification-box">
+                    <form
+                      action=""
+                      class="member-form  fz-14"
                     >
-                      <thead>
-                        <tr>
-                          <th>訂單編號</th>
-                          <th>日期</th>
-                          <th>付款方式</th>
-                          <th>訂單狀態</th>
-                          <th>配送查詢</th>
-                          <th class="text-end">合計</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <a href="javascript:void(0);">20240409050316524</a>
-                          </td>
-                          <td>
-                            <div>2024/4/15</div>
-                          </td>
+                      <div class="row">
 
-                          <td>
-                            <div>已付款</div>
-                          </td>
+                        <div class="col-lg-6">
+                          <div class="form-group ">
+                            <label
+                              for="member_account_num"
+                              class="form-label"
+                            >帳號</label>
 
-                          <td>
-                            <div>已完成</div>
-                          </td>
+                            <div class="form-txt-box">
+                              <span>00001</span>
+                            </div>
+                          </div>
+                        </div>
 
-                          <td>
-                            <a
-                              href="javascript:void(0);"
-                              target="_blank"
-                            >查詢</a>
-                          </td>
 
-                          <td class="text-end">
-                            $18,300
-                          </td>
-                        </tr>
+                        <div class="col-lg-6">
+                          <div class="form-group mb-3">
+                            <label
+                              for="member_name"
+                              class="form-label"
+                            >姓名</label>
+                            <input
+                              id="member_name"
+                              type="text"
+                              name="member_name"
+                              placeholder="姓名"
+                              class="form-input"
+                              value="陳小明"
+                              required
+                            >
+                          </div>
+                        </div>
 
-                        <tr>
-                          <td>
-                            <a href="javascript:void(0);">20240409050316524</a>
-                          </td>
-                          <td>
-                            <div>2024/4/15</div>
-                          </td>
+                        <div class="col-lg-6">
+                          <div class="form-group mb-3">
+                            <label class="form-label">性別</label>
+                            <div class="radio-box">
 
-                          <td>
-                            <div>已付款</div>
-                          </td>
+                              <label
+                                for="member_male"
+                                class="male-radio"
+                              >
+                                <input
+                                  type="radio"
+                                  id="member_male"
+                                  name="member_gender"
+                                  value="male"
+                                  class="form-radio"
+                                  checked
+                                >
+                                男性
+                              </label>
 
-                          <td>
-                            <div>已完成</div>
-                          </td>
+                              <label
+                                for="member_female"
+                                class="male-radio"
+                              >
+                                <input
+                                  type="radio"
+                                  id="member_female"
+                                  name="member_gender"
+                                  value="female"
+                                  class="form-radio"
+                                >
+                                女性
+                              </label>
+                            </div>
 
-                          <td>
-                            <a
-                              href="javascript:void(0);"
-                              target="_blank"
-                            >查詢</a>
-                          </td>
+                          </div>
+                        </div>
 
-                          <td class="text-end">
-                            $18,300
-                          </td>
-                        </tr>
+                        <div class="col-lg-6">
+                          <div class="form-group ">
+                            <label
+                              for="member_level"
+                              class="form-label"
+                            >會員級別</label>
+                            <div class="form-txt-box">
+                              <span>一般會員</span>
+                            </div>
 
-                      </tbody>
+                          </div>
+                        </div>
 
-                    </table>
+                        <div class="col-lg-6">
+                          <div class="form-group mb-3">
+                            <label
+                              for="member_birthday"
+                              class="form-label"
+                            >生日</label>
+                            <div class="form-txt-box">
+                              <span>1999-00-00</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <div class="form-group telephone-form-group mb-3">
+                            <label
+                              for="member_telephone"
+                              class="form-label"
+                            >電話</label>
+
+                            <div class="row align-items-center">
+                              <div class="col-3">
+                                <input
+                                  id="member_telephone_areaCode"
+                                  type="tel"
+                                  name="member_telephone_areaCode"
+                                  placeholder="區碼"
+                                  minlength="2"
+                                  maxlength="3"
+                                  class="form-input"
+                                >
+
+                              </div>
+
+                              <div class="col-1 dash-box">
+                                <span class="dash"></span>
+                              </div>
+
+                              <div class="col-8">
+                                <input
+                                  id="member_telephone"
+                                  type="tel"
+                                  name="member_telephone"
+                                  placeholder="連絡電話"
+                                  class="form-input"
+                                >
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-6">
+                          <div class="form-group mb-3">
+                            <label
+                              for="member_phone"
+                              class="form-label"
+                            >手機</label>
+                            <input
+                              id="member_phone"
+                              type="tel"
+                              name="member_phone"
+                              placeholder="行動電話"
+                              class="form-input"
+                              value="0915243003"
+                              required
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 ">
+                          <div class="form-group mb-3">
+                            <label
+                              for="member_email"
+                              class="form-label"
+                            >電子郵件</label>
+                            <input
+                              id="member_email"
+                              type="email"
+                              name="member_email"
+                              placeholder="電子郵件"
+                              class="form-input"
+                              value="cjowjojeo@gmail.com"
+                              required
+                            >
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="row twzipcode-member-account mb-3">
+                        <div class="col-lg-4">
+                          <div class="form-group ">
+                            <div
+                              data-role="zipcode"
+                              data-style="form-control"
+                              data-name="zipcode"
+                              data-value="郵遞區號"
+                              class="form-group "
+                            >
+
+                              <label
+                                for="member_postal_code"
+                                class="form-label"
+                              >郵遞區號</label>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+
+                          <div class="form-group ">
+                            <label
+                              for="county"
+                              class="form-label"
+                            >縣市</label>
+
+                            <div
+                              data-role="county"
+                              data-style="form-control"
+                              data-name="county"
+                              data-value="請選擇縣市"
+                            ></div>
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                          <div class="form-group">
+                            <label
+                              for="district"
+                              class="form-label"
+                            >鄉鎮市區</label>
+                            <div
+                              data-role="district"
+                              data-style="form-control"
+                              data-name="district"
+                              data-value="請選擇鄉鎮區"
+                            ></div>
+                          </div>
+
+                        </div>
+
+                        <div class="col-lg-12 mt-3">
+                          <div class="form-group">
+                            <label
+                              for="member_address_detail"
+                              class="form-label"
+                            >地址</label>
+                            <input
+                              id="member_address_detail"
+                              type="text"
+                              name="name"
+                              placeholder="請輸入地址*"
+                              class="form-input"
+                              value="中山路1438號"
+                              required
+                            >
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-6 mb-3">
+                          <div class="form-group">
+                            <label
+                              for=""
+                              class="form-label"
+                            >Google</label>
+                            <div class="form-txt-box align-items-center justify-content-around">
+                              <span>未綁定</span>
+
+                              <div class="toggle-switch-box">
+                                <input
+                                  type="checkbox"
+                                  id="google_account"
+                                />
+                                <label for="google_account">
+                                  <span
+                                    class="switch-txt"
+                                    turnOn="On"
+                                    turnOff="Off"
+                                  ></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6 mb-3">
+                          <div class="form-group">
+                            <label
+                              for=""
+                              class="form-label"
+                            >Line</label>
+                            <div class="form-txt-box align-items-center justify-content-around">
+                              <span>未綁定</span>
+
+                              <div class="toggle-switch-box">
+                                <input
+                                  type="checkbox"
+                                  id="line_account"
+                                />
+                                <label for="line_account">
+                                  <span
+                                    class="switch-txt"
+                                    turnOn="On"
+                                    turnOff="Off"
+                                  ></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-12">
+                        <div class="account-btn-group text-center">
+                          <button class="btn-style01 text-center mb-btn-full">
+                            確認修改
+                          </button>
+                        </div>
+
+                      </div>
+                    </form>
+
                   </div>
+
 
                 </div>
               </div>
 
-
-              <div class="col-12 mb-3">
-                <div class="member-personal-box">
+              <!-- 修改密碼 -->
+              <div class="col-lg-12">
+                <div class="reset-password-box">
                   <div class="member-title heading mb-4">
-                    個人資訊
+                    更改密碼
                   </div>
-                  <div class="member-personal-box-content fz-14">
+
+                  <form
+                    action=""
+                    class="member-form fz-14"
+                  >
+                    <p class="fz-12">*為必填欄位</p>
 
                     <div class="row">
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          姓名
-                        </div>
-                        <div class="info-box-txt">
-                          陳小明
-                        </div>
-                      </div>
-
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          電話
-                        </div>
-                        <div class="info-box-txt">
-                          0915243003
+                      <div class="col-lg-7 mb-3">
+                        <div class="form-group ">
+                          <label
+                            for="old_password"
+                            class="form-label"
+                          >舊密碼*</label>
+                          <input
+                            id="old_password"
+                            type="password"
+                            name="old_password"
+                            placeholder="請輸入舊密碼*"
+                            class="form-input"
+                          >
                         </div>
                       </div>
 
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          信箱
-                        </div>
-                        <div class="info-box-txt">
-                          XXXX@icloud.com
-                        </div>
-                      </div>
-
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          性別
-                        </div>
-                        <div class="info-box-txt">
-                          男性
+                      <div class="col-lg-7 mb-3">
+                        <div class="form-group ">
+                          <label
+                            for="new_password"
+                            class="form-label"
+                          >新密碼*</label>
+                          <input
+                            id="new_password"
+                            type="password"
+                            name="new_password"
+                            placeholder="設定新密碼*"
+                            class="form-input"
+                          >
                         </div>
                       </div>
 
-                      <div class="info-box col-lg-4 col-6">
-                        <div class="info-box-head heading">
-                          生日
-                        </div>
-                        <div class="info-box-txt">
-                          1999-09-18
+                      <div class="col-lg-7 mb-3">
+                        <div class="form-group ">
+                          <label
+                            for="new_password_check"
+                            class="form-label"
+                          >確認新密碼*</label>
+                          <input
+                            id="new_password_check"
+                            type="password"
+                            name="new_password_check"
+                            placeholder="確認新密碼*"
+                            class="form-input"
+                          >
                         </div>
                       </div>
 
-                      <div class="info-box col-lg-4">
-                        <div class="info-box-head heading">
-                          地址
-                        </div>
-                        <div class="info-box-txt">
-                          台中市神岡區中山路1438號
+                      <div class="col-lg-12">
+                        <div class="account-btn-group ">
+                          <button class="btn-style01 text-center mb-btn-full">
+                            變更密碼
+                          </button>
                         </div>
                       </div>
                     </div>
 
-                  </div>
 
-                  <div class="member-personal-box-btn-groups mt-5">
-                    <a
-                      href="javascript:void(0);"
-                      class="btn-style02   btn"
-                    >
-                      修改會員資料
-                    </a>
 
-                    <a
-                      href="javascript:void(0);"
-                      class="btn-style02  btn"
-                    >
-                      修改密碼
-                    </a>
-                  </div>
+
+
+                  </form>
                 </div>
               </div>
+
+
+
             </div>
           </div>
         </div>
@@ -694,11 +936,6 @@
     src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
   ></script>
 
-  <!-- slick -->
-  <script
-    type="text/javascript"
-    src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
-  ></script>
 
   <!-- datatables -->
   <script
@@ -706,10 +943,11 @@
     src="/template/node_modules/datatables/datatables.min.js"
   ></script>
 
-  <!-- swiper -->
+
+  <!-- TWzipcode -->
   <script
     type="text/javascript"
-    src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.js"
+    src="/template/node_modules/TWzipcode/jquery.twzipcode.min.js"
   ></script>
 
   <!-- 自定義JS -->
