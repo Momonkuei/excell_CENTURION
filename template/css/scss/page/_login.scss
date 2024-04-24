@@ -8,10 +8,21 @@
     margin: 0 auto;
   }
 
-  .login-form,
-  .forgot-password-form {
+  .login-form {
     width: 100%;
     letter-spacing: 0.2em;
+    .social-account-login-area {
+      .icon {
+        transition: all 0.3s ease-in;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .line {
+        color: rgb(6, 199, 85);
+      }
+    }
 
     .login-form-footer {
       a {

@@ -132,7 +132,7 @@
         background-color: $header-member-dropdown-menu-bg;
         top: 2.1rem;
         left: -2rem;
-        width: 13.75rem;
+        width: 10rem;
         border-radius: 4px;
         display: block;
         box-shadow:
@@ -177,13 +177,8 @@
           }
         }
 
-        @media (max-width: $viewL) {
-          width: 10rem;
-        }
-
-        @media (max-width: $viewM) {
+        @media (max-width: 1440px) {
           left: -8rem;
-          width: 10rem;
 
           &::after {
             left: auto;
@@ -374,10 +369,15 @@
 
         li {
           a {
+            color: $header-second-menu-txt-color;
             span {
               font-size: 1.125rem;
               font-weight: 500;
               line-height: 1.2;
+              color: inherit;
+            }
+
+            &:hover {
               color: $header-second-menu-txt-color;
             }
           }
@@ -528,6 +528,10 @@
   transition: all 0.3s ease-in-out;
   z-index: -1;
 
+  @media (min-width: $viewL) {
+    display: none;
+  }
+
   &-form {
     width: 100%;
   }
@@ -609,6 +613,8 @@
 .open-search {
   overflow: hidden;
   width: 100%;
+  background-color: white;
+
   .headerStyle01 {
     background-color: white;
 
@@ -639,5 +645,14 @@
   .header-fullMenu-mask {
     opacity: 1;
     height: 100vh;
+  }
+}
+
+// 首頁變化
+.index {
+  header {
+    position: absolute;
+    top: 0;
+    background-color: transparent;
   }
 }

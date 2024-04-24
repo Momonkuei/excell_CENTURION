@@ -1,215 +1,96 @@
-@media (min-width: 1400px) {
-  .container-xx-1200 {
-    max-width: 1200px;
+// banner
+
+//產品介紹
+.homepage-product-sectionBlock {
+  margin-top: 0;
+  padding: 6.4vw;
+
+  @media (min-width: $viewS) {
+    padding: 3.125vw;
   }
-}
 
-// 產品
-.product-display-block {
-  margin: 0;
-  padding: 50px 0;
-  position: relative;
-  overflow: hidden;
+  .product-lists {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    gap: 1rem;
 
-  .remind-area {
-    span {
-      color: $mark;
-      font-size: 1.8rem;
-      font-weight: 600;
+    @media (min-width: $viewS) {
+      flex-direction: row;
     }
-  }
 
-  .product-list {
-    .item {
-      margin: 20px 20px 40px 20px;
-      border-radius: 20px;
-      background: $white;
-      box-shadow: 0 0 15px #00509657;
-      transition: all 0.5s ease-in-out;
+    &-item {
+      position: relative;
+      width: 100%;
 
-      .img-box {
-        width: 100%;
-        padding-bottom: 100%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        margin-bottom: 0.5rem;
-        position: relative;
-        overflow: hidden;
-        border-radius: 25px;
-
-        @media (max-width: $viewM) {
-          padding-bottom: 80%;
-        }
-
-        @media (max-width: $viewMobile) {
-          width: 90%;
-          padding-bottom: 100%;
-          margin: 0 auto;
-        }
+      @media (min-width: $viewS) {
+        width: 33.33333%;
       }
-      .text-box {
-        padding: 0.5rem 1.25rem 1.5rem;
 
-        &-title {
-          @include hideLongTexts(2);
-        }
+      &-info {
+        margin-top: 1rem;
+      }
 
-        .price-box {
-          margin-bottom: 1.5rem;
-        }
+      &-link {
+        a {
+          box-shadow: 0 2px 0 -1px currentColor;
+          cursor: pointer;
+          transition: color 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+          text-decoration: none;
 
-        .add-shop-cart {
-          background-color: $black;
-          color: $white;
-          text-align: center;
-          margin-bottom: -2.5rem;
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-          width: 12.5rem;
-          padding: 1rem;
-          border-radius: 25px;
-          font-size: 1rem;
-          transition: all 0.2s ease;
-
-          &:hover {
-            background-color: $mark;
+          &::after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
           }
         }
       }
-
-      &:hover {
-        transform: translateY(-12px);
-      }
-    }
-  }
-
-  .leaf {
-    background-size: contain;
-    position: absolute;
-    background-repeat: no-repeat;
-  }
-}
-
-// 產品一
-.product-display-block-1 {
-  background: url("/template/images/index/bg.png") center center no-repeat;
-  clip-path: polygon(0 0%, 100% 0%, 100% 95%, 50% 100%, 0 95%);
-
-  @media (min-width: 992px) {
-    padding: 3rem 0 9rem;
-    clip-path: polygon(0 0%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
-  }
-
-  .leaf-1 {
-    background-image: url("/template/images/index/leaf1.png");
-    left: -5%;
-    top: -3%;
-    padding-bottom: 45%;
-    width: 36%;
-
-    @media (min-width: 992px) {
-      width: 23%;
-    }
-  }
-
-  .leaf-2 {
-    background-image: url("/template/images/index/leaf2.png");
-    right: -5%;
-    top: 5%;
-    padding-bottom: 18%;
-    width: 26%;
-
-    @media (min-width: 992px) {
-      right: -5%;
-      top: 0;
-      padding-bottom: 14%;
-      width: 22%;
-    }
-  }
-
-  .leaf-3 {
-    background-image: url("/template/images/index/leaf3.png");
-    left: 30%;
-    top: -8%;
-    padding-bottom: 14%;
-    width: 12%;
-  }
-}
-
-// 產品二
-.product-display-block-2 {
-  .leaf-4 {
-    background-image: url("/template/images/index/leaf4.png");
-    left: 0;
-    top: 0;
-    padding-bottom: 39%;
-    width: 25%;
-
-    @media (min-width: 992px) {
-      padding-bottom: 25%;
-      width: 12%;
-      top: -12%;
-    }
-  }
-
-  .leaf-5 {
-    background-image: url("/template/images/index/leaf5.png");
-    right: 0;
-    top: 12%;
-    padding-bottom: 40%;
-    width: 24%;
-
-    @media (min-width: 992px) {
-      padding-bottom: 25%;
-      width: 15%;
     }
   }
 }
 
-// 產品三
-.product-display-block-3 {
-  background: url("/template/images/index/bg2.png") no-repeat top center / cover;
+.sectionBlock-introduction {
   position: relative;
 
-  .leaf-6 {
-    background-image: url("/template/images/index/leaf6.png");
-    left: 22%;
-    top: -3%;
-    padding-bottom: 18%;
-    width: 22%;
+  .bg-img-box {
+    position: relative;
+    padding-bottom: 40rem;
 
-    @media (min-width: 992px) {
-      padding-bottom: 15%;
-      width: 18%;
-      top: -8%;
+    @media (min-width: $viewL) {
+      padding-bottom: 60rem;
+    }
+    .bg-img-pc {
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 
-  .leaf-7 {
-    background-image: url("/template/images/index/leaf7.png");
-    left: -8%;
-    top: -8%;
-    padding-bottom: 26%;
-    width: 47%;
+  .introduction-info {
+    position: absolute;
 
-    @media (min-width: 992px) {
-      padding-bottom: 25%;
-      width: 27%;
-    }
-  }
-
-  .leaf-8 {
-    background-image: url("/template/images/index/leaf8.png");
-    right: -6%;
+    z-index: 1;
+    width: 100%;
     bottom: 0;
-    padding-bottom: 15%;
-    width: 24%;
+    padding-bottom: 3rem;
+    padding-left: 6.4vw;
+    padding-right: 6.4vw;
 
-    @media (min-width: 992px) {
-      padding-bottom: 15%;
-      width: 24%;
+    @media (min-width: 48rem) {
+      padding-left: 3.125vw;
+      padding-right: 3.125vw;
+    }
+
+    @media (min-width: 90rem) {
+      padding-left: 3.3333333333vw;
+      padding-right: 3.3333333333vw;
     }
   }
 }

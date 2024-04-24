@@ -1,12 +1,79 @@
 .bannerBlock {
   position: relative;
+}
 
-  .bannerStyle01 {
-    a {
+.bannerStyle01 {
+  overflow: hidden;
+
+  .index-swiper {
+    // 項目
+    .banner-item {
+      height: 100vh;
       width: 100%;
-      img {
-        width: inherit;
+      overflow: hidden;
+      position: relative;
+
+      // 圖片
+      .pic-box {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        .pic {
+          background-size: cover;
+          background-position: center;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      // 按鈕
+      .banner-item-info {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        bottom: 0;
+        padding-bottom: 3rem;
+        padding-left: 6.4vw;
+        padding-right: 6.4vw;
+
+        @media (min-width: 48rem) {
+          padding-left: 3.125vw;
+          padding-right: 3.125vw;
+        }
+
+        @media (min-width: 90rem) {
+          padding-left: 3.3333333333vw;
+          padding-right: 3.3333333333vw;
+        }
+      }
+
+      // 執行時
+      &.swiper-slide-active {
+        .pic-box {
+          animation-name: bannerZoomOut01;
+          animation-fill-mode: both;
+          animation-duration: 7000ms;
+          animation-delay: 800ms;
+        }
       }
     }
+  }
+}
+
+// banner動畫
+
+@keyframes bannerZoomOut01 {
+  0% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

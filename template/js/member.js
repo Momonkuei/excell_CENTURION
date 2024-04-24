@@ -59,6 +59,30 @@ $(function () {
 			.addClass('form-select')
 			.prop('required', true);
 	}
+
+	// goole綁定
+
+	if ($('.goole-toggle-switch').length) {
+		$('#google_account_switch').on('change', function () {
+			if ($('#google_account_switch').prop('checked')) {
+				console.log('綁定goole');
+			} else {
+				console.log('解除goole綁定');
+			}
+		});
+	}
+
+	// Line綁定
+
+	if ($('.line-toggle-switch').length) {
+		$('#line_account_switch').on('change', function () {
+			if ($('#line_account_switch').prop('checked')) {
+				console.log('綁定line');
+			} else {
+				console.log('解除line綁定');
+			}
+		});
+	}
 });
 
 // 訂單列表

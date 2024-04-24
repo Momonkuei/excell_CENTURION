@@ -87,8 +87,8 @@ $(function () {
 
 // banner
 $(function () {
-	if (typeof Swiper !== 'undefined') {
-		var mySwiper = new Swiper('.swiper', {
+	if ($('.bannerBlock').length) {
+		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
 
 			// 如果需要分页器
@@ -108,6 +108,7 @@ $(function () {
 // gotop
 
 $(function () {
+	$('.goTop').fadeOut('fast');
 	if ($('.goTop').length) {
 		$('.goTop').click(function () {
 			jQuery('html,body').animate(

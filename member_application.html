@@ -226,22 +226,22 @@
                   <ul class="navMenu-second">
                     <li>
                       <a href="javascript:void(0);">
-                        <span class="h5">全部文章</span>
+                        <span class="">全部文章</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <span class="h5">品牌快訊</span>
+                        <span class="">品牌快訊</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <span class="h5">媒體報導</span>
+                        <span class="">媒體報導</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <span class="h5">心得分享</span>
+                        <span class="">心得分享</span>
                       </a>
                     </li>
                   </ul>
@@ -263,12 +263,12 @@
                   <ul class="navMenu-second">
                     <li>
                       <a href="javascript:void(0);">
-                        <span class="h5">產品分類</span>
+                        <span class="">產品分類</span>
                       </a>
                     </li>
                     <li>
                       <a href="javascript:void(0);">
-                        <span class="h5">產品列表</span>
+                        <span class="">產品列表</span>
                       </a>
                     </li>
 
@@ -283,7 +283,7 @@
             </li>
             <li>
               <a href="javascript:void(0);">
-                <span class="h4 txt">會員專區</span>
+                <span class="h4 txt">會員中心</span>
               </a>
             </li>
             <li>
@@ -369,6 +369,58 @@
               </div>
 
               <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label class="form-label">性別*</label>
+                  <div class="radio-box">
+
+                    <label
+                      for="member_male"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="member_male"
+                        name="member_gender"
+                        value="male"
+                        class="form-radio"
+                      >
+                      男性
+                    </label>
+
+                    <label
+                      for="member_female"
+                      class="male-radio"
+                    >
+                      <input
+                        type="radio"
+                        id="member_female"
+                        name="member_gender"
+                        value="female"
+                        class="form-radio"
+                      >
+                      女性
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group mb-3">
+                  <label
+                    for="member_birthday"
+                    class="form-label"
+                  >生日*</label>
+                  <input
+                    id="member_birthday"
+                    type="date"
+                    name="member_birthday"
+                    placeholder="birthday"
+                    class="form-input"
+                  >
+                </div>
+              </div>
+
+              <div class="col-lg-6">
                 <div class="form-group telephone-form-group mb-3">
                   <label
                     for="member_telephone"
@@ -412,13 +464,13 @@
               <div class="col-lg-6">
                 <div class="form-group mb-3">
                   <label
-                    for="member_phone"
+                    for="member_mobilePhone"
                     class="form-label"
                   >手機*</label>
                   <input
-                    id="member_phone"
+                    id="member_mobilePhone"
                     type="tel"
-                    name="member_phone"
+                    name="member_mobilePhone"
                     placeholder="手機"
                     class="form-input"
                     required
@@ -426,12 +478,7 @@
                 </div>
               </div>
 
-            </div>
-
-            <div class="row">
-
-
-              <div class="col-lg-12">
+              <div class="col-lg-6">
                 <div class="form-group mb-3">
                   <label
                     for="member_email"
@@ -447,6 +494,11 @@
                   >
                 </div>
               </div>
+
+            </div>
+
+            <div class="row">
+
 
               <div class="col-lg-6">
                 <div class="form-group mb-3">
@@ -482,58 +534,9 @@
                 </div>
               </div>
 
-              <div class="col-lg-6">
-                <div class="form-group mb-3">
-                  <label class="form-label">性別*</label>
-                  <div class="radio-box">
 
-                    <label
-                      for="member_male"
-                      class="male-radio"
-                    >
-                      <input
-                        type="radio"
-                        id="member_male"
-                        name="member_gender"
-                        value="male"
-                        class="form-radio"
-                      >
-                      男性
-                    </label>
 
-                    <label
-                      for="member_female"
-                      class="male-radio"
-                    >
-                      <input
-                        type="radio"
-                        id="member_female"
-                        name="member_gender"
-                        value="female"
-                        class="form-radio"
-                      >
-                      女性
-                    </label>
-                  </div>
 
-                </div>
-              </div>
-
-              <div class="col-lg-6">
-                <div class="form-group mb-3">
-                  <label
-                    for="member_birthday"
-                    class="form-label"
-                  >生日*</label>
-                  <input
-                    id="member_birthday"
-                    type="date"
-                    name="member_birthday"
-                    placeholder="birthday"
-                    class="form-input"
-                  >
-                </div>
-              </div>
             </div>
 
             <div class="row twzipcode-member mb-3">

@@ -140,6 +140,24 @@
   }
 }
 
+// banner-btn
+.banner-btn {
+  min-width: 15rem;
+  padding: 0.8125rem 2rem;
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  color: $white;
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  border: 1px solid $white;
+  border-radius: 150vw;
+
+  &:hover {
+    color: $white;
+    box-shadow: inset 0 0 0 1px $white;
+  }
+}
+
 // style01
 .btn-style01 {
   text-decoration: none;
