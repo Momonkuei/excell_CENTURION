@@ -4,6 +4,13 @@ document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
 	new bootstrap.Popover(popover);
 });
 
+// AOS
+if (typeof AOS === 'object') {
+	AOS.init({
+		easing: 'ease-in-sine',
+	});
+}
+
 // header
 $(function () {
 	// 取得header 高度
@@ -53,8 +60,16 @@ $(function () {
 		// 會員選單
 		if ($('.member-function-box').length) {
 			$('.member-function-box-btn').click(function () {
+				$('.searchBox').remove('open');
+				removeMbHeaderSearch();
 				$('.member-function-box').toggleClass('open');
 			});
+		}
+
+		// 首頁時，更換白色logo
+		if ($('body').hasClass('index')) {
+			console.log('更換白色logo');
+			$('.centurion_logo').attr('src');
 		}
 
 		// 滾動
@@ -90,7 +105,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-
+			// autoplay: {
+			// 	delay: 5000, //多久切换一次
+			// },
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

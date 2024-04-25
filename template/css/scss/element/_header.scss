@@ -177,7 +177,7 @@
           }
         }
 
-        @media (max-width: 1440px) {
+        @media (max-width: 1500px) {
           left: -8rem;
 
           &::after {
@@ -418,8 +418,8 @@
 
     input {
       border: none;
-      border-bottom: 1px solid #4c5e81;
-      color: #4c5e81;
+      border-bottom: 1px solid $black;
+      color: $black;
       width: calc(100% - 40px);
       height: 25px;
       padding: 0 30px 0 0px;
@@ -472,7 +472,7 @@
           width: 20px;
           height: 1px;
           display: block;
-          background-color: #4c5e81;
+          background-color: $black;
           position: absolute;
           top: calc(50% - 0.5px);
           left: calc(50% - 10px);
@@ -648,11 +648,91 @@
   }
 }
 
-// 首頁變化
+// 首頁header 顏色變化
 .index {
   header {
     position: absolute;
     top: 0;
     background-color: transparent;
+  }
+
+  .headerStyle01 {
+    // 左側選單
+    .menu-list {
+      color: $white;
+      .btn-list {
+        .slide-menu-control {
+          color: $white;
+
+          .line {
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    // 右側選單
+    .user-items {
+      a {
+        color: $white;
+      }
+
+      .member-function-box-dropdown-menu {
+        a {
+          color: $black;
+        }
+      }
+    }
+
+    // 搜尋表單
+    .searchBox {
+      input {
+        border-color: $white;
+        color: $white;
+      }
+
+      .search-btn {
+        color: $white;
+      }
+
+      &.open {
+        .searchToggle {
+          &::after,
+          &::before {
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    // 平板搜尋表單打開時
+  }
+
+  &.open-search {
+    background-color: white;
+
+    .headerStyle01 {
+      // 左側選單
+      .menu-list {
+        color: $black;
+
+        .btn-list {
+          .slide-menu-control {
+            color: $black;
+
+            .line {
+              background-color: $black;
+            }
+          }
+        }
+      }
+
+      // 右側選單
+      .user-items {
+        a {
+          color: $black;
+        }
+      }
+    }
   }
 }

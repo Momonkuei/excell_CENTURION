@@ -60,7 +60,7 @@
     padding-bottom: 40rem;
 
     @media (min-width: $viewL) {
-      padding-bottom: 60rem;
+      padding-bottom: 100vh;
     }
     .bg-img-pc {
       background-size: cover;
@@ -70,6 +70,7 @@
       right: 0;
       bottom: 0;
       left: 0;
+      // background-attachment: fixed;
     }
   }
 
@@ -91,6 +92,28 @@
     @media (min-width: 90rem) {
       padding-left: 3.3333333333vw;
       padding-right: 3.3333333333vw;
+    }
+  }
+
+  .advertising_slogan {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    text-align: center;
+    color: $black;
+    font-weight: 500;
+    font-size: 1.4rem;
+  }
+
+  &-2 {
+    .banner-btn-group {
+      text-align: center;
+
+      @media (min-width: $viewM) {
+        text-align: end;
+      }
     }
   }
 }

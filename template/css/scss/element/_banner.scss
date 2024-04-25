@@ -13,6 +13,14 @@
       overflow: hidden;
       position: relative;
 
+      @media (max-width: $viewM) {
+        height: 70vh;
+      }
+
+      @media (max-width: $viewMobile) {
+        height: 50vh;
+      }
+
       // 圖片
       .pic-box {
         position: absolute;
@@ -20,6 +28,25 @@
         right: 0;
         bottom: 0;
         left: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 3;
+          pointer-events: none;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6) 15%,
+            rgba(0, 0, 0, 0.3) 30%,
+            rgba(0, 0, 0, 0.2) 100%
+          );
+        }
 
         .pic {
           background-size: cover;
@@ -29,6 +56,26 @@
           right: 0;
           bottom: 0;
           left: 0;
+        }
+
+        .pic-pc {
+          @media (max-width: $viewM) {
+            display: none;
+          }
+        }
+
+        .pic-tab {
+          display: none;
+          @media (max-width: $viewM) {
+            display: block;
+          }
+        }
+
+        .pic-mb {
+          display: none;
+          @media (max-width: $viewMobile) {
+            display: block;
+          }
         }
       }
 
@@ -59,7 +106,6 @@
           animation-name: bannerZoomOut01;
           animation-fill-mode: both;
           animation-duration: 7000ms;
-          animation-delay: 800ms;
         }
       }
     }

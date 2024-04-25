@@ -44,14 +44,11 @@
     href="/template/css/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
   >
 
-  <!-- slick css -->
+
+  <!-- aos -->
   <link
     rel="stylesheet"
-    href="/template/node_modules/slick-1.8.1/slick/slick.css"
-  >
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
+    href="/template/node_modules/aos/aos.css"
   >
 
 
@@ -344,10 +341,24 @@
 
           <div class="swiper-slide banner-item">
             <div class="pic-box">
-              <div
-                class="pic"
-                style="background-image: url('/template/images/index/img_index1.jpg');"
-              ></div>
+
+              <picture>
+                <source
+                  srcset="/template/images/index/banner_img_pc_01.jpg"
+                  media="(min-width: 992px)"
+                >
+                <source
+                  srcset="/template/images/index/banner_img_tab_01.jpg"
+                  media="(min-width: 576px)"
+                >
+
+                <img
+                  src="/template/images/index/banner_img_mb_01.jpg"
+                  alt="My default image"
+                  class="pic-box-img"
+                >
+              </picture>
+
             </div>
 
             <div class="banner-item-info">
@@ -365,10 +376,22 @@
 
           <div class="swiper-slide banner-item">
             <div class="pic-box">
-              <div
-                class="pic"
-                style="background-image: url('/template/images/index/img_index2.jpg');"
-              ></div>
+              <picture>
+                <source
+                  srcset="/template/images/index/banner_img_pc_02.jpg"
+                  media="(min-width: 992px)"
+                >
+                <source
+                  srcset="/template/images/index/banner_img_tab_02.jpg"
+                  media="(min-width: 576px)"
+                >
+
+                <img
+                  src="/template/images/index/banner_img_mb_02.jpg"
+                  alt="My default image"
+                  class="pic-box-img"
+                >
+              </picture>
             </div>
 
             <div class="banner-item-info">
@@ -397,12 +420,16 @@
 
   <div class="body-content mt-3">
 
-    <section class="sectionBlock homepage-product-sectionBlock">
+    <section class="sectionBlock homepage-product-sectionBlock mb-0">
       <ul class="product-lists">
-        <li class="product-lists-item">
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+        >
           <div class="itemImg square">
             <img
-              src="https://tw.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/Homepage/2024/2024_april/central/Women_Monogram_Bags_WW_HP_Product_Push_20240419_DI2.jpg?wid=730"
+              class=""
+              src="/template/images/index/homepage-product-01.png"
               alt=""
             >
           </div>
@@ -418,10 +445,14 @@
 
         </li>
 
-        <li class="product-lists-item">
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <div class="itemImg square">
             <img
-              src="https://tw.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/Homepage/2024/2024_april/central/Women_Monogram_Bags_WW_HP_Product_Push_20240419_DI2.jpg?wid=730"
+              src="/template/images/index/homepage-product-02.jpg"
               alt=""
             >
           </div>
@@ -437,10 +468,14 @@
 
         </li>
 
-        <li class="product-lists-item">
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           <div class="itemImg square">
             <img
-              src="https://tw.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/Homepage/2024/2024_april/central/Women_Monogram_Bags_WW_HP_Product_Push_20240419_DI2.jpg?wid=730"
+              src="/template/images/index/homepage-product-03.png"
               alt=""
             >
           </div>
@@ -461,10 +496,10 @@
     </section>
 
     <section class="sectionBlock sectionBlock-introduction my-0">
-      <div class="bg-img-box">
+      <div class="bg-img-box ">
         <div
-          class="bg-img-pc"
-          style="background-image: url('https://tw.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/Homepage/2023/2023_november/LV_Services_WW_HP_Push_DI3.jpg?wid=2400');"
+          class="bg-img-pc "
+          style="background-image: url('/template/images/index/index-introduction-01.jpg');"
         >
 
           <div class="introduction-info">
@@ -480,23 +515,24 @@
       </div>
     </section>
 
-    <section class="sectionBlock sectionBlock-introduction mt-0">
-      <div class="bg-img-box">
+    <section class="sectionBlock sectionBlock-introduction sectionBlock-introduction-2 mt-0">
+      <div class="bg-img-box ">
         <div
           class="bg-img-pc"
-          style="background-image: url('https://tw.louisvuitton.com/images/is/image//content/dam/lv/editorial-content/Homepage/2023/2023_november/LV_Services_WW_HP_Push_DI3.jpg?wid=2400');"
+          style="background-image: url('/template/images/index/index-introduction-02.jpg');"
         >
 
           <div class="introduction-info ">
 
-            <div class="banner-btn-group text-end">
-              <div class="h5">
-                關於CENTURION®
-              </div>
+            <div class="banner-btn-group ">
+
               <a
                 href="javascript:void(0);"
-                class="banner-btn"
-              >瀏覽CENTURION®最新產品</a>
+                class="banner-btn advertising_slogan_pattern"
+              >
+                <span class="advertising_slogan">關於CENTURION®</span>
+                瀏覽CENTURION®最新產品
+              </a>
             </div>
 
           </div>
@@ -662,11 +698,6 @@
     src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
   ></script>
 
-  <!-- slick -->
-  <script
-    type="text/javascript"
-    src="/template/node_modules/slick-1.8.1/slick/slick.min.js"
-  ></script>
 
   <!-- swiper -->
   <script
@@ -674,7 +705,18 @@
     src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.js"
   ></script>
 
+  <!-- lazysizes -->
+  <script
+    src="/template/node_modules/lazysizes/lazysizes.min.js"
+    async=""
+  ></script>
 
+  <!-- aos -->
+
+  <script
+    type="text/javascript"
+    src="/template/node_modules/aos/aos.js"
+  ></script>
 
   <!-- 自定義JS -->
 
