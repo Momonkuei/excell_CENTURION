@@ -6,6 +6,43 @@
     margin-top: 80px;
     margin-bottom: 80px;
   }
+
+  // 副標題
+  .subtitle {
+    position: relative;
+    margin-bottom: 0;
+
+    &::before {
+      left: 15%;
+    }
+
+    &::after {
+      right: 15%;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      background: #aaa;
+      width: 20%;
+      height: 1px;
+    }
+  }
+
+  .social-account-area {
+    a {
+      transition: all 0.3s ease-in;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .line {
+      color: rgb(6, 199, 85);
+    }
+  }
 }
 
 // 個人資訊
