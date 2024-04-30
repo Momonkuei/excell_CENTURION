@@ -30,6 +30,12 @@ $(function () {
 
 // 會員中心
 $(function () {
+	// 點擊修改密碼跳轉欄位
+	if ($('.account-btn-groups').length) {
+		$('.account-btn-groups .change-password-btn').click(function () {
+			$('#old_password').val('').focus();
+		});
+	}
 	if ($('.twzipcode-member-account').length) {
 		$('.twzipcode-member-account').twzipcode({
 			zipcodeIntoDistrict: false, // 郵遞區號自動顯示在區別選單中

@@ -53,6 +53,40 @@ $(function () {
 
 // 產品介紹
 $(function () {
+	const $body = window.opera
+		? document.compatMode == 'CSS1Compat'
+			? $('html')
+			: $('body')
+		: $('html,body');
 	if ($('.product-item-collapsible-lists').length) {
+		$('.product-item-collapsible-btn').click(function (idx) {
+			const $activecollapsible = $(this).parent(
+				'.product-item-collapsible'
+			);
+			if ($activecollapsible.hasClass('active')) {
+				$activecollapsible.removeClass('active');
+			} else {
+				$('.product-item-collapsible').each(function () {
+					$(this).removeClass('active');
+				});
+				$activecollapsible.addClass('active');
+
+				var transitionDuration = $(
+					'.product-item-collapsible-inner'
+				).css('transition-duration');
+
+				const durationInSeconds = parseFloat(transitionDuration) + 0.1;
+
+				setTimeout(function () {
+					const target_top = $activecollapsible.offset().top;
+					$body.animate(
+						{
+							scrollTop: target_top - 50,
+						},
+						300
+					);
+				}, durationInSeconds * 1000);
+			}
+		});
 	}
 });

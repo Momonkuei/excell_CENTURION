@@ -28,9 +28,11 @@ $(function () {
 			removeMbHeaderSearch();
 		});
 
-		// 首頁關閉按鈕
+		// 選單關閉按鈕
 		$('.fullMenu .close-btn, header .fullMenu-mask').click(function () {
-			$('body').removeClass('open-menu');
+			if ($('body').hasClass('open-menu')) {
+				$('body').removeClass('open-menu');
+			}
 		});
 
 		// header 搜尋按鈕
@@ -60,16 +62,49 @@ $(function () {
 		// 會員選單
 		if ($('.member-function-box').length) {
 			$('.member-function-box-btn').click(function () {
-				$('.searchBox').remove('open');
-				removeMbHeaderSearch();
-				$('.member-function-box').toggleClass('open');
+				// 有登入狀態功能視窗
+				if ($(this).hasClass('login')) {
+					console.log('登入狀態');
+					$('.searchBox').remove('open');
+					removeMbHeaderSearch();
+					$('.member-function-box').toggleClass('open');
+				} else {
+					$('body').addClass('open-loginMenu');
+					$('.searchBox').remove('open');
+					removeMbHeaderSearch();
+				}
 			});
 		}
 
+		// 會員選單關閉
+		$('.login-menu .close-btn, header .fullMenu-mask').click(function () {
+			if ($('body').hasClass('open-loginMenu')) {
+				$('body').removeClass('open-loginMenu');
+			}
+		});
+
 		// 首頁時，更換白色logo
 		if ($('body').hasClass('index')) {
-			console.log('更換白色logo');
-			$('.centurion_logo').attr('src');
+			$('.centurion_logo').attr(
+				'src',
+				'/template/images/centurion_logo_white.png'
+			);
+
+			// hover header時更換圖片
+			$('.headerStyle01').hover(
+				function () {
+					$('.centurion_logo').attr(
+						'src',
+						'/template/images/centurion_logo.png'
+					);
+				},
+				function () {
+					$('.centurion_logo').attr(
+						'src',
+						'/template/images/centurion_logo_white.png'
+					);
+				}
+			);
 		}
 
 		// 滾動
@@ -103,11 +138,11 @@ $(function () {
 // banner
 $(function () {
 	if ($('.bannerBlock').length) {
-		var BannerSwiper = new Swiper('.gallery-slider-swiper', {
+		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			autoplay: {
-				delay: 5000, //多久切换一次
-			},
+			// autoplay: {
+			// 	delay: 5000, //多久切换一次
+			// },
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

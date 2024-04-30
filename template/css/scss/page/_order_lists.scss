@@ -1,5 +1,6 @@
 .page-order_lists {
   max-width: 1000px;
+  min-height: 30rem;
   margin: 35px auto;
 }
 
@@ -48,6 +49,7 @@
     th {
       padding-bottom: 0.625rem;
       text-align: left;
+      font-weight: 500;
     }
 
     td {

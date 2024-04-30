@@ -7,6 +7,11 @@
     margin: 0 25px;
     position: relative;
 
+    @media (max-width: $viewM) {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
     .product-gallery-btn-prev,
     .product-gallery-btn-next {
       width: 40px;
@@ -25,6 +30,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media (max-width: $viewMobile) {
+        display: none;
+      }
     }
 
     .product-gallery-btn-prev {
@@ -83,6 +92,12 @@
     }
 
     &-price {
+      margin-bottom: 3rem;
+
+      @media (max-width: 576px) {
+        margin-bottom: 1rem;
+      }
+
       span {
         font-weight: 500;
       }
@@ -142,7 +157,7 @@
     &-inner {
       display: grid;
       grid-template-rows: 0fr;
-      transition: 250ms grid-template-rows ease;
+      transition: 0.3s grid-template-rows ease;
     }
 
     &-content {

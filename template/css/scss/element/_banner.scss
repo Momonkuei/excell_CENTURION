@@ -8,18 +8,50 @@
   .index-swiper {
     // 項目
     .banner-item {
-      height: 100vh;
+      // height: 100vh;
       width: 100%;
       overflow: hidden;
       position: relative;
 
-      @media (max-width: $viewM) {
-        height: 70vh;
+      .banner-item-bg {
+        overflow: hidden;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        pointer-events: none;
+        display: block;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.6) 15%,
+            rgba(0, 0, 0, 0.3) 30%,
+            rgba(0, 0, 0, 0.2) 100%
+          );
+        }
+
+        @media (max-width: $viewMobile) {
+          pointer-events: auto;
+        }
       }
 
-      @media (max-width: $viewMobile) {
-        height: 50vh;
-      }
+      // @media (max-width: $viewM) {
+      //   height: 70vh;
+      // }
+
+      // @media (max-width: $viewMobile) {
+      //   height: 50vh;
+      // }
 
       // 圖片
       .pic-box {
@@ -28,6 +60,10 @@
         right: 0;
         bottom: 0;
         left: 0;
+
+        @media (max-width: $viewMobile) {
+          display: none;
+        }
 
         &::before {
           content: "";
@@ -64,25 +100,25 @@
           }
         }
 
-        .pic-tab {
-          display: none;
-          @media (max-width: $viewM) {
-            display: block;
-          }
-        }
+        // .pic-tab {
+        //   display: none;
+        //   @media (max-width: $viewM) {
+        //     display: block;
+        //   }
+        // }
 
-        .pic-mb {
-          display: none;
-          @media (max-width: $viewMobile) {
-            display: block;
-          }
-        }
+        // .pic-mb {
+        //   display: none;
+        //   @media (max-width: $viewMobile) {
+        //     display: block;
+        //   }
+        // }
       }
 
       // 按鈕
       .banner-item-info {
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         width: 100%;
         bottom: 0;
         padding-bottom: 3rem;
@@ -98,11 +134,16 @@
           padding-left: 3.3333333333vw;
           padding-right: 3.3333333333vw;
         }
+
+        @media (max-width: $viewMobile) {
+          display: none;
+        }
       }
 
       // 執行時
       &.swiper-slide-active {
-        .pic-box {
+        .pic-box,
+        .banner-item-bg {
           animation-name: bannerZoomOut01;
           animation-fill-mode: both;
           animation-duration: 7000ms;
