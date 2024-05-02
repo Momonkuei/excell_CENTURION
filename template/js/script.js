@@ -65,13 +65,15 @@ $(function () {
 				// 有登入狀態功能視窗
 				if ($(this).hasClass('login')) {
 					console.log('登入狀態');
+					$('body').addClass('open-loginMenu');
 					$('.searchBox').remove('open');
 					removeMbHeaderSearch();
-					$('.member-function-box').toggleClass('open');
+					$('.login-box').addClass('login-status');
 				} else {
 					$('body').addClass('open-loginMenu');
 					$('.searchBox').remove('open');
 					removeMbHeaderSearch();
+					$('.login-box').remove('login-status');
 				}
 			});
 		}
@@ -84,28 +86,28 @@ $(function () {
 		});
 
 		// 首頁時，更換白色logo
-		if ($('body').hasClass('index')) {
-			$('.centurion_logo').attr(
-				'src',
-				'/template/images/centurion_logo_white.png'
-			);
+		// if ($('body').hasClass('index')) {
+		// 	$('.centurion_logo').attr(
+		// 		'src',
+		// 		'/template/images/centurion_logo_white.png'
+		// 	);
 
-			// hover header時更換圖片
-			$('.headerStyle01').hover(
-				function () {
-					$('.centurion_logo').attr(
-						'src',
-						'/template/images/centurion_logo.png'
-					);
-				},
-				function () {
-					$('.centurion_logo').attr(
-						'src',
-						'/template/images/centurion_logo_white.png'
-					);
-				}
-			);
-		}
+		// 	// hover header時更換圖片
+		// 	$('.headerStyle01').hover(
+		// 		function () {
+		// 			$('.centurion_logo').attr(
+		// 				'src',
+		// 				'/template/images/centurion_logo.png'
+		// 			);
+		// 		},
+		// 		function () {
+		// 			$('.centurion_logo').attr(
+		// 				'src',
+		// 				'/template/images/centurion_logo_white.png'
+		// 			);
+		// 		}
+		// 	);
+		// }
 
 		// 滾動
 
@@ -140,9 +142,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

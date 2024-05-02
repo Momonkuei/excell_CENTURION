@@ -7,6 +7,18 @@ $(function () {
 	}
 });
 
+// 產品列表分頁
+$(function () {
+	if ($('.pagination-box .pagination-page').length) {
+		$('.pagination-box .pagination-page .pageLink').click(function (idx) {
+			$('.pagination-box .pagination-page .pageLink').each(function () {
+				$(this).removeClass('active');
+			});
+			$(this).addClass('active');
+		});
+	}
+});
+
 // 產品介紹滑塊
 $(function () {
 	if ($('.product-gallery').length) {

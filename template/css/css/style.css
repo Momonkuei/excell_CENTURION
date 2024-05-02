@@ -11846,7 +11846,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   color: #fff;
-  border-color: #35286d;
   position: relative;
   padding: 1rem 1.5rem;
   line-height: normal;
@@ -11899,6 +11898,64 @@ body {
           transform-origin: right center;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
+}
+
+.cart-chcekout-btn-reverse {
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #35286d;
+  position: relative;
+  padding: 1rem 1.5rem;
+  line-height: normal;
+  border: 1px solid #35286d;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  font-style: normal;
+  background-color: transparent;
+  -webkit-transition: color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  z-index: 1;
+  -webkit-tap-highlight-color: initial;
+}
+.cart-chcekout-btn-reverse:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  z-index: -1;
+  background-color: #35286d;
+  -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7), -webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+}
+.cart-chcekout-btn-reverse:hover {
+  color: #fff;
+}
+.cart-chcekout-btn-reverse:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 .discount-btn {
@@ -11968,7 +12025,9 @@ body {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
 }
 .cart-continue-btn:hover {
-  color: white;
+  color: #fff;
+  border-color: transparent;
+  color: #fff;
 }
 
 .banner-btn {
@@ -12557,6 +12616,7 @@ body {
 }
 .headerStyle01 .navbar .header-link {
   text-decoration: none;
+  padding: 0 0.5rem;
 }
 .headerStyle01 .navbar .main-menu li {
   display: -webkit-box;
@@ -12566,16 +12626,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.headerStyle01 .centurion_logo {
+.headerStyle01 .main-logo {
   max-width: 9.625rem;
 }
 @media (min-width: 768px) {
-  .headerStyle01 .centurion_logo {
+  .headerStyle01 .main-logo {
     max-width: 14rem;
   }
 }
 @media (max-width: 576px) {
-  .headerStyle01 .centurion_logo {
+  .headerStyle01 .main-logo {
     max-width: 8rem;
   }
 }
@@ -12632,8 +12692,8 @@ body {
   background-color: inherit;
   height: 2px;
   position: absolute;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
   width: 27px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -12972,6 +13032,19 @@ body {
   width: 100%;
   padding: 2rem 1rem;
 }
+.headerStyle01 .login-menu-inner .login-box .login-form {
+  display: block;
+}
+.headerStyle01 .login-menu-inner .login-box .login-function-box {
+  display: none;
+  width: 100%;
+}
+.headerStyle01 .login-menu-inner .login-box.login-status .login-form {
+  display: none;
+}
+.headerStyle01 .login-menu-inner .login-box.login-status .login-function-box {
+  display: block;
+}
 .headerStyle01 .searchBox {
   border-radius: 5px;
   position: relative;
@@ -12997,12 +13070,10 @@ body {
   height: 35px;
   padding: 9px;
   position: relative;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
 }
 .headerStyle01 .searchBox .searchToggle i {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 }
 .headerStyle01 .searchBox .searchToggle .close-icon {
   display: none;
@@ -13263,8 +13334,20 @@ body {
   top: 0;
   background-color: transparent;
 }
+.index header .main-logo {
+  -webkit-filter: brightness(100);
+          filter: brightness(100);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
 .index header:hover {
   background-color: #fff;
+}
+.index header:hover .main-logo {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .index header:hover.headerStyle01 .menu-list {
   color: #000;
@@ -13385,8 +13468,45 @@ body {
   }
 }
 
+.pagination-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.pagination-box .pagination-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.pagination-box .pagination-page .pageLink {
+  text-decoration: none;
+  padding: 0.375rem 0.75rem;
+  position: relative;
+}
+.pagination-box .pagination-page .pageLink:hover {
+  font-weight: 500;
+}
+.pagination-box .pagination-page .pageLink:not(:first-child) {
+  border-left: 1px solid #35286d;
+}
+.pagination-box .pagination-page .pageLink.active {
+  background-color: #35286d;
+  color: #fff;
+}
+.pagination-box .paginate_button {
+  text-decoration: none;
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0.5em 1em;
+}
+
 .heading {
-  font-weight: 400;
   font-style: normal;
   color: #222;
   -webkit-transition: color 0.2s ease-in-out;
@@ -14934,6 +15054,17 @@ body {
   padding: 4px 5px;
   background: #35286d;
   max-width: none;
+}
+.product-lists .products-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .reset-password-form {

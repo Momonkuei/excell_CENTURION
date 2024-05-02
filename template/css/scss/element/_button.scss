@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  border-color: $primary;
   position: relative;
   padding: 1rem 1.5rem;
   line-height: normal;
@@ -62,6 +61,54 @@
     &::before {
       transform-origin: right center;
       transform: scaleX(0);
+    }
+  }
+}
+
+.cart-chcekout-btn-reverse {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+  position: relative;
+  padding: 1rem 1.5rem;
+  line-height: normal;
+  border: 1px solid $primary;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  font-style: normal;
+  background-color: transparent;
+  transition:
+    color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
+    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  z-index: 1;
+  -webkit-tap-highlight-color: initial;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0, 1);
+    transform-origin: right;
+    z-index: -1;
+    background-color: $primary;
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  }
+
+  &:hover {
+    color: $white;
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left;
     }
   }
 }
@@ -135,7 +182,9 @@
     box-shadow 0.2s ease-in-out;
 
   &:hover {
-    color: white;
+    color: $white;
+    border-color: transparent;
+    color: $white;
   }
 }
 

@@ -14,6 +14,7 @@
   .navbar {
     .header-link {
       text-decoration: none;
+      padding: 0 0.5rem;
     }
     .main-menu {
       li {
@@ -24,7 +25,7 @@
   }
 
   // logo
-  .centurion_logo {
+  .main-logo {
     max-width: 9.625rem;
 
     @media (min-width: $viewS) {
@@ -83,7 +84,7 @@
             background-color: inherit;
             height: 2px;
             position: absolute;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.1s;
             width: 27px;
             box-sizing: border-box;
             outline: 0;
@@ -437,6 +438,25 @@
       .login-box {
         width: 100%;
         padding: 2rem 1rem;
+
+        .login-form {
+          display: block;
+        }
+
+        .login-function-box {
+          display: none;
+          width: 100%;
+        }
+
+        &.login-status {
+          .login-form {
+            display: none;
+          }
+
+          .login-function-box {
+            display: block;
+          }
+        }
       }
     }
   }
@@ -460,10 +480,10 @@
       height: 35px;
       padding: 9px;
       position: relative;
-      transition: all 0.3s ease-in-out;
+      // transition: all 0.1s ease-in-out;
 
       i {
-        transition: all 0.3s ease;
+        transition: all 0.1s;
       }
 
       .close-icon {
@@ -737,8 +757,17 @@
     top: 0;
     background-color: transparent;
 
+    .main-logo {
+      filter: brightness(100);
+      transition: all 0.3s ease-in-out;
+    }
     &:hover {
       background-color: $white;
+
+      .main-logo {
+        filter: brightness(1);
+        transition: all 0.3s ease-in-out;
+      }
 
       &.headerStyle01 {
         // 左側選單
