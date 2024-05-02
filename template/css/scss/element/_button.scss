@@ -200,7 +200,7 @@
   border-color: $primary;
   position: relative;
   padding: 0.5rem 1rem;
-  line-height: normal;
+  line-height: 1.4;
   border: 1px solid transparent;
   border-radius: 0;
   text-transform: uppercase;
@@ -239,6 +239,24 @@
     &::before {
       transform-origin: right center;
       transform: scaleX(0);
+    }
+  }
+
+  &.gray {
+    border-color: $cancel-btn-color;
+
+    &::before {
+      background-color: $cancel-btn-color;
+    }
+
+    &:hover {
+      color: $cancel-btn-color;
+      border-color: $cancel-btn-color;
+      background-color: transparent;
+      &::before {
+        transform-origin: right center;
+        transform: scaleX(0);
+      }
     }
   }
 }

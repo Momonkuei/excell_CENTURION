@@ -12034,7 +12034,7 @@ body {
   border-color: #35286d;
   position: relative;
   padding: 0.5rem 1rem;
-  line-height: normal;
+  line-height: 1.4;
   border: 1px solid transparent;
   border-radius: 0;
   text-transform: uppercase;
@@ -12075,6 +12075,23 @@ body {
   background-color: transparent;
 }
 .btn-style02:hover::before {
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+.btn-style02.gray {
+  border-color: #6e7881;
+}
+.btn-style02.gray::before {
+  background-color: #6e7881;
+}
+.btn-style02.gray:hover {
+  color: #6e7881;
+  border-color: #6e7881;
+  background-color: transparent;
+}
+.btn-style02.gray:hover::before {
   -webkit-transform-origin: right center;
           transform-origin: right center;
   -webkit-transform: scaleX(0);
@@ -13339,6 +13356,33 @@ body {
 }
 .itemImg.traight {
   padding-bottom: 133.333%;
+}
+
+.centurion-modal-style01 .swal2-actions {
+  gap: 1rem;
+}
+.centurion-modal-style01 .content-box {
+  border-color: #ccc;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.centurion-modal-style01 .content-box-content .info-box {
+  padding-left: 0.5rem;
+}
+.centurion-modal-style01 .content-box-content .info-box:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.centurion-modal-style01 .content-box-content .info-box-head {
+  font-weight: 500;
+}
+.centurion-modal-style01 .content-box-content .info-box-note {
+  max-width: 80%;
+}
+@media (max-width: 768px) {
+  .centurion-modal-style01 .content-box-content .info-box-note {
+    max-width: 90%;
+  }
 }
 
 .heading {
