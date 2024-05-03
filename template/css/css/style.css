@@ -12191,7 +12191,6 @@ body {
 }
 .footerStyle01 .footer-content .footer-list {
   max-width: 100%;
-  min-width: 180px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -12204,6 +12203,7 @@ body {
   .footerStyle01 .footer-content .footer-list {
     width: 50%;
     margin: 0 auto;
+    min-width: 180px;
   }
 }
 .footerStyle01 .footer-content .footer-list .linklist {
@@ -12343,6 +12343,17 @@ body {
   border: none;
 }
 
+.member-form .form-label-hints {
+  width: 100%;
+  position: relative;
+}
+.member-form .form-label-hints .hints-txt {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
 .member-form .form-input {
   -webkit-appearance: none;
   display: block;
@@ -13154,8 +13165,7 @@ body {
   background-color: #fff;
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border-top: 3px solid #35286d;
-  position: fixed;
+  position: sticky;
   top: 0;
 }
 @media (max-width: 576px) {
@@ -13244,7 +13254,6 @@ body {
 }
 
 .open-menu {
-  position: fixed;
   overflow: hidden;
   width: 100%;
 }
@@ -13270,7 +13279,6 @@ body {
 }
 
 .open-loginMenu {
-  position: fixed;
   overflow: hidden;
   width: 100%;
 }
@@ -13340,35 +13348,35 @@ body {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.index header:hover {
+.index header:hover, .index header.scroll {
   background-color: #fff;
 }
-.index header:hover .main-logo {
+.index header:hover .main-logo, .index header.scroll .main-logo {
   -webkit-filter: brightness(1);
           filter: brightness(1);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.index header:hover.headerStyle01 .menu-list {
+.index header:hover.headerStyle01 .menu-list, .index header.scroll.headerStyle01 .menu-list {
   color: #000;
 }
-.index header:hover.headerStyle01 .menu-list .btn-list .slide-menu-control {
+.index header:hover.headerStyle01 .menu-list .btn-list .slide-menu-control, .index header.scroll.headerStyle01 .menu-list .btn-list .slide-menu-control {
   color: #000;
 }
-.index header:hover.headerStyle01 .menu-list .btn-list .slide-menu-control .line {
+.index header:hover.headerStyle01 .menu-list .btn-list .slide-menu-control .line, .index header.scroll.headerStyle01 .menu-list .btn-list .slide-menu-control .line {
   background-color: #000;
 }
-.index header:hover.headerStyle01 .user-items a {
+.index header:hover.headerStyle01 .user-items a, .index header.scroll.headerStyle01 .user-items a {
   color: #000;
 }
-.index header:hover.headerStyle01 .searchBox input {
+.index header:hover.headerStyle01 .searchBox input, .index header.scroll.headerStyle01 .searchBox input {
   border-color: #000;
   color: #000;
 }
-.index header:hover.headerStyle01 .searchBox .search-btn {
+.index header:hover.headerStyle01 .searchBox .search-btn, .index header.scroll.headerStyle01 .searchBox .search-btn {
   color: #000;
 }
-.index header:hover.headerStyle01 .searchBox.open .searchToggle::after, .index header:hover.headerStyle01 .searchBox.open .searchToggle::before {
+.index header:hover.headerStyle01 .searchBox.open .searchToggle::after, .index header:hover.headerStyle01 .searchBox.open .searchToggle::before, .index header.scroll.headerStyle01 .searchBox.open .searchToggle::after, .index header.scroll.headerStyle01 .searchBox.open .searchToggle::before {
   background-color: #000;
 }
 .index .headerStyle01 .menu-list {
@@ -13431,6 +13439,8 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -14320,6 +14330,10 @@ body {
   position: relative;
   width: 100%;
 }
+.homepage-product-sectionBlock .product-lists-item:hover .itemImg img {
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
+          transform: translate(-50%, -50%) scale(1.1);
+}
 @media (min-width: 768px) {
   .homepage-product-sectionBlock .product-lists-item {
     width: 33.33333%;
@@ -14677,6 +14691,10 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.product-category-banner .category-swiper {
+  position: relative;
+}
+
 .sectionblock-product-detail {
   max-width: 1000px;
   margin: 35px auto;
@@ -14828,6 +14846,9 @@ body {
 }
 .sectionblock-product-detail .product-item-collapsible-content {
   overflow: hidden;
+}
+.sectionblock-product-detail .product-item-collapsible-content ul {
+  list-style: inherit;
 }
 .sectionblock-product-detail .product-item-collapsible.active .product-item-collapsible-inner {
   -ms-grid-rows: 1fr;

@@ -23,6 +23,14 @@
       position: relative;
       width: 100%;
 
+      &:hover {
+        .itemImg {
+          img {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+      }
+
       @media (min-width: $viewS) {
         width: 33.33333%;
       }

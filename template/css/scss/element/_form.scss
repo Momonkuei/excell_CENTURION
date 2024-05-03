@@ -56,6 +56,20 @@
 
 // 會員表單
 .member-form {
+  .form-label {
+    &-hints {
+      width: 100%;
+      position: relative;
+
+      .hints-txt {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
   .form-input {
     -webkit-appearance: none;
     display: block;

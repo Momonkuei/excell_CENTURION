@@ -13,9 +13,6 @@ if (typeof AOS === 'object') {
 
 // header
 $(function () {
-	// 取得header 高度
-	const hdTop = $('header').outerHeight();
-
 	// 移除 header 搜尋按鈕
 	const removeMbHeaderSearch = function () {
 		$('body').removeClass('open-search');
@@ -85,46 +82,25 @@ $(function () {
 			}
 		});
 
-		// 首頁時，更換白色logo
-		// if ($('body').hasClass('index')) {
-		// 	$('.centurion_logo').attr(
-		// 		'src',
-		// 		'/template/images/centurion_logo_white.png'
-		// 	);
-
-		// 	// hover header時更換圖片
-		// 	$('.headerStyle01').hover(
-		// 		function () {
-		// 			$('.centurion_logo').attr(
-		// 				'src',
-		// 				'/template/images/centurion_logo.png'
-		// 			);
-		// 		},
-		// 		function () {
-		// 			$('.centurion_logo').attr(
-		// 				'src',
-		// 				'/template/images/centurion_logo_white.png'
-		// 			);
-		// 		}
-		// 	);
-		// }
-
 		// 滾動
 
 		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
 
-		// $(window).scroll(function () {
-		// 	if ($(window).scrollTop() > hdTop) {
-		// 		if ($('body.cart').length) {
-		// 			$('body.cart').addClass('fake-title');
-		// 		}
-		// 	}
-		// 	if ($(window).scrollTop() === 0) {
-		// 		if ($('body.cart').length) {
-		// 			$('body.cart').removeClass('fake-title');
-		// 		}
-		// 	}
-		// });
+		// 取得header 高度
+		const hdTop = $('header').outerHeight();
+
+		$(window).scroll(function () {
+			if ($(window).scrollTop() > hdTop) {
+				if ($('header').length) {
+					$('header').addClass('scroll');
+				}
+			}
+			if ($(window).scrollTop() === 0) {
+				if ($('header').length) {
+					$('header').removeClass('scroll');
+				}
+			}
+		});
 
 		// // scroll超過 header 高度就添加 'scroll'
 		// $(window).scroll(function () {
@@ -169,7 +145,7 @@ $(function () {
 				{
 					scrollTop: 0,
 				},
-				1000
+				200
 			);
 		});
 		$(window).scroll(function () {

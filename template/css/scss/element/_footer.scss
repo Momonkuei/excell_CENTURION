@@ -24,7 +24,6 @@
 
     .footer-list {
       max-width: 100%;
-      min-width: 180px;
       margin-bottom: 40px;
       text-align: center;
 
@@ -35,6 +34,7 @@
       @media (min-width: $viewMobile) and (max-width: $viewM) {
         width: 50%;
         margin: 0 auto;
+        min-width: 180px;
       }
 
       .linklist {

@@ -1,9 +1,26 @@
 // 側邊攔
 $(function () {
 	if ($('.product-sidebar').length) {
+		// open 開關收合
 		$('.product-sidebar .product-sidebar-item').each(function () {
 			$(this).click(() => $(this).toggleClass('open'));
 		});
+
+		// 找尋是否有active 並且打開 product-sidebar-item
+		var activeLink = $('.product-sidebar-item a.active');
+
+		if (activeLink.length > 0) {
+			activeLink.each(function () {
+				$(this).closest('.product-sidebar-item').addClass('open');
+			});
+		}
+	}
+});
+
+// 產品大類 product_category
+$(function () {
+	if ($('.product-category-banner').length) {
+		const category_swiper = new Swiper('.category-swiper');
 	}
 });
 

@@ -97,7 +97,8 @@ $(function () {
 	if (typeof $.fn.DataTable === 'function') {
 		var account_table = $('#account_table').DataTable({
 			language: {
-				url: '/template/node_modules/datatables/zh-HANT.json',
+				// url: '/template/node_modules/datatables/zh-HANT.json',
+				url: '/template/jquery/datatables/zh-HANT.json',
 			},
 			// scrollX: '100%',
 			lengthChange: false,

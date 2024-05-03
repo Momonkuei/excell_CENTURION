@@ -572,8 +572,7 @@
   &.scroll {
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-top: 3px solid $secondary;
-    position: fixed;
+    position: sticky;
     top: 0;
   }
 
@@ -660,7 +659,6 @@
 }
 
 .open-menu {
-  position: fixed;
   overflow: hidden;
   width: 100%;
   .headerStyle01 {
@@ -686,7 +684,6 @@
 }
 
 .open-loginMenu {
-  position: fixed;
   overflow: hidden;
   width: 100%;
   .headerStyle01 {
@@ -761,7 +758,8 @@
       filter: brightness(100);
       transition: all 0.3s ease-in-out;
     }
-    &:hover {
+    &:hover,
+    &.scroll {
       background-color: $white;
 
       .main-logo {
