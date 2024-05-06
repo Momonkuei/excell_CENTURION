@@ -146,6 +146,10 @@ table {
 /**************/
 /**************/
 /**************/
+/**************/
+/**************/
+/**************/
+/**************/
 /*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11675,6 +11679,14 @@ body {
   font-size: 1.125rem;
 }
 
+.fz-20 {
+  font-size: 1.25rem;
+}
+
+.fz-24 {
+  font-size: 1.5rem;
+}
+
 .fw-400 {
   font-weight: 400;
 }
@@ -14691,8 +14703,308 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.product-category-banner .category-swiper {
+.product-category-banner-box {
+  overflow: hidden;
+}
+.product-category-banner-box .categoryBanner-swiper {
   position: relative;
+}
+.product-category-banner-box .categoryBanner-swiper .swiper-slide {
+  background-size: cover;
+  background-position: 50%;
+}
+.product-category-banner-box .category-banner {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  overflow: hidden;
+  margin: 0;
+  min-height: 40vh;
+}
+@media (min-width: 1200px) {
+  .product-category-banner-box .category-banner {
+    min-height: 75vh;
+  }
+}
+.product-category-banner-box .category-banner-imageWrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+.sectionBlock-category-carousel {
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+.sectionBlock-category-carousel .category-carousel-swiper {
+  margin: 0 4rem;
+  overflow: hidden;
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-btn {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background-color 0.3s ease, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s, -webkit-transform 0.5s ease-in;
+  transition: background-color 0.3s ease, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s, -webkit-transform 0.5s ease-in;
+  transition: background-color 0.3s ease, transform 0.5s ease-in, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s;
+  transition: background-color 0.3s ease, transform 0.5s ease-in, opacity 0.7s cubic-bezier(0.15, 0, 0.2, 1) 0.1s, -webkit-transform 0.5s ease-in;
+  background: rgba(88, 88, 88, 0.25);
+  vertical-align: middle;
+  border-radius: 50px;
+  font-size: 2rem;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  z-index: 1;
+  height: 4rem;
+  width: 4rem;
+  position: absolute;
+  top: calc(50% - 2.5rem);
+  padding: 0;
+}
+@media (max-width: 992px) {
+  .sectionBlock-category-carousel .category-carousel-swiper .swiper-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-btn svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+  .sectionBlock-category-carousel .category-carousel-swiper .swiper-btn {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-btn:hover {
+  background: rgba(53, 40, 109, 0.75);
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-button-prev-custom {
+  left: 0;
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-button-next-custom {
+  right: 0;
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-pagination-custom {
+  display: none;
+}
+@media (max-width: 992px) {
+  .sectionBlock-category-carousel .category-carousel-swiper .swiper-pagination-custom {
+    display: block;
+  }
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-pagination-custom .swiper-pagination-bullet {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin: 0 0.4rem;
+}
+.sectionBlock-category-carousel .category-carousel-swiper .swiper-pagination-custom .swiper-pagination-bullet-active {
+  background: #35286d;
+}
+.sectionBlock-category-carousel ul {
+  padding-left: 0;
+}
+.sectionBlock-category-carousel ul li {
+  margin: 20px 0 25px;
+  padding: 0 10px;
+  width: 20rem;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 992px) {
+  .sectionBlock-category-carousel ul li.swiper-slide-active {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
+  }
+}
+.sectionBlock-category-carousel .card {
+  text-decoration: none;
+  border: none;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, -webkit-box-shadow 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-title {
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-title span {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-content-top {
+  padding: 1.875rem 1.875rem 0;
+  margin-bottom: auto;
+  line-height: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-content {
+  line-height: 1.4em;
+  color: #606060;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-content span {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.sectionBlock-category-carousel .card-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.sectionBlock-category-carousel .card-img img {
+  max-height: 18.75rem;
+}
+.sectionBlock-category-carousel .card-bottom {
+  padding: 0 30px 30px;
+  margin-top: auto;
+  line-height: 1em;
+}
+.sectionBlock-category-carousel .card:hover {
+  -webkit-box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+          box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.sectionBlock-hero-category {
+  position: relative;
+}
+.sectionBlock-hero-category .bg-img-box {
+  position: relative;
+  padding-bottom: 40rem;
+}
+@media (min-width: 1200px) {
+  .sectionBlock-hero-category .bg-img-box {
+    padding-bottom: 60vh;
+  }
+}
+.sectionBlock-hero-category .bg-img-box .bg-img-pc {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.sectionBlock-hero-category .introduction-info {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 3rem;
+  padding-left: 6.4vw;
+  padding-right: 6.4vw;
+}
+@media (min-width: 48rem) {
+  .sectionBlock-hero-category .introduction-info {
+    padding-left: 3.125vw;
+    padding-right: 3.125vw;
+  }
+}
+@media (min-width: 90rem) {
+  .sectionBlock-hero-category .introduction-info {
+    padding-left: 3.3333333333vw;
+    padding-right: 3.3333333333vw;
+  }
+}
+.sectionBlock-hero-category .advertising_slogan {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
 .sectionblock-product-detail {

@@ -3,6 +3,9 @@ $secondary: #35286d;
 
 $body-color: #212529;
 
+// 線條
+$gray-border: #ccc;
+
 // view
 $viewL: 1200px;
 $viewM: 992px;
@@ -23,9 +26,12 @@ $header-member-dropdown-menu-bg: #f1f1f0;
 $header-member-dropdown-menu-li-hover-bg: #e9e9e7;
 
 /**************/
-// member
+// form
 /**************/
 
+$member-form-input-border-color: #ccc;
+$member-form-select-border-color: #ccc;
+$member-form-dash-color: #606060;
 // 會員
 $zipcode-txt-color: #606060;
 $zipcode-bg: #e4e4e1;
@@ -33,8 +39,16 @@ $zipcode-bg: #e4e4e1;
 //toggle-switch
 $toggle-switch-bg: #606060;
 
-// 線條
-$gray-border: #ccc;
+/**************/
+// member
+/**************/
+
+/**************/
+// product
+/**************/
+
+// 產品大類
+$product-category-cards-content-color: #606060;
 
 // 產品列表
 $product-sidebar-border-color: #ccc;
