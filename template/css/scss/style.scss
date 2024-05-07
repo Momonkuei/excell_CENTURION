@@ -45,11 +45,13 @@
 @import "element/header";
 @import "element/image";
 @import "element/modal";
+@import "element/navMenu";
 @import "element/pagination";
 @import "element/title";
 
 // page
 @import "page/account";
+@import "page/article_inner_pages";
 @import "page/cart";
 @import "page/cart2";
 @import "page/cart3";

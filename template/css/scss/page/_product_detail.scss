@@ -83,12 +83,23 @@
 
   // 產品資料
   .product-item {
+    @media (max-width: $viewM) {
+      margin-top: 1rem;
+    }
+
     &-label {
       display: inline-block;
       color: #fff;
       padding: 4px 5px;
       background: #35286d;
       max-width: none;
+    }
+
+    &-title {
+      margin-bottom: 1rem;
+      .h4 {
+        margin-bottom: 0;
+      }
     }
 
     &-price {

@@ -1,0 +1,156 @@
+header {
+  .nav-menu-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .navMenu {
+    display: flex;
+    justify-content: center;
+
+    .moreMenu {
+      ul {
+        &::-webkit-scrollbar {
+          display: none; /* Safari and Chrome */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      }
+    }
+
+    // 第一層
+    > li {
+      position: relative;
+
+      > a {
+        position: relative;
+        height: 5rem;
+        display: inline-flex;
+        padding-left: 1em;
+        padding-right: 1em;
+        align-items: center;
+      }
+
+      &.moreMenu {
+        overflow: hidden;
+        display: flex;
+        align-items: baseline;
+        padding-right: 0.5em;
+
+        > a {
+          @media (min-width: $viewL) {
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 4px;
+              border-radius: 2px;
+              background-color: $primary;
+              transition: 0.25s;
+            }
+          }
+
+          &::after {
+            content: "\F282";
+            padding-left: 0.5em;
+            font-family: "Bootstrap-icons";
+            transition: all 0.3s ease;
+            transform-origin: center;
+          }
+        }
+
+        &:hover {
+          overflow: visible;
+
+          > a {
+            color: $primary;
+
+            &::before {
+              width: 100%;
+            }
+
+            &::after {
+              content: "\F286";
+            }
+          }
+        }
+
+        // 第二層
+        > ul {
+          position: absolute;
+          left: 0;
+          top: 100%;
+          box-shadow:
+            rgba(0, 0, 0, 0.16) 0px 3px 6px,
+            rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          min-width: 230px;
+          z-index: 5;
+          // overflow: hidden;
+          // overflow-y: auto;
+          max-height: calc(80vh);
+
+          li {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+
+            a {
+              width: 100%;
+              display: block;
+              line-height: 1.5;
+              text-align: center;
+              padding: 0.6em 1em;
+              text-align: left;
+              transition: background 0.3s ease-out;
+            }
+
+            &.moreMenu {
+              position: relative;
+
+              // 第三層
+              > ul {
+                display: none;
+                position: absolute;
+                top: 0;
+                min-width: 230px;
+                background-color: #f8f8f8;
+                box-shadow:
+                  rgba(0, 0, 0, 0.16) 0px 3px 6px,
+                  rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                z-index: 5;
+                opacity: 0;
+              }
+
+              &:hover {
+                > ul {
+                  display: block;
+                  opacity: 1;
+                  z-index: 6;
+                }
+              }
+            }
+
+            &:hover {
+              > a {
+                background-color: rgba(170, 170, 170, 0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

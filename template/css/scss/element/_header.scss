@@ -576,6 +576,500 @@
     top: 0;
   }
 
+  @media (max-width: $viewM) {
+    height: 5rem;
+  }
+
+  @media (max-width: $viewMobile) {
+    padding: 10px 0;
+
+    .logo-box {
+      max-width: 30vw;
+    }
+  }
+}
+
+.headerStyle02 {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  background-color: $white;
+  z-index: 9;
+
+  a {
+    text-decoration: none;
+  }
+
+  .navbar {
+    .header-link {
+      text-decoration: none;
+      padding: 0 0.5rem;
+    }
+    .main-menu {
+      li {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  // logo
+  .main-logo {
+    max-width: 9.625rem;
+
+    @media (min-width: $viewS) {
+      max-width: 14rem;
+    }
+
+    @media (max-width: $viewMobile) {
+      max-width: 8rem;
+    }
+  }
+
+  // 主選單(運用在手機主選單)
+  .main-menu {
+    .menu-list {
+      padding-left: 0;
+    }
+
+    // 首頁選單按鈕
+    .btn-list {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      @media (max-width: $viewMobile) {
+        height: 100%;
+        width: 100%;
+      }
+
+      .slide-menu-control {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        outline: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media (max-width: $viewMobile) {
+          height: 100%;
+          width: 100%;
+        }
+
+        .line {
+          background-color: $black;
+          display: block;
+          height: 2px;
+          transition: all 0.3s ease-in-out;
+          width: 27px;
+          position: relative;
+
+          &::before,
+          &::after {
+            content: "";
+            display: block;
+            background-color: inherit;
+            height: 2px;
+            position: absolute;
+            transition: all 0.1s;
+            width: 27px;
+            box-sizing: border-box;
+            outline: 0;
+          }
+
+          &::before {
+            top: -8px;
+          }
+
+          &::after {
+            bottom: -8px;
+          }
+        }
+      }
+
+      .txt {
+        @media (max-width: $viewS) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  //分隔線
+  .divider-line {
+    height: 16px;
+    border-right: 1px solid #3333331a;
+    opacity: 0.25;
+    margin: 1em 0;
+  }
+
+  // 使用者選單
+  .user-items {
+    ul {
+      padding-left: 0;
+    }
+
+    a {
+      color: $black;
+    }
+
+    // 使用者功能選單
+    .member-function-box {
+      position: relative;
+      &-btn {
+        .close-icon {
+          display: none;
+        }
+      }
+
+      &-dropdown-menu {
+        position: absolute;
+        padding: 5px;
+        background-color: $header-member-dropdown-menu-bg;
+        top: 2.1rem;
+        left: -2rem;
+        width: 10rem;
+        border-radius: 4px;
+        display: block;
+        box-shadow:
+          rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
+        transition: all 200ms linear;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -7px;
+          left: 2rem;
+          width: 0;
+          height: 0;
+          box-shadow:
+            rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+            rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid $header-member-dropdown-menu-bg;
+          display: block;
+          z-index: 9;
+          transition: all 200ms linear;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          li {
+            padding: 0.5rem 1rem;
+            width: 100%;
+            text-align: center;
+            &:hover {
+              background-color: $header-member-dropdown-menu-li-hover-bg;
+            }
+          }
+        }
+
+        @media (max-width: 1500px) {
+          left: -8rem;
+
+          &::after {
+            left: auto;
+            right: 10%;
+          }
+        }
+      }
+
+      &.open {
+        .member-function-box-btn {
+          .person-icon {
+            display: none;
+          }
+
+          .close-icon {
+            display: block;
+          }
+        }
+        .member-function-box-dropdown-menu {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+
+  // 首頁選單
+  .fullMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: $header-fullMenu-bg;
+    transition: all 250ms cubic-bezier(0.215, 0.6, 0.355, 1);
+    z-index: 10;
+
+    @media (min-width: $viewM) {
+      transform: translateX(-100%);
+      height: 100vh;
+      max-width: 30rem;
+      width: 40%;
+    }
+
+    @media (min-width: $viewL) {
+      width: 33.3333333333%;
+    }
+
+    &-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+
+      .close-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        position: absolute;
+        left: 10%;
+        top: 5%;
+
+        i {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    &-nav {
+      position: absolute;
+      top: 8rem;
+      left: 50%;
+      margin: 0 auto;
+      transform: translate(-50%, 0%);
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .navMenu {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        li {
+          width: 100%;
+          transition: all 0.3s ease-in;
+
+          a {
+            text-decoration: none;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .txt {
+              margin-bottom: 0;
+            }
+
+            // 按鈕
+            .icon-box {
+              .plus-icon {
+                position: absolute;
+                right: 10%;
+                top: calc(50% - 0.5rem);
+                width: 1rem;
+                height: 1rem;
+
+                &::before,
+                &::after {
+                  position: absolute;
+                  content: "";
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%) rotate(-90deg);
+                  background-color: currentColor;
+                  transition: all 0.5s ease-in-out;
+                }
+
+                &::before {
+                  width: 1rem;
+                  height: 1px;
+                  opacity: 1;
+                }
+
+                &::after {
+                  width: 1px;
+                  height: 1rem;
+                }
+              }
+            }
+          }
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+          }
+
+          &.open-secondMenu {
+            .second-menu {
+              grid-template-rows: 1fr;
+            }
+
+            a {
+              .icon-box {
+                .plus-icon {
+                  &::before,
+                  &::after {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                  }
+
+                  &::before {
+                    opacity: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 第二層menu
+    .second-menu {
+      width: 100%;
+      background-color: $header-second-menu-bg;
+      // max-height: 0;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: all 0.3s ease-in-out;
+
+      overflow: hidden;
+      .second-menu-content {
+        min-height: 0;
+      }
+
+      // ul
+
+      .navMenu-second {
+        padding-left: 0;
+
+        li {
+          a {
+            color: $header-second-menu-txt-color;
+            span {
+              font-size: 1.125rem;
+              font-weight: 500;
+              line-height: 1.2;
+              color: inherit;
+            }
+
+            &:hover {
+              color: $header-second-menu-txt-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 登入選單
+  .login-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: $header-loginMenu-bg;
+    transition: all 250ms cubic-bezier(0.215, 0.6, 0.355, 1);
+    z-index: 10;
+
+    @media (min-width: $viewM) {
+      transform: translateX(100%);
+      height: 100vh;
+      max-width: 30rem;
+      width: 40%;
+    }
+
+    @media (min-width: $viewL) {
+      width: 33.3333333333%;
+    }
+
+    &-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+
+      .close-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        position: absolute;
+        right: 10%;
+        top: 5%;
+
+        i {
+          font-size: 1.25rem;
+        }
+      }
+
+      .login-box {
+        width: 100%;
+        padding: 2rem 1rem;
+
+        .login-form {
+          display: block;
+        }
+
+        .login-function-box {
+          display: none;
+          width: 100%;
+        }
+
+        &.login-status {
+          .login-form {
+            display: none;
+          }
+
+          .login-function-box {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &.scroll {
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+  }
+
   @media (max-width: 576px) {
     padding: 10px 0;
     height: 5rem;
@@ -661,7 +1155,8 @@
 .open-menu {
   overflow: hidden;
   width: 100%;
-  .headerStyle01 {
+  .headerStyle01,
+  .headerStyle02 {
     // 遮色片
     .fullMenu-mask {
       opacity: 1;
@@ -686,7 +1181,8 @@
 .open-loginMenu {
   overflow: hidden;
   width: 100%;
-  .headerStyle01 {
+  .headerStyle01,
+  .headerStyle02 {
     // 遮色片
     .fullMenu-mask {
       opacity: 1;

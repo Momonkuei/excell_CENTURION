@@ -189,16 +189,27 @@
   }
 
   .product-item {
+    display: flex;
     &-box {
       position: relative;
       padding-top: 30px;
+      display: flex;
+      flex-grow: 1;
 
       a {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
         transition: all 0.3s ease-in;
+        flex-grow: 1;
         &:hover {
           opacity: 0.8;
         }
       }
+    }
+
+    &-imageBox {
+      margin-bottom: 0.75rem;
     }
 
     &-image {
@@ -207,6 +218,7 @@
 
     &-title {
       color: $body-color;
+      flex-grow: 1;
       @include hideLongTexts(2);
     }
     // 標籤列表

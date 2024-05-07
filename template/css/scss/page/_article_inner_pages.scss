@@ -1,0 +1,20 @@
+.page-article {
+  max-width: 1000px;
+  min-height: calc(100vh - 380px);
+  margin: 1.5rem auto 2rem;
+  position: relative;
+
+  .divider-line {
+    border-top: 1px solid #cccccc;
+  }
+
+  .article-content {
+    padding: 2rem;
+  }
+
+  .article-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

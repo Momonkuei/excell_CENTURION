@@ -82,6 +82,44 @@ $(function () {
 			}
 		});
 
+		// 多層次選單
+		$('body').on(
+			'mouseover',
+			'.navMenu .moreMenu:not(.multiMenu)',
+			function () {
+				var $subMenu = $(this).children('ul');
+				var subMenuWidth = $subMenu.width();
+
+				var menuPosL = $subMenu.offset().left + subMenuWidth;
+				var menuPosL2 = $subMenu.offset().left + subMenuWidth * 2;
+				var menuPosL3 = $subMenu.offset().left + subMenuWidth * 3;
+
+				if (menuPosL > $(window).width()) {
+					$subMenu.css({
+						transition: 'none',
+						left: 'auto',
+						right: '0',
+					});
+				}
+				if (menuPosL2 > $(window).width()) {
+					$('.moreMenu > ul ul').css({
+						transition: 'none',
+						left: 'auto',
+						right: '100%',
+					});
+				}
+				if (menuPosL3 > $(window).width()) {
+					$('.moreMenu > ul ul').css({
+						transition: 'none',
+						left: 'auto',
+						right: '100%',
+					});
+				} else {
+					$('.moreMenu > ul ul').css({ left: '100%', right: 'auto' });
+				}
+			}
+		);
+
 		// 滾動
 
 		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
