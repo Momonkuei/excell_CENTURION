@@ -1,0 +1,97 @@
+.page-header {
+  position: relative;
+  margin: 2rem 0;
+
+  @media (min-width: $viewMobile) {
+    margin: 3rem 0;
+  }
+}
+
+// 類別分類
+.article-category {
+  a {
+    text-decoration: none;
+  }
+
+  .article-category-item {
+    display: inline-block;
+    margin: 0.375rem 1rem;
+
+    @media (max-width: $viewM) {
+      margin: 0.375rem 0.625rem;
+    }
+
+    @media (max-width: $viewMobile) {
+      margin: 0.375rem;
+    }
+
+    .link {
+      padding: 0.125rem 0.5rem;
+
+      &.active {
+        background: $primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+// 文章列表
+.article-list-wrapper {
+  min-height: 40vh;
+  max-width: 80rem;
+  margin: 0 auto 3.75rem;
+
+  @media (min-width: $viewM) {
+    margin-bottom: 3.75rem;
+  }
+
+  .article-item {
+    margin-bottom: 1.875rem;
+
+    @media (min-width: $viewM) {
+      margin-bottom: 3.75rem;
+    }
+
+    &-imgBox {
+      margin-bottom: 1.25rem;
+
+      &:hover {
+        .itemImg {
+          img {
+            transform: translate(-50%, -50%) scale(1.01);
+          }
+        }
+      }
+    }
+
+    &-subLabel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: $article-item-subLabel-color;
+      opacity: 0.8;
+      margin-bottom: 0.75rem;
+    }
+
+    &-title {
+      margin-bottom: 0.5rem;
+      span {
+        @include hideLongTexts(2);
+      }
+    }
+
+    &-describe {
+      line-height: 1.8;
+      span {
+        @include hideLongTexts(3);
+      }
+    }
+
+    &-link {
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

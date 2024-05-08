@@ -51,8 +51,17 @@
     }
 
     .swiper-slide-cover {
-      // padding-bottom: calc(133.3333333333% + 30px);
       padding-bottom: calc(133.3333333333%);
+
+      .media-box {
+        img {
+          object-fit: contain;
+        }
+      }
+
+      @media (max-width: $viewMobile) {
+        padding-bottom: 120%;
+      }
     }
   }
 
@@ -91,7 +100,7 @@
       display: inline-block;
       color: #fff;
       padding: 4px 5px;
-      background: #35286d;
+      background: $primary;
       max-width: none;
     }
 
@@ -168,7 +177,7 @@
     &-inner {
       display: grid;
       grid-template-rows: 0fr;
-      transition: 0.3s grid-template-rows ease;
+      transition: 0.1s grid-template-rows ease;
     }
 
     &-content {

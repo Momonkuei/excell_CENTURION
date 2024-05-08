@@ -133,19 +133,23 @@ $(function () {
 				});
 				$activecollapsible.addClass('active');
 
+				// 抓取動畫時間
 				var transitionDuration = $(
 					'.product-item-collapsible-inner'
 				).css('transition-duration');
 
 				const durationInSeconds = parseFloat(transitionDuration) + 0.1;
 
+				// 抓取header高度
+				const hdTop = $('header').outerHeight();
+
 				setTimeout(function () {
 					const target_top = $activecollapsible.offset().top;
 					$body.animate(
 						{
-							scrollTop: target_top - 100,
+							scrollTop: target_top - hdTop - 10,
 						},
-						300
+						200
 					);
 				}, durationInSeconds * 1000);
 			}
