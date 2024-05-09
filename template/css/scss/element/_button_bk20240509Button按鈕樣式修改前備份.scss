@@ -24,13 +24,29 @@
   letter-spacing: 0.1em;
   font-weight: 400;
   font-style: normal;
-  background-color: $primary;
+  background-color: transparent;
   transition:
-    color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7),
-    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
-    background 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+    color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
+    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   z-index: 1;
   -webkit-tap-highlight-color: initial;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transform-origin: left center;
+    z-index: -1;
+    background-color: $primary;
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  }
 
   @media (min-width: $viewS) {
     &.cart1 {
@@ -42,6 +58,10 @@
     color: $primary;
     border-color: $primary;
     background-color: transparent;
+    &::before {
+      transform-origin: right center;
+      transform: scaleX(0);
+    }
   }
 }
 
@@ -233,32 +253,59 @@
   border: 1px solid transparent;
   border-radius: 0;
   text-transform: uppercase;
-  font-size: 0.875rem;
+  font-size: 14px;
   letter-spacing: 0.1em;
   font-weight: 400;
   font-style: normal;
-  background-color: $primary;
+  background-color: transparent;
   transition:
-    color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7),
-    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
-    background 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+    color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
+    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   z-index: 1;
   -webkit-tap-highlight-color: initial;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transform-origin: left center;
+    z-index: -1;
+    background-color: $primary;
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  }
 
   &:hover {
     color: $primary;
     border-color: $primary;
     background-color: transparent;
+    &::before {
+      transform-origin: right center;
+      transform: scaleX(0);
+    }
   }
 
   &.gray {
     border-color: $cancel-btn-color;
-    background-color: $cancel-btn-color;
+
+    &::before {
+      background-color: $cancel-btn-color;
+    }
 
     &:hover {
       color: $cancel-btn-color;
       border-color: $cancel-btn-color;
       background-color: transparent;
+      &::before {
+        transform-origin: right center;
+        transform: scaleX(0);
+      }
     }
   }
 }

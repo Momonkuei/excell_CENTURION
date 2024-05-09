@@ -1,10 +1,11 @@
 // 側邊攔
 $(function () {
 	if ($('.product-sidebar').length) {
-		// open 開關收合
-		$('.product-sidebar .product-sidebar-item').each(function () {
-			$(this).click(() => $(this).toggleClass('open'));
-		});
+		$('.product-sidebar .product-sidebar-item .second-menu-btn').click(
+			function () {
+				$(this).parent('.product-sidebar-item').toggleClass('open');
+			}
+		);
 
 		// 找尋是否有active 並且打開 product-sidebar-item
 		var activeLink = $('.product-sidebar-item a.active');
@@ -92,6 +93,9 @@ $(function () {
 				nextEl: '.gallery-slider-next',
 				prevEl: '.gallery-slider-prev',
 			},
+			pagination: {
+				el: '.swiper-pagination',
+			},
 			thumbs: {
 				swiper: product_thumbs,
 				autoScrollOffset: 1,
@@ -113,8 +117,28 @@ $(function () {
 	}
 });
 
-// 產品介紹
+// 產品內頁
 $(function () {
+	// 數量
+	if ($('.sectionblock-product-detail .product-item-quantity').length) {
+		let product_Num = parseInt(
+			$('.product-item-quantity .product-item-num').val()
+		);
+		$('.product-item-quantity .quantity-reduce').click(function () {
+			product_Num--;
+			if (product_Num <= 0) {
+				return (product_Num = 1);
+			}
+			$('.product-item-quantity .product-item-num').val(product_Num);
+		});
+
+		$('.product-item-quantity .quantity-plus').click(function () {
+			product_Num++;
+			$('.product-item-quantity .product-item-num').val(product_Num);
+		});
+	}
+
+	//  產品介紹
 	const $body = window.opera
 		? document.compatMode == 'CSS1Compat'
 			? $('html')

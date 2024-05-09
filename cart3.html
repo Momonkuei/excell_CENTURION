@@ -54,6 +54,11 @@
     href="/template/node_modules/slick-1.8.1/slick/slick-theme.css"
   >
 
+  <!-- sweetalert2 -->
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/sweetalert2/sweetalert2.min.css"
+  >
 
   <!-- Swiper css -->
   <link
@@ -573,12 +578,23 @@
 
                       <div class="info-box">
                         <div class="info-box-head">付款方式</div>
-                        <div>信用卡</div>
+                        <div>ATM匯款</div>
                       </div>
 
                       <div class="info-box">
                         <div class="info-box-head">付款狀態</div>
-                        <div>已付款</div>
+                        <div>待匯款</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">匯款資訊</div>
+                        <div>
+                          <a
+                            id="remittance_informationl_btn"
+                            class="btn-style02 mt-2"
+                            href="javascript:void(0);"
+                          >點我顯示</a>
+                        </div>
                       </div>
 
                     </div>
@@ -695,31 +711,7 @@
 
             </div>
 
-            <div class="left-box-footer mt-3">
-              <div class="left-box-footer-area">
-                <ul class="pay-attention-lists">
-                  <li>
-                    <a href="javascript:void(0);">退款政策</a>
-                  </li>
 
-                  <li>
-                    <a href="javascript:void(0);">運送政策</a>
-                  </li>
-
-                  <li>
-                    <a href="javascript:void(0);">隱私政策</a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0);">服務政策</a>
-                  </li>
-
-                  <li>
-                    <a href="javascript:void(0);">法律聲明</a>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
 
           </div>
         </div>
@@ -885,6 +877,13 @@
     src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
   ></script>
 
+
+  <!-- sweetalert2 -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/sweetalert2/sweetalert2.all.min.js"
+  ></script>
+
   <!-- slick -->
   <script
     type="text/javascript"
@@ -898,6 +897,82 @@
   ></script>
 
   <!-- 自定義JS -->
+
+  <!-- sweetalert2 啟動程式 -->
+  <script>
+    $(function () {
+
+      // 匯款資訊
+
+      $('#remittance_informationl_btn').click(function () {
+        Swal.fire({
+          title: '<div class="h5">匯款資訊</div >',
+          // icon: 'info',
+          html:
+            '<div class="content-box">' +
+            '<div class="info-box mb-3">' +
+            '<div class="info-box-head">銀行代號</div>' +
+            '<div>822</div>' +
+            '</div>' +
+            '<div class="info-box ">' +
+            '<div class="info-box-head">銀行帳號</div>' +
+            '<div>123456789</div>' +
+            '</div>'
+            + '</div>',
+          confirmButtonText: '確認',
+          cancelButtonText: '取消',
+          buttonsStyling: false,
+          customClass: {
+            container: 'centurion-modal-style01',
+            confirmButton: 'btn-style02',
+            cancelButton: 'btn-style02 gray'
+          },
+
+          showCloseButton: true, // 預設顯示在右上角的關閉按鈕
+          showCancelButton: true, // 取消按鈕
+
+        })
+      })
+
+      // 匯款帳戶後五碼
+      $('#remittance_account_modal_btn').click(function () {
+
+        Swal.fire({
+          title: '<div class="h5">匯款帳戶後五碼<span class= "fz-12 " >* 為必填欄位</span></div >',
+          // icon: 'info',
+          html:
+            '<div class="cart-form">' +
+            '<div class="form-group ">' +
+            '<input id="order_remittance_account" type="text" name="order_remittance_account" placeholder="請輸入匯款帳戶後五碼*" class="form-input">' +
+            '</div>' + '</div>',
+          confirmButtonText: '確認',
+          cancelButtonText: '取消',
+          buttonsStyling: false,
+          customClass: {
+            container: 'centurion-modal-style01',
+            confirmButton: 'btn-style02',
+            cancelButton: 'btn-style02 gray'
+          },
+
+          showCloseButton: true, // 預設顯示在右上角的關閉按鈕
+          showCancelButton: true, // 取消按鈕
+          preConfirm: function () {
+            var val1 = $('#order_remittance_account').val();
+            if (/^\d{5}$/.test(val1)) {
+              return val1
+            } else {
+              Swal.showValidationMessage('請輸入匯款帳戶後五碼');
+            }
+          }
+        }).then(function (result) {
+          console.log('匯款帳號', result.value);
+        });
+      })
+
+
+
+    })
+  </script>
 
   <script
     type="text/javascript"

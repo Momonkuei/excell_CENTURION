@@ -36,6 +36,18 @@
       }
     }
 
+    .swiper-pagination {
+      bottom: 1.25rem;
+
+      .swiper-pagination-bullet-active {
+        background: $primary;
+      }
+
+      @media (min-width: $viewMobile) {
+        display: none;
+      }
+    }
+
     .product-gallery-btn-prev {
       left: -30px;
     }
@@ -92,6 +104,9 @@
 
   // 產品資料
   .product-item {
+    display: flex;
+    flex-direction: column;
+
     @media (max-width: $viewM) {
       margin-top: 1rem;
     }
@@ -126,6 +141,42 @@
     &-feature {
       ul {
         padding-left: 0;
+      }
+    }
+
+    // 數量
+    &-quantity {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .QTY-selector {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #cccccc;
+        white-space: nowrap;
+
+        &-currentNum {
+          display: inline-block;
+          width: 2.5rem;
+          padding: 0;
+          text-align: center;
+          letter-spacing: normal;
+          background: transparent;
+          border: none;
+        }
+
+        &-btn {
+          display: inline-block;
+          padding: 0.25rem 0.625rem;
+          cursor: pointer;
+          user-select: none;
+
+          @media (min-width: $viewMobile) {
+            padding: 0.5rem 1rem 0.5rem;
+          }
+        }
       }
     }
   }
