@@ -597,6 +597,11 @@
   position: relative;
   background-color: $white;
   z-index: 9;
+  overflow: hidden;
+
+  &.open-wrap-box {
+    overflow: visible;
+  }
 
   .header-navbar-box {
     display: flex;
@@ -608,9 +613,143 @@
     text-decoration: none;
   }
 
+  // 首頁選單按鈕
+  .menu-icon-box {
+    display: none;
+
+    .btn-list {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      @media (max-width: $viewMobile) {
+        height: 100%;
+        width: 100%;
+      }
+
+      .slide-menu-control {
+        cursor: pointer;
+        border: 0;
+        background-color: transparent;
+        outline: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @media (max-width: $viewMobile) {
+          height: 100%;
+          width: 100%;
+        }
+
+        .line {
+          background-color: $black;
+          display: block;
+          height: 2px;
+          transition: all 0.3s ease-in-out;
+          width: 27px;
+          position: relative;
+
+          &::before,
+          &::after {
+            content: "";
+            display: block;
+            background-color: inherit;
+            height: 2px;
+            position: absolute;
+            transition: all 0.1s;
+            width: 27px;
+            box-sizing: border-box;
+            outline: 0;
+          }
+
+          &::before {
+            top: -8px;
+          }
+
+          &::after {
+            bottom: -8px;
+          }
+        }
+      }
+
+      .txt {
+        @media (max-width: $viewS) {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: $viewL) {
+      display: block;
+    }
+
+    @media (max-width: $viewMobile) {
+      min-width: 6.25rem;
+    }
+  }
+
+  // 去除原本設定
   .navbar {
     padding-top: 0;
     padding-bottom: 0;
+    position: static;
+
+    .navMenu {
+      padding-left: 0;
+      margin-bottom: 0;
+
+      > li {
+        position: static;
+
+        // a 連結
+        .navMenu-link {
+          font-weight: 500;
+          letter-spacing: 0.1em;
+          position: relative;
+
+          @media (max-width: 1440px) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            font-size: 0.875rem;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            background-color: $primary;
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            opacity: 0;
+            transition: opacity 0.4s;
+          }
+
+          &:hover {
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+
+        &.active-wrap-box {
+          .navMenu-link {
+            &::after {
+              opacity: 1;
+            }
+          }
+
+          .wrap-box {
+            // 啟動後的效果
+            opacity: 1;
+            pointer-events: auto;
+          }
+        }
+      }
+    }
 
     .header-link {
       text-decoration: none;
@@ -627,33 +766,186 @@
     .wrap-box {
       z-index: 1;
       opacity: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
       pointer-events: none;
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 480px;
-      -webkit-transform: translate(0, 100%);
+      height: 30rem;
       transform: translate(0, 100%);
       background-color: #ffffff;
-      -webkit-transition: opacity 0.7s;
-      transition: opacity 0.7s;
+      transition: opacity 0.5s;
+
+      &-content {
+        display: flex;
+        gap: 1.5rem;
+        margin: 0 auto;
+        max-width: 75rem;
+        height: 100%;
+        @media (min-width: $viewM) {
+          padding-top: 2.5rem;
+          padding-bottom: 5rem;
+        }
+      }
+
+      // 下拉側邊選單
+      &-menu {
+        width: 40%;
+        height: 100%;
+
+        border-right: 1px solid $primary;
+
+        &-container {
+          overflow: hidden;
+          overflow-y: auto;
+          padding-right: 1.5rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          // scrollbar
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: $header-scrollbar-bg-color;
+            border-radius: 10px;
+            // margin: 20px 130px;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $header-scrollbar-color;
+          }
+        }
+      }
+
+      // 下拉側邊選單清單
+      &-submenu-list {
+        padding-left: 0;
+        width: 100%;
+        .item {
+          font-size: 1.25rem;
+
+          letter-spacing: 0.009em;
+
+          a {
+            display: inline-block;
+            padding: 7px 11px;
+            color: #000;
+            transition: all 0.3s ease-in;
+          }
+
+          &.active {
+            font-weight: 600;
+            a {
+              color: $primary;
+            }
+          }
+
+          &:hover {
+            a {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      // 下拉選單內容
+      &-detail {
+        width: 100%;
+
+        &-container {
+          overflow: hidden;
+          overflow-y: auto;
+          padding: 0 2.5rem;
+          height: 100%;
+
+          // 去除
+          // scrollbar-width: none;
+
+          // scrollbar
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: $header-scrollbar-bg-color;
+            border-radius: 10px;
+            // margin: 20px 130px;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $header-scrollbar-color;
+          }
+        }
+
+        // 類別
+        .info-wrap {
+          &-topBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          // 標題
+          &-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.009em;
+          }
+
+          &-block {
+            padding: 0 5px;
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 0.625rem;
+
+            &-box {
+              width: 100%;
+
+              ul {
+                padding-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                li {
+                  width: calc((100% - 3rem) / 4);
+
+                  a {
+                    @include hideLongTexts(3);
+                  }
+                }
+              }
+            }
+          }
+
+          &[data-target-sub-list-item] {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media (max-width: $viewL) {
+      &.header-menu-box {
+        display: none;
+      }
     }
   }
 
   // logo
   .main-logo {
-    max-width: 9.625rem;
+    max-width: 14rem;
 
-    @media (min-width: $viewS) {
-      max-width: 14rem;
+    @media (min-width: $viewL) {
+      max-width: 10rem;
     }
 
-    @media (max-width: $viewMobile) {
-      max-width: 8rem;
+    @media (min-width: 1500px) {
+      max-width: 14rem;
     }
   }
 
@@ -665,6 +957,10 @@
 
     a {
       color: $black;
+    }
+
+    @media (max-width: 1440px) {
+      min-width: 6.25rem;
     }
   }
 
@@ -1011,6 +1307,7 @@
   }
 }
 
+// menu選單
 .open-menu {
   overflow: hidden;
   width: 100%;
@@ -1037,6 +1334,7 @@
   }
 }
 
+// 登入選單
 .open-loginMenu {
   overflow: hidden;
   width: 100%;
@@ -1099,6 +1397,21 @@
   .header-fullMenu-mask {
     opacity: 1;
     height: 100vh;
+  }
+}
+
+// headerStyle02 的下拉選單
+.open-wrap-box {
+  overflow: hidden;
+  width: 100%;
+
+  .header-fullMenu-mask {
+    opacity: 1;
+
+    @media (min-width: $viewS) {
+      height: 100vh;
+      transform: translateX(0%);
+    }
   }
 }
 

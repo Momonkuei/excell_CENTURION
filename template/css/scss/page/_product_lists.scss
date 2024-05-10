@@ -182,6 +182,10 @@
     grid-gap: 20px;
     grid-template-columns: repeat(4, 1fr);
 
+    @media (max-width: $viewM) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     @media (max-width: $viewS) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -202,6 +206,7 @@
         flex-direction: column;
         transition: all 0.3s ease-in;
         flex-grow: 1;
+
         &:hover {
           box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
           transform: translate(-2px, -2px);
@@ -211,6 +216,7 @@
 
     &-imageBox {
       margin-bottom: 0.75rem;
+      position: relative;
     }
 
     &-image {

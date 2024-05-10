@@ -43,7 +43,7 @@
         background: $primary;
       }
 
-      @media (min-width: $viewMobile) {
+      @media (min-width: $viewM) {
         display: none;
       }
     }
