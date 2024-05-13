@@ -62,34 +62,15 @@
   font-style: normal;
   background-color: transparent;
   transition:
-    color 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7),
-    border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+    color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7),
+    border 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.7),
+    background 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   z-index: 1;
   -webkit-tap-highlight-color: initial;
 
-  &:before {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    transform: scale(0, 1);
-    transform-origin: right;
-    z-index: -1;
-    background-color: $primary;
-    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.7);
-  }
-
   &:hover {
     color: $white;
-    &::before {
-      transform: scale(1, 1);
-      transform-origin: left;
-    }
+    background-color: $primary;
   }
 }
 

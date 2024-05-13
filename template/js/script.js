@@ -75,10 +75,29 @@ $(function () {
 			});
 		}
 
+		// login表單 登入/忘記密碼更換
+		if ($('.sectionblock-login').length) {
+			$('.forgetPassword-box').css('display', 'none');
+
+			$('.forgot-password-btn').click(function () {
+				$('.sectionblock-login .login-box').css('display', 'none');
+				$('.sectionblock-login .forgetPassword-box').fadeIn(300);
+			});
+
+			$('.return-login-btn').click(function () {
+				$('.sectionblock-login .forgetPassword-box').css(
+					'display',
+					'none'
+				);
+				$('.sectionblock-login .login-box').fadeIn(300);
+			});
+		}
 		// 會員選單關閉
 		$('.login-menu .close-btn, header .fullMenu-mask').click(function () {
 			if ($('body').hasClass('open-loginMenu')) {
 				$('body').removeClass('open-loginMenu');
+				$('.forgetPassword-box').css('display', 'none');
+				$('.sectionblock-login .login-box').fadeIn();
 			}
 		});
 
@@ -166,9 +185,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

@@ -711,15 +711,11 @@
 
             </div>
 
-
-
           </div>
         </div>
 
-
       </div>
     </div>
-
 
 
   </div>
@@ -912,11 +908,15 @@
             '<div class="content-box">' +
             '<div class="info-box mb-3">' +
             '<div class="info-box-head">銀行代號</div>' +
-            '<div>822</div>' +
+            '<div>808 玉山銀行</div>' +
+            '</div>' +
+            '<div class="info-box mb-3">' +
+            '<div class="info-box-head">戶名</div>' +
+            '<div>瑪眾國際貿易有限公司</div>' +
             '</div>' +
             '<div class="info-box ">' +
             '<div class="info-box-head">銀行帳號</div>' +
-            '<div>123456789</div>' +
+            '<div>0381 9401 15839 </div>' +
             '</div>'
             + '</div>',
           confirmButtonText: '確認',
@@ -933,43 +933,6 @@
 
         })
       })
-
-      // 匯款帳戶後五碼
-      $('#remittance_account_modal_btn').click(function () {
-
-        Swal.fire({
-          title: '<div class="h5">匯款帳戶後五碼<span class= "fz-12 " >* 為必填欄位</span></div >',
-          // icon: 'info',
-          html:
-            '<div class="cart-form">' +
-            '<div class="form-group ">' +
-            '<input id="order_remittance_account" type="text" name="order_remittance_account" placeholder="請輸入匯款帳戶後五碼*" class="form-input">' +
-            '</div>' + '</div>',
-          confirmButtonText: '確認',
-          cancelButtonText: '取消',
-          buttonsStyling: false,
-          customClass: {
-            container: 'centurion-modal-style01',
-            confirmButton: 'btn-style02',
-            cancelButton: 'btn-style02 gray'
-          },
-
-          showCloseButton: true, // 預設顯示在右上角的關閉按鈕
-          showCancelButton: true, // 取消按鈕
-          preConfirm: function () {
-            var val1 = $('#order_remittance_account').val();
-            if (/^\d{5}$/.test(val1)) {
-              return val1
-            } else {
-              Swal.showValidationMessage('請輸入匯款帳戶後五碼');
-            }
-          }
-        }).then(function (result) {
-          console.log('匯款帳號', result.value);
-        });
-      })
-
-
 
     })
   </script>

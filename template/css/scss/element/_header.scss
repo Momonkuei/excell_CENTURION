@@ -636,6 +636,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        padding: 1rem 0.5rem;
 
         @media (max-width: $viewMobile) {
           height: 100%;
@@ -674,18 +675,12 @@
       }
 
       .txt {
-        @media (max-width: $viewS) {
-          display: none;
-        }
+        display: none;
       }
     }
 
     @media (max-width: $viewL) {
       display: block;
-    }
-
-    @media (max-width: $viewMobile) {
-      min-width: 6.25rem;
     }
   }
 
@@ -912,7 +907,7 @@
                 gap: 1rem;
 
                 li {
-                  width: calc((100% - 3rem) / 4);
+                  width: calc((100% - 2.5rem) / 3);
 
                   a {
                     @include hideLongTexts(3);
@@ -938,7 +933,7 @@
 
   // logo
   .main-logo {
-    max-width: 14rem;
+    max-width: 12rem;
 
     @media (min-width: $viewL) {
       max-width: 10rem;
@@ -1001,10 +996,11 @@
         display: flex;
         align-items: center;
         gap: 10px;
-
         position: absolute;
-        left: 10%;
-        top: 5%;
+        left: auto;
+        right: 10%;
+        top: 10vw;
+        color: $black;
 
         i {
           font-size: 1.25rem;
@@ -1026,6 +1022,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin-bottom: 0;
 
         li {
           width: 100%;
@@ -1221,7 +1218,7 @@
   &.scroll {
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
   }
 
@@ -1435,15 +1432,11 @@
         transition: all 0.3s ease-in-out;
       }
 
-      &.headerStyle01 {
-        // 左側選單
-        .menu-list {
-          color: $black;
-
+      &.headerStyle02 {
+        // 手機版menu
+        .menu-icon-box {
           .btn-list {
             .slide-menu-control {
-              color: $black;
-
               .line {
                 background-color: $black;
               }
@@ -1451,45 +1444,28 @@
           }
         }
 
-        // 右側選單
-        .user-items {
-          a {
-            color: $black;
+        .header-menu {
+          .navMenu {
+            .navMenu-link {
+              color: $primary;
+            }
           }
         }
 
-        // 搜尋表單
-        .searchBox {
-          input {
-            border-color: $black;
-            color: $black;
-          }
-
-          .search-btn {
-            color: $black;
-          }
-
-          &.open {
-            .searchToggle {
-              &::after,
-              &::before {
-                background-color: $black;
-              }
-            }
+        .user-items {
+          a {
+            color: black;
           }
         }
       }
     }
   }
 
-  .headerStyle01 {
-    // 左側選單
-    .menu-list {
-      color: $white;
+  .headerStyle02 {
+    // 手機板menu
+    .menu-icon-box {
       .btn-list {
         .slide-menu-control {
-          color: $white;
-
           .line {
             background-color: $white;
           }
@@ -1497,67 +1473,17 @@
       }
     }
 
-    // 右側選單
+    .header-menu {
+      .navMenu {
+        .navMenu-link {
+          color: #fff;
+        }
+      }
+    }
+
     .user-items {
       a {
-        color: $white;
-      }
-
-      .member-function-box-dropdown-menu {
-        a {
-          color: $black;
-        }
-      }
-    }
-
-    // 搜尋表單
-    .searchBox {
-      input {
-        border-color: $white;
-        color: $white;
-      }
-
-      .search-btn {
-        color: $white;
-      }
-
-      &.open {
-        .searchToggle {
-          &::after,
-          &::before {
-            background-color: $white;
-          }
-        }
-      }
-    }
-
-    // 平板搜尋表單打開時
-  }
-
-  &.open-search {
-    background-color: white;
-
-    .headerStyle01 {
-      // 左側選單
-      .menu-list {
-        color: $black;
-
-        .btn-list {
-          .slide-menu-control {
-            color: $black;
-
-            .line {
-              background-color: $black;
-            }
-          }
-        }
-      }
-
-      // 右側選單
-      .user-items {
-        a {
-          color: $black;
-        }
+        color: #fff;
       }
     }
   }

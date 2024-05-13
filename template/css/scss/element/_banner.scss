@@ -20,6 +20,7 @@
         background-size: cover;
         pointer-events: none;
         display: block;
+        height: 100vh;
 
         &::before {
           content: "";
@@ -42,6 +43,7 @@
 
         @media (max-width: $viewMobile) {
           pointer-events: auto;
+          height: auto;
         }
       }
 
@@ -99,20 +101,6 @@
             display: none;
           }
         }
-
-        // .pic-tab {
-        //   display: none;
-        //   @media (max-width: $viewM) {
-        //     display: block;
-        //   }
-        // }
-
-        // .pic-mb {
-        //   display: none;
-        //   @media (max-width: $viewMobile) {
-        //     display: block;
-        //   }
-        // }
       }
 
       // 按鈕

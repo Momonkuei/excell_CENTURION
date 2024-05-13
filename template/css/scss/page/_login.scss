@@ -1,6 +1,7 @@
 .sectionblock-login {
-  .login-box {
-    max-width: 400px;
+  .login-box,
+  .forgetPassword-box {
+    max-width: 25rem;
     min-height: 45rem;
     display: flex;
     align-items: center;
