@@ -12296,6 +12296,7 @@ body {
   -webkit-transition: border-color 0.1s ease-in-out;
   transition: border-color 0.1s ease-in-out;
   background: transparent;
+  color: #222;
 }
 .member-form .telephone-form-group .dash-box {
   position: relative;
@@ -13244,7 +13245,7 @@ body {
   display: block;
   background-color: #35286d;
   width: 100%;
-  height: 5px;
+  height: 3px;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -13505,8 +13506,13 @@ body {
   position: absolute;
   left: auto;
   right: 10%;
-  top: 10vw;
+  top: 5%;
   color: #000;
+}
+@media (max-width: 576px) {
+  .headerStyle02 .fullMenu-inner .close-btn {
+    top: 7%;
+  }
 }
 .headerStyle02 .fullMenu-inner .close-btn i {
   font-size: 1.25rem;
@@ -13680,8 +13686,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  color: #000;
   position: absolute;
-  right: 10%;
+  right: 5%;
   top: 5%;
 }
 .headerStyle02 .login-menu-inner .close-btn i {
@@ -14357,6 +14364,10 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   }
 }
 
+.article-category {
+  padding-left: 0;
+  margin-bottom: 0;
+}
 .article-category a {
   text-decoration: none;
 }
@@ -15452,8 +15463,15 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   color: #35286d !important;
   font-weight: 500;
 }
+.sectionblock-account .order-table-box .dataTables_wrapper .dataTables_paginate span a {
+  margin-left: 0;
+}
 .sectionblock-account .order-table-box .dataTables_wrapper .dataTables_paginate span a:not(:first-child) {
   border-left: 1px solid #35286d;
+}
+.sectionblock-account .order-table-box .dataTables_wrapper .dataTables_paginate span a.current {
+  background-color: #35286d;
+  color: #fff !important;
 }
 .sectionblock-account .order-table-scrollbar {
   padding-bottom: 1rem;
@@ -15863,7 +15881,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   }
 }
 .sectionblock-product-detail .product-gallery .swiper-pagination {
-  bottom: 1.25rem;
+  bottom: 0.5rem;
 }
 .sectionblock-product-detail .product-gallery .swiper-pagination .swiper-pagination-bullet-active {
   background: #35286d;
@@ -15891,7 +15909,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 @media (max-width: 576px) {
   .sectionblock-product-detail .gallery-slider .swiper-slide-cover {
-    padding-bottom: 110%;
+    padding-bottom: 115%;
   }
 }
 .sectionblock-product-detail .gallery-thumbs {
@@ -16017,6 +16035,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   position: relative;
   border: none;
   cursor: pointer;
+  color: #000;
 }
 .sectionblock-product-detail .product-item-collapsible .plus-icon {
   position: absolute;
@@ -16245,7 +16264,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(4, 1fr);
 }
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .product-lists .products-content {
     -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
     grid-template-columns: repeat(3, 1fr);

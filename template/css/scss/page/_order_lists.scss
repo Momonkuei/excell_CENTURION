@@ -28,8 +28,14 @@
 
         span {
           a {
+            margin-left: 0;
             &:not(:first-child) {
               border-left: 1px solid $primary;
+            }
+
+            &.current {
+              background-color: $primary;
+              color: $white !important;
             }
           }
         }

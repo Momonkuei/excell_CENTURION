@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="format-detection"
+    content="telephone=no"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link
+    rel="stylesheet"
+    href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+  >
+
+
+  <!-- 客製css -->
+  <link
+    rel="stylesheet"
+    href="/template/css/<?# version ?>/style.css"
+  >
+
+  <title>百夫長旅行箱CENTURION</title>
+</head>
+
+<body class="">
+
+  <?# header ?>
+
+  <div class="body-content mt-3">
+
+    <div class="page-cart2">
+
+      <!-- left-box -->
+      <div class="left-box fz-14">
+        <div class="left-box-area">
+          <div class="left-box-header">
+
+          </div>
+
+          <div class="left-box-body">
+
+            <form
+              action=""
+              id=""
+              class="cart-form"
+            >
+              <!-- 聯絡資訊 -->
+              <div class="contact-information-area mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="h4 ">
+                    聯絡資訊
+                    <span class="fz-12 ">*為必填欄位</span>
+                  </div>
+                  <!-- <a href="javascript:void(0);">登入</a> -->
+                </div>
+
+                <div class="row twzipcode1">
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="contact_name"
+                        type="text"
+                        name="contact_name"
+                        placeholder="姓名*"
+                        class="form-input"
+                        required
+                      >
+                      <label
+                        for="contact_name"
+                        class="form-label"
+                      >姓名*</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="contact_phone"
+                        type="tel"
+                        name="contact_phone"
+                        placeholder="連絡電話*"
+                        class="form-input"
+                        required
+                      >
+                      <label
+                        for="contact_phone"
+                        class="form-label"
+                      >連絡電話*</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="contact_email"
+                        type="email"
+                        name="email"
+                        placeholder="電子郵件*"
+                        class="form-input"
+                        required
+                      >
+                      <label
+                        for="contact_email"
+                        class="form-label"
+                      >電子郵件*</label>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4 mb-3">
+                    <div
+                      data-role="zipcode"
+                      data-style="form-control"
+                      data-name="zipcode"
+                      data-value="郵遞區號"
+                      class="form-group "
+                    >
+
+                      <label
+                        for="name"
+                        class="form-label"
+                      >郵遞區號</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group ">
+                      <label
+                        for="county"
+                        class="form-label"
+                      >縣市*</label>
+
+                      <div
+                        data-role="county"
+                        data-style="form-control"
+                        data-name="county"
+                        data-value="請選擇縣市"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="district"
+                        class="form-label"
+                      >鄉鎮市區*</label>
+                      <div
+                        data-role="district"
+                        data-style="form-control"
+                        data-name="district"
+                        data-value="請選擇鄉鎮區"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 ">
+                    <div class="form-group">
+                      <label
+                        for="contact_address_detail"
+                        class="form-label"
+                      >地址*</label>
+                      <input
+                        id="contact_address_detail"
+                        type="text"
+                        name="contact_address_detail"
+                        placeholder="請輸入地址*"
+                        class="form-input"
+                        required
+                      >
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- 付款方始 -->
+              <div class="payment-area mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="h4 ">
+                    付款方式
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <select
+                    class="form-select"
+                    id="payment_method"
+                  >
+                    <option value="credit_card">信用卡</option>
+                  </select>
+                  <label
+                    for="payment_method"
+                    class="form-label"
+                  >付款方式</label>
+                </div>
+
+              </div>
+
+              <!-- 發票 -->
+
+              <div class="payment-area mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="h4 ">
+                    發票類型
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <select
+                    class="form-select"
+                    id="invoice_type"
+                  >
+                    <option selected>請選擇發票類型</option>
+                    <option value="invoice-area">個人發票</option>
+                    <option value="company-account-invoice-area">公司戶發票</option>
+                  </select>
+                  <label
+                    for="invoice_type"
+                    class="form-label"
+                  >發票類型</label>
+                </div>
+
+                <!-- 個人發票 -->
+                <div class="invoice-area">
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <select
+                        class="form-select"
+                        id="vehicle_type"
+                        aria-label="vehicle_type"
+                      >
+                        <option
+                          value="0"
+                          selected
+                        >請選擇載具類型</option>
+                        <option value="email">電子郵件 (發票資訊會寄到您的電子郵件)</option>
+                        <option value="mobileBarcode-area">手機條碼</option>
+                      </select>
+                      <label
+                        for="payment_method"
+                        class="form-label"
+                      >載具類型</label>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <!-- 手機條碼 -->
+                <div class="mobileBarcode-area">
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="mobileBarcode"
+                        class="form-label"
+                      >手機條碼*</label>
+                      <input
+                        id="mobileBarcode"
+                        type="text"
+                        name="mobileBarcode"
+                        placeholder="手機條碼*"
+                        class="form-input"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 公司戶發票 -->
+
+                <div class="company-account-invoice-area">
+                  <div class="col-12 mb-3">
+                    <div class="form-group ">
+                      <input
+                        id="tax_ID_number"
+                        type="text"
+                        name="tax_ID_number"
+                        placeholder="統一編號*"
+                        class="form-input"
+                      >
+                      <label
+                        for="tax_ID_number"
+                        class="form-label"
+                      >統一編號*</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <input
+                        id="company_letterhead"
+                        type="text"
+                        name="company_letterhead"
+                        placeholder="公司抬頭*"
+                        class="form-input"
+                      >
+                      <label
+                        for="company_letterhead"
+                        class="form-label"
+                      >公司抬頭*</label>
+                    </div>
+
+                    <div>
+                      <span class="fz-12 mt-1">(發票資訊會寄到您的電子郵件)</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- 運送 -->
+              <div class="transport-area">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="h4 ">
+                    運送資訊
+
+                  </div>
+                </div>
+
+                <div class="row twzipcode2">
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="transport_name"
+                        class="form-label"
+                      >姓名*</label>
+                      <input
+                        id="transport_name"
+                        type="text"
+                        name="name"
+                        placeholder="姓名*"
+                        class="form-input"
+                        required
+                      >
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="transport_phone"
+                        class="form-label"
+                      >電話*</label>
+                      <input
+                        id="transport_phone"
+                        type="tel"
+                        name="transport_phone"
+                        placeholder="請輸入電話*"
+                        class="form-input"
+                        required
+                      >
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <div
+                      data-role="zipcode"
+                      data-style="form-control"
+                      data-name="zipcode"
+                      data-value="郵遞區號"
+                      class="form-group "
+                    >
+
+                      <label
+                        for="transport_postal_code"
+                        class="form-label"
+                      >郵遞區號</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group ">
+                      <label
+                        for="county"
+                        class="form-label"
+                      >縣市*</label>
+
+                      <div
+                        data-role="county"
+                        data-style="form-control"
+                        data-name="county"
+                        data-value="請選擇縣市"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="district"
+                        class="form-label"
+                      >鄉鎮市區*</label>
+                      <div
+                        data-role="district"
+                        data-style="form-control"
+                        data-name="district"
+                        data-value="請選擇鄉鎮區"
+                      >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <label
+                        for="transport_address_detail"
+                        class="form-label"
+                      >地址*</label>
+                      <input
+                        id="transport_address_detail"
+                        type="text"
+                        name="name"
+                        placeholder="請輸入地址*"
+                        class="form-input"
+                        required
+                      >
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <div class="form-group">
+                      <select
+                        class="form-select"
+                        id="shipping_method"
+                      >
+                        <option value="home_delivery">宅配</option>
+                      </select>
+                      <label
+                        for="shipping_method"
+                        class="form-label"
+                      >運送方式</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-3">
+                    <button class="cart-chcekout-btn btn-full">
+                      完成並檢視訂單
+                    </button>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+
+          <div class="left-box-footer mt-3">
+            <div class="left-box-footer-area">
+              <ul class="pay-attention-lists">
+                <li>
+                  <a
+                    href="javascript:void(0);"
+                    target="_blank"
+                  >退款政策</a>
+                </li>
+
+                <li>
+                  <a
+                    href="javascript:void(0);"
+                    target="_blank"
+                  >運送政策</a>
+                </li>
+
+                <li>
+                  <a
+                    href="javascript:void(0);"
+                    target="_blank"
+                  >服務政策</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="right-box fz-14">
+
+        <div class="right-box-header">
+          <button class="order-content-btn active">
+            <span class="order-content-btn-area ">
+              <span class="content">
+                <span class="txt">隱藏訂單內容</span>
+                <span class="icon">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </span>
+              <span class="price h5">
+                $18,300.00
+              </span>
+
+            </span>
+          </button>
+        </div>
+        <div class="right-box-area">
+
+          <div class="right-box-body">
+            <div class="shopping-list-cart">
+              <div class="product-list">
+                <div class="item">
+                  <div class="item-thumbnail-box">
+
+                    <img
+                      class="CartItem__Image"
+                      src="/template/image/<?# version ?>/big_sea_fish.webp"
+                      alt="大海魚"
+                    >
+                    <div class="count">
+                      <span class="fz-12 count-num">2</span>
+                    </div>
+                  </div>
+                  <div class="item-content">
+                    <div class="item-info">
+                      <div class="item-name">
+                        CENTURION 百夫長 28吋 頭等艙系列 旅行箱
+                      </div>
+                      <div class="item-category">
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item-price">
+                    <span>$18,000.00</span>
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div class="discount-code-area">
+                <form
+                  action=""
+                  class="cart-form"
+                >
+                  <div class="discount-code-area-box">
+                    <div class="form-group form-group-cart-discount">
+                      <label
+                        for="cart_discount_code"
+                        class="form-label"
+                      >折扣碼</label>
+                      <input
+                        id="cart_discount_code"
+                        type="text"
+                        name="name"
+                        placeholder="請輸入折扣碼"
+                        class="form-input"
+                      >
+                    </div>
+                    <button class="discount-btn">
+                      <span>使用</span>
+                    </button>
+                  </div>
+
+                </form>
+
+              </div>
+
+              <div class="total-area">
+                <div class="total-box">
+                  <div class="total-box-title">
+                    <span>小計</span>
+                  </div>
+                  <div class="total-box-txt">
+                    <span class="fw-bold">$18,000.00</span>
+                  </div>
+                </div>
+
+                <div class="total-box">
+                  <div class="total-box-title">
+                    <span>運費
+                    </span>
+                  </div>
+                  <div class="total-box-txt">
+                    <span>$300.00</span>
+                  </div>
+                </div>
+
+                <div class="total-box">
+                  <div class="total-box-title">
+                    <span class="h5">總計
+                    </span>
+                  </div>
+                  <div class="total-box-txt">
+                    <span class="currency ">TWD</span>
+                    <span class="h5">$18,300.00</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+  <?# footer ?>
+
+  <a
+    href="javascript:void(0);"
+    class="goTop"
+  >
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/popper/popper.min.js"
+  ></script>
+
+  <!-- bootstrap -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/bootstrap/bootstrap.js"
+  ></script>
+
+  <!-- TWzipcode -->
+  <script src="/template/jquery/jQuery-TWzipcode-master/jquery.twzipcode.min.js"></script>
+
+
+  <!-- 自定義JS -->
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/script.js"
+  ></script>
+
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/cart.js"
+  >
+  </script>
+
+</body>
+
+</html>

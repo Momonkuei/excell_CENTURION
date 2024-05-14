@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="format-detection"
+    content="telephone=no"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link
+    rel="stylesheet"
+    href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- slick css -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/slick/slick.css"
+  >
+  <link
+    rel="stylesheet"
+    href="/template/jquery/slick/slick-theme.css"
+  >
+
+  <!-- sweetalert2 -->
+  <link
+    href="template/jquery/sweetalert2/sweetalert2.min.css"
+    rel="stylesheet"
+  >
+
+
+  <!-- Swiper css -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/swiper/swiper-bundle.min.css"
+  >
+
+  <!-- 客製css -->
+  <link
+    rel="stylesheet"
+    href="/template/css/<?# version ?>/style.css"
+  >
+
+  <title>百夫長旅行箱CENTURION</title>
+</head>
+
+<body class="">
+
+  <?# header ?>
+
+
+
+  <div class="body-content mt-3">
+
+    <div class="container">
+      <div class="page-cart3">
+
+        <!-- left-box -->
+        <div class="left-box fz-14">
+          <div class="left-box-area">
+            <div class="left-box-header">
+
+            </div>
+
+            <div class="left-box-body">
+
+              <!-- 訂單完成資訊 -->
+              <div class="comfirm-information-box">
+                <div class="confirm-message ">
+                  <i class="bi bi-check-lg check-icon"></i>
+                  <div class="h5 fw-bolder">謝謝您！您的訂單已經成立！</div>
+                  <p>訂單號碼 20240408010854982</p>
+                  <div class="h6">已將訂單明細發送至您的電子信箱:</div>
+                  <p class="fw-bolder">XXXXX@icloud.com</p>
+                </div>
+              </div>
+
+              <!-- 訂單詳細資訊 -->
+
+              <div class="content-box mb-3">
+                <div class="content-box-title">
+                  <div class="h6">
+                    訂單詳細資訊
+                  </div>
+                </div>
+                <div class="content-box-content">
+                  <div class="row">
+
+                    <div class="col-6 mb-3">
+                      <div class="cart-left-lead-title fw-bolder">
+                        訂單資訊
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">訂單日期</div>
+                        <div>2024-04-08 09:08AM</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">訂單狀態</div>
+                        <div>訂單處理中</div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-6 mb-3">
+                      <div class="cart-left-lead-title fw-bolder">
+                        付款資訊
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">付款方式</div>
+                        <div>ATM匯款</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">付款狀態</div>
+                        <div>待匯款</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">匯款資訊</div>
+                        <div>
+                          <a
+                            id="remittance_informationl_btn"
+                            class="btn-style02 mt-2"
+                            href="javascript:void(0);"
+                          >點我顯示</a>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-6 mb-3">
+                      <div class="cart-left-lead-title fw-bolder">
+                        聯絡資訊
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">名稱</div>
+                        <div>陳小明</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">電子郵件</div>
+                        <div>XXXXX@icloud.com</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">電話號碼</div>
+                        <div>0919***454</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">地址</div>
+                        <div>台中市神岡區中山路1438號</div>
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="col-6 mb-3">
+                      <div class="cart-left-lead-title fw-bolder">
+                        發票資訊
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">發票申請類型</div>
+                        <div>雲端發票</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">發票載具類型</div>
+                        <div>會員載具 (XXXXX@icloud.com)</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">統一編號</div>
+                        <div></div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">公司抬頭</div>
+                        <div></div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-6 mb-3">
+                      <div class="cart-left-lead-title fw-bolder">
+                        運送資訊
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">收件人名稱</div>
+                        <div>陳小明</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">收件人電話號碼</div>
+                        <div>0919***454</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">送貨方式</div>
+                        <div>新竹物流 - 常溫</div>
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">地址</div>
+                        <div>台中市神岡區中山路1438號</div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="col-12 col-lg-6 mb-3">
+                      <div class="cart-left-lead-title fw-bolder">
+                        訂單備註
+                      </div>
+
+                      <div class="info-box">
+                        <div class="info-box-head">備註訊息</div>
+                        <div class="info-box-note">備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息備註訊息
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart3-btn-group">
+                <a
+                  href="javascript:void(0);"
+                  class="cart-continue-btn fz-14"
+                >
+                  繼續購物
+                </a>
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a
+    href="javascript:void(0);"
+    class="goTop"
+  >
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/popper/popper.min.js"
+  ></script>
+
+  <!-- bootstrap -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/bootstrap/bootstrap.js"
+  ></script>
+
+  <!-- TWzipcode -->
+  <script src="/template/jquery/jQuery-TWzipcode-master/jquery.twzipcode.min.js"></script>
+
+  <!-- slick -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/slick/slick.min.js"
+  ></script>
+
+  <!-- swiper -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/swiper/swiper-bundle.min.js"
+  ></script>
+
+  <!-- sweetalert2 -->
+  <script
+    type="text/javascript"
+    src="template/jquery/sweetalert2/sweetalert2.all.min.js"
+  ></script>
+
+  <!-- 自定義JS -->
+
+  <!-- sweetalert2 啟動程式 -->
+  <script>
+    $(function () {
+
+      // 匯款資訊
+
+      $('#remittance_informationl_btn').click(function () {
+        Swal.fire({
+          title: '<div class="h5">匯款資訊</div >',
+          // icon: 'info',
+          html:
+            '<div class="content-box">' +
+            '<div class="info-box mb-3">' +
+            '<div class="info-box-head">銀行代號</div>' +
+            '<div>808 玉山銀行</div>' +
+            '</div>' +
+            '<div class="info-box mb-3">' +
+            '<div class="info-box-head">戶名</div>' +
+            '<div>瑪眾國際貿易有限公司</div>' +
+            '</div>' +
+            '<div class="info-box ">' +
+            '<div class="info-box-head">銀行帳號</div>' +
+            '<div>0381940115839 </div>' +
+            '</div>'
+            + '</div>',
+          confirmButtonText: '確認',
+          cancelButtonText: '取消',
+          buttonsStyling: false,
+          customClass: {
+            container: 'centurion-modal-style01',
+            confirmButton: 'btn-style02',
+            cancelButton: 'btn-style02 gray'
+          },
+
+          showCloseButton: true, // 預設顯示在右上角的關閉按鈕
+          showCancelButton: true, // 取消按鈕
+
+        })
+      })
+
+
+    })
+  </script>
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/script.js"
+  ></script>
+
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/cart.js"
+  >
+  </script>
+
+</body>
+
+</html>

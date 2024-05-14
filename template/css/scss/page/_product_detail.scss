@@ -42,7 +42,7 @@
     }
 
     .swiper-pagination {
-      bottom: 1.25rem;
+      bottom: 0.5rem;
 
       .swiper-pagination-bullet-active {
         background: $primary;
@@ -77,7 +77,7 @@
       }
 
       @media (max-width: $viewMobile) {
-        padding-bottom: 110%;
+        padding-bottom: 115%;
       }
     }
   }
@@ -203,6 +203,7 @@
       position: relative;
       border: none;
       cursor: pointer;
+      color: $black;
     }
 
     .plus-icon {

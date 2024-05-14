@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="format-detection"
+    content="telephone=no"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link
+    rel="stylesheet"
+    href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- slick css -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/slick/slick.css"
+  >
+  <link
+    rel="stylesheet"
+    href="/template/jquery/slick/slick-theme.css"
+  >
+
+
+  <!-- Swiper css -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/swiper/swiper-bundle.min.css"
+  >
+
+  <!-- 客製css -->
+  <link
+    rel="stylesheet"
+    href="/template/css/<?# version ?>/style.css"
+  >
+
+  <title>百夫長旅行箱CENTURION</title>
+</head>
+
+<body class="">
+
+  <!-- header -->
+
+
+  <?# header ?>
+
+  <div class="body-content mt-3">
+
+    <div class="container">
+      <div class="h4 text-center">
+        購物清單
+      </div>
+
+      <div class="page-cart">
+        <form
+          action=""
+          class=""
+        >
+          <div class="cart-itemList fz-14">
+
+            <div class="cart-head">
+              <div class="cart-head-item  mini heading">
+                商品
+              </div>
+              <div class="cart-head-item"></div>
+              <div class="cart-head-item mini heading text-center">
+                數量
+              </div>
+              <div class="cart-head-item mini heading text-end">
+                小計
+              </div>
+            </div>
+
+            <div class="cart-item">
+
+              <div class="cart-item-imageWrapper aspect-ratio">
+                <div class="aspect-ratio aspect-ratio-1">
+                  <img
+                    class="cartItem__Image"
+                    src="/template/image/<?# version ?>/big_sea_fish.webp"
+                    alt="大海魚"
+                  >
+                </div>
+              </div>
+
+              <div class="cart-item-info">
+                <div class="cart-item-title heading fz-14">
+                  <a href="javascript:void(0);">CENTURION 百夫長 28吋 頭等艙系列 旅行箱</a>
+                </div>
+                <div class="cart-item-txt fz-14">
+                  <div class="cart-item-productName heading">
+
+                  </div>
+                  <div class="cart-item-priceList ">
+                    <div class="cart-item-price heading fz-14">
+                      $9,000
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart-item-adjustment heading text-center">
+                <div class="cart-item-QTY-selector-box">
+                  <div class="QTY-selector">
+                    <a
+                      href="javascript:void(0);"
+                      class="QTY-selector-btn QTY-reduce"
+                    >
+                      <i class="bi bi-dash"></i>
+                    </a>
+                    <input
+                      type="text"
+                      class="QTY-selector-currentNum fz-12"
+                      value="2"
+                    >
+                    <a
+                      href="javascript:void(0);"
+                      class="QTY-selector-btn QTY-plus"
+                    >
+                      <i class="bi bi-plus"></i>
+                    </a>
+                  </div>
+
+                </div>
+                <a
+                  href="javascript:void(0);"
+                  class=" cart-item-remove link-underline heading"
+                >移除</a>
+
+              </div>
+
+              <div class="cart-item-priceList cart-item-priceList-total heading text-end">
+                <div class="cart-item-price heading">
+                  $18,000
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+          </div>
+          <div class="cart-footer fz-12">
+
+            <div class="cart-note-container">
+              <div class="cart-note-label heading fz-14">
+                新增訂單備註
+              </div>
+              <textarea
+                class="cart-note"
+                name="order_note"
+                id="order_note"
+                rows="4"
+                placeholder="請留下您的訊息"
+              ></textarea>
+            </div>
+
+            <div class="cart-sum">
+              <div class="cart-total-area">
+                <div class="cart-total heading">合計:
+                  <span class="cart-total-price fz-14">$18,000.00 TWD</span>
+                </div>
+
+                <p class="cart-taxes">
+                  結帳時將計算您的的運費
+                </p>
+              </div>
+
+
+              <button class="cart-chcekout-btn cart1 btn-full">
+                前往結帳
+              </button>
+
+            </div>
+
+          </div>
+        </form>
+
+        <div class="cart-footer-info fz-14 mt-3">
+
+          <div class="cart-footer-info-label heading">
+            購物須知
+          </div>
+
+          <div class="shopping-notes-box">
+            <!-- 服務條款 -->
+            <div class="terms-service-area ">
+              <div class="heading shopping-notes-box-title">購物條款</div>
+
+              <ol class="shop-terms-lists fz-12">
+                <li class="">
+                  請注意！本網站商品數量眾多，多少會產生缺貨或停售之情況，下單成功或匯款成功不代表實質交易完成。我們仍保有保留接受訂單與否的權利。
+                </li>
+                <li class="">
+                  每台電腦因螢幕解析度不同，多少會有些許色差，物品皆以實品顏色為標準，若您是對顏色標準相當嚴格之買家，請謹慎確認再訂購。
+                </li>
+                <li class="">下標前請慎選款式及顏色並仔細詳閱商品、價格、運費等相關事宜。</li>
+              </ol>
+            </div>
+
+            <!-- 退換貨須知 -->
+            <div class=" terms-returned-or-exchanged-area ">
+              <div class="heading shopping-notes-box-title">退換貨須知</div>
+
+              <ol class="shop-terms-lists fz-12">
+                <li class="">
+                  退換貨及訂單相關問題請先與我們聯繫，我們將在第一時間協助後續處理。
+                </li>
+                <li class="">
+                  原廠外盒及原廠包裝都屬於商品的一部分，遺失、毀損或缺件，都可能影響您退貨的權益，也將依損毀程度扣除所需之整新費用。
+                </li>
+                <li class="">「猶豫期」非「試用期」，在您還不確定是否要辦理退貨以前，請勿拆封！一經拆封則依消費者保護法之規定，無法享有七天猶豫期之權益且不得辦理退貨。</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a
+    href="javascript:void(0);"
+    class="goTop"
+  >
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/popper/popper.min.js"
+  ></script>
+
+  <!-- bootstrap -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/bootstrap/bootstrap.js"
+  ></script>
+
+  <!-- slick -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/slick/slick.min.js"
+  ></script>
+
+  <!-- swiper -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/swiper/swiper-bundle.min.js"
+  ></script>
+
+  <!-- 自定義JS -->
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/script.js"
+  ></script>
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/cart.js"
+  ></script>
+
+</body>
+
+</html>
