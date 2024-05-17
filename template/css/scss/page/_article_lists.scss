@@ -41,18 +41,22 @@
 // 文章列表
 .article-list-wrapper {
   min-height: 40vh;
-  max-width: 80rem;
-  margin: 0 auto 3.75rem;
+  max-width: 62.5rem;
+  margin: 0 auto 0;
 
-  @media (min-width: $viewM) {
-    margin-bottom: 3.75rem;
+  @media (min-width: $viewL) {
+    margin-bottom: 2rem;
   }
 
   .article-item {
-    margin-bottom: 1.875rem;
+    margin-bottom: 1.5rem;
 
     @media (min-width: $viewM) {
-      margin-bottom: 3.75rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: $viewL) {
+      margin-bottom: 2.5rem;
     }
 
     &-imgBox {

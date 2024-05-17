@@ -1,0 +1,29 @@
+.sectionblock-product-introduction-1 {
+  &-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 48.75rem;
+    margin: 0 auto;
+    padding: 3.75rem 1.5rem;
+
+    .title {
+      font-size: 1.5rem;
+      @media (min-width: $viewL) {
+        font-size: 2rem;
+      }
+    }
+
+    .txt {
+      color: #666666;
+    }
+
+    @media (min-width: $viewS) {
+      padding: 2.5rem 0;
+    }
+
+    @media (min-width: $viewL) {
+      padding: 6.25rem 0;
+    }
+  }
+}

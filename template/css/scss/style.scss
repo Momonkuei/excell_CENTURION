@@ -29,7 +29,7 @@
 
 // basic
 @import "basic/basic";
-@import "basic/effects";
+
 @import "basic/font";
 @import "basic/size";
 
@@ -39,6 +39,7 @@
 // elements
 @import "element/banner";
 @import "element/button";
+@import "element/effects";
 @import "element/footer";
 @import "element/form";
 @import "element/gotop";
@@ -67,4 +68,5 @@
 @import "page/product_category";
 @import "page/_product_detail";
 @import "page/product_lists";
+@import "page/project_Introduction";
 @import "page/reset_password";

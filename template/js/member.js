@@ -39,7 +39,7 @@ $(function () {
 	// 點擊修改密碼跳轉欄位
 	if ($('.account-btn-groups').length) {
 		$('.account-btn-groups .change-password-btn').click(function () {
-			$('#old_password').val('').focus();
+			$('.reset-password-box').find('input').first().focus();
 		});
 	}
 	if ($('.twzipcode-member-account').length) {

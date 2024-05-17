@@ -907,10 +907,21 @@
                 gap: 1rem;
 
                 li {
-                  width: calc((100% - 2.5rem) / 3);
+                  width: calc((100% - 4rem) / 5);
+                  overflow: hidden;
 
                   a {
-                    @include hideLongTexts(3);
+                    img {
+                      transition: all 0.3s ease-in-out;
+                    }
+                  }
+
+                  &:hover {
+                    a {
+                      img {
+                        transform: scale(1.05);
+                      }
+                    }
                   }
                 }
               }
