@@ -27,3 +27,22 @@
   padding-bottom: 0.625rem;
   border-bottom: 1px solid #cccccc;
 }
+
+// 中類標題
+.product-introduction-title {
+  font-size: 1.5rem;
+  @media (min-width: $viewM) {
+    font-size: 2rem;
+  }
+}
+
+// 中類副標
+.product-introduction-subTitle {
+  font-size: 1.125rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5;
+
+  @media (min-width: $viewM) {
+    font-size: 1.2rem;
+  }
+}

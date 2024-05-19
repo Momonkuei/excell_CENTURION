@@ -1,3 +1,16 @@
+.sectionblock-product-introduction {
+  padding: 1.5rem 1.25rem;
+  margin: 0 auto;
+
+  @media (min-width: $viewS) {
+    padding: 2.5rem 4.5rem;
+  }
+
+  @media (min-width: $viewM) {
+    padding: 3.25rem 8rem;
+  }
+}
+
 .sectionblock-product-introduction-1 {
   &-box {
     display: flex;
@@ -5,25 +18,135 @@
     gap: 1rem;
     max-width: 48.75rem;
     margin: 0 auto;
-    padding: 3.75rem 1.5rem;
-
-    .title {
-      font-size: 1.5rem;
-      @media (min-width: $viewL) {
-        font-size: 2rem;
-      }
-    }
 
     .txt {
       color: #666666;
     }
+  }
+}
 
-    @media (min-width: $viewS) {
-      padding: 2.5rem 0;
+.sectionblock-product-introduction-2 {
+  &-box {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    margin: 0;
+    min-height: 20rem;
+
+    @media (min-width: $viewMobile) {
+      min-height: 25rem;
     }
 
     @media (min-width: $viewL) {
-      padding: 6.25rem 0;
+      min-height: 30rem;
+    }
+
+    // 圖片
+    &-imageWrapper {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center center;
+
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-image: linear-gradient(to top, #040404a6, #36363633);
+        pointer-events: none;
+      }
+    }
+
+    // 標題
+    &-title {
+      position: relative;
+    }
+  }
+}
+
+.sectionblock-product-introduction-3 {
+  .left-box {
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: $viewS) {
+      padding: 0 1.25rem;
+    }
+
+    @media (min-width: $viewM) {
+      padding: 0 2.5rem;
+    }
+  }
+
+  .img-box {
+    margin: 1rem auto;
+  }
+
+  &-2 {
+    background-color: rgb(245, 245, 245);
+  }
+
+  &-2-box {
+    @media (max-width: $viewMobile) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.sectionblock-product-introduction-4 {
+  &-box {
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .product-introduction-swiper {
+    overflow: hidden;
+    .item-box {
+      .title-box {
+        font-size: 1.125rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        line-height: 1.5;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+
+        @media (min-width: $viewS) {
+          margin-bottom: 0.75rem;
+        }
+      }
+
+      .txt-box {
+        color: rgb(95, 104, 88);
+        text-align: center;
+      }
+    }
+
+    // 分頁器
+    &-pagination {
+      text-align: center;
+      margin-top: 1rem;
+
+      .swiper-pagination-bullet-active {
+        background: $primary;
+      }
     }
   }
 }

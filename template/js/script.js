@@ -52,7 +52,15 @@ $(function () {
 		// 次選單
 		$('.fullMenu .navMenu li >a').click(function () {
 			if ($('.fullMenu .navMenu li').has('.second-menu').length) {
-				$(this).parent('li').toggleClass('open-secondMenu');
+				$(this).closest('li').toggleClass('open-secondMenu');
+			}
+
+			if (
+				$(
+					'.fullMenu .navMenu li .navMenu-second li.third-menu-box '
+				).has('.third-menu').length
+			) {
+				$(this).closest('li').toggleClass('open-thirdMenu');
 			}
 		});
 

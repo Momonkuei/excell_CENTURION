@@ -1032,6 +1032,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
+
       .navMenu {
         padding-left: 0;
         display: flex;
@@ -1098,7 +1099,7 @@
               grid-template-rows: 1fr;
             }
 
-            a {
+            > a {
               .icon-box {
                 .plus-icon {
                   &::before,
@@ -1137,6 +1138,72 @@
         padding-left: 0;
 
         li {
+          > a {
+            color: $header-second-menu-txt-color;
+            span {
+              font-size: 1.125rem;
+              font-weight: 500;
+              line-height: 1.2;
+              color: inherit;
+            }
+
+            &:hover {
+              color: $header-second-menu-txt-color;
+            }
+          }
+        }
+      }
+    }
+    // 第三層 menu
+
+    .third-menu-box {
+      &.open-thirdMenu {
+        .third-menu {
+          grid-template-rows: 1fr;
+        }
+
+        a {
+          .icon-box {
+            .plus-icon {
+              &::before,
+              &::after {
+                transform: translate(-50%, -50%) rotate(90deg);
+              }
+
+              &::before {
+                opacity: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .third-menu {
+      width: 100%;
+      background-color: $header-second-menu-bg;
+      // max-height: 0;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: all 0.3s ease-in-out;
+
+      overflow: hidden;
+      .third-menu-content {
+        min-height: 0;
+      }
+
+      // ul
+
+      .navMenu-third {
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 5vw;
+
+        @media (min-width: $viewMobile) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        li {
           a {
             color: $header-second-menu-txt-color;
             span {
@@ -1149,6 +1216,20 @@
             &:hover {
               color: $header-second-menu-txt-color;
             }
+          }
+        }
+      }
+
+      // btn-group
+      &-btn {
+        display: flex;
+        justify-content: center;
+
+        a {
+          color: #fff;
+
+          &:hover {
+            color: $primary;
           }
         }
       }
