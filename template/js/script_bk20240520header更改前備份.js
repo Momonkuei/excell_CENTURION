@@ -14,52 +14,57 @@ if (typeof AOS === 'object') {
 // header
 $(function () {
 	// 移除 header 搜尋按鈕
+	const removeMbHeaderSearch = function () {
+		$('body').removeClass('open-search');
+	};
 
 	if ($('header').length) {
 		$('.slide-menu-control').click(function () {
 			$('body').addClass('open-menu');
 			$('.searchBox').remove('open');
+			removeMbHeaderSearch();
 		});
 
 		// 選單關閉按鈕
 		$('.fullMenu .close-btn, header .fullMenu-mask').click(function () {
 			if ($('body').hasClass('open-menu')) {
 				$('body').removeClass('open-menu');
-				$('.fullMenu')
-					.find('.open-secondMenu')
-					.removeClass('open-secondMenu');
-				$('.fullMenu')
-					.find('.open-thirdMenu')
-					.removeClass('open-thirdMenu');
 			}
+		});
+
+		// header 搜尋按鈕
+		$('.searchToggle').click(function () {
+			if ($(window).innerWidth() > 1200) {
+				$('.searchBox').toggleClass('open');
+			} else {
+				if (!$('body').hasClass('open-search')) {
+					$('body').addClass('open-search');
+				} else {
+					removeMbHeaderSearch();
+				}
+			}
+		});
+
+		$('.header-fullMenu-mask').click(function () {
+			removeMbHeaderSearch();
 		});
 
 		// 次選單
 		$('.fullMenu .navMenu >li >a').click(function () {
 			if ($('.fullMenu .navMenu li').has('.second-menu').length) {
-				$(this).closest('li').addClass('open-secondMenu');
-			}
-		});
-
-		// 次選單 返回
-		$('.second-menu .return-box a').click(function () {
-			if ($('.fullMenu .navMenu li').has('.second-menu').length) {
-				$(this).closest('li').removeClass('open-secondMenu');
+				$(this).closest('li').toggleClass('open-secondMenu');
 			}
 		});
 
 		// 第三層選單
 		$('.second-menu .navMenu-second >li >a').click(function () {
-			if ($(this).closest('li').has('.third-menu').length) {
-				$(this).closest('li').addClass('open-thirdMenu');
-			}
-		});
-
-		// 第三選單返回
-		$('.third-menu .return-box a').click(function () {
 			console.log('123456');
-			if ($(this).closest('li').has('.third-menu').length) {
-				$(this).closest('li').removeClass('open-thirdMenu');
+			if (
+				$(
+					'.fullMenu .navMenu li .navMenu-second li.third-menu-box '
+				).has('.third-menu').length
+			) {
+				$(this).closest('li').toggleClass('open-thirdMenu');
 			}
 		});
 
@@ -71,10 +76,12 @@ $(function () {
 					console.log('登入狀態');
 					$('body').addClass('open-loginMenu');
 					$('.searchBox').remove('open');
+					removeMbHeaderSearch();
 					$('.login-box').addClass('login-status');
 				} else {
 					$('body').addClass('open-loginMenu');
 					$('.searchBox').remove('open');
+					removeMbHeaderSearch();
 					$('.login-box').remove('login-status');
 				}
 			});
@@ -125,6 +132,15 @@ $(function () {
 				}
 			}
 		});
+
+		// // scroll超過 header 高度就添加 'scroll'
+		// $(window).scroll(function () {
+		// 	if ($(window).scrollTop() > hdTop) {
+		// 		$('header').addClass('scroll');
+		// 	} else {
+		// 		$('header').removeClass('scroll');
+		// 	}
+		// });
 	}
 });
 

@@ -1,3 +1,75 @@
+.sectionblock-product-banner {
+  &-box {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    margin: 0;
+    min-height: 70vh;
+
+    @media (min-width: $viewS) {
+      min-height: 27rem;
+    }
+
+    @media (min-width: $viewL) {
+      min-height: 80vh;
+    }
+
+    // 圖片
+    &-imageWrapper {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center center;
+
+      background-image: url("/template/images/project_introduction/project_Introduction_banner01_mb.webp");
+
+      @media (min-width: $viewS) {
+        background-image: url("/template/images/project_introduction/project_Introduction_banner01.webp");
+      }
+
+      // &:after {
+      //   position: absolute;
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   left: 0;
+      //   top: 0;
+      //   background-image: linear-gradient(to top, rgba(4, 4, 4, 0.3), rgba(54, 54, 54, 0.2));
+      //   pointer-events: none;
+      // }
+    }
+
+    .imageWrapper-mb {
+      display: block;
+
+      @media (min-width: $viewS) {
+        display: none;
+      }
+    }
+
+    .imageWrapper-web {
+      display: none;
+
+      @media (min-width: $viewS) {
+        display: block;
+      }
+    }
+
+    // 標題
+    &-title {
+      position: relative;
+    }
+  }
+}
+
 .sectionblock-product-introduction {
   padding: 1.5rem 1.25rem;
   margin: 0 auto;
@@ -23,6 +95,10 @@
       color: #666666;
     }
   }
+
+  @media (min-width: $viewM) {
+    padding: 5.25rem 8rem;
+  }
 }
 
 .sectionblock-product-introduction-2 {
@@ -43,7 +119,7 @@
     }
 
     @media (min-width: $viewL) {
-      min-height: 30rem;
+      min-height: 60vh;
     }
 
     // 圖片
@@ -63,7 +139,7 @@
         height: 100%;
         left: 0;
         top: 0;
-        background-image: linear-gradient(to top, #040404a6, #36363633);
+        background-image: linear-gradient(to top, rgba(4, 4, 4, 0.4), rgba(54, 54, 54, 0.2));
         pointer-events: none;
       }
     }

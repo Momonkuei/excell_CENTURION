@@ -1045,7 +1045,7 @@
 
     &-nav {
       position: absolute;
-      top: 6rem;
+      top: 8rem;
       left: 50%;
       margin: 0 auto;
       transform: translate(-50%, 0%);
@@ -1068,10 +1068,9 @@
             text-decoration: none;
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             position: relative;
-            color: #000;
 
             .txt {
               margin-bottom: 0;
@@ -1079,10 +1078,34 @@
 
             // 按鈕
             .icon-box {
-              i {
-                color: #333;
-                font-size: 1.5rem;
-                font-weight: 700;
+              .plus-icon {
+                position: absolute;
+                right: 10%;
+                top: calc(50% - 0.5rem);
+                width: 1rem;
+                height: 1rem;
+
+                &::before,
+                &::after {
+                  position: absolute;
+                  content: "";
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%) rotate(-90deg);
+                  background-color: currentColor;
+                  transition: all 0.5s ease-in-out;
+                }
+
+                &::before {
+                  width: 1rem;
+                  height: 1px;
+                  opacity: 1;
+                }
+
+                &::after {
+                  width: 1px;
+                  height: 1rem;
+                }
               }
             }
           }
@@ -1093,7 +1116,22 @@
 
           &.open-secondMenu {
             .second-menu {
-              transform: translate3d(0, 0, 0);
+              grid-template-rows: 1fr;
+            }
+
+            > a {
+              .icon-box {
+                .plus-icon {
+                  &::before,
+                  &::after {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                  }
+
+                  &::before {
+                    opacity: 0;
+                  }
+                }
+              }
             }
           }
         }
@@ -1106,37 +1144,12 @@
       background-color: $header-second-menu-bg;
       // max-height: 0;
       display: grid;
-      grid-template-rows: 1fr;
+      grid-template-rows: 0fr;
       transition: all 0.3s ease-in-out;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      transform: translate3d(100%, 0, 0);
-      z-index: 3;
 
+      overflow: hidden;
       .second-menu-content {
         min-height: 0;
-
-        .return-box {
-          display: flex;
-
-          a {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            justify-content: flex-start;
-            cursor: pointer;
-            width: 100%;
-
-            .icon-box {
-              font-size: 1.25rem;
-            }
-
-            &:hover {
-              background-color: rgba(0, 0, 0, 0.05);
-            }
-          }
-        }
       }
 
       // ul
@@ -1166,11 +1179,21 @@
     .third-menu-box {
       &.open-thirdMenu {
         .third-menu {
-          transform: translate3d(0, 0, 0);
+          grid-template-rows: 1fr;
         }
 
         a {
           .icon-box {
+            .plus-icon {
+              &::before,
+              &::after {
+                transform: translate(-50%, -50%) rotate(90deg);
+              }
+
+              &::before {
+                opacity: 0;
+              }
+            }
           }
         }
       }
@@ -1181,14 +1204,10 @@
       background-color: $header-second-menu-bg;
       // max-height: 0;
       display: grid;
-      grid-template-rows: 1fr;
+      grid-template-rows: 0fr;
       transition: all 0.3s ease-in-out;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      transform: translate3d(100%, 0, 0);
-      z-index: 5;
 
+      overflow: hidden;
       .third-menu-content {
         min-height: 0;
       }
@@ -1197,8 +1216,13 @@
 
       .navMenu-third {
         padding-left: 0;
-        padding: 1rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem 5vw;
 
+        @media (min-width: $viewMobile) {
+          grid-template-columns: repeat(3, 1fr);
+        }
         li {
           a {
             color: $header-second-menu-txt-color;

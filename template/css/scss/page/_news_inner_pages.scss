@@ -1,4 +1,4 @@
-.page-article {
+.page-news {
   max-width: 1000px;
   min-height: calc(100vh - 380px);
   margin: 1.5rem auto 2rem;
@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
 
-  .article-img {
+  .news-img {
     max-width: 56.25rem;
     margin: 0 auto;
     margin-bottom: 1.5rem;
@@ -19,17 +19,17 @@
     width: 100%;
   }
 
-  .article-content {
+  .news-content {
     padding: 2rem;
   }
 
-  .article-imgBoxs {
+  .news-imgBoxs {
     img {
       margin-bottom: 1.5rem;
     }
   }
 
-  .article-btn-group {
+  .news-btn-group {
     display: flex;
     align-items: center;
     justify-content: space-around;

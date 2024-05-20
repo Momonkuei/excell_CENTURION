@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>
+    <?# webTitle ?>
+  </title>
+  <!-- 字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link rel="stylesheet" href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+
+
+  <!-- aos -->
+  <link rel="stylesheet" href="/template/jquery/aos/aos.css">
+
+
+  <!-- Swiper css -->
+  <link rel="stylesheet" href="/template/jquery/swiper/swiper-bundle.min.css">
+
+
+  <!-- 客製css -->
+  <link rel="stylesheet" href="/template/css/<?# version ?>/style.css">
+
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+</head>
+
+<body class="">
+
+  <!-- header -->
+  <?# header ?>
+
+  <div class="body-content mt-3">
+
+    <div class="container">
+      <div class="h4 text-center mb-5">
+        <?# ArticleTitle ?>
+      </div>
+      <div class="page-article">
+
+        <?# ArticleDesc ?>
+
+        <div class="divider-line my-5"></div>
+
+        <div class="article-btn-group">
+          <button class="btn-style02 btn" disabled>上一則</button>
+          <button class="btn-style02 btn">下一則</button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- 頁尾 -->
+  <?# footer ?>
+
+
+  <a href="javascript:void(0);" class="goTop">
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/popper/popper.min.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/bootstrap/bootstrap.js"></script>
+
+
+  <!-- swiper -->
+  <script type="text/javascript" src="/template/jquery/swiper/swiper-bundle.min.js"></script>
+
+  <!-- 自定義JS -->
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/script.js"></script>
+
+
+</body>
+
+</html>
