@@ -8,6 +8,10 @@
   flex-direction: column;
   justify-content: center;
 
+  .article-headerImg {
+    width: 100%;
+  }
+
   .article-img {
     max-width: 56.25rem;
     margin: 0 auto;

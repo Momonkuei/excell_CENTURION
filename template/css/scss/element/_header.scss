@@ -593,7 +593,7 @@
   width: 100%;
   max-height: 5rem;
   padding: 0 35px;
-  transition: all 0.2s ease-in;
+  transition: all 0.15s;
   position: relative;
   background-color: $white;
   z-index: 9;
@@ -601,6 +601,11 @@
 
   &.open-wrap-box {
     overflow: visible;
+  }
+
+  .header-navbar-container {
+    display: flex;
+    gap: 1.5rem;
   }
 
   .header-navbar-box {
@@ -713,14 +718,16 @@
             content: "";
             display: block;
             background-color: $primary;
-            width: 100%;
+            width: 0%;
             height: 3px;
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0);
             opacity: 0;
-            transition: opacity 0.4s;
+            transition:
+              opacity 0.4s,
+              width 0.4s;
           }
 
           &:hover {
@@ -734,6 +741,7 @@
           .navMenu-link {
             &::after {
               opacity: 1;
+              width: 100%;
             }
           }
 
@@ -787,8 +795,11 @@
       &-menu {
         width: 40%;
         height: 100%;
-
         border-right: 1px solid $primary;
+
+        @media (max-width: 90rem) {
+          padding-left: 1rem;
+        }
 
         &-container {
           overflow: hidden;
@@ -915,6 +926,7 @@
                     padding: 0.3em 0;
                     transition: all 0.3s;
                     color: #bbb;
+                    display: inline-block;
 
                     &::before {
                       content: "";
@@ -930,11 +942,15 @@
                       opacity: 0;
                       transition: all 0.3s;
                     }
+
+                    span {
+                      @include hideLongTexts(2);
+                    }
                   }
 
                   &:hover {
                     a {
-                      padding-left: 12px;
+                      padding-left: 0.75rem;
                       color: $primary;
                       font-weight: 500;
 
@@ -1052,6 +1068,14 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      flex-direction: column;
+
+      &-remind {
+        margin: 0 30px;
+        color: #555;
+        padding-bottom: 0.625rem;
+        border-bottom: 1px solid #ccc;
+      }
 
       .navMenu {
         padding-left: 0;
@@ -1059,6 +1083,11 @@
         flex-direction: column;
         width: 100%;
         margin-bottom: 0;
+        overflow: hidden;
+
+        &.open-secondMenu {
+          overflow: visible;
+        }
 
         li {
           width: 100%;
@@ -1081,7 +1110,7 @@
             .icon-box {
               i {
                 color: #333;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 font-weight: 700;
               }
             }
@@ -1108,11 +1137,15 @@
       display: grid;
       grid-template-rows: 1fr;
       transition: all 0.3s ease-in-out;
-      overflow: hidden;
       position: absolute;
       top: 0;
       transform: translate3d(100%, 0, 0);
       z-index: 3;
+      overflow: hidden;
+
+      &.open-thirdMenu {
+        overflow: visible;
+      }
 
       .second-menu-content {
         min-height: 0;
@@ -1167,6 +1200,7 @@
       &.open-thirdMenu {
         .third-menu {
           transform: translate3d(0, 0, 0);
+          height: 100%;
         }
 
         a {
@@ -1183,7 +1217,7 @@
       display: grid;
       grid-template-rows: 1fr;
       transition: all 0.3s ease-in-out;
-      overflow: hidden;
+
       position: absolute;
       top: 0;
       transform: translate3d(100%, 0, 0);
@@ -1569,6 +1603,7 @@
       .navMenu {
         .navMenu-link {
           color: #fff;
+          gap: 0.25rem;
         }
       }
     }

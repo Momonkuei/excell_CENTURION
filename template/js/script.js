@@ -36,31 +36,36 @@ $(function () {
 
 		// 次選單
 		$('.fullMenu .navMenu >li >a').click(function () {
+			$('.fullMenu .navMenu').addClass('open-secondMenu');
+
 			if ($('.fullMenu .navMenu li').has('.second-menu').length) {
 				$(this).closest('li').addClass('open-secondMenu');
 			}
 		});
 
 		// 次選單 返回
-		$('.second-menu .return-box a').click(function () {
-			if ($('.fullMenu .navMenu li').has('.second-menu').length) {
-				$(this).closest('li').removeClass('open-secondMenu');
+		$('.second-menu .second-menu-content >.return-box a').click(
+			function () {
+				$('.fullMenu .navMenu').removeClass('open-secondMenu');
+
+				if ($('.fullMenu .navMenu li').has('.second-menu').length) {
+					$(this).closest('li').removeClass('open-secondMenu');
+				}
 			}
-		});
+		);
 
 		// 第三層選單
 		$('.second-menu .navMenu-second >li >a').click(function () {
 			if ($(this).closest('li').has('.third-menu').length) {
+				$(this).closest('.second-menu').addClass('open-thirdMenu');
 				$(this).closest('li').addClass('open-thirdMenu');
 			}
 		});
 
 		// 第三選單返回
 		$('.third-menu .return-box a').click(function () {
-			console.log('123456');
-			if ($(this).closest('li').has('.third-menu').length) {
-				$(this).closest('li').removeClass('open-thirdMenu');
-			}
+			$(this).closest('.second-menu').removeClass('open-thirdMenu');
+			$(this).closest('li').removeClass('open-thirdMenu');
 		});
 
 		// 會員選單
@@ -158,6 +163,10 @@ $(function () {
 			$('header .navMenu > li').removeClass('active-wrap-box');
 			$('header').removeClass('open-wrap-box');
 			$('body').removeClass('open-wrap-box');
+			// 取消側邊選取欄位
+			$(this).find('.wrap-box-menu .item.active').removeClass('active');
+
+			// 取消側邊欄位
 			$(this)
 				.find('.wrap-box-detail [data-target-sub-list-item]')
 				.css('display', 'none');
