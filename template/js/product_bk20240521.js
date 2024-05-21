@@ -106,9 +106,20 @@ $(function () {
 $(function () {
 	if ($('.product-gallery').length) {
 		// 縮圖
+		const product_thumbs = new Swiper('.gallery-thumbs', {
+			// slidesPerView: 'auto',
+			slidesPerView: 6,
+			spaceBetween: 10,
+			loop: true,
+			slideToClickedSlide: true,
+			centeredSlides: true,
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+		});
 
 		const product_slider = new Swiper('.gallery-slider', {
-			slidesPerView: 2,
+			slidesPerView: 1,
 			loop: true,
 			navigation: {
 				nextEl: '.gallery-slider-next',
@@ -116,6 +127,10 @@ $(function () {
 			},
 			pagination: {
 				el: '.swiper-pagination',
+			},
+			thumbs: {
+				swiper: product_thumbs,
+				autoScrollOffset: 1,
 			},
 		});
 

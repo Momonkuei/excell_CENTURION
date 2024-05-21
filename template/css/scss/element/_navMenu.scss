@@ -24,7 +24,6 @@ header {
       ul {
         &::-webkit-scrollbar {
           display: none; /* Safari and Chrome */
-          -ms-overflow-style: none;
           scrollbar-width: none;
         }
       }
