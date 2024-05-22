@@ -322,9 +322,13 @@
   &-item {
     overflow: hidden;
     padding: 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;
 
     a {
       text-decoration: none;
+      display: flex;
+      flex-direction: column;
     }
 
     @media (min-width: $viewS) {
@@ -371,6 +375,12 @@
 
     .related-products-gallery-item-info {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        @include hideLongTexts(2);
+      }
     }
 
     &:hover {

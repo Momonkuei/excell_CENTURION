@@ -16,6 +16,10 @@
   justify-content: center;
   color: $white;
 
+  i {
+    line-height: 1;
+  }
+
   &:hover {
     color: $white;
     i {
