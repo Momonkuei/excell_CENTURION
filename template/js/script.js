@@ -73,7 +73,6 @@ $(function () {
 			$('.member-function-box-btn').click(function () {
 				// 有登入狀態功能視窗
 				if ($(this).hasClass('login')) {
-					console.log('登入狀態');
 					$('body').addClass('open-loginMenu');
 					$('.searchBox').remove('open');
 					$('.login-box').addClass('login-status');

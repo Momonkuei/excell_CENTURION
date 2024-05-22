@@ -1,4 +1,4 @@
-// 篩選攔
+// 側邊攔
 $(function () {
 	if ($('.product-sidebar').length) {
 		$('.product-sidebar .product-sidebar-item .second-menu-btn').click(
@@ -92,50 +92,6 @@ $(function () {
 
 // 產品列表分頁
 $(function () {
-	//滾動
-	const hdTop = $('header').outerHeight();
-	const product_lists_filters_bar = $(
-		'.product-lists-filters-bar'
-	).outerHeight();
-
-	$(window).scroll(function () {
-		if ($(window).scrollTop() > hdTop + product_lists_filters_bar) {
-			if ($('.product-lists-filters-bar').length) {
-				$('.product-lists-filters-bar').addClass('scroll');
-			}
-		}
-		if ($(window).scrollTop() === 0) {
-			if ($('.product-lists-filters-bar').length) {
-				$('.product-lists-filters-bar').removeClass('scroll');
-			}
-		}
-	});
-
-	// 打開產品篩選
-	if ($('.filters-button-box-btn').length) {
-		$('.filters-button-box-btn').click(function () {
-			$('body').addClass('open-filters-menu');
-		});
-	}
-
-	// 關閉產品篩選
-	if ($('.filters-menu').length) {
-		$('.filters-menu .close-btn').click(function () {
-			$('body').removeClass('open-filters-menu');
-		});
-	}
-
-	// 產品列表
-	if ($('.product-lists-gallery-item-imgBoxList').length) {
-		$('.product-lists-gallery-item-imgBoxList-1').slick({
-			prevArrow:
-				'<button class="slick-prev slick-arrow"><i class="bi bi-chevron-left"></i></button>',
-			nextArrow:
-				'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
-		});
-	}
-
-	// 頁數點擊
 	if ($('.pagination-box .pagination-page').length) {
 		$('.pagination-box .pagination-page .pageLink').click(function (idx) {
 			$('.pagination-box .pagination-page .pageLink').each(function () {
@@ -146,35 +102,47 @@ $(function () {
 	}
 });
 
-// 產品內頁
+// 產品介紹滑塊
 $(function () {
-	//  產品介紹滑塊
 	if ($('.product-gallery').length) {
-		function productgallery_initializeSlick() {
-			if ($(window).innerWidth() < 992) {
-				if (
-					!$('.product-gallery-lists').hasClass('slick-initialized')
-				) {
-					$('.product-gallery-lists').slick({
-						prevArrow:
-							'<button class="slick-prev slick-arrow"><i class="bi bi-chevron-left"></i></button>',
-						nextArrow:
-							'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
-					});
-				}
-			} else {
-				if ($('.product-gallery-lists').hasClass('slick-initialized')) {
-					$('.product-gallery-lists').slick('unslick');
-				}
-			}
+		// 縮圖
+
+		const product_slider = new Swiper('.gallery-slider', {
+			slidesPerView: 1,
+			loop: true,
+			navigation: {
+				nextEl: '.gallery-slider-next',
+				prevEl: '.gallery-slider-prev',
+			},
+			// pagination: {
+			// 	el: '.swiper-pagination',
+			// },
+			breakpoints: {
+				992: {
+					slidesPerView: 2,
+				},
+			},
+		});
+
+		// 與swiper 的按鈕綁定
+		if ($('.product-gallery-btn-prev').length) {
+			$('.product-gallery-btn-prev').click(() =>
+				$('.gallery-slider-prev').click()
+			);
 		}
 
-		productgallery_initializeSlick();
-		$(window).on('resize load', productgallery_initializeSlick);
+		if ($('.product-gallery-btn-next').length) {
+			$('.product-gallery-btn-next').click(() =>
+				$('.gallery-slider-next').click()
+			);
+		}
 	}
+});
 
+// 產品內頁
+$(function () {
 	// 數量
-	if ($('.page-product_detail .product-item-quantity').length) {
+	if ($('.sectionblock-product-detail .product-item-quantity').length) {
 		let product_Num = parseInt(
 			$('.product-item-quantity .product-item-num').val()
 		);
@@ -231,16 +199,6 @@ $(function () {
 					);
 				}, durationInSeconds * 1000);
 			}
-		});
-	}
-
-	// 相關產品
-	if ($('.related-products-gallery-item-imgBoxList').length) {
-		$('.related-products-gallery-item-imgBoxList-1').slick({
-			prevArrow:
-				'<button class="slick-prev slick-arrow"><i class="bi bi-chevron-left"></i></button>',
-			nextArrow:
-				'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
 		});
 	}
 });

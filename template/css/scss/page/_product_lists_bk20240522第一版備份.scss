@@ -1,0 +1,257 @@
+// 產品banner
+.product-banner {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  margin: 0;
+  min-height: 60vh;
+
+  @media (min-width: $viewMobile) {
+    min-height: 50vh;
+  }
+
+  @media (min-width: $viewL) {
+    min-height: 60vh;
+  }
+
+  // 圖片
+  &-imageWrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-image: linear-gradient(to top, #040404a6, #36363633);
+      pointer-events: none;
+    }
+  }
+
+  // 標題
+  &-title {
+    position: relative;
+  }
+}
+
+.sectionblock-product-lists {
+  max-width: 1200px;
+  margin: 35px auto;
+
+  // 側邊攔
+  .product-sidebar {
+    padding-left: 0;
+    border-top: 1px solid $product-sidebar-border-color;
+    margin-top: 1rem;
+
+    @media (max-width: $viewM) {
+      margin-top: 0.5rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .product-sidebar-item {
+      position: relative;
+      padding: 8px 0;
+      border-bottom: 1px solid $product-sidebar-border-color;
+
+      &-txt {
+        font-weight: 500;
+      }
+
+      > a {
+        padding: 8px 20px 8px 0;
+        border-radius: 5px;
+        color: inherit;
+        width: 100%;
+        display: inline-block;
+      }
+
+      //摺疊按鈕
+      .plus-icon {
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: calc(50% - 7.5px);
+        width: 15px;
+        height: 15px;
+
+        &::before,
+        &::after {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-90deg);
+          background-color: currentColor;
+          transition:
+            transform 0.3s ease-in-out,
+            opacity 0.3s ease-in-out;
+        }
+
+        &::before {
+          width: 1rem;
+          height: 1px;
+          opacity: 1;
+        }
+
+        &::after {
+          width: 1px;
+          height: 1rem;
+        }
+      }
+
+      .second-menu-btn {
+        position: relative;
+
+        .plus-icon {
+          display: block;
+        }
+      }
+
+      // 次選單
+      .product-sidebar-item-secondMenu {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 300ms grid-template-rows ease;
+
+        > ul {
+          overflow: hidden;
+          padding-left: 0;
+
+          li {
+            a {
+              width: 100%;
+              display: inline-block;
+              padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+
+              &:hover {
+                background-color: $product-sidebar-hover-color-bg;
+              }
+
+              &.active {
+                background-color: $product-sidebar-hover-color-bg;
+              }
+            }
+          }
+        }
+      }
+
+      // 打開效果
+      &.open {
+        .second-menu-btn {
+          .plus-icon {
+            &::before {
+              opacity: 0;
+            }
+            &:after {
+              transform: translate(-50%, -50%) rotate(90deg);
+            }
+          }
+        }
+
+        .product-sidebar-item-secondMenu {
+          grid-template-rows: 1fr;
+        }
+      }
+    }
+  }
+}
+
+// 產品列表
+.product-lists {
+  .products-content {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: $viewL) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $viewS) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .product-item {
+    display: flex;
+    &-box {
+      position: relative;
+      padding-top: 30px;
+      display: flex;
+      flex-grow: 1;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+        transform: translate(-2px, -2px);
+        // background: rgba(0, 0, 0, 0.1);
+      }
+
+      a {
+        display: flex;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        flex-direction: column;
+        transition: all 0.3s ease-in;
+        flex-grow: 1;
+      }
+    }
+
+    &-imageBox {
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    &-image {
+      object-fit: contain;
+    }
+
+    &-title {
+      color: $body-color;
+      flex-grow: 1;
+      @include hideLongTexts(2);
+    }
+    // 標籤列表
+    &-labelList {
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      gap: 5px;
+    }
+
+    // 標籤
+    &-label {
+      display: inline-block;
+      color: $white;
+      padding: 4px 5px;
+      background: $primary;
+      max-width: none;
+    }
+  }
+
+  .products-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
