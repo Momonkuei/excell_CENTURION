@@ -84,10 +84,10 @@
 
   .bg-img-box {
     position: relative;
-    padding-bottom: 90vh;
+    padding-bottom: 100%;
 
     @media (min-width: $viewL) {
-      padding-bottom: 100vh;
+      padding-bottom: calc(100vh - 5rem);
     }
 
     .bg-img-pc,

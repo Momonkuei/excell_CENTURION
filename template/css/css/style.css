@@ -11702,36 +11702,14 @@ body {
   overflow: hidden;
 }
 .bannerStyle01 .index-swiper .banner-item {
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-.bannerStyle01 .index-swiper .banner-item .banner-item-bg {
-  overflow: hidden;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  pointer-events: none;
-  display: block;
-  height: 100vh;
-}
-.bannerStyle01 .index-swiper .banner-item .banner-item-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(0, 0, 0, 0.6)), color-stop(30%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.2)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 15%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.2) 100%);
-}
-@media (max-width: 576px) {
-  .bannerStyle01 .index-swiper .banner-item .banner-item-bg {
-    pointer-events: auto;
+@media (max-width: 768px) {
+  .bannerStyle01 .index-swiper .banner-item {
+    padding-bottom: 100%;
     height: auto;
   }
 }
@@ -11741,11 +11719,6 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-}
-@media (max-width: 576px) {
-  .bannerStyle01 .index-swiper .banner-item .pic-box {
-    display: none;
-  }
 }
 .bannerStyle01 .index-swiper .banner-item .pic-box::before {
   content: "";
@@ -11758,8 +11731,8 @@ body {
   height: 100%;
   z-index: 3;
   pointer-events: none;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(0, 0, 0, 0.6)), color-stop(30%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.2)));
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 15%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.2) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(0, 0, 0, 0.3)), color-stop(30%, rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
 }
 .bannerStyle01 .index-swiper .banner-item .pic-box .pic {
   background-size: cover;
@@ -11770,8 +11743,19 @@ body {
   bottom: 0;
   left: 0;
 }
-@media (max-width: 992px) {
+.bannerStyle01 .index-swiper .banner-item .pic-box .pic-pc {
+  display: none;
+}
+@media (min-width: 768px) {
   .bannerStyle01 .index-swiper .banner-item .pic-box .pic-pc {
+    display: block;
+  }
+}
+.bannerStyle01 .index-swiper .banner-item .pic-box .pic-tab {
+  display: block;
+}
+@media (min-width: 768px) {
+  .bannerStyle01 .index-swiper .banner-item .pic-box .pic-tab {
     display: none;
   }
 }
@@ -11780,11 +11764,16 @@ body {
   z-index: 3;
   width: 100%;
   bottom: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
   padding-left: 6.4vw;
   padding-right: 6.4vw;
 }
-@media (min-width: 48rem) {
+@media (min-width: 576px) {
+  .bannerStyle01 .index-swiper .banner-item .banner-item-info {
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 768px) {
   .bannerStyle01 .index-swiper .banner-item .banner-item-info {
     padding-left: 3.125vw;
     padding-right: 3.125vw;
@@ -11796,13 +11785,7 @@ body {
     padding-right: 3.3333333333vw;
   }
 }
-@media (max-width: 576px) {
-  .bannerStyle01 .index-swiper .banner-item .banner-item-info {
-    display: none;
-  }
-}
-.bannerStyle01 .index-swiper .banner-item.swiper-slide-active .pic-box,
-.bannerStyle01 .index-swiper .banner-item.swiper-slide-active .banner-item-bg {
+.bannerStyle01 .index-swiper .banner-item.swiper-slide-active .pic-box {
   -webkit-animation-name: bannerZoomOut01;
           animation-name: bannerZoomOut01;
   -webkit-animation-fill-mode: both;
@@ -11813,8 +11796,8 @@ body {
 
 @-webkit-keyframes bannerZoomOut01 {
   0% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
   100% {
     -webkit-transform: scale(1);
@@ -11824,8 +11807,8 @@ body {
 
 @keyframes bannerZoomOut01 {
   0% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
   }
   100% {
     -webkit-transform: scale(1);
@@ -12010,6 +11993,7 @@ body {
   -webkit-box-shadow: inset 0 0 0 1px #fff;
           box-shadow: inset 0 0 0 1px #fff;
 }
+
 .btn-style01 {
   text-decoration: none;
   cursor: pointer;
@@ -15338,11 +15322,11 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 .sectionBlock-introduction .bg-img-box {
   position: relative;
-  padding-bottom: 90vh;
+  padding-bottom: 100%;
 }
 @media (min-width: 1200px) {
   .sectionBlock-introduction .bg-img-box {
-    padding-bottom: 100vh;
+    padding-bottom: calc(100vh - 5rem);
   }
 }
 .sectionBlock-introduction .bg-img-box .bg-img-pc,
@@ -16385,6 +16369,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 .product-detail-infoBox .product-item-collapsible-lists .product-item-collapsible.active .product-item-collapsible-content {
   padding: 20px 10px;
+  font-size: 0.875rem;
 }
 .product-detail-infoBox .product-item-collapsible-lists .product-item-collapsible.active .plus-icon::before {
   opacity: 0;

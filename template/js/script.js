@@ -189,9 +189,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			autoplay: {
-				delay: 5000, //多久切换一次
-			},
+			// autoplay: {
+			// 	delay: 5000, //多久切换一次
+			// },
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

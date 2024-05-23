@@ -8,14 +8,41 @@
   .index-swiper {
     // 項目
     .banner-item {
-      height: 100vh;
       width: 100%;
       overflow: hidden;
       position: relative;
 
-      @media (max-width: $viewS) {
-        padding-bottom: 100%;
-        height: auto;
+      .banner-item-bg {
+        overflow: hidden;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        pointer-events: none;
+        display: block;
+        height: 100vh;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          pointer-events: none;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        @media (max-width: $viewMobile) {
+          pointer-events: auto;
+          height: auto;
+        }
+      }
+
+      @media (max-width: $viewM) {
+        height: 100%;
       }
 
       // 圖片
@@ -25,6 +52,10 @@
         right: 0;
         bottom: 0;
         left: 0;
+
+        @media (max-width: $viewMobile) {
+          display: none;
+        }
 
         &::before {
           content: "";
@@ -37,7 +68,7 @@
           height: 100%;
           z-index: 3;
           pointer-events: none;
-          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
         }
 
         .pic {
@@ -51,16 +82,7 @@
         }
 
         .pic-pc {
-          display: none;
-
-          @media (min-width: $viewS) {
-            display: block;
-          }
-        }
-
-        .pic-tab {
-          display: block;
-          @media (min-width: $viewS) {
+          @media (max-width: $viewM) {
             display: none;
           }
         }
@@ -76,24 +98,26 @@
         padding-left: 6.4vw;
         padding-right: 6.4vw;
 
-        @media (min-width: $viewMobile) {
-          padding-bottom: 2rem;
-        }
-
-        @media (min-width: $viewS) {
+        @media (min-width: 48rem) {
           padding-left: 3.125vw;
           padding-right: 3.125vw;
+          padding-bottom: 3rem;
         }
 
         @media (min-width: 90rem) {
           padding-left: 3.3333333333vw;
           padding-right: 3.3333333333vw;
         }
+
+        @media (max-width: $viewMobile) {
+          // display: none;
+        }
       }
 
       // 執行時
       &.swiper-slide-active {
-        .pic-box {
+        .pic-box,
+        .banner-item-bg {
           animation-name: bannerZoomOut01;
           animation-fill-mode: both;
           animation-duration: 7000ms;
@@ -107,7 +131,7 @@
 
 @keyframes bannerZoomOut01 {
   0% {
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
 
   100% {
