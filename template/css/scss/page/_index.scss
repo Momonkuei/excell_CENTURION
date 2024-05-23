@@ -84,12 +84,14 @@
 
   .bg-img-box {
     position: relative;
-    padding-bottom: 40rem;
+    padding-bottom: 90vh;
 
     @media (min-width: $viewL) {
       padding-bottom: 100vh;
     }
-    .bg-img-pc {
+
+    .bg-img-pc,
+    .bg-img-md {
       background-size: cover;
       background-position: center;
       position: absolute;
@@ -97,7 +99,20 @@
       right: 0;
       bottom: 0;
       left: 0;
-      // background-attachment: fixed;
+    }
+
+    .bg-img-pc {
+      display: none;
+      @media (min-width: $viewS) {
+        display: block;
+      }
+    }
+
+    .bg-img-md {
+      display: block;
+      @media (min-width: $viewS) {
+        display: none;
+      }
     }
   }
 

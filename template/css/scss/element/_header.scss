@@ -1528,6 +1528,10 @@
   overflow: hidden;
   width: 100%;
 
+  .product-lists-filters-bar.scroll {
+    z-index: 1;
+  }
+
   .header-fullMenu-mask {
     opacity: 1;
 

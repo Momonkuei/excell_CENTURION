@@ -14035,6 +14035,9 @@ body {
   overflow: hidden;
   width: 100%;
 }
+.open-wrap-box .product-lists-filters-bar.scroll {
+  z-index: 1;
+}
 .open-wrap-box .header-fullMenu-mask {
   opacity: 1;
 }
@@ -15335,14 +15338,15 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 .sectionBlock-introduction .bg-img-box {
   position: relative;
-  padding-bottom: 40rem;
+  padding-bottom: 90vh;
 }
 @media (min-width: 1200px) {
   .sectionBlock-introduction .bg-img-box {
     padding-bottom: 100vh;
   }
 }
-.sectionBlock-introduction .bg-img-box .bg-img-pc {
+.sectionBlock-introduction .bg-img-box .bg-img-pc,
+.sectionBlock-introduction .bg-img-box .bg-img-md {
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -15350,6 +15354,22 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   right: 0;
   bottom: 0;
   left: 0;
+}
+.sectionBlock-introduction .bg-img-box .bg-img-pc {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sectionBlock-introduction .bg-img-box .bg-img-pc {
+    display: block;
+  }
+}
+.sectionBlock-introduction .bg-img-box .bg-img-md {
+  display: block;
+}
+@media (min-width: 768px) {
+  .sectionBlock-introduction .bg-img-box .bg-img-md {
+    display: none;
+  }
 }
 .sectionBlock-introduction .introduction-info {
   position: absolute;
@@ -16062,6 +16082,9 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 @media (max-width: 992px) {
   .product-gallery {
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 0;
   }
 }
 .product-gallery-lists {
@@ -16128,6 +16151,8 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 @media (max-width: 992px) {
   .product-info-box {
     width: 100%;
+    position: sticky;
+    top: 0;
   }
 }
 .product-info-box-container {
@@ -16158,6 +16183,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
     width: 100%;
     position: relative;
     top: 0;
+    background: #fff;
   }
 }
 .product-info-box .product-item {
@@ -16454,6 +16480,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   opacity: 0;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  color: #000;
 }
 .related-products-gallery-item .related-products-gallery-item-imgBoxList .slick-prev {
   left: -3px;
@@ -16567,6 +16594,9 @@ header .navMenu > li.moreMenu > ul li:hover > a {
             transform: translateX(0%);
   }
 }
+.open-filters-menu .product-lists-filters-bar.scroll {
+  z-index: 1;
+}
 
 .product-lists {
   margin: 0 auto;
@@ -16610,25 +16640,28 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #35286d;
+  color: #fff;
+  border-color: #35286d;
   position: relative;
-  padding: 0.5rem 0.75rem;
-  line-height: normal;
-  border: 1px solid #35286d;
+  padding: 0.5rem 1rem;
+  line-height: 1.4;
+  border: 1px solid transparent;
   border-radius: 0;
-  font-size: 14px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
   letter-spacing: 0.1em;
   font-weight: 400;
   font-style: normal;
-  background-color: transparent;
-  -webkit-transition: color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.7), background 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.7);
-  transition: color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.7), background 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  background-color: #35286d;
+  -webkit-transition: color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7), background 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
+  transition: color 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.7), border 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7), background 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.7);
   z-index: 1;
   -webkit-tap-highlight-color: initial;
 }
 .product-lists-filters-bar .filters-button-box-btn:hover {
-  color: #fff;
-  background-color: #35286d;
+  color: #35286d;
+  border-color: #35286d;
+  background-color: transparent;
 }
 .product-lists-gallery-title {
   margin: 1rem 0 0;
@@ -16711,6 +16744,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   opacity: 0;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  color: #000;
 }
 .product-lists-gallery-item .product-lists-gallery-item-imgBoxList .slick-prev {
   left: -3px;
