@@ -15298,6 +15298,12 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   position: relative;
   width: 100%;
 }
+.homepage-product-sectionBlock .product-lists-item-info {
+  margin-top: 1rem;
+}
+.homepage-product-sectionBlock .product-lists-item-info .title {
+  color: #151515;
+}
 .homepage-product-sectionBlock .product-lists-item a {
   text-decoration: none;
 }
@@ -15314,9 +15320,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
     width: 33.33333%;
   }
 }
-.homepage-product-sectionBlock .product-lists-item-info {
-  margin-top: 1rem;
-}
+
 .sectionBlock-introduction {
   position: relative;
 }

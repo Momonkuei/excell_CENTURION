@@ -23,6 +23,14 @@
       position: relative;
       width: 100%;
 
+      &-info {
+        margin-top: 1rem;
+
+        .title {
+          color: #151515;
+        }
+      }
+
       a {
         text-decoration: none;
       }
@@ -45,35 +53,6 @@
 
       @media (min-width: $viewS) {
         width: 33.33333%;
-      }
-
-      &-info {
-        margin-top: 1rem;
-      }
-
-      &-link {
-        // a {
-        //   box-shadow: 0 2px 0 -1px currentColor;
-        //   cursor: pointer;
-        //   transition: color 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-        //   text-decoration: none;
-
-        //   &::after {
-        //     content: "";
-        //     height: 100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     width: 100%;
-        //     transform: scale(1);
-        //     transform-origin: left center;
-        //     transition: transform 0.2s ease-in-out;
-        //   }
-
-        //   &:hover {
-        //     cursor: pointer;
-        //   }
-        // }
       }
     }
   }
