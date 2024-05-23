@@ -13602,6 +13602,7 @@ body {
   width: 100%;
   margin-bottom: 0;
   overflow: hidden;
+  position: relative;
 }
 .headerStyle02 .fullMenu-nav .navMenu.open-secondMenu {
   overflow: visible;
@@ -13610,6 +13611,7 @@ body {
   width: 100%;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  position: static;
 }
 .headerStyle02 .fullMenu-nav .navMenu li a {
   text-decoration: none;
