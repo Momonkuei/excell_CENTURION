@@ -41,12 +41,6 @@ $(function () {
 			if ($('.fullMenu .navMenu li').has('.second-menu').length) {
 				$(this).closest('li').addClass('open-secondMenu');
 			}
-			$(this).closest('.fullMenu').animate(
-				{
-					scrollTop: 0,
-				},
-				200
-			);
 		});
 
 		// 次選單 返回
@@ -66,51 +60,12 @@ $(function () {
 				$(this).closest('.second-menu').addClass('open-thirdMenu');
 				$(this).closest('li').addClass('open-thirdMenu');
 			}
-			// 如果第三層選單比第二層 還高  css處理
-			const $second_menu = $(this).closest('.second-menu').outerHeight();
-			const $third_menu = $(this).next('.third-menu').outerHeight();
-			if ($second_menu < $third_menu) {
-				$(this).closest('.second-menu').css('overflow', 'visible');
-			}
-
-			// 如果第二層選單比第三層 還高  css處理
-			if ($second_menu > $third_menu) {
-				$(this)
-					.closest('.second-menu')
-					.delay(300)
-					.css('height', `${$third_menu}px`);
-			}
-
-			$(this)
-				.closest('.navMenu')
-				.delay(300)
-				.css('height', `${$third_menu}px`)
-				.css('overflow', 'hidden');
-
-			$(this).closest('.fullMenu').animate(
-				{
-					scrollTop: 0,
-				},
-				200
-			);
 		});
 
 		// 第三選單返回
 		$('.third-menu .return-box a').click(function () {
 			$(this).closest('.second-menu').removeClass('open-thirdMenu');
 			$(this).closest('li').removeClass('open-thirdMenu');
-			// CSS修正
-			$(this)
-				.delay(300)
-				.closest('.second-menu')
-				.css('overflow', '')
-				.css('height', '');
-
-			$(this)
-				.closest('.navMenu')
-				.delay(300)
-				.css('height', '')
-				.css('overflow', '');
 		});
 
 		// 會員選單
@@ -234,9 +189,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

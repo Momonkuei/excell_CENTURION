@@ -1125,6 +1125,16 @@
           &.open-secondMenu {
             .second-menu {
               transform: translate3d(0, 0, 0);
+              overflow: visible;
+
+              &.open-thirdMenu {
+                overflow: hidden;
+                height: fit-content;
+
+                &-content {
+                  height: fit-content;
+                }
+              }
             }
           }
         }
@@ -1144,6 +1154,7 @@
       transform: translate3d(100%, 0, 0);
       z-index: 3;
       overflow: hidden;
+      height: 100%;
 
       &.open-thirdMenu {
         overflow: visible;
@@ -1202,7 +1213,10 @@
       &.open-thirdMenu {
         .third-menu {
           transform: translate3d(0, 0, 0);
-          height: 100%;
+          height: fit-content;
+          &-content {
+            height: fit-content;
+          }
         }
 
         a {
@@ -1234,6 +1248,7 @@
       .navMenu-third {
         padding-left: 0;
         padding: 1rem 0;
+        background: #fff;
 
         li {
           a {

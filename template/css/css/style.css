@@ -13642,6 +13642,18 @@ body {
 .headerStyle02 .fullMenu-nav .navMenu li.open-secondMenu .second-menu {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  overflow: visible;
+}
+.headerStyle02 .fullMenu-nav .navMenu li.open-secondMenu .second-menu.open-thirdMenu {
+  overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.headerStyle02 .fullMenu-nav .navMenu li.open-secondMenu .second-menu.open-thirdMenu-content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .headerStyle02 .fullMenu .second-menu {
   width: 100%;
@@ -13658,6 +13670,7 @@ body {
           transform: translate3d(100%, 0, 0);
   z-index: 3;
   overflow: hidden;
+  height: 100%;
 }
 .headerStyle02 .fullMenu .second-menu.open-thirdMenu {
   overflow: visible;
@@ -13708,7 +13721,14 @@ body {
 .headerStyle02 .fullMenu .third-menu-box.open-thirdMenu .third-menu {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.headerStyle02 .fullMenu .third-menu-box.open-thirdMenu .third-menu-content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .headerStyle02 .fullMenu .third-menu {
   width: 100%;
@@ -13731,6 +13751,7 @@ body {
 .headerStyle02 .fullMenu .third-menu .navMenu-third {
   padding-left: 0;
   padding: 1rem 0;
+  background: #fff;
 }
 .headerStyle02 .fullMenu .third-menu .navMenu-third li a {
   color: #606060;
