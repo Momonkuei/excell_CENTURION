@@ -133,6 +133,13 @@ $(function () {
 			nextArrow:
 				'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
 		});
+
+		// 阻止冒泡事件
+		$('.product-lists-gallery-item .slick-arrow').click(function (event) {
+			event.stopPropagation();
+			event.preventDefault();
+			console.log('123');
+		});
 	}
 
 	// 頁數點擊

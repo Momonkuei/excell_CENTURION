@@ -16179,7 +16179,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
           justify-content: center;
   min-height: 100vh;
   position: sticky;
-  top: 0;
+  top: 6.25rem;
   width: 100%;
 }
 .product-info-box .product-item-box {
