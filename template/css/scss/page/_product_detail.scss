@@ -93,6 +93,10 @@
     position: sticky;
     top: 6.25rem;
     width: 100%;
+
+    @media (max-width: $viewM) {
+      justify-content: end;
+    }
   }
 
   // 產品介紹
@@ -184,6 +188,14 @@
           border: none;
           padding: 0.25rem 0rem;
           outline: none;
+
+          // 去除數字隱藏按鍵
+          // -moz-appearance: textfield;
+          // &::-webkit-outer-spin-button,
+          // &::-webkit-inner-spin-button {
+          //   -webkit-appearance: none;
+          //   margin: 0;
+          // }
 
           @media (min-width: $viewMobile) {
             padding: 0.5rem 0rem;

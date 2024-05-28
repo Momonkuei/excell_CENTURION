@@ -16205,6 +16205,13 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   top: 6.25rem;
   width: 100%;
 }
+@media (max-width: 992px) {
+  .product-info-box-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+}
 .product-info-box .product-item-box {
   display: inline-block;
   width: 30rem;
@@ -16302,6 +16309,11 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   border: none;
   padding: 0.25rem 0rem;
   outline: none;
+  -moz-appearance: textfield;
+}
+.product-info-box .product-item-quantity .QTY-selector-currentNum::-webkit-outer-spin-button, .product-info-box .product-item-quantity .QTY-selector-currentNum::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 @media (min-width: 576px) {
   .product-info-box .product-item-quantity .QTY-selector-currentNum {
