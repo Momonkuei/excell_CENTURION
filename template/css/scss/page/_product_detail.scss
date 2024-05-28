@@ -178,11 +178,16 @@
         &-currentNum {
           display: inline-block;
           width: 2.5rem;
-          padding: 0;
           text-align: center;
           letter-spacing: normal;
           background: transparent;
           border: none;
+          padding: 0.25rem 0rem;
+          outline: none;
+
+          @media (min-width: $viewMobile) {
+            padding: 0.5rem 0rem;
+          }
         }
 
         &-btn {
@@ -192,7 +197,7 @@
           user-select: none;
 
           @media (min-width: $viewMobile) {
-            padding: 0.5rem 1rem 0.5rem;
+            padding: 0.5rem 1rem;
           }
         }
       }

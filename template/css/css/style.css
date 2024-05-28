@@ -14855,6 +14855,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 @media (min-width: 768px) {
   .cart-footer .cart-note-container {
     max-width: 21.25rem;
+    vertical-align: bottom;
   }
 }
 .cart-footer .cart-note {
@@ -14876,6 +14877,28 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   width: 21.25rem;
   padding-left: 1.25rem;
   text-align: right;
+}
+.cart-footer .cart-sum .cart-total-area .cart-total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  margin-left: auto;
+}
+.cart-footer .cart-sum .cart-total-area .cart-total:last-of-type {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .cart-footer .cart-sum .cart-total-area .cart-total {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
 @media (max-width: 768px) {
   .cart-footer .cart-sum {
@@ -16273,11 +16296,17 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 .product-info-box .product-item-quantity .QTY-selector-currentNum {
   display: inline-block;
   width: 2.5rem;
-  padding: 0;
   text-align: center;
   letter-spacing: normal;
   background: transparent;
   border: none;
+  padding: 0.25rem 0rem;
+  outline: none;
+}
+@media (min-width: 576px) {
+  .product-info-box .product-item-quantity .QTY-selector-currentNum {
+    padding: 0.5rem 0rem;
+  }
 }
 .product-info-box .product-item-quantity .QTY-selector-btn {
   display: inline-block;
@@ -16290,7 +16319,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 @media (min-width: 576px) {
   .product-info-box .product-item-quantity .QTY-selector-btn {
-    padding: 0.5rem 1rem 0.5rem;
+    padding: 0.5rem 1rem;
   }
 }
 .product-info-box .product-item-btnGroup {
@@ -16674,6 +16703,9 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   color: #35286d;
   border-color: #35286d;
   background-color: transparent;
+}
+.product-lists-gallery {
+  min-height: 60vh;
 }
 .product-lists-gallery-title {
   margin: 1rem 0 0;

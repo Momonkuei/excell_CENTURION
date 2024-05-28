@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>
+    <?# webTitle ?>
+  </title>
+  <!-- 字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link rel="stylesheet" href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+
+
+  <!-- aos -->
+  <link rel="stylesheet" href="/template/jquery/aos/aos.css">
+
+
+  <!-- Swiper css -->
+  <link rel="stylesheet" href="/template/jquery/swiper/swiper-bundle.min.css">
+
+
+  <!-- 客製css -->
+  <link rel="stylesheet" href="/template/css/<?# version ?>/style.css">
+  <!-- sweetalert2 -->
+  <script src="template/jquery/sweetalert2/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="template/jquery/sweetalert2/sweetalert2.min.css">
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+
+
+</head>
+
+<body class="">
+
+  <!-- header -->
+  <?# header ?>
+
+
+
+  <div class="body-content">
+
+
+
+    <div class="container">
+      <!-- 標頭 -->
+      <div class="page-header">
+        <div class="h4 text-center mb-5">
+          文章列表
+        </div>
+
+        <!-- 類別分類 -->
+        <ul class="article-category text-center">
+
+
+
+          <php:repeater id="newsCategoryList">
+            <template>
+              <li class="article-category-item">
+                <a href="news_lists-<?# CategoryID ?>_0.html" class="heading link <?# active ?>">
+                  <?# CategoryName ?>
+                </a>
+              </li>
+            </template>
+          </php:repeater>
+
+
+        </ul>
+      </div>
+
+      <!-- 文章列表 -->
+      <div class="article-list-wrapper">
+        <div class="row">
+          <php:repeater id="newsList">
+            <template>
+              <div class="col-lg-4 col-md-6 col-12 ">
+                <div class="article-item">
+                  <div class="article-item-imgBox">
+                    <a class="itemImg" href="news_inner_pages-<?# NewsID ?>.html">
+                      <img src="<?# NewsImg ?>" alt="">
+                    </a>
+                  </div>
+                  <div class="article-item-content">
+                    <div class="article-item-title fz-14 heading">
+                      <span><?# NewsDesc ?></span>
+                    </div>
+                    <div class="article-item-subLabel fz-14">
+                      <span class="category "><?# CategoryName ?></span>
+                      <span class="time "><?# InsertTime ?></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </php:repeater>
+        </div>
+      </div>
+
+      <div class="article-list-wrapper-footer my-5">
+        <div class="pagination-box">
+          <a class="paginate_button" href="<?# beforePage ?>">上一頁</a>
+
+          <div class="pagination-page">
+
+            <php:repeater id="pagesList">
+              <template>
+                <a href="news_lists-<?# ID ?>_<?# page ?>.html" class="pageLink <?# active ?>">
+                  <?# page ?>
+                </a>
+              </template>
+            </php:repeater>
+          </div>
+          <a class="paginate_button" href="<?# nextPage ?>">下一頁</a>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- 頁尾 -->
+  <?# footer ?>
+
+
+  <a href="#" class="goTop">
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/popper/popper.min.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/bootstrap/bootstrap.js"></script>
+
+
+  <!-- 自定義JS -->
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/script.js"></script>
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/article.js"></script>
+
+</body>
+
+</html>

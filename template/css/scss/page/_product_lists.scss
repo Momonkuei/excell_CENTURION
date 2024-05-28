@@ -149,7 +149,10 @@
     }
   }
 
+  // 商品導覽
   &-gallery {
+    min-height: 60vh;
+
     &-title {
       margin: 1rem 0 0;
     }

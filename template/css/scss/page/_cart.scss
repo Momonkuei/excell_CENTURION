@@ -176,6 +176,7 @@
   .cart-note-container {
     @media (min-width: $viewS) {
       max-width: 21.25rem;
+      vertical-align: bottom;
     }
   }
 
@@ -198,6 +199,25 @@
     width: 21.25rem;
     padding-left: 1.25rem;
     text-align: right;
+
+    .cart-total-area {
+      .cart-total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+        margin-left: auto;
+
+        &:last-of-type {
+          margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: $viewS) {
+          width: 100%;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
 
     @media (max-width: $viewS) {
       margin-top: 1rem;

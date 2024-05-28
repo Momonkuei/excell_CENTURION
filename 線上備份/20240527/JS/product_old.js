@@ -92,21 +92,21 @@ $(function () {
 
 // 產品列表分頁
 $(function () {
-	//滾動產品列表功能列
+	//滾動
+	const hdTop = $('header').outerHeight();
+	const product_lists_filters_bar = $(
+		'.product-lists-filters-bar'
+	).outerHeight();
 
-	$(window).on('scroll resize load', function () {
-		const hdTop = $('header').outerHeight();
-
-		if ($(window).scrollTop() > hdTop) {
+	$(window).scroll(function () {
+		if ($(window).scrollTop() > hdTop + product_lists_filters_bar) {
 			if ($('.product-lists-filters-bar').length) {
 				$('.product-lists-filters-bar').addClass('scroll');
-				$('.product-lists-filters-bar').css('top', `${hdTop}px`);
 			}
 		}
 		if ($(window).scrollTop() === 0) {
 			if ($('.product-lists-filters-bar').length) {
 				$('.product-lists-filters-bar').removeClass('scroll');
-				$('.product-lists-filters-bar').css('top', '');
 			}
 		}
 	});
@@ -133,15 +133,7 @@ $(function () {
 			nextArrow:
 				'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
 		});
-
-		// 阻止冒泡事件
-		$('.product-lists-gallery-item .slick-arrow').click(function (event) {
-			event.stopPropagation();
-			event.preventDefault();
-			console.log('123');
-		});
 	}
-
 	// 頁數點擊
 	if ($('.pagination-box .pagination-page').length) {
 		$('.pagination-box .pagination-page .pageLink').click(function (idx) {
@@ -177,43 +169,14 @@ $(function () {
 		}
 
 		productgallery_initializeSlick();
+		$(window).on('resize load', productgallery_initializeSlick);
 	}
 
 	// 數量
 	if ($('.page-product_detail .product-item-quantity').length) {
-		const $product_item_num = $(
-			'.page-product_detail .product-item-quantity .product-item-num'
+		let product_Num = parseInt(
+			$('.product-item-quantity .product-item-num').val()
 		);
-		let product_Num = parseInt($product_item_num.val());
-
-		$product_item_num.blur(function () {
-			const value = $(this).val();
-
-			// 正則表達式是否大於0
-			const isValid = /^\d+$/.test(value) && parseInt(value) > 0;
-
-			// 判斷是否大於0
-			if (!isValid) {
-				Swal.fire({
-					title: '輸入錯誤資訊',
-					icon: 'error',
-					text: '請輸入購買數量',
-					confirmButtonText: '確認',
-					buttonsStyling: false,
-					customClass: {
-						container: 'centurion-modal-style01',
-						confirmButton: 'btn-style02',
-					},
-
-					showCloseButton: true, // 預設顯示在右上角的關閉按鈕
-					showCancelButton: false, // 取消按鈕
-				});
-				$(this).val(product_Num);
-			} else {
-				product_Num = value;
-			}
-		});
-
 		$('.product-item-quantity .quantity-reduce').click(function () {
 			product_Num--;
 			if (product_Num <= 0) {
@@ -277,13 +240,6 @@ $(function () {
 				'<button class="slick-prev slick-arrow"><i class="bi bi-chevron-left"></i></button>',
 			nextArrow:
 				'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
-		});
-
-		$('.related-products-gallery-item .slick-arrow').click(function (
-			event
-		) {
-			event.stopPropagation();
-			event.preventDefault();
 		});
 	}
 });

@@ -6,36 +6,6 @@ $(function () {
 			let product_QTY = parseInt(
 				$item.find('.QTY-selector-currentNum').val()
 			);
-
-			// 輸入input
-			$item.find('.QTY-selector-currentNum').blur(function () {
-				const value = $(this).val();
-
-				// 正則表達式是否大於0
-				const isValid = /^\d+$/.test(value) && parseInt(value) > 0;
-
-				// 判斷是否大於0
-				if (!isValid) {
-					Swal.fire({
-						title: '輸入錯誤資訊',
-						icon: 'error',
-						text: '請輸入購買數量',
-						confirmButtonText: '確認',
-						buttonsStyling: false,
-						customClass: {
-							container: 'centurion-modal-style01',
-							confirmButton: 'btn-style02',
-						},
-
-						showCloseButton: true, // 預設顯示在右上角的關閉按鈕
-						showCancelButton: false, // 取消按鈕
-					});
-					$(this).val(product_QTY);
-				} else {
-					product_QTY = value;
-				}
-			});
-
 			$item.find('.QTY-reduce').click(function () {
 				product_QTY--;
 				if (product_QTY <= 0) {
