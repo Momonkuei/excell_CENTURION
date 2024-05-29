@@ -93,7 +93,6 @@ $(function () {
 // 產品列表分頁
 $(function () {
 	//滾動產品列表功能列
-
 	$(window).on('scroll resize load', function () {
 		const hdTop = $('header').outerHeight();
 
@@ -125,7 +124,52 @@ $(function () {
 		});
 	}
 
-	// 產品列表
+	// 產品列表 產品添加動畫
+	if ($('.product-lists-gallery-box').length) {
+		$(window).on('scroll resize load', function () {
+			let itemsPerRow; //每行項目數
+			let start_quantity; //起始數量
+			if ($(window).innerWidth() < 768) {
+				itemsPerRow = 2; // 每行的項目數
+				start_quantity = 4;
+			} else {
+				itemsPerRow = 4;
+				start_quantity = 8;
+			}
+
+			// 依據行列添加 aos 效果
+			$('.product-lists-gallery-box')
+				.find('.product-lists-gallery-item')
+				.each(function (idx) {
+					const rowNumber = Math.floor(idx / itemsPerRow);
+
+					if (rowNumber % 2 === 0) {
+						$(this).attr('data-aos', 'fade-left');
+					} else {
+						$(this).attr('data-aos', 'fade-right');
+					}
+				});
+
+			AOS.init({
+				easing: 'ease-in-sine',
+			});
+
+			// 768以上前八個添加動畫
+			$('.product-lists-gallery-box')
+				.find('.product-lists-gallery-item')
+				.each(function (idx) {
+					const rowNumber = Math.floor(idx / itemsPerRow);
+
+					if (rowNumber % 2 === 0 && idx < start_quantity) {
+						$(this).addClass('start-left');
+					} else if (rowNumber % 2 !== 0 && idx < start_quantity) {
+						$(this).addClass('start-right');
+					}
+				});
+		});
+	}
+
+	// 產品列表 產品展示
 	if ($('.product-lists-gallery-item-imgBoxList').length) {
 		$('.product-lists-gallery-item-imgBoxList-1').slick({
 			prevArrow:

@@ -155,10 +155,9 @@ $(function () {
 			}
 		});
 
-		// 滾動
-
 		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
 
+		// 滾動
 		// 取得header 高度
 		const hdTop = $('header').outerHeight();
 

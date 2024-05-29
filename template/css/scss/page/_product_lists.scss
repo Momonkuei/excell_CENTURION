@@ -160,6 +160,7 @@
     &-box {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      overflow: hidden;
 
       @media (min-width: 48rem) {
         grid-template-columns: repeat(4, 1fr);
@@ -171,6 +172,20 @@
       padding: 0.75rem 0.5rem;
       display: flex;
       flex-direction: column;
+
+      &.start-right {
+        animation-name: startFadeRight;
+        animation-delay: 0.5s;
+        animation-duration: 0.4s;
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+      }
+
+      &.start-left {
+        animation-name: startFadeLeft;
+        animation-delay: 0.3s;
+        animation-duration: 0.4s;
+        animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+      }
 
       a {
         text-decoration: none;
@@ -191,6 +206,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: all 0.3s ease-in;
           img {
             max-width: 80%;
           }
@@ -225,6 +241,7 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+        transition: all 0.3s ease-in;
         .title {
           @include hideLongTexts(2);
         }
@@ -235,6 +252,15 @@
           .slick-arrow {
             opacity: 1;
           }
+
+          .img-box {
+            transform: scale(1.02);
+          }
+        }
+
+        .related-products-gallery-item-info {
+          color: $product-info-hover-color;
+          font-size: 0.9rem;
         }
       }
     }
