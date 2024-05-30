@@ -348,6 +348,7 @@
     padding: 0.75rem 0.5rem;
     display: flex;
     flex-direction: column;
+    opacity: 0;
 
     a {
       text-decoration: none;
@@ -368,6 +369,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: all 0.3s ease-in;
         img {
           max-width: 80%;
         }
@@ -402,6 +404,7 @@
       text-align: center;
       display: flex;
       flex-direction: column;
+      transition: all 0.3s ease-in;
 
       .title {
         @include hideLongTexts(2);
@@ -413,6 +416,14 @@
         .slick-arrow {
           opacity: 1;
         }
+        .img-box {
+          transform: scale(1.02);
+        }
+      }
+
+      .related-products-gallery-item-info {
+        color: $product-info-hover-color;
+        font-size: 0.9rem;
       }
     }
   }

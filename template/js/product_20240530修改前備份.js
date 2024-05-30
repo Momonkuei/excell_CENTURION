@@ -134,16 +134,10 @@ $(function () {
 	}
 });
 
-// 產品列表 產品添加動畫
 $(function () {
+	// 產品列表 產品添加動畫
 	if ($('.product-lists-gallery-box').length) {
-		const AOS_start = function () {
-			AOS.init({
-				easing: 'ease-in-sine',
-				duration: 200,
-			});
-		};
-		const product_lists_start_function = function (callback) {
+		$(window).on('resize load', function () {
 			let itemsPerRow; //每行項目數
 			let start_quantity; //起始數量
 			if ($(window).innerWidth() < 768) {
@@ -159,10 +153,9 @@ $(function () {
 				.find('.product-lists-gallery-item')
 				.each(function (idx) {
 					const rowNumber = Math.floor(idx / itemsPerRow);
-					const columnNumber = idx % itemsPerRow; // 計算列數
 
+					// 判斷第幾列
 					if (rowNumber % 2 === 0) {
-						// 判斷第幾列
 						$(this)
 							.attr('data-aos', 'fade-left')
 							.attr('data-aos-once', 'true');
@@ -171,12 +164,12 @@ $(function () {
 							.attr('data-aos', 'fade-right')
 							.attr('data-aos-once', 'true');
 					}
-					if (columnNumber !== 0) {
-						// 第一行第一個不添加
-						const delay = columnNumber * 100;
-						$(this).attr('data-aos-delay', delay);
-					}
 				});
+
+			AOS.init({
+				easing: 'ease-in-sine',
+				duration: 200,
+			});
 
 			// 768以上前八個添加動畫
 			$('.product-lists-gallery-box')
@@ -211,21 +204,9 @@ $(function () {
 							return 50 + 100 * i;
 						},
 						easing: 'easeInSine',
-						complete: () => {
-							// 在最後一個動畫完成後執行回調函數
-							if (idx === start_quantity - 1) {
-								if (callback) callback();
-							}
-						},
 					});
 				});
-		};
-
-		$(window).on('resize load', function () {
-			product_lists_start_function(AOS_start);
 		});
-
-		product_lists_start_function(AOS_start);
 	}
 
 	// 產品列表 產品展示
@@ -381,26 +362,12 @@ $(function () {
 
 	// 相關產品添加AOS
 	if ($('.related-products-gallery-box').length) {
-		let itemsPerRow; //每行項目數
-		if ($(window).innerWidth() < 768) {
-			itemsPerRow = 2; // 每行的項目數
-		} else {
-			itemsPerRow = 4;
-		}
-
 		$('.related-products-gallery-box')
 			.find('.related-products-gallery-item')
 			.each(function (idx) {
-				const columnNumber = idx % itemsPerRow; // 計算列數
 				$(this)
 					.attr('data-aos', 'fade-left')
 					.attr('data-aos-once', 'true');
-
-				if (columnNumber !== 0) {
-					// 第一行第一個不添加
-					const delay = columnNumber * 100;
-					$(this).attr('data-aos-delay', delay);
-				}
 			});
 
 		AOS.init({

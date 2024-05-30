@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>
+    <?# webTitle ?>
+  </title>
+  <!-- 字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link rel="stylesheet" href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+
+
+  <!-- aos -->
+  <link rel="stylesheet" href="/template/jquery/aos/aos.css">
+
+  <!-- slick  -->
+  <link rel="stylesheet" href="/template/jquery/slick/slick.css">
+
+
+  <!-- Swiper css -->
+  <link rel="stylesheet" href="/template/jquery/swiper/swiper-bundle.min.css">
+
+
+  <!-- 客製css -->
+  <link rel="stylesheet" href="/template/css/<?# version ?>/style.css">
+
+  <!-- sweetalert2 -->
+  <script src="template/jquery/sweetalert2/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="template/jquery/sweetalert2/sweetalert2.min.css">
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+</head>
+
+<body class="">
+
+
+  <!-- header -->
+  <?# header ?>
+
+
+
+  <div class="body-content">
+
+    <section class="sectionblock-product-lists">
+
+      <!-- 篩選選單 -->
+      <div class="filters-menu ">
+        <div class="filters-menu-inner">
+
+          <button class="close-btn">
+            <i class="bi bi-x-lg "></i>
+            <span class="txt-close">關閉</span>
+          </button>
+          <div class="filter-box">
+            <ul class="product-sidebar">
+
+              <!-- 當有second-menu-btn就會控制摺疊按鈕顯示 -->
+              <li class="product-sidebar-item">
+
+                <a href="javascript:void(0);" class="second-menu-btn">
+                  <span class="product-sidebar-item-txt">旅行箱</span>
+                  <span class="plus-icon"></span>
+                </a>
+                <div class="product-sidebar-item-secondMenu">
+                  <ul id="" class="fz-14">
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        14吋 愛黛兒箱
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        20吋 旅行箱
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        24吋 跑車箱
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="active" href="javascript:void(0);">
+                        28吋 旅行箱
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        29吋 胖胖箱
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+
+              <li class="product-sidebar-item">
+
+                <a href="javascript:void(0);" class="second-menu-btn">
+                  <span class="product-sidebar-item-txt">旅行週邊商品</span>
+                  <span class="plus-icon"></span>
+                </a>
+
+                <div class="product-sidebar-item-secondMenu">
+                  <ul id="" class="fz-14">
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        比基尼
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        四角內褲
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        海灘拖鞋
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        海灘褲
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a class="" href="javascript:void(0);">
+                        襪子
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+
+              </li>
+
+
+
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="product-lists">
+        <div class="product-lists-filters-bar">
+          <div class="title-box">
+            <span class="title fz-14 heading">28吋 旅行箱</span>
+          </div>
+
+          <div class="filters-button-box">
+            <a href="javascript:void(0);" class="filters-button-box-btn fz-14 heading">
+              <span>產品類別</span>
+              <span><i class="bi bi-filter"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="product-lists-gallery">
+          <div class="product-lists-gallery-box">
+
+
+            <php:repeater id="ProductList">
+              <template>
+                <div class="product-lists-gallery-item">
+                  <a href="product_detail-<?# ProductID ?>.html">
+                    <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                      <li>
+                        <div class="img-box">
+                          <img src="<?# ProductImg ?>" alt="">
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img src="<?# ProductImg2 ?>" alt="">
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img src="<?# ProductImg3 ?>" alt="">
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img src="<?# ProductImg4 ?>" alt="">
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img src="<?# ProductImg5 ?>" alt="">
+                        </div>
+                      </li>
+
+                    </ul>
+
+                    <div class="related-products-gallery-item-info fz-14">
+                      <div class="title">
+                        <span><?# ProductNameTW ?></span>
+                      </div>
+                      <div class="price">
+                        <span>NT$</span><span><?# Price ?></span>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+              </template>
+            </php:repeater>
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="products-footer my-5">
+        <div class="pagination-box">
+          <a class="paginate_button" href="<?# beforePage ?>">上一頁</a>
+
+          <div class="pagination-page">
+
+            <php:repeater id="pagesList">
+              <template>
+
+                <a href="product_lists-<?# ID ?>_<?# page ?>.html" class="pageLink <?# active ?>">
+                  <?# page ?>
+                </a>
+              </template>
+            </php:repeater>
+
+          </div>
+          <a class="paginate_button" href="<?# nextPage ?>">下一頁</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </div>
+
+
+
+
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a href="javascript:void(0);" class="goTop">
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/popper/popper.min.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/bootstrap/bootstrap.js"></script>
+
+
+  <!-- swiper -->
+  <script type="text/javascript" src="/template/jquery/swiper/swiper-bundle.min.js"></script>
+
+  <!-- slick -->
+  <script type="text/javascript" src="/template/jquery/slick/slick.js"></script>
+
+  <!-- aos -->
+
+  <script type="text/javascript" src="/template/jquery/aos/aos.js"></script>
+
+
+
+  <!-- 自定義JS -->
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/script.js"></script>
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/product.js"></script>
+
+
+
+</body>
+
+</html>
