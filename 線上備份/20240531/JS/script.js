@@ -155,9 +155,10 @@ $(function () {
 			}
 		});
 
+		// 滾動
+
 		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
 
-		// 滾動
 		// 取得header 高度
 		const hdTop = $('header').outerHeight();
 
@@ -202,18 +203,18 @@ $(function () {
 		});
 
 		// 取消下拉選單;
-		// $('header .navMenu >li').on('mouseleave', function () {
-		// 	$('header .navMenu > li').removeClass('active-wrap-box');
-		// 	$('header').removeClass('open-wrap-box');
-		// 	$('body').removeClass('open-wrap-box');
-		// 	// 取消側邊選取欄位
-		// 	$(this).find('.wrap-box-menu .item.active').removeClass('active');
+		$('header .navMenu >li').on('mouseleave', function () {
+			$('header .navMenu > li').removeClass('active-wrap-box');
+			$('header').removeClass('open-wrap-box');
+			$('body').removeClass('open-wrap-box');
+			// 取消側邊選取欄位
+			$(this).find('.wrap-box-menu .item.active').removeClass('active');
 
-		// 	// 取消側邊欄位
-		// 	$(this)
-		// 		.find('.wrap-box-detail [data-target-sub-list-item]')
-		// 		.css('display', 'none');
-		// });
+			// 取消側邊欄位
+			$(this)
+				.find('.wrap-box-detail [data-target-sub-list-item]')
+				.css('display', 'none');
+		});
 
 		// 點擊側拉項目時，更換選單
 		$('.wrap-box-menu .item-link').on('click', function () {
@@ -225,8 +226,6 @@ $(function () {
 				`.wrap-box-detail .info-wrap[data-target-sub-list-item='${subListItemData}']`
 			).css('display', 'block');
 		});
-
-		// 點擊出現第三項選單
 	}
 });
 
@@ -235,9 +234,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

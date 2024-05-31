@@ -355,7 +355,7 @@
       // max-height: 0;
       display: grid;
       grid-template-rows: 0fr;
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
 
       overflow: hidden;
       .second-menu-content {
@@ -366,6 +366,7 @@
 
       .navMenu-second {
         padding-left: 0;
+        background-color: #fff;
 
         li {
           a {
@@ -931,7 +932,9 @@
                     padding: 0.3em 0;
                     transition: all 0.3s;
                     color: #bbb;
-                    display: inline-block;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.5rem;
 
                     &::before {
                       content: "";
@@ -950,6 +953,10 @@
 
                     span {
                       @include hideLongTexts(1);
+                    }
+
+                    .icon-box {
+                      font-size: 0.75rem;
                     }
                   }
 
@@ -1057,7 +1064,7 @@
                       left: -8px;
                       transform: translateY(-50%);
                       opacity: 0;
-                      transition: all 0.3s;
+                      transition: all 0.3s ease-in;
                     }
 
                     span {
@@ -1261,7 +1268,7 @@
       // max-height: 0;
       display: grid;
       grid-template-rows: 1fr;
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
       position: absolute;
       top: 0;
       transform: translate3d(100%, 0, 0);
@@ -1302,6 +1309,7 @@
 
       .navMenu-second {
         padding-left: 0;
+        background-color: #fff;
 
         li {
           > a {
@@ -1418,7 +1426,7 @@
       // max-height: 0;
       display: grid;
       grid-template-rows: 1fr;
-      transition: all 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
 
       position: absolute;
       top: 0;

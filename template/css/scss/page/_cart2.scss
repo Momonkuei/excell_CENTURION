@@ -33,7 +33,8 @@
     }
 
     // 郵遞區號
-    input[name="zipcode"] {
+    input[name="zipcode"],
+    input[name="Postzipcode"] {
       color: $zipcode-txt-color;
       background-color: $zipcode-bg;
       pointer-events: none;

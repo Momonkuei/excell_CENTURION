@@ -11,7 +11,7 @@ if (typeof AOS === 'object') {
 	});
 }
 
-// header 手機板menu
+// header
 $(function () {
 	if ($('header').length) {
 		$('.slide-menu-control').click(function () {
