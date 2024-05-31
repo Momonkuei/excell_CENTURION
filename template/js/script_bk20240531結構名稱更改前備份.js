@@ -113,63 +113,6 @@ $(function () {
 				.css('overflow', '');
 		});
 
-		// 第四層選單
-		$('.third-menu .navMenu-third >li >a').click(function () {
-			if ($(this).closest('li').has('.fourth-menu').length) {
-				$(this).closest('.third-menu').addClass('open-fourthMenu');
-				$(this).closest('li').addClass('open-fourthMenu');
-			}
-			// 如果第四層選單比第三層 還高  css處理
-			const $second_menu = $(this).closest('.second-menu').outerHeight();
-			const $third_menu = $(this).closest('.third-menu').outerHeight();
-			const $fourth_menu = $(this).next('.fourth-menu').outerHeight();
-			console.log('$third_menu', $third_menu);
-			console.log('$fourth_menu', $fourth_menu);
-			// 第四層比第三層還高
-			if ($fourth_menu > $third_menu) {
-				$(this)
-					.delay(300)
-					.closest('.navMenu ')
-					.css('height', `${$fourth_menu}px`)
-					.css('overflow', 'hidden');
-			}
-
-			// 第三層比第四層還高
-			if ($third_menu > $fourth_menu) {
-				$(this)
-					.delay(300)
-					.closest('.third-menu ,.second-menu ')
-					.css('height', `${$fourth_menu}px`)
-					.css('overflow', 'hidden');
-			}
-
-			$(this).closest('.fullMenu').animate(
-				{
-					scrollTop: 0,
-				},
-				200
-			);
-		});
-
-		// 第四選單返回
-		$('.fourth-menu .return-box a').click(function () {
-			const $third_menu = $(this).closest('.third-menu').outerHeight();
-			$(this).closest('.third-menu').removeClass('open-fourthMenu');
-			$(this).closest('li').removeClass('open-fourthMenu');
-			// CSS修正
-			$(this)
-				.delay(300)
-				.closest('.second-menu')
-				.css('overflow', '')
-				.css('height', '');
-
-			$(this)
-				.closest('.navMenu')
-				.delay(300)
-				.css('height', `${$third_menu}px`)
-				.css('overflow', 'hidden');
-		});
-
 		// 會員選單
 		if ($('.member-function-box').length) {
 			$('.member-function-box-btn').click(function () {
@@ -259,18 +202,18 @@ $(function () {
 		});
 
 		// 取消下拉選單;
-		$('header .navMenu >li').on('mouseleave', function () {
-			$('header .navMenu > li').removeClass('active-wrap-box');
-			$('header').removeClass('open-wrap-box');
-			$('body').removeClass('open-wrap-box');
-			// 取消側邊選取欄位
-			$(this).find('.wrap-box-menu .item.active').removeClass('active');
+		// $('header .navMenu >li').on('mouseleave', function () {
+		// 	$('header .navMenu > li').removeClass('active-wrap-box');
+		// 	$('header').removeClass('open-wrap-box');
+		// 	$('body').removeClass('open-wrap-box');
+		// 	// 取消側邊選取欄位
+		// 	$(this).find('.wrap-box-menu .item.active').removeClass('active');
 
-			// 取消側邊欄位
-			$(this)
-				.find('.wrap-box-detail [data-target-sub-list-item]')
-				.css('display', 'none');
-		});
+		// 	// 取消側邊欄位
+		// 	$(this)
+		// 		.find('.wrap-box-detail [data-target-sub-list-item]')
+		// 		.css('display', 'none');
+		// });
 
 		// 點擊側拉項目時，更換選單
 		$('.wrap-box-menu .item-link').on('click', function () {
@@ -284,36 +227,6 @@ $(function () {
 		});
 
 		// 點擊出現第三項選單
-		$('.wrap-box-detail .info-wrap-link').on('click', function () {
-			var third_list_item_data = $(this).parent().data('third-list-item');
-			$(this).closest('ul').find('li').removeClass('active');
-			$(this).parent().addClass('active');
-			$(`.wrap-box-sub-detail .info-sub-wrap`).css('display', 'none');
-			$(
-				`.wrap-box-sub-detail .info-sub-wrap[data-target-sub-list-item='${third_list_item_data}']`
-			).css('display', 'block');
-		});
-	}
-
-	// 控制側邊選單內容中層的選項 寬度
-	if ($('.headerStyle02 .wrap-box-detail').length) {
-		$('.wrap-box-detail')
-			.find('.info-wrap-block-box ul')
-			.each(function () {
-				const item_nums = $(this).children().length;
-				if (item_nums <= 20) {
-					$(this).css(
-						'grid-template-columns',
-						'repeat(3, calc((100% - 2rem) / 3))'
-					);
-				} else {
-					const row_Num = Math.ceil(item_nums / 5);
-					$(this).css(
-						'grid-template-columns',
-						`repeat(${row_Num}, calc((100% - 2rem) / 3))`
-					);
-				}
-			});
 	}
 });
 
