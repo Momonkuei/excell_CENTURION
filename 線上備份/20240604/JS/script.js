@@ -255,14 +255,17 @@ $(function () {
 			$('body').removeClass('open-wrap-box');
 			// 取消側邊選取欄位
 			$(this).find('.wrap-box-menu .item.active').removeClass('active');
+
 			// 取消側邊欄位
 			$(this)
 				.find('.wrap-box-detail [data-target-sub-list-item]')
 				.css('display', 'none');
+
 			// 取消選取的項目
 			$(this)
 				.find('.wrap-box-detail .info-wrap-block-box li.active')
 				.removeClass('active');
+
 			// 取消第三欄選單
 			$(this).find('.info-sub-wrap').css('display', 'none');
 		});
@@ -303,13 +306,13 @@ $(function () {
 				if (item_nums <= 10) {
 					$(this).css(
 						'grid-template-columns',
-						'repeat(2, calc((100% - 2.2rem) / 2))'
+						'repeat(2, calc((100% - 1rem) / 2))'
 					);
 				} else {
 					const row_Num = Math.ceil(item_nums / 5);
 					$(this).css(
 						'grid-template-columns',
-						`repeat(${row_Num}, calc((100% - 2.2rem) / 2))`
+						`repeat(${row_Num}, calc((100% - 1rem) / 2))`
 					);
 				}
 			});
@@ -321,9 +324,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

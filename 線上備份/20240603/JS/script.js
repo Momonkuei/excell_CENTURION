@@ -75,7 +75,10 @@ $(function () {
 			const $third_menu = $(this).next('.third-menu').outerHeight();
 			// 如果第三層選單比第二層 還高  css處理
 			if ($second_menu < $third_menu) {
-				$(this).closest('.second-menu').css('overflow', 'visible');
+				$(this)
+					.closest('.second-menu')
+					.delay(300)
+					.css('overflow', 'visible');
 			}
 
 			// 如果第二層選單比第三層 還高  css處理
@@ -104,11 +107,16 @@ $(function () {
 			$(this).closest('li').removeClass('open-thirdMenu');
 			// CSS修正
 			$(this)
+				.delay(10)
 				.closest('.second-menu')
 				.css('overflow', '')
 				.css('height', '');
 
-			$(this).closest('.navMenu').css('height', '').css('overflow', '');
+			$(this)
+				.closest('.navMenu')
+				.delay(10)
+				.css('height', '')
+				.css('overflow', '');
 		});
 
 		// 第四層選單
@@ -117,16 +125,22 @@ $(function () {
 				$(this).closest('.third-menu').addClass('open-fourthMenu');
 				$(this).closest('li').addClass('open-fourthMenu');
 			}
-
+			// 如果第四層選單比第三層 還高  css處理
+			const $second_menu = $(this).closest('.second-menu').outerHeight();
+			const $third_menu = $(this).closest('.third-menu').outerHeight();
 			const $fourth_menu = $(this).next('.fourth-menu').outerHeight();
 
 			// 第三層比第四層還高
-			$(this)
-				.closest('.third-menu ,.second-menu ')
-				.css('height', `${$fourth_menu}px`)
-				.css('overflow', 'hidden');
+			if ($third_menu > $fourth_menu) {
+				$(this)
+					.delay(300)
+					.closest('.third-menu ,.second-menu ')
+					.css('height', `${$fourth_menu}px`)
+					.css('overflow', 'hidden');
+			}
 
 			$(this)
+				.delay(300)
 				.closest('.navMenu ')
 				.css('height', `${$fourth_menu}px`)
 				.css('overflow', 'hidden');
@@ -255,14 +269,17 @@ $(function () {
 			$('body').removeClass('open-wrap-box');
 			// 取消側邊選取欄位
 			$(this).find('.wrap-box-menu .item.active').removeClass('active');
+
 			// 取消側邊欄位
 			$(this)
 				.find('.wrap-box-detail [data-target-sub-list-item]')
 				.css('display', 'none');
+
 			// 取消選取的項目
 			$(this)
 				.find('.wrap-box-detail .info-wrap-block-box li.active')
 				.removeClass('active');
+
 			// 取消第三欄選單
 			$(this).find('.info-sub-wrap').css('display', 'none');
 		});
@@ -274,9 +291,6 @@ $(function () {
 			$(this).parent().addClass('active');
 			$(`.wrap-box-detail .info-wrap`).css('display', 'none');
 			$(`.wrap-box-sub-detail .info-sub-wrap`).css('display', 'none');
-			$('.wrap-box-detail .info-wrap-block-box')
-				.find('li.active')
-				.removeClass('active');
 			$(
 				`.wrap-box-detail .info-wrap[data-target-sub-list-item='${subListItemData}']`
 			).css('display', 'block');
@@ -300,16 +314,16 @@ $(function () {
 			.find('.info-wrap-block-box ul')
 			.each(function () {
 				const item_nums = $(this).children().length;
-				if (item_nums <= 10) {
+				if (item_nums <= 20) {
 					$(this).css(
 						'grid-template-columns',
-						'repeat(2, calc((100% - 2.2rem) / 2))'
+						'repeat(3, calc((100% - 2rem) / 3))'
 					);
 				} else {
 					const row_Num = Math.ceil(item_nums / 5);
 					$(this).css(
 						'grid-template-columns',
-						`repeat(${row_Num}, calc((100% - 2.2rem) / 2))`
+						`repeat(${row_Num}, calc((100% - 2rem) / 3))`
 					);
 				}
 			});
@@ -321,9 +335,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',

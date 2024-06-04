@@ -39,7 +39,7 @@
         color: $black;
         position: absolute;
         right: 5%;
-        top: 3%;
+        top: 5%;
 
         i {
           font-size: 1.25rem;
@@ -49,7 +49,7 @@
       .filter-box {
         width: 100%;
         padding: 2rem 1rem;
-        margin-top: 3.5rem;
+        margin-top: 3rem;
       }
     }
   }
@@ -266,10 +266,6 @@
   padding-left: 0;
   border-top: 1px solid $product-sidebar-border-color;
   margin-top: 1rem;
-  overflow-x: hidden;
-  position: relative;
-  height: 100%;
-  margin-bottom: 0;
 
   @media (max-width: $viewM) {
     margin-top: 0.5rem;
@@ -279,13 +275,8 @@
     text-decoration: none;
   }
 
-  // 當第一層項目比第二項目還多時，往下滾會看到
-  &.open-secondMenu {
-    overflow-y: hidden;
-  }
-
-  // 第一選單
   .product-sidebar-item {
+    position: relative;
     padding: 8px 0;
     border-bottom: 1px solid $product-sidebar-border-color;
 
@@ -298,9 +289,41 @@
       border-radius: 5px;
       color: inherit;
       width: 100%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
+      display: inline-block;
+    }
+
+    //摺疊按鈕
+    .plus-icon {
+      display: none;
+      position: absolute;
+      right: 15px;
+      top: calc(50% - 7.5px);
+      width: 15px;
+      height: 15px;
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        background-color: currentColor;
+        transition:
+          transform 0.3s ease-in-out,
+          opacity 0.3s ease-in-out;
+      }
+
+      &::before {
+        width: 1rem;
+        height: 1px;
+        opacity: 1;
+      }
+
+      &::after {
+        width: 1px;
+        height: 1rem;
+      }
     }
 
     .second-menu-btn {
@@ -311,82 +334,21 @@
       }
     }
 
-    // 打開第二層選單
-    &.open-secondMenu {
-      .product-sidebar-item-secondMenu {
-        transform: translate3d(0%, 0, 0);
-        // min-height: 100vh;
-        overflow-y: auto;
-      }
-    }
+    // 次選單
+    .product-sidebar-item-secondMenu {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: 300ms grid-template-rows ease;
 
-    // 打開第三層選單
-    .product-sidebar-item-secondMenu-lists {
-      li {
-        &.open-thirdMenu {
-          .product-sidebar-item-thirdMenu {
-            transform: translate3d(0%, 0, 0);
-            // min-height: 100vh;
-            overflow-y: auto;
-          }
-        }
-      }
-    }
-  }
-
-  // 次選單,第三選單
-  .product-sidebar-item-secondMenu,
-  .product-sidebar-item-thirdMenu {
-    display: grid;
-    grid-template-rows: 1fr;
-    transition: 300ms transform ease;
-    transform: translate3d(100%, 0, 0);
-    width: 100%;
-    position: absolute;
-    background: #fff;
-    top: 0;
-    height: 100%;
-    z-index: 3;
-    overflow-x: hidden;
-
-    &-content {
-      min-height: 0;
-
-      .return-box {
-        display: flex;
-
-        a {
-          color: $body-color;
-          padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-          justify-content: flex-start;
-          cursor: pointer;
-          width: 100%;
-
-          .icon-box {
-            font-size: 1.25rem;
-          }
-
-          &:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-          }
-        }
-      }
       > ul {
-        // overflow: hidden;
-        background-color: #fff;
+        overflow: hidden;
         padding-left: 0;
 
         li {
           a {
             width: 100%;
-            display: inline-flex;
+            display: inline-block;
             padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-            color: $body-color;
-            align-items: center;
-            justify-content: space-between;
 
             &:hover {
               background-color: $product-sidebar-hover-color-bg;
@@ -397,6 +359,24 @@
             }
           }
         }
+      }
+    }
+
+    // 打開效果
+    &.open {
+      .second-menu-btn {
+        .plus-icon {
+          &::before {
+            opacity: 0;
+          }
+          &:after {
+            transform: translate(-50%, -50%) rotate(90deg);
+          }
+        }
+      }
+
+      .product-sidebar-item-secondMenu {
+        grid-template-rows: 1fr;
       }
     }
   }

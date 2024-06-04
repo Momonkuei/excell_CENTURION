@@ -3,9 +3,10 @@
 //產品介紹
 .homepage-product-sectionBlock {
   margin-top: 0;
-  padding: 6.4vw;
+  padding: 0 0 6.4vw;
+  overflow: hidden;
 
-  @media (min-width: $viewS) {
+  @media (min-width: $viewM) {
     padding: 3.125vw;
   }
 
@@ -14,20 +15,35 @@
     flex-direction: column;
     padding-left: 0;
     gap: 1rem;
+    margin-bottom: 0;
 
-    @media (min-width: $viewS) {
+    @media (min-width: $viewM) {
       flex-direction: row;
     }
 
     &-item {
       position: relative;
       width: 100%;
+      transform: translateZ(0) !important;
 
       &-info {
         margin-top: 1rem;
+        padding: 0 6.4vw;
+
+        @media (min-width: $viewM) {
+          padding: 0;
+        }
 
         .title {
           color: #151515;
+        }
+      }
+
+      &-link {
+        padding: 0 6.4vw;
+
+        @media (min-width: $viewM) {
+          padding: 0;
         }
       }
 
@@ -51,7 +67,7 @@
         }
       }
 
-      @media (min-width: $viewS) {
+      @media (min-width: $viewM) {
         width: 33.33333%;
       }
     }
@@ -60,6 +76,7 @@
 
 .sectionBlock-introduction {
   position: relative;
+  overflow: hidden;
 
   .bg-img-box {
     position: relative;
@@ -93,6 +110,20 @@
         display: none;
       }
     }
+
+    // 動畫啟動時
+    &.aos-animate {
+      transform: translateZ(0) scale(1) !important;
+      opacity: 1 !important;
+      transition-duration: 0s !important;
+
+      .bg-img-pc,
+      .bg-img-md {
+        animation-name: bannerZoomOut01;
+        animation-fill-mode: both;
+        animation-duration: 7000ms;
+      }
+    }
   }
 
   .introduction-info {
@@ -101,11 +132,15 @@
     z-index: 1;
     width: 100%;
     bottom: 0;
-    padding-bottom: 3rem;
+    padding-bottom: 1.5rem;
     padding-left: 6.4vw;
     padding-right: 6.4vw;
 
-    @media (min-width: 48rem) {
+    @media (min-width: $viewMobile) {
+      padding-bottom: 2rem;
+    }
+
+    @media (min-width: $viewS) {
       padding-left: 3.125vw;
       padding-right: 3.125vw;
     }
