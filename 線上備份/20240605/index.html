@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="format-detection"
+    content="telephone=no"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+  <title>
+    <?# webTitle ?>
+  </title>
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link
+    rel="stylesheet"
+    href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+  >
+
+
+  <!-- aos -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/aos/aos.css"
+  >
+
+
+  <!-- Swiper css -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/swiper/swiper-bundle.min.css"
+  >
+
+
+  <!-- 客製css -->
+  <link
+    rel="stylesheet"
+    href="/template/css/<?# version ?>/style.css?v20240604"
+  >
+
+  <!-- sweetalert2 -->
+  <script src="template/jquery/sweetalert2/sweetalert2.all.min.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="template/jquery/sweetalert2/sweetalert2.min.css"
+  >
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+
+</head>
+
+
+<body class="index">
+
+
+  <!-- header -->
+  <?# header ?>
+
+  <!-- banner -->
+  <div class="bannerBlock">
+    <div class="bannerStyle01">
+      <div class="index-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide banner-item">
+            <div class="pic-box">
+              <div
+                class="pic pic-pc lazyload"
+                style="background-image: url('/template/image/<?# version ?>/index/banner_img_pc_01.jpg');"
+              ></div>
+
+              <div
+                class="pic pic-tab lazyload"
+                style="background-image: url('/template/image/<?# version ?>/index/650x650-01.jpg');"
+              ></div>
+
+            </div>
+
+            <div class="banner-item-info">
+              <div class="banner-btn-group text-center">
+                <a
+                  href="javascript:void(0);"
+                  class="banner-btn"
+                >瀏覽CENTURION®最新產品</a>
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="swiper-slide banner-item">
+            <div class="pic-box">
+              <div
+                class="pic pic-pc lazyload"
+                style="background-image: url('/template/image/<?# version ?>/index/banner_img_pc_02.jpg');"
+              ></div>
+
+              <div
+                class="pic pic-tab lazyload"
+                style="background-image: url('/template/image/<?# version ?>/index/650x650-02.jpg');"
+              ></div>
+
+            </div>
+
+            <div class="banner-item-info">
+              <div class="banner-btn-group text-center">
+                <a
+                  href="javascript:void(0);"
+                  class="banner-btn"
+                >瀏覽CENTURION®最新產品</a>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-content ">
+
+    <section class="sectionBlock homepage-product-sectionBlock mb-0">
+      <ul class="product-lists">
+        <php:repeater id="onepageSetList">
+          <template>
+            <li
+              class="product-lists-item"
+              data-aos="fade-up"
+            >
+              <a href="<?# Href ?>">
+
+
+                <div class="itemImg square">
+                  <img
+                    src="<?# Img ?>"
+                    alt=""
+                  >
+                </div>
+                <div class="product-lists-item-info">
+                  <div class="title h5 mb-2">
+                    <span>
+                      <?# Title ?>
+                    </span>
+                  </div>
+                </div>
+                <div class="product-lists-item-link">
+
+                  <span class="link-underline">
+                    <?# Desc ?>
+                  </span>
+                </div>
+              </a>
+
+
+            </li>
+          </template>
+        </php:repeater>
+      </ul>
+    </section>
+
+    <section class="sectionBlock sectionBlock-introduction my-0">
+      <div
+        class="bg-img-box "
+        data-aos="zoom-out"
+      >
+        <div
+          class="bg-img-pc "
+          style="background-image: url('/template/image/<?# version ?>/index/index-introduction-01.jpg');"
+        >
+        </div>
+        <div
+          class="bg-img-md"
+          style="background-image: url('/template/image/<?# version ?>/index/650x650-03.jpg');"
+        >
+        </div>
+        <div class="introduction-info">
+          <div class="banner-btn-group text-center">
+            <a
+              href="javascript:void(0);"
+              class="banner-btn"
+            >瀏覽CENTURION®所有產品</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sectionBlock sectionBlock-introduction sectionBlock-introduction-2 my-0">
+      <div
+        class="bg-img-box "
+        data-aos="zoom-out"
+      >
+        <div
+          class="bg-img-pc"
+          style="background-image: url('/template/image/<?# version ?>/index/index-introduction-02.jpg');"
+        >
+        </div>
+        <div
+          class="bg-img-md"
+          style="background-image: url('/template/image/<?# version ?>/index/650x650-04.jpg');"
+        >
+        </div>
+        <div class="introduction-info ">
+
+          <div class="banner-btn-group ">
+
+            <a
+              href="javascript:void(0);"
+              class="banner-btn advertising_slogan_pattern"
+            >
+              <span class="advertising_slogan">關於CENTURION®</span>
+              瀏覽
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a
+    href="javascript:void(0);"
+    class="goTop"
+  >
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/popper/popper.min.js"
+  ></script>
+
+  <!-- bootstrap -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/bootstrap/bootstrap.js"
+  ></script>
+
+
+  <!-- swiper -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/swiper/swiper-bundle.min.js"
+  ></script>
+
+
+  <!-- aos -->
+
+  <script
+    type="text/javascript"
+    src="/template/jquery/aos/aos.js"
+  ></script>
+
+
+
+  <!-- 自定義JS -->
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/script.js?v20240604"
+  ></script>
+
+
+
+</body>
+
+</html>

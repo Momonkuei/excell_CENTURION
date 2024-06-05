@@ -255,14 +255,17 @@ $(function () {
 			$('body').removeClass('open-wrap-box');
 			// 取消側邊選取欄位
 			$(this).find('.wrap-box-menu .item.active').removeClass('active');
+
 			// 取消側邊欄位
 			$(this)
 				.find('.wrap-box-detail [data-target-sub-list-item]')
 				.css('display', 'none');
+
 			// 取消選取的項目
 			$(this)
 				.find('.wrap-box-detail .info-wrap-block-box li.active')
 				.removeClass('active');
+
 			// 取消第三欄選單
 			$(this).find('.info-sub-wrap').css('display', 'none');
 		});
@@ -321,9 +324,9 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			// autoplay: {
-			// 	delay: 5000, //多久切换一次
-			// },
+			autoplay: {
+				delay: 5000, //多久切换一次
+			},
 			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',
@@ -335,32 +338,6 @@ $(function () {
 				prevEl: '.swiper-button-prev',
 			},
 		});
-	}
-});
-
-//熱銷推薦
-$(function () {
-	if ($('.products-recommended-swiper').length) {
-		const products_recommended_swiper = new Swiper(
-			'.products-recommended-swiper',
-			{
-				slidesPerView: 2,
-				spaceBetween: 10,
-				loop: true,
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				breakpoints: {
-					768: {
-						slidesPerView: 4,
-					},
-					1200: {
-						slidesPerView: 6,
-					},
-				},
-			}
-		);
 	}
 });
 

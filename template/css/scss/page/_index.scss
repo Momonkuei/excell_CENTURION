@@ -27,34 +27,49 @@
       transform: translateZ(0) !important;
 
       &-info {
-        margin-top: 1rem;
-        padding: 0 6.4vw;
-
-        @media (min-width: $viewM) {
-          padding: 0;
-        }
-
+        position: absolute;
+        left: 50%;
+        bottom: 5%;
+        transform: translate(-50%, 0);
+        text-align: center;
         .title {
-          color: #151515;
+          color: #fff;
+          font-weight: 500;
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
         }
       }
 
       &-link {
-        padding: 0 6.4vw;
+        min-width: 7.5rem;
+        padding: 0.625rem 3.5rem;
+        transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+        color: #fff;
+        backdrop-filter: blur(15px);
+        background-color: rgba(0, 0, 0, 0.6);
+        text-decoration: none;
+        border: 1px solid #fff;
+        border-radius: 150vw;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
 
-        @media (min-width: $viewM) {
-          padding: 0;
+        &:hover {
+          box-shadow: inset 0 0 0 1px #fff;
         }
       }
 
-      a {
-        text-decoration: none;
+      .itemImg {
+        img {
+          filter: grayscale(1);
+        }
       }
 
       &:hover {
         .itemImg {
           img {
             transform: translate(-50%, -50%) scale(1.05);
+            filter: grayscale(0);
           }
         }
 
@@ -74,98 +89,209 @@
   }
 }
 
+// 產品導覽
+.sectionBlock-products-recommended {
+  overflow: hidden;
+  background: #f7f7f7;
+  padding: 4rem 0;
+  position: relative;
+
+  .title-box {
+    margin-bottom: 5rem;
+  }
+
+  .products-recommended-item {
+    > a {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-infoBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 95%;
+      line-height: 20px;
+      font-weight: 400;
+      margin-top: 12px;
+      flex-grow: 1;
+
+      .title {
+        margin-bottom: 0.5rem;
+        span {
+          @include hideLongTexts(1);
+        }
+        flex-grow: 1;
+
+        @media (max-width: $viewMobile) {
+          font-size: 0.875rem;
+        }
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        .original-price {
+          color: #b6b6b6;
+        }
+        .selling-price {
+          color: $primary;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &-imgBox {
+      overflow: hidden;
+      img {
+        transition: all 0.3s ease;
+      }
+    }
+
+    &:hover {
+      .products-recommended-item-imgBox {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  // 輪播
+  .products-recommended-swiper {
+    position: relative;
+    // 按鈕
+    .swiper-button-prev,
+    .swiper-button-next {
+      z-index: 2;
+      padding: 0.625rem;
+      background-color: #fff;
+      border-radius: 5px;
+      line-height: 6px;
+      opacity: 1;
+      cursor: pointer;
+      box-shadow:
+        0px -1px 4px rgba(84, 77, 77, 0.1),
+        0px 0px 0px 1px #f8f8f8,
+        0px 4px 8px rgba(133, 128, 128, 0.25);
+      width: fit-content;
+      height: fit-content;
+      transition: all 0.3s ease-in;
+
+      &::after {
+        font-family: "Bootstrap-icons";
+        font-size: 0.875rem;
+        color: $primary;
+      }
+
+      &:hover {
+        background-color: #f8f8f8;
+      }
+    }
+
+    .swiper-button-prev {
+      &::after {
+        content: "\F284";
+      }
+    }
+
+    .swiper-button-next {
+      &::after {
+        content: "\F285";
+      }
+    }
+  }
+}
+
+// 產品形象
 .sectionBlock-introduction {
   position: relative;
   overflow: hidden;
 
   .bg-img-box {
-    position: relative;
-    padding-bottom: 100%;
+    height: 560px;
 
-    @media (min-width: $viewL) {
-      padding-bottom: calc(100vh - 5rem);
+    > a {
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
     }
 
-    .bg-img-pc,
-    .bg-img-md {
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: all 0.8s ease;
+      object-fit: cover;
+      object-position: center;
     }
 
-    .bg-img-pc {
+    .pic-pc {
       display: none;
       @media (min-width: $viewS) {
         display: block;
       }
     }
 
-    .bg-img-md {
+    .pic-tab {
       display: block;
       @media (min-width: $viewS) {
         display: none;
-      }
-    }
-
-    // 動畫啟動時
-    &.aos-animate {
-      transform: translateZ(0) scale(1) !important;
-      opacity: 1 !important;
-      transition-duration: 0s !important;
-
-      .bg-img-pc,
-      .bg-img-md {
-        animation-name: bannerZoomOut01;
-        animation-fill-mode: both;
-        animation-duration: 7000ms;
       }
     }
   }
 
   .introduction-info {
     position: absolute;
+    top: 50%;
+    right: 20%;
+    transform: translateY(-50%);
+    text-align: right;
 
-    z-index: 1;
-    width: 100%;
-    bottom: 0;
-    padding-bottom: 1.5rem;
-    padding-left: 6.4vw;
-    padding-right: 6.4vw;
-
-    @media (min-width: $viewMobile) {
-      padding-bottom: 2rem;
-    }
-
-    @media (min-width: $viewS) {
-      padding-left: 3.125vw;
-      padding-right: 3.125vw;
-    }
-
-    @media (min-width: 90rem) {
-      padding-left: 3.3333333333vw;
-      padding-right: 3.3333333333vw;
-    }
-  }
-
-  .advertising_slogan {
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 100%;
-    text-align: center;
-    color: $white;
-    font-weight: 500;
-    font-size: 1.4rem;
-  }
-
-  &-2 {
-    .banner-btn-group {
+    @media (max-width: $viewS) {
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
+      width: 100%;
+    }
+
+    .title-box {
+      .title {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+
+        a {
+          text-decoration: none;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+//slogan
+.sectionBlock-slogan {
+  .title-box {
+    padding: 2rem 0;
+    .title {
+      font-size: 1.125rem;
+
+      @media (max-width: $viewM) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: $viewMobile) {
+        font-size: 0.875rem;
+      }
     }
   }
 }

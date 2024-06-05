@@ -23,6 +23,13 @@
   }
 }
 
+.index-title {
+  font-size: 1.25rem;
+  @media (min-width: $viewM) {
+    font-size: 1.5rem;
+  }
+}
+
 .member-title {
   padding-bottom: 0.625rem;
   border-bottom: 1px solid #cccccc;
