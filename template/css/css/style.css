@@ -10446,6 +10446,9 @@ body {
   animation-fill-mode: both;
   animation-duration: 7000ms;
 }
+.bannerStyle01 .index-swiper .swiper-pagination {
+  z-index: 5;
+}
 .bannerStyle01 .index-swiper .swiper-pagination .swiper-pagination-bullet-active {
   background: #35286d;
 }
@@ -13698,6 +13701,11 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+@media (max-width: 576px) {
+  .sectionBlock-products-recommended .products-recommended-item-infoBox .title {
+    font-size: 0.875rem;
+  }
 }
 .sectionBlock-products-recommended .products-recommended-item-infoBox .price {
   display: flex;

@@ -101,15 +101,12 @@
       }
     }
 
-    .swiper-pagination {
-      .swiper-pagination-bullet-active {
-        background: $primary;
-      }
-    }
-
     // 分頁器
     .swiper-pagination {
       z-index: 5;
+      .swiper-pagination-bullet-active {
+        background: $primary;
+      }
     }
 
     // 輪播按鈕
