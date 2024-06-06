@@ -599,6 +599,7 @@
   background-color: $white;
   z-index: 9;
   overflow: hidden;
+  display: flex;
 
   &.open-wrap-box {
     overflow: visible;
@@ -613,6 +614,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
   }
 
   a {
