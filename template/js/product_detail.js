@@ -14,6 +14,7 @@ $(function () {
 							'<button class="slick-prev slick-arrow"><i class="bi bi-chevron-left"></i></button>',
 						nextArrow:
 							'<button class="slick-next slick-arrow"><i class="bi bi-chevron-right"></i></button>',
+						asNavFor: '.product-gallery .product-gallery-sublists',
 					});
 				}
 			} else {
@@ -26,6 +27,18 @@ $(function () {
 		}
 
 		productgallery_initializeSlick();
+		$(window).on('resize load', productgallery_initializeSlick);
+	}
+
+	// 副滑塊
+	if ($('.product-gallery-sublists').length) {
+		$('.product-gallery .product-gallery-sublists').slick({
+			arrows: false,
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			focusOnSelect: true,
+			asNavFor: '.product-gallery .product-gallery-lists',
+		});
 	}
 
 	// 數量
@@ -77,7 +90,7 @@ $(function () {
 		});
 	}
 
-	//  產品介紹 ,點選時移動到適合位置
+	//  產品介紹
 
 	if ($('.product-item-collapsible-lists').length) {
 		$('.product-item-collapsible-btn').click(function (idx) {

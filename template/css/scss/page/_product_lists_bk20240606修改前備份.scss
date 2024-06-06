@@ -225,99 +225,13 @@
         }
       }
 
-      // 標籤列表
-      &-labelLists {
-        position: absolute;
-        left: 15%;
-        top: 5%;
-        gap: 5px;
-
-        @media (max-width: $viewMobile) {
-          top: 0;
-          left: 5%;
-        }
-      }
-
-      // 標籤
-      &-label {
-        display: inline-block;
-        color: #fff;
-        padding: 4px 5px;
-        background: $product-label-bg-color;
-        max-width: none;
-      }
-
-      .product-lists-gallery-item-info {
-        position: relative;
+      .related-products-gallery-item-info {
+        text-align: center;
         display: flex;
         flex-direction: column;
         transition: all 0.3s ease-in;
-        width: 70%;
-        margin: 0 auto;
-
-        @media (max-width: $viewMobile) {
-          width: 100%;
-        }
-
-        // 標題
         .title {
           @include hideLongTexts(2);
-          padding-right: 30%;
-
-          @media (max-width: $viewMobile) {
-            font-size: 0.875rem;
-            padding-right: 20%;
-          }
-        }
-
-        // 購物車
-        .instant-add-cart {
-          .icon-box {
-            display: inline-flex;
-            height: 2rem;
-            width: 2rem;
-            border-radius: 50%;
-            border: 1px solid #ccc;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 15%;
-            right: 8%;
-            color: #ccc;
-            font-size: 18px;
-            overflow: hidden;
-            background: transparent;
-            z-index: 2;
-            padding: 0;
-            transition: all 0.4s ease-in;
-
-            @media (max-width: $viewMobile) {
-              right: 5%;
-            }
-          }
-
-          &:hover {
-            .icon-box {
-              background-color: $primary;
-              color: #fff;
-              border-color: $primary;
-            }
-          }
-        }
-
-        // 價格
-        .price {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.875rem;
-          .original-price {
-            color: #b6b6b6;
-          }
-          .selling-price {
-            color: $primary;
-            font-weight: 700;
-          }
         }
       }
 
@@ -332,9 +246,9 @@
           }
         }
 
-        .product-lists-gallery-item-info {
+        .related-products-gallery-item-info {
           color: $product-info-hover-color;
-          // font-size: 0.9rem;
+          font-size: 0.9rem;
         }
       }
     }

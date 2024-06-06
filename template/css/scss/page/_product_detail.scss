@@ -38,9 +38,9 @@
     .slick-arrow {
       width: 2.5rem;
       height: 2.5rem;
-      border: 1px solid $primary;
-      color: #fff;
-      background-color: $primary;
+      border: 1px solid transparent;
+      color: $primary;
+      background-color: transparent;
       font-size: 0.875rem;
       border-radius: 50%;
       display: flex;
@@ -54,8 +54,7 @@
       transition: all 0.3 ease-in-out;
 
       &:hover {
-        background-color: transparent;
-        color: $primary;
+        border: 1px solid $primary;
       }
     }
 
@@ -65,6 +64,33 @@
 
     .slick-next {
       right: 5px;
+    }
+  }
+
+  // 手機副輪播
+  .product-gallery-subBox {
+    display: none;
+    @media (max-width: $viewM) {
+      display: block;
+    }
+
+    .product-gallery-sublists {
+      .product-gallery-subItem {
+        border: 1px solid #eee;
+        transition: all 0.3s ease-in;
+      }
+
+      .slick-current {
+        border: 1.5px solid $primary;
+      }
+    }
+
+    .slick-slide {
+      margin: 0 10px;
+    }
+
+    .slick-list {
+      margin: 0 -10px;
     }
   }
 
@@ -138,6 +164,7 @@
     @media (max-width: $viewM) {
       justify-content: flex-start;
       min-height: auto;
+      position: static;
     }
   }
 
@@ -151,7 +178,7 @@
 
     @media (max-width: $viewM) {
       width: 100%;
-      position: relative;
+      // position: relative;
       top: 0;
       background: #fff;
     }
@@ -179,6 +206,14 @@
     // 標籤列表
     &-label-lists {
       grid-area: item_label_lists;
+      margin-bottom: 1rem;
+
+      @media (max-width: $viewM) {
+        position: absolute;
+        margin-bottom: 0;
+        top: 1%;
+        left: 10%;
+      }
     }
 
     // 標籤
@@ -186,7 +221,7 @@
       display: inline-block;
       color: #fff;
       padding: 4px 5px;
-      background: #ff0000;
+      background: $product-label-bg-color;
       max-width: none;
     }
 
@@ -194,12 +229,17 @@
       margin-bottom: 1rem;
       grid-area: item_title;
       .title {
-        font-size: 1.125rem;
+        font-size: 1.25rem;
+
         margin-bottom: 0;
         @include hideLongTexts(2);
 
-        @media (min-width: $viewM) {
-          font-size: 1.25rem;
+        @media (max-width: $viewM) {
+          font-size: 1.125rem;
+        }
+
+        @media (max-width: $viewMobile) {
+          font-size: 1rem;
         }
       }
     }
@@ -210,6 +250,14 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+
+      .original-price {
+        color: #b6b6b6;
+      }
+      .selling-price {
+        color: $primary;
+        font-weight: 700;
+      }
 
       @media (max-width: $viewM) {
         margin-bottom: 1rem;
@@ -512,14 +560,44 @@
       }
     }
 
-    .related-products-gallery-item-info {
+    // 標籤列表
+    &-labelLists {
+      position: absolute;
+      left: 15%;
+      top: 5%;
+      gap: 5px;
+    }
+
+    // 標籤
+    &-label {
+      display: inline-block;
+      color: #fff;
+      padding: 4px 5px;
+      background: $product-label-bg-color;
+      max-width: none;
+    }
+
+    // 訊息
+    &-info {
       text-align: center;
       display: flex;
       flex-direction: column;
       transition: all 0.3s ease-in;
+      width: 70%;
+      margin: 0 auto;
 
       .title {
         @include hideLongTexts(2);
+      }
+
+      .price {
+        .original-price {
+          color: #b6b6b6;
+        }
+        .selling-price {
+          color: $primary;
+          font-weight: 700;
+        }
       }
     }
 
@@ -531,11 +609,6 @@
         .img-box {
           transform: scale(1.02);
         }
-      }
-
-      .related-products-gallery-item-info {
-        color: $product-info-hover-color;
-        font-size: 0.9rem;
       }
     }
   }

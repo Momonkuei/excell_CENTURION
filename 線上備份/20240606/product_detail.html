@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>
+    <?# webTitle ?>
+  </title>
+  <!-- 字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link rel="stylesheet" href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+
+  <!-- Swiper css -->
+  <link rel="stylesheet" href="/template/jquery/swiper/swiper-bundle.min.css">
+
+  <!-- aos -->
+  <link rel="stylesheet" href="/template/jquery/aos/aos.css">
+
+
+  <!-- slick  -->
+  <link rel="stylesheet" href="/template/jquery/slick/slick.css">
+
+
+  <!-- 客製css -->
+  <link rel="stylesheet" href="/template/css/<?# version ?>/style.css">
+  <!-- sweetalert2 -->
+  <script src="template/jquery/sweetalert2/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="template/jquery/sweetalert2/sweetalert2.min.css">
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+</head>
+
+<body class="">
+
+
+  <!-- header -->
+  <?# header ?>
+
+
+
+  <div class="body-content ">
+    <div class="page-product_detail">
+      <!-- 商品展示 -->
+      <div class="product-gallery">
+        <div class="product-gallery-box">
+          <ul class="product-gallery-lists">
+            <php:repeater id="MediaList">
+              <template>
+                <li class="product-gallery-item">
+                  <div class="img-box">
+                    <img src="<?# Img ?>" alt="">
+                  </div>
+                </li>
+              </template>
+            </php:repeater>
+
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- 商品介紹圖 -->
+      <div class="product-gallery-2">
+        <div class="product-gallery-box">
+          <ul class="product-gallery-lists">
+
+
+            <li class="product-gallery-item-2">
+              <div class="img-box">
+                <img src="/template/image/<?# version ?>/product_detail/004.jpg" alt="">
+              </div>
+            </li>
+
+            <li class="product-gallery-item-2">
+              <div class="img-box">
+                <img src="/template/image/<?# version ?>/product_detail/005.jpg" alt="">
+              </div>
+            </li>
+
+            <li class="product-gallery-item-2">
+              <div class="img-box">
+                <img src="/template/image/<?# version ?>/product_detail/006.jpg" alt="">
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <div class="product-info-box">
+        <div class="product-info-box-container">
+          <div class="product-item-box">
+
+            <div class="product-item">
+              <div class="product-label-lists mb-3">
+                <span class="product-item-label fz-12">NEW</span>
+              </div>
+
+              <!-- 標題 -->
+              <div class="product-item-title ">
+                <span class="title heading">
+                  <?# ProductNameTW ?>
+                </span>
+              </div>
+
+              <!-- price -->
+              <div class="product-item-price ">
+                <span>NT</span>
+                <span class="heading ">
+                  <?# NPrice ?>
+                </span>
+              </div>
+
+              <!-- 商品特點 -->
+              <div class="product-item-feature">
+                <?# OtherInstructions ?>
+
+              </div>
+
+
+
+              <!-- 控制數量 -->
+              <div class="product-item-quantity ">
+                <div class="product-item-quantity-box">
+                  <span class="product-item-quantity-title fz-14">數量</span>
+                  <div class="product-item-quantity-counts">
+                    <div class="QTY-selector">
+                      <a href="javascript:void(0);" class="QTY-selector-btn quantity-reduce">
+                        <i class="bi bi-dash"></i>
+                      </a>
+                      <input type="text" class="QTY-selector-currentNum product-item-num fz-12" value="1"
+                        id="ProductNum">
+                      <a href="javascript:void(0);" class="QTY-selector-btn quantity-plus">
+                        <i class="bi bi-plus"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="product-item-btnGroup">
+                <button class="cart-chcekout-btn btn-full" name="add-to-cart" data-id="<?# ProductID ?>">
+                  放入購物車
+                </button>
+
+
+              </div>
+
+            </div>
+
+            <!-- 手機板介紹 -->
+            <div class="product-detail-mb-imgBox">
+              <ul class="product-detail-mb-imgBox-lists">
+
+                <li class="product-detail-mb-imgBox-item">
+                  <div class="img-box">
+                    <img src="/template/image/<?# version ?>/product_detail/004.jpg" alt="">
+                  </div>
+                </li>
+
+                <li class="product-detail-mb-imgBox-item">
+                  <div class="img-box">
+                    <img src="/template/image/<?# version ?>/product_detail/005.jpg" alt="">
+                  </div>
+                </li>
+
+                <li class="product-detail-mb-imgBox-item">
+                  <div class="img-box">
+                    <img src="/template/image/<?# version ?>/product_detail/006.jpg" alt="">
+                  </div>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <div class="product-detail-infoBox">
+
+              <!-- 摺疊區域 -->
+              <div class="product-item-collapsible-lists">
+
+                <div class="product-item-collapsible ">
+                  <button class="product-item-collapsible-btn fz-14">
+                    <span class="plus-icon"></span>
+                    <span class="product-item-collapsible-title">商品特色</span>
+                  </button>
+
+                  <div class="product-item-collapsible-inner">
+                    <div class="product-item-collapsible-content">
+                      <?# Introduce ?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-item-collapsible">
+                  <button class="product-item-collapsible-btn fz-14">
+                    <span class="plus-icon"></span>
+                    <span class="product-item-collapsible-title">商品規格</span>
+                  </button>
+
+                  <div class="product-item-collapsible-inner">
+                    <div class="product-item-collapsible-content">
+                      <?# Attributes ?>
+
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-item-collapsible ">
+                  <button class="product-item-collapsible-btn fz-14">
+                    <span class="plus-icon"></span>
+                    <span class="product-item-collapsible-title">購物須知</span>
+                  </button>
+
+                  <div class="product-item-collapsible-inner">
+                    <div class="product-item-collapsible-content">
+                      <div class="msgArea">
+                        <?# Notice ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="product-item-collapsible ">
+                  <button class="product-item-collapsible-btn fz-14">
+                    <span class="plus-icon"></span>
+                    <span class="product-item-collapsible-title">退換貨須知</span>
+                  </button>
+
+                  <div class="product-item-collapsible-inner">
+                    <div class="product-item-collapsible-content">
+                      <div class="msgArea">
+                        <?# PayInstructions ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="related-products-gallery">
+
+      <div class="related-products-gallery-title">
+        <span class="heading">其他相關商品</span>
+      </div>
+
+      <div class="related-products-gallery-box">
+
+
+
+        <php:repeater id="OtherProductList">
+          <template>
+            <div class="related-products-gallery-item">
+              <a href="javascript:void(0);">
+                <ul class="related-products-gallery-item-imgBoxList related-products-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img src="<?# ProductImg ?>" alt="">
+                    </div>
+                  </li>
+                  <li class="">
+                    <div class="img-box">
+                      <img src="<?# ProductImg2 ?>" alt="">
+                    </div>
+                  </li>
+                  <li class="">
+                    <div class="img-box">
+                      <img src="<?# ProductImg3 ?>" alt="">
+                    </div>
+                  </li>
+                  <li class="">
+                    <div class="img-box">
+                      <img src="<?# ProductImg4 ?>" alt="">
+                    </div>
+                  </li>
+                  <li class="">
+                    <div class="img-box">
+                      <img src="<?# ProductImg5 ?>" alt="">
+                    </div>
+                  </li>
+
+                </ul>
+
+                <div class="related-products-gallery-item-info fz-14">
+                  <div class="title">
+                    <span>
+                      <?# ProductNameTW ?>
+                    </span>
+                  </div>
+                  <div class="price">
+                    <span>NT</span><span>
+                      <?# Price ?>
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </template>
+        </php:repeater>
+      </div>
+
+    </div>
+
+
+    <!-- 按鈕 -->
+    <div class="productDetail-btn-group text-center mb-4">
+      <button class="cart-chcekout-btn text-center ">
+        回上一頁
+      </button>
+    </div>
+
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a href="javascript:void(0);" class="goTop">
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/popper/popper.min.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/bootstrap/bootstrap.js"></script>
+
+
+  <!-- slick -->
+  <script type="text/javascript" src="/template/jquery/slick/slick.js"></script>
+
+
+  <!-- aos -->
+
+  <script type="text/javascript" src="/template/jquery/aos/aos.js"></script>
+
+  <!-- swiper -->
+  <script type="text/javascript" src="/template/jquery/swiper/swiper-bundle.min.js"></script>
+
+
+
+  <!-- 自定義JS -->
+
+
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/script.js"></script>
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/product.js"></script>
+  <script>
+    // 加入購物車
+    $("button[name='add-to-cart']").click(function () {
+      let ProductID = $(this).attr("data-id");
+      let ProductNum = $("#ProductNum").val();
+      $.ajax({
+        url: 'ajax/<?# version ?>/cart.php',
+        async: false,
+        type: 'POST',
+        data: {
+          "do": "add-to-cart",
+          "ProductID": ProductID,
+          "Number": ProductNum
+        },
+        dataType: 'json',
+        context: $(this),
+        success: function (obj) {
+          if (obj.status == "-1") {
+            Swal.fire({
+              title: "【系統通知】",
+              text: obj.msg,
+              icon: "error",
+              allowOutsideClick: false
+            })
+          } else {
+            Swal.fire({
+              title: "【系統通知】",
+              text: "加入成功",
+              icon: "success",
+              allowOutsideClick: false
+            }).then(function (result) {
+              if (result.value) {
+                window.location.reload();
+              }
+            });
+
+          }
+        },
+        error: function () {
+
+
+        }
+
+
+
+
+      })
+    })
+  </script>
+
+</body>
+
+</html>
