@@ -372,35 +372,6 @@ $(function () {
 	}
 });
 
-// 產品列表
-// $(function () {
-// 	if ($('.homepage-product-sectionBlock').length) {
-// 		$(window).on('resize load', function () {
-// 			if ($(window).innerWidth() < 992) {
-// 				$('.homepage-product-sectionBlock .product-lists').slick({
-// 					arrows: false,
-// 					autoplay: true,
-// 					slidesToShow: 2,
-// 					slidesToScroll: 1,
-// 					autoplaySpeed: 2000,
-// 					dots: true,
-// 					dotsClass: 'product-lists-dots',
-// 				});
-// 			} else {
-// 				if (
-// 					$('.homepage-product-sectionBlock .product-lists').hasClass(
-// 						'slick-initialized'
-// 					)
-// 				) {
-// 					$('.homepage-product-sectionBlock .product-lists').slick(
-// 						'unslick'
-// 					);
-// 				}
-// 			}
-// 		});
-// 	}
-// });
-
 //熱銷推薦
 $(function () {
 	if ($('.products-recommended-swiper').length) {

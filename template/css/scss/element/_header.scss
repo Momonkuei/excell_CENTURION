@@ -650,6 +650,7 @@
         @media (max-width: $viewMobile) {
           height: 100%;
           width: 100%;
+          padding-right: 0;
         }
 
         .line {
@@ -711,7 +712,7 @@
           font-weight: 500;
           letter-spacing: 0.1em;
           position: relative;
-          height: auto;
+          // height: auto;
 
           @media (max-width: 1440px) {
             padding-left: 0.5rem;
@@ -1109,18 +1110,18 @@
 
   // logo
   .main-logo {
-    max-width: 33vw;
+    max-width: 8rem;
+
+    @media (min-width: $viewMobile) {
+      max-width: 10rem;
+    }
 
     @media (min-width: $viewS) {
       max-width: 12rem;
     }
 
     @media (min-width: $viewL) {
-      max-width: 10rem;
-    }
-
-    @media (min-width: 1500px) {
-      max-width: 14rem;
+      max-width: 12rem;
     }
   }
 

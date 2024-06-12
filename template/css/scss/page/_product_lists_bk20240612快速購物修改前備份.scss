@@ -179,26 +179,20 @@
       flex-direction: column;
       position: relative;
 
-      &-link {
-        position: relative;
+      a {
         text-decoration: none;
         display: flex;
         flex-direction: column;
-
-        @media (max-width: $viewMobile) {
-          margin-bottom: 0.625rem;
-        }
       }
 
       @media (min-width: $viewS) {
         padding: 1rem 0.5rem;
       }
 
-      // 圖片導覽
-      &-imgBoxList {
+      .product-lists-gallery-item-imgBoxList {
         padding-left: 0;
         position: relative;
-        margin-bottom: 0;
+        margin-bottom: 1.5rem;
 
         .img-box {
           display: flex;
@@ -239,27 +233,17 @@
         }
       }
 
-      // 功能列
-      &-functionColumn {
-        width: 80%;
+      // 標籤列表
+      &-labelLists {
         position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        left: 5%;
         top: 5%;
-        left: 50%;
-        transform: translate(-50%, 0);
+        gap: 5px;
 
         @media (max-width: $viewMobile) {
           top: 0;
-          width: 90%;
+          left: 5%;
         }
-      }
-
-      // 標籤列表
-      &-labelLists {
-        display: flex;
-        align-items: center;
       }
 
       // 標籤
@@ -278,63 +262,16 @@
         }
       }
 
-      // 一鍵購買鍵
-      .instant-add-cart {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        // position: absolute;
-        bottom: 0;
-        left: auto;
-        right: 5%;
-        border: none;
-        background: transparent;
-
-        @media (max-width: $viewS) {
-          right: 0;
-        }
-
-        .icon-box {
-          display: inline-flex;
-          height: 2rem;
-          width: 2rem;
-          border-radius: 50%;
-          border: 1px solid #ccc;
-          justify-content: center;
-          align-items: center;
-          color: #ccc;
-          font-size: 1.25rem;
-          overflow: hidden;
-          background: transparent;
-          z-index: 2;
-          padding: 0;
-          transition: all 0.4s ease-in;
-
-          @media (max-width: $viewS) {
-            height: 1.5rem;
-            width: 1.5rem;
-            font-size: 0.875rem;
-          }
-
-          @media (max-width: $viewMobile) {
-            left: 5%;
-          }
-        }
-
-        &:hover {
-          .icon-box {
-            background-color: $primary;
-            color: #fff;
-            border-color: $primary;
-          }
-        }
-      }
-
-      &-info {
+      .product-lists-gallery-item-info {
         position: relative;
-        display: flex;
+        display: grid;
         flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+          "instant_add_cart title"
+          "instant_add_cart price";
+
         transition: all 0.3s ease-in;
         width: 70%;
         margin: 0 auto;
@@ -344,6 +281,11 @@
           width: 90%;
         }
 
+        @media (max-width: $viewMobile) {
+          width: 100%;
+          grid-template-columns: 1fr 3fr;
+        }
+
         // 標題
         .title {
           grid-area: title;
@@ -351,6 +293,50 @@
 
           @media (max-width: $viewMobile) {
             font-size: 0.875rem;
+          }
+        }
+
+        // 購物車
+        .instant-add-cart {
+          grid-area: instant_add_cart;
+          align-items: center;
+          justify-content: center;
+          .icon-box {
+            display: inline-flex;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            justify-content: center;
+            align-items: center;
+            // position: absolute;
+            top: 15%;
+            left: 8%;
+            color: #ccc;
+            font-size: 1.125rem;
+            overflow: hidden;
+            background: transparent;
+            z-index: 2;
+            padding: 0;
+            transition: all 0.4s ease-in;
+
+            @media (max-width: $viewS) {
+              height: 1.5rem;
+              width: 1.5rem;
+              font-size: 0.875rem;
+            }
+
+            @media (max-width: $viewMobile) {
+              left: 5%;
+            }
+          }
+
+          &:hover {
+            .icon-box {
+              background-color: $primary;
+              color: #fff;
+              border-color: $primary;
+            }
           }
         }
 
@@ -385,6 +371,7 @@
 
         .product-lists-gallery-item-info {
           color: $product-info-hover-color;
+          // font-size: 0.9rem;
         }
       }
     }
