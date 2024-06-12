@@ -163,11 +163,7 @@
       grid-template-columns: repeat(2, 1fr);
       overflow: hidden;
 
-      @media (min-width: $viewS) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media (min-width: $viewL) {
+      @media (min-width: 48rem) {
         grid-template-columns: repeat(4, 1fr);
       }
     }
@@ -177,7 +173,7 @@
       padding: 0.75rem 0.5rem;
       display: flex;
       flex-direction: column;
-      position: relative;
+      opacity: 0;
 
       a {
         text-decoration: none;
@@ -201,10 +197,6 @@
           transition: all 0.3s ease-in;
           img {
             max-width: 80%;
-
-            @media (max-width: $viewMobile) {
-              max-width: 100%;
-            }
           }
         }
 
@@ -236,7 +228,7 @@
       // 標籤列表
       &-labelLists {
         position: absolute;
-        left: 5%;
+        left: 15%;
         top: 5%;
         gap: 5px;
 
@@ -248,59 +240,38 @@
 
       // 標籤
       &-label {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        display: inline-block;
         color: #fff;
         padding: 4px 5px;
         background: $product-label-bg-color;
         max-width: none;
-        font-size: 0.75rem;
-
-        @media (max-width: $viewM) {
-          font-size: 0.625rem;
-        }
       }
 
       .product-lists-gallery-item-info {
         position: relative;
-        display: grid;
+        display: flex;
         flex-direction: column;
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas:
-          "instant_add_cart title"
-          "instant_add_cart price";
-
         transition: all 0.3s ease-in;
         width: 70%;
         margin: 0 auto;
-        flex-grow: 1;
-
-        @media (max-width: $viewM) {
-          width: 90%;
-        }
 
         @media (max-width: $viewMobile) {
           width: 100%;
-          grid-template-columns: 1fr 3fr;
         }
 
         // 標題
         .title {
-          grid-area: title;
           @include hideLongTexts(2);
+          padding-right: 30%;
 
           @media (max-width: $viewMobile) {
             font-size: 0.875rem;
+            padding-right: 20%;
           }
         }
 
         // 購物車
         .instant-add-cart {
-          grid-area: instant_add_cart;
-          align-items: center;
-          justify-content: center;
           .icon-box {
             display: inline-flex;
             height: 2rem;
@@ -309,25 +280,19 @@
             border: 1px solid #ccc;
             justify-content: center;
             align-items: center;
-            // position: absolute;
+            position: absolute;
             top: 15%;
-            left: 8%;
+            right: 8%;
             color: #ccc;
-            font-size: 1.125rem;
+            font-size: 18px;
             overflow: hidden;
             background: transparent;
             z-index: 2;
             padding: 0;
             transition: all 0.4s ease-in;
 
-            @media (max-width: $viewS) {
-              height: 1.5rem;
-              width: 1.5rem;
-              font-size: 0.875rem;
-            }
-
             @media (max-width: $viewMobile) {
-              left: 5%;
+              right: 5%;
             }
           }
 
@@ -342,12 +307,10 @@
 
         // 價格
         .price {
-          grid-area: price;
           display: flex;
           align-items: center;
           gap: 0.5rem;
           font-size: 0.875rem;
-
           .original-price {
             color: #b6b6b6;
           }

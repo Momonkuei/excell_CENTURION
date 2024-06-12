@@ -326,7 +326,6 @@ $(function () {
 			// },
 			// 如果需要分页器
 			// direction: 'vertical',
-			// autoHeight: true,
 			pagination: {
 				el: '.swiper-pagination',
 			},
@@ -340,66 +339,34 @@ $(function () {
 	}
 });
 
+// 產品列表
 $(function () {
-	if ($('.bannerStyle02').length) {
-		$('.bannerStyle02-banner-wrapper').slick({
-			vertical: true,
-			verticalSwiping: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			dots: true,
-			arrows: false,
-		});
-
-		// 監聽滾動事件
-		$(window).on('scroll', function () {
-			var scrollTop = $(this).scrollTop();
-			var windowHeight = $(this).height();
-			var documentHeight = $(document).height();
-
-			// 判斷滾動方向
-			if (scrollTop > lastScrollTop) {
-				// 向下滾動
-				$('.bannerStyle02-banner-wrapper').slick('slickNext');
+	if ($('.homepage-product-sectionBlock').length) {
+		$(window).on('resize load', function () {
+			if ($(window).innerWidth() < 992) {
+				$('.homepage-product-sectionBlock .product-lists').slick({
+					arrows: false,
+					autoplay: true,
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					autoplaySpeed: 2000,
+					dots: true,
+					dotsClass: 'product-lists-dots',
+				});
 			} else {
-				// 向上滾動
-				$('.bannerStyle02-banner-wrapper').slick('slickPrev');
+				if (
+					$('.homepage-product-sectionBlock .product-lists').hasClass(
+						'slick-initialized'
+					)
+				) {
+					$('.homepage-product-sectionBlock .product-lists').slick(
+						'unslick'
+					);
+				}
 			}
-			lastScrollTop = scrollTop;
 		});
-
-		var lastScrollTop = 0;
 	}
 });
-
-// 產品列表
-// $(function () {
-// 	if ($('.homepage-product-sectionBlock').length) {
-// 		$(window).on('resize load', function () {
-// 			if ($(window).innerWidth() < 992) {
-// 				$('.homepage-product-sectionBlock .product-lists').slick({
-// 					arrows: false,
-// 					autoplay: true,
-// 					slidesToShow: 2,
-// 					slidesToScroll: 1,
-// 					autoplaySpeed: 2000,
-// 					dots: true,
-// 					dotsClass: 'product-lists-dots',
-// 				});
-// 			} else {
-// 				if (
-// 					$('.homepage-product-sectionBlock .product-lists').hasClass(
-// 						'slick-initialized'
-// 					)
-// 				) {
-// 					$('.homepage-product-sectionBlock .product-lists').slick(
-// 						'unslick'
-// 					);
-// 				}
-// 			}
-// 		});
-// 	}
-// });
 
 //熱銷推薦
 $(function () {

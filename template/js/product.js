@@ -134,97 +134,100 @@ $(function () {
 
 // 產品列表 產品添加動畫
 $(function () {
-	if ($('.product-lists-gallery-box').length) {
-		const AOS_start = function () {
-			AOS.init({
-				easing: 'ease-in-sine',
-				duration: 200,
-			});
-		};
-		const product_lists_start_function = function (callback) {
-			let itemsPerRow; //每行項目數
-			let start_quantity; //起始數量
-			if ($(window).innerWidth() < 768) {
-				itemsPerRow = 2; // 每行的項目數
-				start_quantity = 6;
-			} else {
-				itemsPerRow = 4;
-				start_quantity = 8;
-			}
+	// if ($('.product-lists-gallery-box').length) {
+	// 	const AOS_start = function () {
+	// 		AOS.init({
+	// 			easing: 'ease-in-sine',
+	// 			duration: 200,
+	// 		});
+	// 	};
+	// 	const product_lists_start_function = function (callback) {
+	// 		let itemsPerRow; //每行項目數
+	// 		let start_quantity; //起始數量
+	// 		if ($(window).innerWidth() < 768) {
+	// 			itemsPerRow = 2; // 每行的項目數
+	// 			start_quantity = 6;
+	// 		} else {
+	// 			itemsPerRow = 4;
+	// 			start_quantity = 8;
+	// 		}
 
-			// 依據行列添加 aos 效果
-			$('.product-lists-gallery-box')
-				.find('.product-lists-gallery-item')
-				.each(function (idx) {
-					const rowNumber = Math.floor(idx / itemsPerRow);
-					const columnNumber = idx % itemsPerRow; // 計算列數
+	// 		// 依據行列添加 aos 效果
+	// 		$('.product-lists-gallery-box')
+	// 			.find('.product-lists-gallery-item')
+	// 			.each(function (idx) {
+	// 				const rowNumber = Math.floor(idx / itemsPerRow);
+	// 				const columnNumber = idx % itemsPerRow; // 計算列數
 
-					if (rowNumber % 2 === 0) {
-						// 判斷第幾列
-						$(this)
-							.attr('data-aos', 'fade-left')
-							.attr('data-aos-once', 'true');
-					} else {
-						$(this)
-							.attr('data-aos', 'fade-right')
-							.attr('data-aos-once', 'true');
-					}
-					if (columnNumber !== 0) {
-						// 第一行第一個不添加
-						const delay = columnNumber * 100;
-						$(this).attr('data-aos-delay', delay);
-					}
-				});
+	// 				if (rowNumber % 2 === 0) {
+	// 					// 判斷第幾列
+	// 					$(this)
+	// 						.attr('data-aos', 'fade-left')
+	// 						.attr('data-aos-once', 'true');
+	// 				} else {
+	// 					$(this)
+	// 						.attr('data-aos', 'fade-right')
+	// 						.attr('data-aos-once', 'true');
+	// 				}
+	// 				if (columnNumber !== 0) {
+	// 					// 第一行第一個不添加
+	// 					const delay = columnNumber * 100;
+	// 					$(this).attr('data-aos-delay', delay);
+	// 				}
+	// 			});
 
-			// 768以上前八個添加動畫
-			$('.product-lists-gallery-box')
-				.find('.product-lists-gallery-item')
-				.each(function (idx) {
-					const rowNumber = Math.floor(idx / itemsPerRow);
+	// 		// 768以上前八個添加動畫
+	// 		$('.product-lists-gallery-box')
+	// 			.find('.product-lists-gallery-item')
+	// 			.each(function (idx) {
+	// 				const itemNum = $('.product-lists-gallery-box').find(
+	// 					'.product-lists-gallery-item'
+	// 				).length;
+	// 				const rowNumber = Math.floor(idx / itemsPerRow);
 
-					if (rowNumber % 2 === 0 && idx < start_quantity) {
-						$(this).addClass('start-left');
-					} else if (rowNumber % 2 !== 0 && idx < start_quantity) {
-						$(this).addClass('start-right');
-					}
+	// 				if (rowNumber % 2 === 0 && idx < start_quantity) {
+	// 					$(this).addClass('start-left');
+	// 				} else if (rowNumber % 2 !== 0 && idx < start_quantity) {
+	// 					$(this).addClass('start-right');
+	// 				}
 
-					anime({
-						targets: '.product-lists-gallery-box .start-left',
-						opacity: [0, 1],
-						translateX: [-100, 0],
-						duration: 100,
-						delay: (el, i) => {
-							return 100 * i;
-						},
-						easing: 'easeInSine',
-					});
+	// 				anime({
+	// 					targets: '.product-lists-gallery-box .start-left',
+	// 					opacity: [0, 1],
+	// 					translateX: [-100, 0],
+	// 					duration: 100,
+	// 					delay: (el, i) => {
+	// 						return 100 * i;
+	// 					},
+	// 					easing: 'easeInSine',
+	// 				});
 
-					anime({
-						targets: '.product-lists-gallery-box .start-right',
-						opacity: [0, 1],
-						translateX: [100, 0],
-						duration: 300,
+	// 				anime({
+	// 					targets: '.product-lists-gallery-box .start-right',
+	// 					opacity: [0, 1],
+	// 					translateX: [100, 0],
+	// 					duration: 300,
 
-						delay: (el, i) => {
-							return 50 + 100 * i;
-						},
-						easing: 'easeInSine',
-						complete: () => {
-							// 在最後一個動畫完成後執行回調函數
-							if (idx === start_quantity - 1) {
-								if (callback) callback();
-							}
-						},
-					});
-				});
-		};
+	// 					delay: (el, i) => {
+	// 						return 50 + 100 * i;
+	// 					},
+	// 					easing: 'easeInSine',
+	// 					complete: () => {
+	// 						// 在最後一個動畫完成後執行回調函數
+	// 						if (idx === itemNum - 1) {
+	// 							if (callback) callback();
+	// 						}
+	// 					},
+	// 				});
+	// 			});
+	// 	};
 
-		$(window).on('resize load', function () {
-			product_lists_start_function(AOS_start);
-		});
+	// 	$(window).on('resize load', function () {
+	// 		product_lists_start_function(AOS_start);
+	// 	});
 
-		product_lists_start_function(AOS_start);
-	}
+	// 	product_lists_start_function(AOS_start);
+	// }
 
 	// 產品列表 產品展示
 	if ($('.product-lists-gallery-item-imgBoxList').length) {

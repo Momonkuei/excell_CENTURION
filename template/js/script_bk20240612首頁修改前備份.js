@@ -340,38 +340,6 @@ $(function () {
 	}
 });
 
-$(function () {
-	if ($('.bannerStyle02').length) {
-		$('.bannerStyle02-banner-wrapper').slick({
-			vertical: true,
-			verticalSwiping: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			dots: true,
-			arrows: false,
-		});
-
-		// 監聽滾動事件
-		$(window).on('scroll', function () {
-			var scrollTop = $(this).scrollTop();
-			var windowHeight = $(this).height();
-			var documentHeight = $(document).height();
-
-			// 判斷滾動方向
-			if (scrollTop > lastScrollTop) {
-				// 向下滾動
-				$('.bannerStyle02-banner-wrapper').slick('slickNext');
-			} else {
-				// 向上滾動
-				$('.bannerStyle02-banner-wrapper').slick('slickPrev');
-			}
-			lastScrollTop = scrollTop;
-		});
-
-		var lastScrollTop = 0;
-	}
-});
-
 // 產品列表
 // $(function () {
 // 	if ($('.homepage-product-sectionBlock').length) {

@@ -44,11 +44,6 @@
     href="/template/css/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
   >
 
-  <!-- sweetalert2 -->
-  <link
-    rel="stylesheet"
-    href="/template/node_modules/sweetalert2/sweetalert2.min.css"
-  >
 
   <!-- aos -->
   <link
@@ -62,6 +57,18 @@
     href="/template/node_modules/slick/slick.css"
   >
 
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/slick/slick-theme.css"
+  >
+
+  <!-- Swiper css -->
+  <link
+    rel="stylesheet"
+    href="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.css"
+  >
+
+
   <!-- 客製css -->
   <link
     rel="stylesheet"
@@ -71,7 +78,7 @@
   <title>百夫長旅行箱CENTURION</title>
 </head>
 
-<body class="">
+<body class="index ">
 
   <!-- header -->
 
@@ -1157,682 +1164,541 @@
   <!-- 平板以下搜尋欄的遮色片 -->
   <div class="header-fullMenu-mask"></div>
 
+  <!-- banner -->
+  <div class="bannerBlock">
+    <div class="bannerStyle01">
+      <div class="index-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide banner-item">
+            <a href="https://www.google.com.tw/?hl=zh_TW">
+              <div class="pic-box">
+                <div
+                  class="pic pic-pc "
+                  style="background-image: url('/template/images/index/banner/01.jpg');"
+                ></div>
+
+                <div
+                  class="pic pic-tab "
+                  style="background-image: url('/template/images/index/banner/01_mb.jpg');"
+                ></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide banner-item">
+            <a href="https://www.google.com.tw/?hl=zh_TW">
+              <div class="pic-box">
+                <div
+                  class="pic pic-pc "
+                  style="background-image: url('/template/images/index/banner/02.jpg');"
+                ></div>
+
+                <div
+                  class="pic pic-tab "
+                  style="background-image: url('/template/images/index/banner/02_mb.jpg');"
+                ></div>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="swiper-slide banner-item">
+            <a href="https://www.google.com.tw/?hl=zh_TW">
+              <div class="pic-box">
+                <div
+                  class="pic pic-pc "
+                  style="background-image: url('/template/images/index/banner/03.jpg');"
+                ></div>
+
+                <div
+                  class="pic pic-tab "
+                  style="background-image: url('/template/images/index/banner/03_mb.jpg');"
+                ></div>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+      </div>
+    </div>
+  </div>
+
   <div class="body-content ">
-    <div class="page-product_detail">
-      <div class="product-gallery">
-        <div class="product-gallery-box">
-          <ul class="product-gallery-lists">
-            <li class="product-gallery-item">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/001.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-            <li class="product-gallery-item">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/002.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
 
-            <li class="product-gallery-item">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/003.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-          </ul>
-        </div>
+    <section class="sectionBlock homepage-product-sectionBlock my-0">
+      <ul class="product-lists">
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+        >
+          <div class="itemImg square">
+            <img
+              class=""
+              src="/template/images/index/product_exhibit/01.jpg"
+              alt=""
+            >
+          </div>
+          <div class="product-lists-item-info">
 
-        <div class="product-gallery-subBox">
-          <ul class="product-gallery-sublists">
-            <li class="product-gallery-subItem">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/001.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-            <li class="product-gallery-subItem">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/002.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-            <li class="product-gallery-subItem">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/003.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
+            <a class="product-lists-item-link">
+              <span class="">14吋 愛戴兒箱系列
+              </span>
+            </a>
+          </div>
+
+        </li>
+
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+        >
+          <div class="itemImg square">
+            <img
+              src="/template/images/index/product_exhibit/02.jpg"
+              alt=""
+            >
+          </div>
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span>20吋 登機箱系列</span>
+            </a>
+          </div>
+        </li>
+
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+        >
+
+          <div class="itemImg square">
+            <img
+              src="/template/images/index/product_exhibit/03.jpg"
+              alt=""
+            >
+          </div>
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span>28吋 旅行箱系列</span>
+            </a>
+          </div>
+
+        </li>
+
+        <li
+          class="product-lists-item"
+          data-aos="fade-up"
+        >
+
+          <div class="itemImg square">
+            <img
+              src="/template/images/index/product_exhibit/04.jpg"
+              alt=""
+            >
+          </div>
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span>29吋 胖胖箱系列</span>
+            </a>
+          </div>
+
+        </li>
 
 
-      <div class="product-gallery-2">
-        <div class="product-gallery-box">
-          <ul class="product-gallery-lists">
+      </ul>
+    </section>
 
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/004.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/005.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/006.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/007.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/008.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/009.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-            <li class="product-gallery-item-2">
-              <div class="img-box">
-                <img
-                  src="/template/images/product_detail/010.jpg"
-                  alt=""
-                >
-              </div>
-            </li>
-
-          </ul>
+    <section class="sectionBlock sectionBlock-products-recommended my-0">
+      <div class="title-box text-center">
+        <div class="product-introduction-subTitle">
+          <span>熱銷推薦</span>
         </div>
       </div>
 
-      <div class="product-info-box">
-        <div class="product-info-box-container">
-          <div class="product-item-box">
+      <!-- 產品導覽 -->
+      <div class="products-recommended-swiper">
+        <div class="swiper-wrapper">
 
-            <div class="product-item">
-              <div class="product-item-label-lists ">
-                <span class="product-item-label">NEW</span>
-                <span class="product-item-label">限量特價</span>
-                <span class="product-item-label ">30% OFF</span>
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/01.jpg"
+                  alt=""
+                >
               </div>
-
-              <!-- 標題 -->
-              <div class="product-item-title ">
-                <span class="title heading"> EXCELL限量版</span>
-              </div>
-
-              <!-- price -->
-              <div class="product-item-price ">
-                <span class="original-price">
-                  <del>NT$9000</del>
-                </span>
-                <span class="selling-price">
-                  NT$7480
-                </span>
-              </div>
-
-              <!-- 商品特點 -->
-              <div class="product-item-feature">
-
-                <ul class="heading product-item-feature-lists ">
-                  <li>
-                    <span>箱身專利 PC+ABS 材質</span>
-                  </li>
-                  <li>
-                    <span>TSA007海關鎖</span>
-                  </li>
-                  <li>
-                    <span>
-                      日本頂級靜音大八輪
-                    </span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- 控制數量 -->
-              <div class="product-item-quantity ">
-                <div class="product-item-quantity-box">
-                  <span class="product-item-quantity-title fz-14">數量</span>
-                  <div class="product-item-quantity-counts">
-                    <div class="QTY-selector">
-                      <a
-                        href="javascript:void(0);"
-                        class="QTY-selector-btn quantity-reduce"
-                      >
-                        <i class="bi bi-dash"></i>
-                      </a>
-                      <input
-                        type="text"
-                        class="QTY-selector-currentNum product-item-num fz-12"
-                        value="2"
-                      >
-                      <a
-                        href="javascript:void(0);"
-                        class="QTY-selector-btn quantity-plus"
-                      >
-                        <i class="bi bi-plus"></i>
-                      </a>
-                    </div>
-                  </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>EXCELL限量版</span>
                 </div>
+                <div class="price">
 
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
               </div>
 
+            </a>
+          </div>
 
-              <div class="product-item-btnGroup">
-                <button class="cart-chcekout-btn btn-full">
-                  放入購物車
-                </button>
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/02.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 九尾粉狐 旅行箱CENTURION</span>
+                </div>
+                <div class="price">
 
-
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
               </div>
 
-            </div>
+            </a>
+          </div>
 
-            <!-- 手機板介紹 -->
-            <div class="product-detail-mb-imgBox">
-              <ul class="product-detail-mb-imgBox-lists">
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/004.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/005.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/006.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/007.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/008.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/009.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-                <li class="product-detail-mb-imgBox-item">
-                  <div class="img-box">
-                    <img
-                      src="/template/images/product_detail/010.jpg"
-                      alt=""
-                    >
-                  </div>
-                </li>
-
-              </ul>
-
-            </div>
-
-            <div class="product-detail-infoBox">
-
-              <!-- 摺疊區域 -->
-              <div class="product-item-collapsible-lists">
-
-                <div class="product-item-collapsible ">
-                  <button class="product-item-collapsible-btn fz-14">
-                    <span class="plus-icon"></span>
-                    <span class="product-item-collapsible-title">商品特色</span>
-                  </button>
-
-                  <div class="product-item-collapsible-inner">
-                    <div class="product-item-collapsible-content">
-                      <p>
-                        箱身專利PC+ABS材質
-                      </p>
-                      <p>
-                        多段式鋁合金拉桿
-                      </p>
-                      <p>
-                        TSA007海關密碼鎖
-                      </p>
-                      <p>
-                        專利雙齒防盜拉鍊
-                      </p>
-                      <p>
-                        側邊拉鍊收納袋
-                      </p>
-                      <p>
-                        側邊軟質手把
-                      </p>
-                      <p>
-                        側邊防撞腳墊
-                      </p>
-                      <p>
-                        日本頂級靜音大八輪
-                      </p>
-
-                    </div>
-                  </div>
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/03.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 大海魚 旅行箱</span>
                 </div>
+                <div class="price">
 
-                <div class="product-item-collapsible">
-                  <button class="product-item-collapsible-btn fz-14">
-                    <span class="plus-icon"></span>
-                    <span class="product-item-collapsible-title">商品規格</span>
-                  </button>
-
-                  <div class="product-item-collapsible-inner">
-                    <div class="product-item-collapsible-content">
-                      <p>
-                        品牌：CENTURION百夫長
-                      </p>
-                      <p>
-                        品名：28吋旅行箱
-                      </p>
-                      <p>
-                        尺寸：28吋 (53 x 31 x 77 cm)
-                      </p>
-                      <p>
-                        材質：耐衝擊PC+ABS、尼龍
-                      </p>
-                      <p>
-                        商品產地（國）：中國
-                      </p>
-                      <p>
-                        商品重（容）量：4.8KG
-                      </p>
-                      <p>
-                        容量：88L/擴充後：100L
-                      </p>
-                      <p>
-                        重量：4.3kg
-                      </p>
-                      <p>
-                        適用身高：150公分以上
-                      </p>
-                      <p>
-                        最大承重：建議不超過25公斤
-                      </p>
-                      <p>
-                        BSMI商品檢驗標識字號：R55155
-                      </p>
-
-                    </div>
-                  </div>
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
                 </div>
-
-                <div class="product-item-collapsible ">
-                  <button class="product-item-collapsible-btn fz-14">
-                    <span class="plus-icon"></span>
-                    <span class="product-item-collapsible-title">購物須知</span>
-                  </button>
-
-                  <div class="product-item-collapsible-inner">
-                    <div class="product-item-collapsible-content">
-                      <div class="msgArea">
-                        <ul class="fz-14">
-                          <li>
-                            請注意！本網站商品數量眾多，多少會產生缺貨或停售之情況，下單成功或匯款成功不代表實質交易完成。我們仍保有保留接受訂單與否的權利。
-                          </li>
-
-                          <li>
-                            每台電腦因螢幕解析度不同，多少會有些許色差，物品皆以實品顏色為標準，若您是對顏色標準相當嚴格之買家，請謹慎確認再訂購。
-                          </li>
-
-                          <li>
-                            下標前請慎選款式及顏色並仔細詳閱商品、價格、運費等相關事宜。
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="product-item-collapsible ">
-                  <button class="product-item-collapsible-btn fz-14">
-                    <span class="plus-icon"></span>
-                    <span class="product-item-collapsible-title">退換貨須知</span>
-                  </button>
-
-                  <div class="product-item-collapsible-inner">
-                    <div class="product-item-collapsible-content">
-                      <div class="msgArea">
-                        <ul class="fz-14">
-                          <li>
-                            退換貨及訂單相關問題請先與我們聯繫，我們將在第一時間協助後續處理。
-                          </li>
-
-                          <li>
-                            原廠外盒及原廠包裝都屬於商品的一部分，遺失、毀損或缺件，都可能影響您退貨的權益，也將依損毀程度扣除所需之整新費用。
-                          </li>
-
-                          <li>
-                            「猶豫期」非「試用期」，在您還不確定是否要辦理退貨以前，請勿拆封！一經拆封則依消費者保護法之規定，無法享有七天猶豫期之權益且不得辦理退貨。
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
 
-            </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/04.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 大鯨魚 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/05.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 小海豚 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/06.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 小海龜 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/07.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 牛奶糖 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/08.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 北極熊 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/09.jpg"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 布達佩斯 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/10.png"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 飛燕煉乳 28吋旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/11.png"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 清平調 28吋旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img
+                  src="/template/images/products/12.png"
+                  alt=""
+                >
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>CENTURION 百夫長 瘋虎將軍 28吋旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+
+      </div>
+    </section>
+
+    <section class="sectionBlock sectionBlock-introduction my-0">
+
+      <div class="bg-img-box">
+        <a href="javascript:void(0);">
+          <img
+            class="pic-pc"
+            src="https://image-cdn-flare.qdm.cloud/q6ef96d99e472a/image/data//20231127%E9%A6%96%E9%A0%81/pic08.jpg"
+            alt=""
+          >
+          <img
+            class="pic-tab"
+            src="/template/images/index/650x650-02.jpg"
+            alt=""
+          >
+        </a>
+      </div>
+
+      <div class="introduction-info ">
+        <div class="title-box">
+          <div class="title">
+            <a href="javascript:void(0);">
+              <span>About</span>
+              <span>CENTURION 百夫長旅行箱</span>
+            </a>
+          </div>
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            <p>為自由重新定義，</p>
+            <p>美好旅遊體驗從一只驚豔的旅行箱開始。</p>
           </div>
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-    <div class="related-products-gallery">
-
-      <div class="related-products-gallery-title">
-        <span class="heading">其他相關商品</span>
+    <section class="sectionBlock sectionBlock-slogan my-0">
+      <div class="title-box">
+        <div class="title text-center">
+          <span class="heading">CENTURION 全系列花花箱陪您環遊世界~</span>
+        </div>
       </div>
-
-      <div class="related-products-gallery-box">
-
-        <div class="related-products-gallery-item">
-          <a href="https://www.google.com.tw/?hl=zh_TW">
-            <ul class="related-products-gallery-item-imgBoxList related-products-gallery-item-imgBoxList-1">
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/products/02.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/002.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/003.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-            </ul>
-
-            <div class="related-products-gallery-item-labelLists">
-              <span class="related-products-gallery-item-label ">NEW</span>
-            </div>
-
-            <div class="related-products-gallery-item-info ">
-              <div class="title">
-                <span>九尾粉狐 旅行箱</span>
-              </div>
-              <div class="price fz-14">
-                <span class="original-price">
-                  <span>NT</span><del>NT$9000</del>
-                </span>
-                <span class="selling-price">
-                  <span>NT</span>$7480
-                </span>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <div class="related-products-gallery-item">
-          <a href="https://www.google.com.tw/?hl=zh_TW">
-            <ul class="related-products-gallery-item-imgBoxList related-products-gallery-item-imgBoxList-1">
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/products/03.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/002.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/003.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-            </ul>
-
-            <div class="related-products-gallery-item-info ">
-              <div class="title">
-                <span>大海魚 旅行箱</span>
-              </div>
-              <div class="price fz-14">
-                <span class="original-price">
-                  <del>NT$9000</del>
-                </span>
-                <span class="selling-price">
-                  NT$7480
-                </span>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <div class="related-products-gallery-item">
-          <a href="javascript:void(0);">
-            <ul class="related-products-gallery-item-imgBoxList related-products-gallery-item-imgBoxList-1">
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/products/04.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/002.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/003.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-            </ul>
-
-            <div class="related-products-gallery-item-info ">
-              <div class="title">
-                <span>大鯨魚 旅行箱</span>
-              </div>
-              <div class="price fz-14">
-                <span class="original-price">
-                  <del>NT$9000</del>
-                </span>
-                <span class="selling-price">
-                  NT$7480
-                </span>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-        <div class="related-products-gallery-item">
-          <a href="javascript:void(0);">
-            <ul class="related-products-gallery-item-imgBoxList related-products-gallery-item-imgBoxList-1">
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/products/05.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/002.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-              <li class="">
-                <div class="img-box">
-                  <img
-                    src="/template/images/product_detail/003.jpg"
-                    alt=""
-                  >
-                </div>
-
-              </li>
-
-            </ul>
-
-            <div class="related-products-gallery-item-info ">
-              <div class="title">
-                <span>小海豚 旅行箱</span>
-              </div>
-              <div class="price fz-14">
-                <span class="original-price">
-                  <del>NT$9000</del>
-                </span>
-                <span class="selling-price">
-                  NT$7480
-                </span>
-              </div>
-            </div>
-          </a>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- 按鈕 -->
-    <div class="productDetail-btn-group text-center mb-4">
-      <button class="cart-chcekout-btn text-center ">
-        回上一頁
-      </button>
-    </div>
-
+    </section>
 
   </div>
 
@@ -1883,7 +1749,7 @@
         <div class="footer-map">
           <div class="row">
 
-            <div class="col-lg-4 col-6">
+            <div class="col-md-4 col-12">
               <div class="footer-list fz-14">
                 <div class="footer-title fw-bolder">
                   關於
@@ -1900,7 +1766,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-6">
+            <div class="col-md-4 col-12">
               <div class="footer-list fz-14">
                 <div class="footer-title fw-bolder">
                   產品
@@ -1914,7 +1780,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-6">
+            <div class="col-md-4 col-12">
               <div class="footer-list fz-14">
                 <div class="footer-title fw-bolder">
                   會員
@@ -1931,8 +1797,6 @@
               </div>
             </div>
 
-
-
           </div>
         </div>
 
@@ -1943,7 +1807,10 @@
               Copyright © 2024 CENTURION® 百夫長旅行箱,
             </span>
             <span>
-              Ltd. All Rights Reserved. <a href="javascript:void(0);">隱私政策</a>
+              Ltd. All Rights Reserved. <a
+                href="javascript:void(0);"
+                target="_blank"
+              >隱私政策</a>
             </span>
           </div>
         </div>
@@ -1953,9 +1820,8 @@
   </footer>
 
 
-
   <a
-    href="#"
+    href="javascript:void(0);"
     class="goTop"
   >
     <i class="bi bi-chevron-up"></i>
@@ -1973,16 +1839,11 @@
     src="/template/node_modules/bootstrap-5.1.1/dist/js/bootstrap.js"
   ></script>
 
-  <!-- aos -->
-  <script
-    type="text/javascript"
-    src="/template/node_modules/aos/aos.js"
-  ></script>
 
-  <!-- sweetalert2 -->
+  <!-- swiper -->
   <script
     type="text/javascript"
-    src="/template/node_modules/sweetalert2/sweetalert2.all.min.js"
+    src="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.js"
   ></script>
 
   <!-- slick -->
@@ -1991,16 +1852,23 @@
     src="/template/node_modules/slick/slick.js"
   ></script>
 
+  <!-- aos -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/aos/aos.js"
+  ></script>
+
   <!-- 自定義JS -->
 
   <script
-    type="text/javascript"
+    type="
+    text/javascript"
     src="/template/js/script.js"
   ></script>
 
   <script
     type="text/javascript"
-    src="/template/js/product_detail.js"
+    src="/template/js/cart.js"
   ></script>
 
 </body>

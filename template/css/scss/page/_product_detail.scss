@@ -75,6 +75,7 @@
     }
 
     .product-gallery-sublists {
+      padding-left: 0;
       .product-gallery-subItem {
         border: 1px solid #eee;
         transition: all 0.3s ease-in;
@@ -87,6 +88,7 @@
 
     .slick-slide {
       margin: 0 10px;
+      line-height: 1;
     }
 
     .slick-list {
@@ -98,12 +100,16 @@
   &-item-2 {
     height: calc(100vh - 5.625rem);
 
-    @media (max-width: $viewM) {
+    @media (max-width: $viewL) {
       height: 50vh;
     }
 
     @media (max-width: $viewS) {
-      height: 28vh;
+      height: 40vh;
+    }
+
+    @media (max-width: $viewMobile) {
+      height: 32vh;
     }
 
     .img-box {
@@ -200,7 +206,6 @@
         "item_price item_price"
         "item_feature item_quantity"
         "item_btnGroup item_btnGroup";
-      margin-top: 1rem;
       margin-bottom: 1.5rem;
     }
     // 標籤列表
@@ -211,18 +216,31 @@
       @media (max-width: $viewM) {
         position: absolute;
         margin-bottom: 0;
-        top: 1%;
-        left: 10%;
+        top: 0.05%;
+        left: 0%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-left: 1rem;
       }
     }
 
     // 標籤
     &-label {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: #fff;
       padding: 4px 5px;
       background: $product-label-bg-color;
       max-width: none;
+      // min-width: 5rem;
+      font-size: 0.75rem;
+      flex-grow: 1;
+
+      @media (max-width: $viewM) {
+        font-size: 0.625rem;
+      }
     }
 
     &-title {
@@ -490,7 +508,7 @@
   margin-bottom: 1.5rem;
 
   &-title {
-    margin: 1rem 0 0;
+    margin: 1rem 0;
   }
 
   &-box {
@@ -564,17 +582,32 @@
     &-labelLists {
       position: absolute;
       left: 15%;
-      top: 5%;
-      gap: 5px;
+      top: 0;
+
+      @media (max-width: $viewM) {
+        left: 5%;
+      }
+
+      @media (max-width: $viewMobile) {
+        left: 0%;
+      }
     }
 
     // 標籤
     &-label {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: #fff;
       padding: 4px 5px;
       background: $product-label-bg-color;
       max-width: none;
+
+      font-size: 0.75rem;
+
+      @media (max-width: $viewM) {
+        font-size: 0.625rem;
+      }
     }
 
     // 訊息
@@ -585,6 +618,10 @@
       transition: all 0.3s ease-in;
       width: 70%;
       margin: 0 auto;
+
+      @media (max-width: $viewM) {
+        width: 90%;
+      }
 
       .title {
         @include hideLongTexts(2);

@@ -3,39 +3,45 @@
 //產品介紹
 .homepage-product-sectionBlock {
   margin-top: 0;
-  padding: 3.125vw;
+  padding: 3.2vw 0 3.2vw;
 
   overflow: hidden;
 
-  @media (max-width: $viewM) {
-    padding: 3.2vw 0 3.2vw;
+  @media (min-width: $viewM) {
+    padding: 3.125vw;
   }
 
   .product-lists {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
     padding-left: 0;
     gap: 1rem;
     margin-bottom: 0;
 
-    @media (max-width: $viewM) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0rem;
+    @media (min-width: $viewM) {
+      flex-direction: row;
     }
 
     &-item {
       position: relative;
-      width: 33.33333%;
+      width: 100%;
+      transform: translateZ(0) !important;
 
       &-info {
         position: absolute;
         left: 50%;
         bottom: 5%;
         transform: translate(-50%, 0);
-        width: 100%;
         text-align: center;
+        .title {
+          color: #fff;
+          font-weight: 500;
+          font-size: 1.125rem;
+          margin-bottom: 0.5rem;
+          @media (max-width: $viewMobile) {
+            font-size: 0.875rem;
+          }
+        }
       }
 
       &-link {
@@ -63,6 +69,16 @@
         }
       }
 
+      .itemImg {
+        img {
+          filter: grayscale(1);
+
+          @media (max-width: $viewM) {
+            filter: grayscale(0);
+          }
+        }
+      }
+
       &:hover {
         .itemImg {
           img {
@@ -80,8 +96,8 @@
         }
       }
 
-      @media (max-width: $viewM) {
-        width: 100%;
+      @media (min-width: $viewM) {
+        width: 33.33333%;
       }
     }
   }
