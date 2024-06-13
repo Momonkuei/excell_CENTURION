@@ -94,11 +94,14 @@
           img {
             transform: scale(1.05);
           }
+          border: 1.5px solid $primary;
         }
       }
 
       .slick-current {
-        border: 1.5px solid $primary;
+        .product-gallery-subItem {
+          border: 1.5px solid $primary;
+        }
       }
     }
 
@@ -520,8 +523,14 @@
 
 .related-products-gallery {
   width: 90%;
-  margin: 0 auto;
-  margin-bottom: 1.5rem;
+  // padding: 1rem;
+  margin: 1.5rem auto;
+
+  @media (max-width: $viewM) {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 
   &-title {
     margin: 1rem 0;
@@ -539,7 +548,7 @@
 
   &-item {
     overflow: hidden;
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0;
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -594,11 +603,11 @@
     // 標籤列表
     &-labelLists {
       position: absolute;
-      left: 15%;
+      left: 10%;
       top: 0;
 
       @media (max-width: $viewM) {
-        left: 5%;
+        left: 0%;
       }
     }
 

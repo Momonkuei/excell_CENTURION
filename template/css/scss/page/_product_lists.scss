@@ -250,9 +250,12 @@
         left: 50%;
         transform: translate(-50%, 0);
 
+        @media (max-width: $viewM) {
+          width: 90%;
+        }
+
         @media (max-width: $viewMobile) {
           top: 0;
-          width: 90%;
         }
       }
 
@@ -313,7 +316,7 @@
           @media (max-width: $viewS) {
             height: 1.5rem;
             width: 1.5rem;
-            font-size: 0.875rem;
+            font-size: 1rem;
           }
 
           @media (max-width: $viewMobile) {
@@ -342,6 +345,10 @@
 
         @media (max-width: $viewM) {
           width: 90%;
+        }
+
+        @media (max-width: $viewMobile) {
+          width: 12.5rem;
         }
 
         // 標題

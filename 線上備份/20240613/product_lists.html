@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="format-detection"
+    content="telephone=no"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+  <title>
+    <?# webTitle ?>
+  </title>
+  <!-- 字型 -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link
+    rel="stylesheet"
+    href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- aos -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/aos/aos.css"
+  >
+
+  <!-- slick  -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/slick/slick.css"
+  >
+
+
+  <!-- Swiper css -->
+  <link
+    rel="stylesheet"
+    href="/template/jquery/swiper/swiper-bundle.min.css"
+  >
+
+
+  <!-- 客製css -->
+  <link
+    rel="stylesheet"
+    href="/template/css/<?# version ?>/style.css?v=20240607"
+  >
+
+  <!-- sweetalert2 -->
+  <script src="template/jquery/sweetalert2/sweetalert2.all.min.js"></script>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="template/jquery/sweetalert2/sweetalert2.min.css"
+  >
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+</head>
+
+<body class="">
+
+
+  <!-- header -->
+  <?# header ?>
+
+
+
+  <div class="body-content">
+
+    <section class="sectionblock-product-lists">
+
+      <!-- 篩選選單 -->
+      <div class="filters-menu ">
+        <div class="filters-menu-inner">
+
+          <button class="close-btn">
+            <i class="bi bi-x-lg "></i>
+            <span class="txt-close">關閉</span>
+          </button>
+          <div class="filter-box">
+            <ul class="product-sidebar">
+
+
+              <li class="product-sidebar-item">
+
+                <a
+                  href="javascript:void(0);"
+                  class="second-menu-btn"
+                >
+                  <span class="product-sidebar-item-txt">旅行箱</span>
+                  <div class="icon-box">
+                    <i class="bi bi-chevron-right"></i>
+                  </div>
+                </a>
+                <div class="product-sidebar-item-secondMenu">
+                  <div class="product-sidebar-item-secondMenu-content">
+                    <div class="return-box">
+                      <a href="javascript:void(0);">
+                        <span class="icon-box">
+                          <i class="bi bi-arrow-left"></i>
+                        </span>
+                        <span>返回</span>
+                      </a>
+                    </div>
+                    <ul
+                      id=""
+                      class="product-sidebar-item-secondMenu-lists"
+                    >
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>14吋 愛黛兒箱</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>20吋 旅行箱</span>
+                          <div class="icon-box">
+                            <i class="bi bi-chevron-right"></i>
+                          </div>
+                        </a>
+
+                        <div class="product-sidebar-item-thirdMenu">
+                          <div class="product-sidebar-item-thirdMenu-content">
+                            <div class="return-box">
+                              <a href="javascript:void(0);">
+                                <span class="icon-box">
+                                  <i class="bi bi-arrow-left"></i>
+                                </span>
+                                <span>返回</span>
+                              </a>
+                            </div>
+                            <ul
+                              id=""
+                              class=""
+                            >
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>頭等艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>商務艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>經濟艙</span>
+                                </a>
+                              </li>
+
+                            </ul>
+                          </div>
+
+
+                        </div>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>24吋 跑車箱</span>
+                          <div class="icon-box">
+                            <i class="bi bi-chevron-right"></i>
+                          </div>
+                        </a>
+                        <div class="product-sidebar-item-thirdMenu">
+                          <div class="product-sidebar-item-thirdMenu-content">
+                            <div class="return-box">
+                              <a href="javascript:void(0);">
+                                <span class="icon-box">
+                                  <i class="bi bi-arrow-left"></i>
+                                </span>
+                                <span>返回</span>
+                              </a>
+                            </div>
+                            <ul
+                              id=""
+                              class=""
+                            >
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>頭等艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>商務艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>經濟艙</span>
+                                </a>
+                              </li>
+
+                            </ul>
+                          </div>
+
+
+                        </div>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>28吋 旅行箱</span>
+                          <div class="icon-box">
+                            <i class="bi bi-chevron-right"></i>
+                          </div>
+                        </a>
+                        <div class="product-sidebar-item-thirdMenu">
+                          <div class="product-sidebar-item-thirdMenu-content">
+                            <div class="return-box">
+                              <a href="javascript:void(0);">
+                                <span class="icon-box">
+                                  <i class="bi bi-arrow-left"></i>
+                                </span>
+                                <span>返回</span>
+                              </a>
+                            </div>
+                            <ul
+                              id=""
+                              class=""
+                            >
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>頭等艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>商務艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>經濟艙</span>
+                                </a>
+                              </li>
+
+                            </ul>
+                          </div>
+
+
+                        </div>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>29吋 胖胖箱</span>
+                          <div class="icon-box">
+                            <i class="bi bi-chevron-right"></i>
+                          </div>
+                        </a>
+                        <div class="product-sidebar-item-thirdMenu">
+                          <div class="product-sidebar-item-thirdMenu-content">
+                            <div class="return-box">
+                              <a href="javascript:void(0);">
+                                <span class="icon-box">
+                                  <i class="bi bi-arrow-left"></i>
+                                </span>
+                                <span>返回</span>
+                              </a>
+                            </div>
+                            <ul
+                              id=""
+                              class=""
+                            >
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>頭等艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>商務艙</span>
+                                </a>
+                              </li>
+                              <li class="">
+                                <a
+                                  class=""
+                                  href="javascript:void(0);"
+                                >
+                                  <span>經濟艙</span>
+                                </a>
+                              </li>
+
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                </div>
+              </li>
+
+              <li class="product-sidebar-item">
+
+                <a
+                  href="javascript:void(0);"
+                  class="second-menu-btn"
+                >
+                  <span class="product-sidebar-item-txt">旅行週邊商品</span>
+                  <div class="icon-box">
+                    <i class="bi bi-chevron-right"></i>
+                  </div>
+                </a>
+
+                <div class="product-sidebar-item-secondMenu">
+                  <div class="product-sidebar-item-secondMenu-content">
+                    <div class="return-box">
+                      <a href="javascript:void(0);">
+                        <span class="icon-box">
+                          <i class="bi bi-arrow-left"></i>
+                        </span>
+                        <span>返回</span>
+                      </a>
+                    </div>
+                    <ul
+                      id=""
+                      class="product-sidebar-item-secondMenu-lists"
+                    >
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>比基尼</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>四角內褲</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>海灘拖鞋</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>海灘褲</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a
+                          class=""
+                          href="javascript:void(0);"
+                        >
+                          <span>襪子</span>
+                        </a>
+                      </li>
+
+
+                    </ul>
+                  </div>
+                </div>
+
+              </li>
+
+
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="product-lists">
+        <div class="product-lists-filters-bar">
+          <div class="title-box">
+            <span class="title fz-14 heading">28吋 旅行箱</span>
+          </div>
+
+          <div class="filters-button-box">
+            <a
+              href="javascript:void(0);"
+              class="filters-button-box-btn fz-14 heading"
+            >
+              <span>產品類別</span>
+              <span><i class="bi bi-filter"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="product-lists-gallery">
+          <div class="product-lists-gallery-box">
+
+
+            <!-- <php:repeater id="ProductList">
+              <template>
+                <div class="product-lists-gallery-item">
+                  <a href="product_detail-<?# ProductID ?>.html">
+                    <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                      <li>
+                        <div class="img-box">
+                          <img
+                            src="<?# ProductImg ?>"
+                            alt=""
+                          >
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img
+                            src="<?# ProductImg2 ?>"
+                            alt=""
+                          >
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img
+                            src="<?# ProductImg3 ?>"
+                            alt=""
+                          >
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img
+                            src="<?# ProductImg4 ?>"
+                            alt=""
+                          >
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="img-box">
+                          <img
+                            src="<?# ProductImg5 ?>"
+                            alt=""
+                          >
+                        </div>
+                      </li>
+
+                    </ul>
+
+                    <div class="related-products-gallery-item-info fz-14">
+                      <div class="title">
+                        <span>
+                          <?# ProductNameTW ?>
+                        </span>
+                      </div>
+                      <div class="price">
+                        <span>NT$</span><span>
+                          <?# Price ?>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+
+                </div>
+              </template>
+            </php:repeater> -->
+
+            <!-- 假資料 -->
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/01.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <div class="product-lists-gallery-item-labelLists">
+                  <span class="product-lists-gallery-item-label ">NEW</span>
+                </div>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>EXCELL限量版</span>
+
+                </div>
+                <div class="price fz-14s">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/02.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <div class="product-lists-gallery-item-labelLists">
+                  <span class="product-lists-gallery-item-label ">HOT</span>
+                </div>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>九尾粉狐九尾粉狐九尾粉狐九尾粉狐九尾粉狐九尾粉狐九尾粉狐九尾粉狐九尾粉狐</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/03.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <div class="product-lists-gallery-item-labelLists">
+                  <span class="product-lists-gallery-item-label ">NEW</span>
+                </div>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>大海魚 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/04.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>大鯨魚 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/05.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>小海豚 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/06.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>小海龜 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/07.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>牛奶糖 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/08.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>北極熊 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/09.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>布達佩斯 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/10.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>飛燕煉乳 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/11.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+
+              </a>
+
+              <div class="product-lists-gallery-item-info ">
+
+                <div class="title">
+                  <span>清平調 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="product-lists-gallery-item">
+              <a
+                href="javascript:void(0);"
+                class="product-lists-gallery-item-link"
+              >
+                <ul class="product-lists-gallery-item-imgBoxList product-lists-gallery-item-imgBoxList-1">
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/products/12.png"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/002.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                  <li class="">
+                    <div class="img-box">
+                      <img
+                        src="/template/image/<?# version ?>/product_detail/003.jpg"
+                        alt=""
+                      >
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <button
+                  href="javascript:void(0);"
+                  class="instant-add-cart"
+                >
+                  <div class="icon-box">
+                    <i class="bi bi-plus-lg"></i>
+                  </div>
+                </button>
+
+              </a>
+
+              <div class="product-lists-gallery-item-info">
+
+                <div class="title">
+                  <span>瘋虎將軍 旅行箱</span>
+
+                </div>
+                <div class="price fz-14">
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="products-footer my-5">
+        <div class="pagination-box">
+          <a
+            class="paginate_button"
+            href="<?# beforePage ?>"
+          >上一頁</a>
+
+          <div class="pagination-page">
+
+            <php:repeater id="pagesList">
+              <template>
+
+                <a
+                  href="product_lists-<?# ID ?>_<?# page ?>.html"
+                  class="pageLink <?# active ?>"
+                >
+                  <?# page ?>
+                </a>
+              </template>
+            </php:repeater>
+
+          </div>
+          <a
+            class="paginate_button"
+            href="<?# nextPage ?>"
+          >下一頁</a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </div>
+
+
+
+
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a
+    href="javascript:void(0);"
+    class="goTop"
+  >
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+  <!-- popper -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/popper/popper.min.js"
+  ></script>
+
+  <!-- bootstrap -->
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/bootstrap/bootstrap.js"
+  ></script>
+
+
+  <!-- swiper -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/swiper/swiper-bundle.min.js"
+  ></script>
+
+  <!-- slick -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/slick/slick.js"
+  ></script>
+
+  <!-- aos -->
+
+  <script
+    type="text/javascript"
+    src="/template/jquery/aos/aos.js"
+  ></script>
+
+  <!-- animejs -->
+  <script
+    type="text/javascript"
+    src="/template/jquery/animejs/anime.min.js"
+  ></script>
+
+  <!-- 自定義JS -->
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/script.js"
+  ></script>
+
+  <script
+    type="text/javascript"
+    src="/template/js/<?# version ?>/product.js?v=20240607"
+  ></script>
+
+
+
+</body>
+
+</html>

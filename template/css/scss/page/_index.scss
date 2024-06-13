@@ -8,10 +8,6 @@
   overflow: hidden;
 
   @media (max-width: $viewM) {
-    padding: 3.2vw 0 3.2vw;
-  }
-
-  @media (max-width: $viewMobile) {
     padding: 0;
   }
 
@@ -43,7 +39,7 @@
       }
 
       .itemImg {
-        @media (max-width: $viewS) {
+        @media (max-width: $viewM) {
           img {
             transform: translate(-50%, -50%) scale(1.02);
           }
