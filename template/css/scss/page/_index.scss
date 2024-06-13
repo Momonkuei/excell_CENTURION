@@ -4,8 +4,8 @@
 .homepage-product-sectionBlock {
   margin-top: 0;
   padding: 3.125vw;
-
   overflow: hidden;
+  background-color: #fdfdfd;
 
   @media (max-width: $viewM) {
     padding: 0;
@@ -373,6 +373,7 @@
 .sectionBlock-slogan {
   .title-box {
     padding: 2rem 0;
+    background-color: #fdfdfd;
     .title {
       font-size: 1.125rem;
     }

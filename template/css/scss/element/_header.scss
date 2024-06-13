@@ -1566,6 +1566,11 @@
     }
   }
 
+  &.scroll-index-banner {
+    position: fixed;
+    top: 0;
+  }
+
   &.scroll {
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);

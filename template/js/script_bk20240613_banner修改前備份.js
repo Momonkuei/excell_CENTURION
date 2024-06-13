@@ -194,59 +194,25 @@ $(function () {
 				$('.sectionblock-login .login-box').fadeIn();
 			}
 		});
-	}
-});
 
-// 判斷滾動高度 在header 中添加 scroll
-$(function () {
-	if ($('header').length) {
+		// 針對購物車頁面進行撐篙，不然會造成header 浮動後，高度不夠又移除 scroll
+
 		// 滾動
 		// 取得header 高度
 		const hdTop = $('header').outerHeight();
 
-		const bannerTop = $('.pic-box').outerHeight();
-
-		// 判斷是否在首頁
-		if ($('body').hasClass('index')) {
-			$(window).scroll(function () {
-				if ($(window).scrollTop() > hdTop) {
-					if ($('header').length) {
-						$('header').addClass('scroll-index-banner');
-					}
+		$(window).scroll(function () {
+			if ($(window).scrollTop() > hdTop) {
+				if ($('header').length) {
+					$('header').addClass('scroll');
 				}
-				if ($(window).scrollTop() === 0) {
-					if ($('header').length) {
-						$('header').removeClass('scroll-index-banner');
-					}
+			}
+			if ($(window).scrollTop() === 0) {
+				if ($('header').length) {
+					$('header').removeClass('scroll');
 				}
-
-				// 滾動超過 banner 高度時
-				if ($(window).scrollTop() > bannerTop) {
-					if ($('header').length) {
-						$('header').removeClass('scroll-index-banner');
-						$('header').addClass('scroll');
-					}
-				} else {
-					if ($('header').length) {
-						$('header').addClass('scroll-index-banner');
-						$('header').removeClass('scroll');
-					}
-				}
-			});
-		} else {
-			$(window).scroll(function () {
-				if ($(window).scrollTop() > hdTop) {
-					if ($('header').length) {
-						$('header').addClass('scroll');
-					}
-				}
-				if ($(window).scrollTop() === 0) {
-					if ($('header').length) {
-						$('header').removeClass('scroll');
-					}
-				}
-			});
-		}
+			}
+		});
 	}
 });
 
@@ -348,9 +314,12 @@ $(function () {
 	if ($('.bannerBlock').length) {
 		var BannerSwiper = new Swiper('.index-swiper', {
 			loop: true, // 循环模式选项
-			autoplay: {
-				delay: 5000, //多久切换一次
-			},
+			// autoplay: {
+			// 	delay: 5000, //多久切换一次
+			// },
+			// 如果需要分页器
+			// direction: 'vertical',
+			// autoHeight: true,
 			pagination: {
 				el: '.swiper-pagination',
 			},
@@ -375,71 +344,24 @@ $(function () {
 			arrows: false,
 		});
 
-		var lastScrollTop = 0;
-		var isAtLastSlide = false;
-
-		// 使用 addEventListener 添加非被动的 wheel 事件监听器
-		window.addEventListener(
-			'wheel',
-			function (e) {
-				var $slider = $('.bannerStyle02-banner-wrapper');
-				var currentSlide = $slider.slick('slickCurrentSlide');
-				var slideCount = $slider.slick('getSlick').slideCount;
-
-				if (e.deltaY > 0) {
-					// 向下滾動
-					if (currentSlide < slideCount - 1) {
-						$slider.slick('slickNext');
-						e.preventDefault();
-					} else {
-						isAtLastSlide = true;
-					}
-				} else {
-					// 向上滾動
-					if (currentSlide > 0) {
-						$slider.slick('slickPrev');
-						e.preventDefault();
-					}
-				}
-			},
-			{ passive: false }
-		);
-
-		// 在 Slick 切换后重新计算 AOS
-		$('.bannerStyle02-banner-wrapper').on(
-			'afterChange',
-			function (event, slick, currentSlide, nextSlide) {
-				AOS.refresh();
-				if (currentSlide === slick.slideCount - 1) {
-					isAtLastSlide = true;
-				} else {
-					isAtLastSlide = false;
-				}
-			}
-		);
-
-		// 滚动到下一部分动画
+		// 監聽滾動事件
 		$(window).on('scroll', function () {
-			if (isAtLastSlide) {
-				var scrollTop = $(this).scrollTop();
-				var windowHeight = $(this).height();
-				var sliderBottom = $(
-					'.bannerStyle02-banner-wrapper .pic-box'
-				).outerHeight();
+			var scrollTop = $(this).scrollTop();
+			var windowHeight = $(this).height();
+			var documentHeight = $(document).height();
 
-				if (scrollTop > sliderBottom / 2) {
-					$('html, body').animate(
-						{
-							scrollTop: $(
-								'.homepage-product-sectionBlock'
-							).offset().top,
-						},
-						100
-					);
-					isAtLastSlide = false;
-				}
+			// 判斷滾動方向
+			if (scrollTop > lastScrollTop) {
+				// 向下滾動
+				$('.bannerStyle02-banner-wrapper').slick('slickNext');
+			} else {
+				// 向上滾動
+				$('.bannerStyle02-banner-wrapper').slick('slickPrev');
 			}
+			lastScrollTop = scrollTop;
 		});
+
+		var lastScrollTop = 0;
 	}
 });
 

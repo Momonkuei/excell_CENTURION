@@ -10253,17 +10253,21 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.sectionBlock {
+  margin: 50px 0;
+}
+
 img {
   height: auto;
   max-width: 100%;
 }
 
-.sectionBlock {
-  margin: 50px 0;
-}
-
 a:hover {
   color: #35286d;
+}
+
+body {
+  background-color: #fdfdfd;
 }
 
 body {
@@ -10474,6 +10478,7 @@ body {
 
 .bannerStyle02 {
   overflow: hidden;
+  position: relative;
 }
 .bannerStyle02 .banner-item {
   height: 100vh;
@@ -10557,6 +10562,12 @@ body {
     padding-left: 3.3333333333vw;
     padding-right: 3.3333333333vw;
   }
+}
+.bannerStyle02 .slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+.bannerStyle02 .slick-dots {
+  bottom: 1.5rem;
 }
 
 @keyframes bannerZoomOut01 {
@@ -12430,6 +12441,10 @@ body {
 .headerStyle02 .login-menu-inner .login-box.login-status .login-function-box {
   display: block;
 }
+.headerStyle02.scroll-index-banner {
+  position: fixed;
+  top: 0;
+}
 .headerStyle02.scroll {
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -13688,6 +13703,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   margin-top: 0;
   padding: 3.125vw;
   overflow: hidden;
+  background-color: #fdfdfd;
 }
 @media (max-width: 992px) {
   .homepage-product-sectionBlock {
@@ -13998,6 +14014,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 
 .sectionBlock-slogan .title-box {
   padding: 2rem 0;
+  background-color: #fdfdfd;
 }
 .sectionBlock-slogan .title-box .title {
   font-size: 1.125rem;
@@ -14565,12 +14582,14 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-areas: "product_gallery product_info_box" "product_gallery_2 product_info_box";
+  margin: 0 3.125rem;
 }
 @media (max-width: 992px) {
   .page-product_detail {
     flex-direction: column;
     display: flex;
     position: relative;
+    margin: 0;
   }
 }
 
@@ -15014,8 +15033,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 
 .related-products-gallery {
-  width: 90%;
-  margin: 1.5rem auto;
+  margin: 1.5rem 3.125rem;
 }
 @media (max-width: 992px) {
   .related-products-gallery {
@@ -15088,13 +15106,8 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 .related-products-gallery-item-labelLists {
   position: absolute;
-  left: 10%;
+  left: 0%;
   top: 0;
-}
-@media (max-width: 992px) {
-  .related-products-gallery-item-labelLists {
-    left: 0%;
-  }
 }
 .related-products-gallery-item-label {
   display: inline-flex;

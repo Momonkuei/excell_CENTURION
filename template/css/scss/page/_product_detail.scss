@@ -5,11 +5,14 @@
   grid-template-areas:
     "product_gallery product_info_box"
     "product_gallery_2 product_info_box";
+
+  margin: 0 3.125rem;
+
   @media (max-width: $viewM) {
     flex-direction: column;
     display: flex;
-
     position: relative;
+    margin: 0;
   }
 }
 
@@ -522,9 +525,8 @@
 }
 
 .related-products-gallery {
-  width: 90%;
   // padding: 1rem;
-  margin: 1.5rem auto;
+  margin: 1.5rem 3.125rem;
 
   @media (max-width: $viewM) {
     width: 100%;
@@ -603,12 +605,8 @@
     // 標籤列表
     &-labelLists {
       position: absolute;
-      left: 10%;
+      left: 0%;
       top: 0;
-
-      @media (max-width: $viewM) {
-        left: 0%;
-      }
     }
 
     // 標籤

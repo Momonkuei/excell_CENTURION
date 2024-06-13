@@ -140,7 +140,6 @@
 
 .bannerStyle02 {
   overflow: hidden;
-  position: relative;
 
   // 項目
   .banner-item {
@@ -226,14 +225,6 @@
         padding-right: 3.3333333333vw;
       }
     }
-  }
-
-  .slick-dotted.slick-slider {
-    margin-bottom: 0;
-  }
-
-  .slick-dots {
-    bottom: 1.5rem;
   }
 }
 
