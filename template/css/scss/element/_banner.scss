@@ -162,19 +162,19 @@
       bottom: 0;
       left: 0;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        pointer-events: none;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
-      }
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   z-index: 3;
+      //   pointer-events: none;
+      //   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
+      // }
 
       .pic {
         background-size: cover;
@@ -234,6 +234,20 @@
 
   .slick-dots {
     bottom: 1.5rem;
+
+    .slick-active {
+      button {
+        &::before {
+          color: #fdfdfd;
+        }
+      }
+    }
+  }
+
+  .slick-vertical {
+    .slick-slide {
+      height: 100vh;
+    }
   }
 }
 

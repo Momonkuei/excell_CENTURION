@@ -221,7 +221,7 @@ $(function () {
 				}
 
 				// 滾動超過 banner 高度時
-				if ($(window).scrollTop() > bannerTop - hdTop) {
+				if ($(window).scrollTop() > bannerTop) {
 					if ($('header').length) {
 						$('header').removeClass('scroll-index-banner');
 						$('header').addClass('scroll');
@@ -365,13 +365,8 @@ $(function () {
 });
 
 $(function () {
-	// 初始化 AOS
-	AOS.init();
-
 	if ($('.bannerStyle02').length) {
-		var $slider = $('.bannerStyle02-banner-wrapper');
-
-		$slider.slick({
+		$('.bannerStyle02-banner-wrapper').slick({
 			vertical: true,
 			verticalSwiping: true,
 			slidesToShow: 1,
@@ -382,12 +377,12 @@ $(function () {
 
 		var lastScrollTop = 0;
 		var isAtLastSlide = false;
-		var go_back = false;
 
 		// 使用 addEventListener 添加非被动的 wheel 事件监听器
 		window.addEventListener(
 			'wheel',
 			function (e) {
+				var $slider = $('.bannerStyle02-banner-wrapper');
 				var currentSlide = $slider.slick('slickCurrentSlide');
 				var slideCount = $slider.slick('getSlick').slideCount;
 
@@ -411,7 +406,7 @@ $(function () {
 		);
 
 		// 在 Slick 切换后重新计算 AOS
-		$slider.on(
+		$('.bannerStyle02-banner-wrapper').on(
 			'afterChange',
 			function (event, slick, currentSlide, nextSlide) {
 				AOS.refresh();
@@ -420,52 +415,30 @@ $(function () {
 				} else {
 					isAtLastSlide = false;
 				}
-				if (currentSlide === 0) {
-					isAtFirstSlide = true;
-				} else {
-					isAtFirstSlide = false;
-				}
 			}
 		);
 
-		// GSAP ScrollTrigger
-		gsap.registerPlugin(ScrollTrigger);
-
 		// 滚动到下一部分动画
-		// 使用 GSAP ScrollTrigger 监听滚动事件
-		ScrollTrigger.create({
-			trigger: '.homepage-product-sectionBlock',
-			start: 'top top',
-			onEnter: () => {
-				if (isAtLastSlide) {
-					gsap.to(window, {
-						scrollTo: {
-							y: '.homepage-product-sectionBlock',
-							offsetY: 0,
+		$(window).on('scroll', function () {
+			if (isAtLastSlide) {
+				var scrollTop = $(this).scrollTop();
+				var windowHeight = $(this).height();
+				var sliderBottom = $(
+					'.bannerStyle02-banner-wrapper .pic-box'
+				).outerHeight();
+
+				if (scrollTop > sliderBottom / 2) {
+					$('html, body').animate(
+						{
+							scrollTop: $(
+								'.homepage-product-sectionBlock'
+							).offset().top,
 						},
-						duration: 0.2,
-						onComplete: () => {
-							isAtLastSlide = false;
-							go_back = true;
-						},
-					});
+						100
+					);
+					isAtLastSlide = false;
 				}
-			},
-			onLeaveBack: () => {
-				if (go_back) {
-					gsap.to(window, {
-						scrollTo: {
-							y: '.bannerStyle02',
-							offsetY: 0,
-						},
-						duration: 0.2,
-						onComplete: () => {
-							go_back = false;
-							console.log('回程啟動');
-						},
-					});
-				}
-			},
+			}
 		});
 	}
 });

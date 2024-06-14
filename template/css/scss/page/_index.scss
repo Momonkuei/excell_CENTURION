@@ -267,28 +267,8 @@
     position: relative;
     overflow: hidden;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(0deg, rgba(29, 29, 30, 0.5) 0%, rgba(29, 29, 30, 0) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
     @media (max-width: $viewS) {
       height: auto;
-    }
-
-    > a {
-      &:hover {
-        img {
-          transform: scale(1.1);
-        }
-      }
     }
 
     img {
@@ -317,13 +297,17 @@
 
   .introduction-info {
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: 33%;
+    left: 5%;
     transform: translateY(-50%);
     z-index: 2;
 
+    @media (max-width: $viewM) {
+      top: 50%;
+    }
+
     @media (max-width: $viewS) {
-      top: 30%;
+      top: 25%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -332,13 +316,19 @@
     }
 
     .title-box {
+      margin-bottom: 1.25rem;
+
+      @media (max-width: $viewM) {
+        margin-bottom: 1.5rem;
+      }
+
       .title {
-        font-size: 3rem;
-        margin-bottom: 1.25rem;
+        font-size: 2.5rem;
+
         line-height: 1.2;
 
         @media (max-width: $viewM) {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
 
         a {
@@ -352,17 +342,26 @@
     }
 
     .desc-box {
+      position: absolute;
+      bottom: -8rem;
+
+      @media (max-width: $viewM) {
+        position: static;
+        bottom: 0;
+      }
+
       .desc {
         color: $primary;
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 1.25rem;
+
         p {
           margin-bottom: 0;
         }
 
         @media (max-width: $viewM) {
           color: #fff;
-          font-size: 1.25rem;
+          font-size: 0.75rem;
+          font-weight: 300;
         }
       }
     }

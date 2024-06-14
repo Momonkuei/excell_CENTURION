@@ -10499,19 +10499,6 @@ body {
   bottom: 0;
   left: 0;
 }
-.bannerStyle02 .banner-item .pic-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
-}
 .bannerStyle02 .banner-item .pic-box .pic {
   background-size: cover;
   background-position: center;
@@ -10568,6 +10555,12 @@ body {
 }
 .bannerStyle02 .slick-dots {
   bottom: 1.5rem;
+}
+.bannerStyle02 .slick-dots .slick-active button::before {
+  color: #fdfdfd;
+}
+.bannerStyle02 .slick-vertical .slick-slide {
+  height: 100vh;
 }
 
 @keyframes bannerZoomOut01 {
@@ -12921,6 +12914,7 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   font-size: 1.125rem;
   letter-spacing: 0.02rem;
   line-height: 1.5;
+  font-weight: 600;
 }
 @media (min-width: 992px) {
   .product-introduction-subTitle {
@@ -13920,24 +13914,10 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   position: relative;
   overflow: hidden;
 }
-.sectionBlock-introduction .bg-img-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(29, 29, 30, 0.5) 0%, rgba(29, 29, 30, 0) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
 @media (max-width: 768px) {
   .sectionBlock-introduction .bg-img-box {
     height: auto;
   }
-}
-.sectionBlock-introduction .bg-img-box > a:hover img {
-  transform: scale(1.1);
 }
 .sectionBlock-introduction .bg-img-box img {
   display: block;
@@ -13965,14 +13945,19 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 .sectionBlock-introduction .introduction-info {
   position: absolute;
-  top: 50%;
-  left: 20%;
+  top: 33%;
+  left: 5%;
   transform: translateY(-50%);
   z-index: 2;
 }
+@media (max-width: 992px) {
+  .sectionBlock-introduction .introduction-info {
+    top: 50%;
+  }
+}
 @media (max-width: 768px) {
   .sectionBlock-introduction .introduction-info {
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -13980,14 +13965,21 @@ header .navMenu > li.moreMenu > ul li:hover > a {
     color: #fff;
   }
 }
-.sectionBlock-introduction .introduction-info .title-box .title {
-  font-size: 3rem;
+.sectionBlock-introduction .introduction-info .title-box {
   margin-bottom: 1.25rem;
+}
+@media (max-width: 992px) {
+  .sectionBlock-introduction .introduction-info .title-box {
+    margin-bottom: 1.5rem;
+  }
+}
+.sectionBlock-introduction .introduction-info .title-box .title {
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 @media (max-width: 992px) {
   .sectionBlock-introduction .introduction-info .title-box .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 .sectionBlock-introduction .introduction-info .title-box .title a {
@@ -13997,10 +13989,19 @@ header .navMenu > li.moreMenu > ul li:hover > a {
   color: #fff;
   font-weight: 600;
 }
+.sectionBlock-introduction .introduction-info .desc-box {
+  position: absolute;
+  bottom: -8rem;
+}
+@media (max-width: 992px) {
+  .sectionBlock-introduction .introduction-info .desc-box {
+    position: static;
+    bottom: 0;
+  }
+}
 .sectionBlock-introduction .introduction-info .desc-box .desc {
   color: #35286d;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.25rem;
 }
 .sectionBlock-introduction .introduction-info .desc-box .desc p {
   margin-bottom: 0;
@@ -14008,7 +14009,8 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 @media (max-width: 992px) {
   .sectionBlock-introduction .introduction-info .desc-box .desc {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 300;
   }
 }
 
