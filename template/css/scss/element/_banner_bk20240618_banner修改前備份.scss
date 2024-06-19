@@ -1,16 +1,5 @@
 .bannerBlock {
   position: relative;
-
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  z-index: 4;
-  transition: all 0.3s ease-in;
-
-  &.moveUp-banner {
-    transform: translate(0, -100%);
-  }
 }
 
 .bannerStyle01 {
@@ -173,6 +162,20 @@
       bottom: 0;
       left: 0;
 
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   z-index: 3;
+      //   pointer-events: none;
+      //   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 15%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 100%);
+      // }
+
       .pic {
         background-size: cover;
         background-position: center;
@@ -183,8 +186,6 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
         background: no-repeat 50% 100% / cover;
       }
 
@@ -249,13 +250,6 @@
   .slick-vertical {
     .slick-slide {
       height: 100vh;
-      overflow: hidden;
-
-      @media (max-width: $viewM) {
-        > div {
-          width: 100vw;
-        }
-      }
     }
   }
 }

@@ -1,4 +1,15 @@
-// banner
+// 使在 banner 階段 可以固定視窗
+.index {
+  overflow: hidden;
+
+  -ms-overflow-style: none;
+  height: 100%;
+  // width: calc(100vw + 18px);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 //產品介紹
 .homepage-product-sectionBlock {

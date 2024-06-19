@@ -204,26 +204,39 @@ $(function () {
 	}
 });
 
-// 判斷滾動高度 在header 中添加 class名稱
+// 判斷滾動高度 在header 中添加 scroll
 $(function () {
 	if ($('header').length) {
 		// 滾動
 		// 取得header 高度
 		const hdTop = $('header').outerHeight();
 
+		const bannerTop = $('.pic-box').outerHeight();
+
 		// 判斷是否在首頁
 		if ($('body').hasClass('index')) {
 			$(window).scroll(function () {
 				if ($(window).scrollTop() > hdTop) {
 					if ($('header').length) {
-						$('header').addClass('scroll');
-						$('header').removeClass('finish-banner');
+						$('header').addClass('scroll-index-banner');
 					}
 				}
 				if ($(window).scrollTop() === 0) {
 					if ($('header').length) {
+						$('header').removeClass('scroll-index-banner');
+					}
+				}
+
+				// 滾動超過 banner 高度時
+				if ($(window).scrollTop() > bannerTop - hdTop) {
+					if ($('header').length) {
+						$('header').removeClass('scroll-index-banner');
+						$('header').addClass('scroll');
+					}
+				} else {
+					if ($('header').length) {
+						$('header').addClass('scroll-index-banner');
 						$('header').removeClass('scroll');
-						$('header').addClass('finish-banner');
 					}
 				}
 			});
@@ -394,21 +407,20 @@ $(function () {
 			(function () {
 				let isThrottled = false;
 				let interval = 200; // 设置时间间隔，单位为毫秒
-				let img_replacement_license = true; //換圖許可
 
 				return function (e) {
 					if (!isThrottled) {
 						// 处理事件的代码
 						var currentSlide = $slider.slick('slickCurrentSlide');
 						var slideCount = $slider.slick('getSlick').slideCount;
+						let img_replacement_license = true; //換圖許可
 
 						if (e.deltaY > 0) {
 							// 向下滾動
-							if (
-								currentSlide < slideCount - 1 &&
-								img_replacement_license
-							) {
-								$slider.slick('slickNext');
+							if (currentSlide < slideCount - 1) {
+								if (img_replacement_license) {
+									$slider.slick('slickNext');
+								}
 								e.preventDefault();
 							} else {
 								isAtLastSlide = true;
@@ -416,15 +428,13 @@ $(function () {
 
 							if (currentSlide === slideCount - 1) {
 								$('.bannerBlock').addClass('moveUp-banner');
-								$('header').addClass('finish-banner');
 								setTimeout(function () {
-									$('body').css('overflow', 'auto');
+									$('body').css('overflow', 'inherit');
 								}, 500);
-								img_replacement_license = false;
 							}
 						} else {
 							// 向上滾動
-							if (currentSlide > 0 && img_replacement_license) {
+							if (currentSlide > 0) {
 								$slider.slick('slickPrev');
 								e.preventDefault();
 							}
@@ -432,9 +442,7 @@ $(function () {
 							if (window.scrollY === 0 && e.deltaY < 0) {
 								e.preventDefault();
 								$('.bannerBlock').removeClass('moveUp-banner');
-								$('header').removeClass('finish-banner');
 								$('body').css('overflow', '');
-								img_replacement_license = true;
 							}
 						}
 
@@ -524,10 +532,6 @@ $(function () {
 				},
 				200
 			);
-
-			if ($('body').hasClass('index')) {
-				$('.bannerBlock').removeClass('moveUp-banner');
-			}
 		});
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 300) {

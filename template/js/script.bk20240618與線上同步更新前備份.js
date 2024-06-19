@@ -4,13 +4,6 @@ document.querySelectorAll('[data-bs-toggle="popover"]').forEach(popover => {
 	new bootstrap.Popover(popover);
 });
 
-// AOS
-if (typeof AOS === 'object') {
-	AOS.init({
-		easing: 'ease-in-sine',
-	});
-}
-
 // header 手機板menu
 $(function () {
 	if ($('header').length) {
@@ -204,26 +197,39 @@ $(function () {
 	}
 });
 
-// 判斷滾動高度 在header 中添加 class名稱
+// 判斷滾動高度 在header 中添加 scroll
 $(function () {
 	if ($('header').length) {
 		// 滾動
 		// 取得header 高度
 		const hdTop = $('header').outerHeight();
 
+		const bannerTop = $('.pic-box').outerHeight();
+
 		// 判斷是否在首頁
 		if ($('body').hasClass('index')) {
 			$(window).scroll(function () {
 				if ($(window).scrollTop() > hdTop) {
 					if ($('header').length) {
-						$('header').addClass('scroll');
-						$('header').removeClass('finish-banner');
+						$('header').addClass('scroll-index-banner');
 					}
 				}
 				if ($(window).scrollTop() === 0) {
 					if ($('header').length) {
+						$('header').removeClass('scroll-index-banner');
+					}
+				}
+
+				// 滾動超過 banner 高度時
+				if ($(window).scrollTop() > bannerTop - hdTop) {
+					if ($('header').length) {
+						$('header').removeClass('scroll-index-banner');
+						$('header').addClass('scroll');
+					}
+				} else {
+					if ($('header').length) {
+						$('header').addClass('scroll-index-banner');
 						$('header').removeClass('scroll');
-						$('header').addClass('finish-banner');
 					}
 				}
 			});
@@ -276,17 +282,14 @@ $(function () {
 			$('body').removeClass('open-wrap-box');
 			// 取消側邊選取欄位
 			$(this).find('.wrap-box-menu .item.active').removeClass('active');
-
 			// 取消側邊欄位
 			$(this)
 				.find('.wrap-box-detail [data-target-sub-list-item]')
 				.css('display', 'none');
-
 			// 取消選取的項目
 			$(this)
 				.find('.wrap-box-detail .info-wrap-block-box li.active')
 				.removeClass('active');
-
 			// 取消第三欄選單
 			$(this).find('.info-sub-wrap').css('display', 'none');
 		});
@@ -348,7 +351,6 @@ $(function () {
 			autoplay: {
 				delay: 5000, //多久切换一次
 			},
-			// 如果需要分页器
 			pagination: {
 				el: '.swiper-pagination',
 			},
@@ -362,10 +364,9 @@ $(function () {
 	}
 });
 
-// banner02
-
 $(function () {
 	// 初始化 AOS
+	// AOS
 	if (typeof AOS === 'object') {
 		AOS.init({
 			easing: 'ease-in-sine',
@@ -386,79 +387,90 @@ $(function () {
 
 		var lastScrollTop = 0;
 		var isAtLastSlide = false;
+		var go_back = false;
 
 		// 使用 addEventListener 添加非被动的 wheel 事件监听器
-
 		window.addEventListener(
 			'wheel',
-			(function () {
-				let isThrottled = false;
-				let interval = 200; // 设置时间间隔，单位为毫秒
-				let img_replacement_license = true; //換圖許可
+			function (e) {
+				var currentSlide = $slider.slick('slickCurrentSlide');
+				var slideCount = $slider.slick('getSlick').slideCount;
 
-				return function (e) {
-					if (!isThrottled) {
-						// 处理事件的代码
-						var currentSlide = $slider.slick('slickCurrentSlide');
-						var slideCount = $slider.slick('getSlick').slideCount;
-
-						if (e.deltaY > 0) {
-							// 向下滾動
-							if (
-								currentSlide < slideCount - 1 &&
-								img_replacement_license
-							) {
-								$slider.slick('slickNext');
-								e.preventDefault();
-							} else {
-								isAtLastSlide = true;
-							}
-
-							if (currentSlide === slideCount - 1) {
-								$('.bannerBlock').addClass('moveUp-banner');
-								$('header').addClass('finish-banner');
-								setTimeout(function () {
-									$('body').css('overflow', 'auto');
-								}, 500);
-								img_replacement_license = false;
-							}
-						} else {
-							// 向上滾動
-							if (currentSlide > 0 && img_replacement_license) {
-								$slider.slick('slickPrev');
-								e.preventDefault();
-							}
-
-							if (window.scrollY === 0 && e.deltaY < 0) {
-								e.preventDefault();
-								$('.bannerBlock').removeClass('moveUp-banner');
-								$('header').removeClass('finish-banner');
-								$('body').css('overflow', '');
-								img_replacement_license = true;
-							}
-						}
-
-						// 标记为节流中
-						isThrottled = true;
-
-						// 在指定的时间间隔后解锁
-						setTimeout(function () {
-							isThrottled = false;
-						}, interval);
+				if (e.deltaY > 0) {
+					// 向下滾動
+					if (currentSlide < slideCount - 1) {
+						$slider.slick('slickNext');
+						e.preventDefault();
+					} else {
+						isAtLastSlide = true;
 					}
-				};
-			})(),
+				} else {
+					// 向上滾動
+					if (currentSlide > 0) {
+						$slider.slick('slickPrev');
+						e.preventDefault();
+					}
+				}
+			},
 			{ passive: false }
 		);
 
 		// 在 Slick 切换后重新计算 AOS
-		$slider.on('afterChange', function (event, slick, currentSlide) {
-			AOS.refresh();
-			if (currentSlide === slick.slideCount - 1) {
-				isAtLastSlide = true;
-			} else {
-				isAtLastSlide = false;
+		$slider.on(
+			'afterChange',
+			function (event, slick, currentSlide, nextSlide) {
+				AOS.refresh();
+				if (currentSlide === slick.slideCount - 1) {
+					isAtLastSlide = true;
+				} else {
+					isAtLastSlide = false;
+				}
+				if (currentSlide === 0) {
+					isAtFirstSlide = true;
+				} else {
+					isAtFirstSlide = false;
+				}
 			}
+		);
+
+		// GSAP ScrollTrigger
+		gsap.registerPlugin(ScrollTrigger);
+
+		// 滚动到下一部分动画
+		// 使用 GSAP ScrollTrigger 监听滚动事件
+		ScrollTrigger.create({
+			trigger: '.homepage-product-sectionBlock',
+			start: 'top top',
+			onEnter: () => {
+				if (isAtLastSlide) {
+					gsap.to(window, {
+						scrollTo: {
+							y: '.homepage-product-sectionBlock',
+							offsetY: 0,
+						},
+						duration: 0.2,
+						onComplete: () => {
+							isAtLastSlide = false;
+							go_back = true;
+						},
+					});
+				}
+			},
+			onLeaveBack: () => {
+				if (go_back) {
+					gsap.to(window, {
+						scrollTo: {
+							y: '.bannerStyle02',
+							offsetY: 0,
+						},
+						duration: 0.2,
+						onComplete: () => {
+							go_back = false;
+							console.log('回程啟動');
+						},
+					});
+				}
+			},
 		});
 	}
 });
@@ -524,10 +536,6 @@ $(function () {
 				},
 				200
 			);
-
-			if ($('body').hasClass('index')) {
-				$('.bannerBlock').removeClass('moveUp-banner');
-			}
 		});
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 300) {

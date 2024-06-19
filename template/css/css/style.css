@@ -10357,6 +10357,15 @@ body {
 }
 .bannerBlock {
   position: relative;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 4;
+  transition: all 0.3s ease-in;
+}
+.bannerBlock.moveUp-banner {
+  transform: translate(0, -100%);
 }
 
 .bannerStyle01 {
@@ -10507,6 +10516,11 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
+  background: no-repeat 50% 100%/cover;
 }
 .bannerStyle02 .banner-item .pic-box .pic-pc {
   display: none;
@@ -10561,6 +10575,12 @@ body {
 }
 .bannerStyle02 .slick-vertical .slick-slide {
   height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .bannerStyle02 .slick-vertical .slick-slide > div {
+    width: 100vw;
+  }
 }
 
 @keyframes bannerZoomOut01 {
@@ -12637,20 +12657,23 @@ body {
   filter: brightness(100);
   transition: all 0.3s ease-in-out;
 }
-.index header:hover, .index header.scroll {
+.index header.finish-banner {
+  position: relative;
+}
+.index header:hover, .index header.scroll, .index header.finish-banner {
   background-color: #fff;
 }
-.index header:hover .main-logo, .index header.scroll .main-logo {
+.index header:hover .main-logo, .index header.scroll .main-logo, .index header.finish-banner .main-logo {
   filter: brightness(1);
   transition: all 0.3s ease-in-out;
 }
-.index header:hover.headerStyle02 .menu-icon-box .btn-list .slide-menu-control .line, .index header.scroll.headerStyle02 .menu-icon-box .btn-list .slide-menu-control .line {
+.index header:hover.headerStyle02 .menu-icon-box .btn-list .slide-menu-control .line, .index header.scroll.headerStyle02 .menu-icon-box .btn-list .slide-menu-control .line, .index header.finish-banner.headerStyle02 .menu-icon-box .btn-list .slide-menu-control .line {
   background-color: #000;
 }
-.index header:hover.headerStyle02 .header-menu .navMenu .navMenu-link, .index header.scroll.headerStyle02 .header-menu .navMenu .navMenu-link {
+.index header:hover.headerStyle02 .header-menu .navMenu .navMenu-link, .index header.scroll.headerStyle02 .header-menu .navMenu .navMenu-link, .index header.finish-banner.headerStyle02 .header-menu .navMenu .navMenu-link {
   color: #35286d;
 }
-.index header:hover.headerStyle02 .user-items a, .index header.scroll.headerStyle02 .user-items a {
+.index header:hover.headerStyle02 .user-items a, .index header.scroll.headerStyle02 .user-items a, .index header.finish-banner.headerStyle02 .user-items a {
   color: black;
 }
 .index .headerStyle02 .menu-icon-box .btn-list .slide-menu-control .line {
@@ -13691,6 +13714,15 @@ header .navMenu > li.moreMenu > ul li:hover > a {
 }
 .forget-password-form .forget-form-footer a:hover::before {
   transform: scaleX(0);
+}
+
+.index {
+  overflow: hidden;
+  -ms-overflow-style: none;
+  height: 100%;
+}
+.index::-webkit-scrollbar {
+  display: none;
 }
 
 .homepage-product-sectionBlock {

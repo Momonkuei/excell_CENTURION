@@ -1789,8 +1789,14 @@
       filter: brightness(100);
       transition: all 0.3s ease-in-out;
     }
+
+    &.finish-banner {
+      position: relative;
+    }
+
     &:hover,
-    &.scroll {
+    &.scroll,
+    &.finish-banner {
       background-color: $white;
 
       .main-logo {
