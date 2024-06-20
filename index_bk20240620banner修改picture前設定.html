@@ -68,6 +68,11 @@
     href="/template/node_modules/swiper-10.3.1/swiper/swiper-bundle.min.css"
   >
 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.css"
+  />
+
   <!-- 客製css -->
   <link
     rel="stylesheet"
@@ -1181,76 +1186,58 @@
   <div class="bannerBlock">
     <div class="bannerStyle02">
       <div class="bannerStyle02-banner-wrapper">
+
+
         <div class=" banner-item">
           <a href="https://www.google.com.tw/?hl=zh_TW">
             <div class="pic-box">
-              <picture class="">
-                <source
-                  media="(min-width: 576px)"
-                  srcset="/template/images/index/banner/02.jpg"
-                >
-                <source
-                  media="(max-width: 575px)"
-                  srcset="/template/images/index/banner/02_mb_20240618.jpg"
-                >
-                <img
-                  class="pic"
-                  src="#"
-                  alt=""
-                >
-              </picture>
+              <div
+                class="pic pic-pc "
+                style="background-image: url('/template/images/index/banner/02.jpg');"
+              ></div>
 
+              <div
+                class="pic pic-tab "
+                style="background-image: url('/template/images/index/banner/02_mb_20240618.jpg');"
+              ></div>
             </div>
           </a>
 
         </div>
 
-        <div class=" banner-item">
+        <div class="banner-item">
           <a href="https://www.google.com.tw/?hl=zh_TW">
             <div class="pic-box">
-              <picture class="">
-                <source
-                  media="(min-width: 576px)"
-                  srcset="/template/images/index/banner/03.jpg"
-                >
-                <source
-                  media="(max-width: 575px)"
-                  srcset="/template/images/index/banner/03_mb.jpg"
-                >
-                <img
-                  class="pic"
-                  src="#"
-                  alt=""
-                >
-              </picture>
+              <div
+                class="pic pic-pc "
+                style="background-image: url('/template/images/index/banner/03.jpg');"
+              ></div>
 
+              <div
+                class="pic pic-tab "
+                style="background-image: url('/template/images/index/banner/03_mb_20240618.jpg');"
+              ></div>
             </div>
           </a>
+
         </div>
 
-        <div class=" banner-item">
+        <div class="banner-item">
           <a href="https://www.google.com.tw/?hl=zh_TW">
             <div class="pic-box">
-              <picture class="">
-                <source
-                  media="(min-width: 576px)"
-                  srcset="/template/images/index/banner/04.jpg"
-                >
-                <source
-                  media="(max-width: 575px)"
-                  srcset="/template/images/index/banner/04_mb_20240618.jpg"
-                >
-                <img
-                  class="pic"
-                  src="#"
-                  alt=""
-                >
-              </picture>
+              <div
+                class="pic pic-pc "
+                style="background-image: url('/template/images/index/banner/04.jpg');"
+              ></div>
 
+              <div
+                class="pic pic-tab "
+                style="background-image: url('/template/images/index/banner/04_mb_20240618.jpg');"
+              ></div>
             </div>
           </a>
-        </div>
 
+        </div>
 
       </div>
     </div>
@@ -1685,21 +1672,16 @@
 
       <div class="bg-img-box">
         <a href="javascript:void(0);">
-          <picture class="">
-            <source
-              media="(min-width: 769px)"
-              srcset="/template/images/index/ABOUT_CENTURION_BN_1900x560_0.jpg"
-            >
-            <source
-              media="(max-width: 768px)"
-              srcset="/template/images/index/ABOUT_CENTURION_650x650_0.jpg"
-            >
-            <img
-              class="object-fit"
-              src="#"
-              alt=""
-            >
-          </picture>
+          <img
+            class="pic-pc"
+            src="/template/images/index/ABOUT_CENTURION_BN_1900x560_0.jpg"
+            alt=""
+          >
+          <img
+            class="pic-tab"
+            src="/template/images/index/ABOUT_CENTURION_650x650_0.jpg"
+            alt=""
+          >
         </a>
       </div>
 
@@ -1888,6 +1870,22 @@
     type="text/javascript"
     src="/template/node_modules/aos/aos.js"
   ></script>
+
+  <!-- gsap -->
+  <script
+    type="text/javascript"
+    src="/template/node_modules/gsap/gsap.js"
+  >
+  </script>
+
+  <script
+    type="text/javascript"
+    src="/template/node_modules/gsap/ScrollToPlugin.js"
+  >
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script>
 
   <!-- 自定義JS -->
 

@@ -10510,7 +10510,6 @@ body {
   left: 0;
 }
 .bannerStyle02 .banner-item .pic-box .pic {
-  background-size: cover;
   background-position: center;
   position: absolute;
   top: 0;
@@ -10521,7 +10520,13 @@ body {
   height: 100vh;
   /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
-  background: no-repeat 50% 100%/cover;
+  object-fit: cover;
+  object-position: bottom;
+}
+@media (max-width: 576px) {
+  .bannerStyle02 .banner-item .pic-box .pic {
+    object-position: top;
+  }
 }
 .bannerStyle02 .banner-item .pic-box .pic-pc {
   display: none;

@@ -207,6 +207,7 @@ $(function () {
 // 判斷滾動高度 在header 中添加 scroll
 $(function () {
 	if ($('header').length) {
+		// 滾動
 		// 取得header 高度
 		const hdTop = $('header').outerHeight();
 
@@ -396,7 +397,7 @@ $(function () {
 		var mc = new Hammer(element[0]); // 將 jQuery 對象轉換為普通的 DOM 元素
 		mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 
-		mc.on('swipeup', function (event) {
+		mc.on('swipeup', function () {
 			// console.log('向上滑行 Swipetup');
 			const currentSlide = $slider.slick('slickCurrentSlide');
 			const slideCount = $slider.slick('getSlick').slideCount;
@@ -425,7 +426,7 @@ $(function () {
 			}
 		});
 
-		mc.on('swipedown', function (event) {
+		mc.on('swipedown', function () {
 			// console.log('swipedown');
 			const currentSlide = $slider.slick('slickCurrentSlide');
 			const slideCount = $slider.slick('getSlick').slideCount;
@@ -530,6 +531,39 @@ $(function () {
 				isAtLastSlide = false;
 			}
 		});
+
+		// GSAP ScrollTrigger
+		// gsap.registerPlugin(ScrollTrigger);
+
+		// // 滚动到下一部分动画
+		// ScrollTrigger.create({
+		// 	trigger: '.bannerStyle02',
+		// 	start: 'top top',
+		// 	onUpdate: self => {
+		// 		if (isAtLastSlide && self.direction === 1) {
+		// 			gsap.to(window, {
+		// 				scrollTo: {
+		// 					y: '.homepage-product-sectionBlock',
+		// 					offsetY: 0,
+		// 				},
+		// 				duration: 0.2,
+		// 			});
+		// 			isAtLastSlide = false;
+		// 			self.kill(); // 动画完成后销毁 ScrollTrigger
+		// 		}
+		// 	},
+		// });
+
+		// // 滚动回顶部动画
+		// ScrollTrigger.create({
+		// 	trigger: '.bannerStyle02',
+		// 	start: 'bottom center',
+		// 	onEnterBack: () => {
+		// 		if (!isAtLastSlide) {
+		// 			gsap.to(window, { scrollTo: { y: 0 }, duration: 0.2 });
+		// 		}
+		// 	},
+		// });
 	}
 });
 
@@ -592,15 +626,13 @@ $(function () {
 				{
 					scrollTop: 0,
 				},
-				200,
-				function () {
-					if ($('body').hasClass('index')) {
-						console.log('index');
-						$('.bannerBlock').removeClass('moveUp-banner');
-						$('header').removeClass('finish-banner');
-					}
-				}
+				200
 			);
+
+			if ($('body').hasClass('index')) {
+				$('.bannerBlock').removeClass('moveUp-banner');
+				$('header').removeClass('finish-banner');
+			}
 		});
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 300) {

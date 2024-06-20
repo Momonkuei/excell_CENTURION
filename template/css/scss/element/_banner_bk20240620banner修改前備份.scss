@@ -175,6 +175,7 @@
       left: 0;
 
       .pic {
+        background-size: cover;
         background-position: center;
         position: absolute;
         top: 0;
@@ -185,13 +186,10 @@
         height: 100vh;
         /* Fallback for browsers that do not support Custom Properties */
         height: calc(var(--vh, 1vh) * 100);
+        background: no-repeat 50% 100% / cover;
 
         object-fit: cover;
         object-position: bottom;
-
-        @media (max-width: $viewMobile) {
-          object-position: top;
-        }
       }
 
       .pic-pc {
