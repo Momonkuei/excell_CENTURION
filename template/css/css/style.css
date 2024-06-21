@@ -10521,27 +10521,11 @@ body {
   /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
   object-fit: cover;
-  object-position: bottom;
+  object-position: 0% 100%;
 }
 @media (max-width: 576px) {
   .bannerStyle02 .banner-item .pic-box .pic {
-    object-position: top;
-  }
-}
-.bannerStyle02 .banner-item .pic-box .pic-pc {
-  display: none;
-}
-@media (min-width: 768px) {
-  .bannerStyle02 .banner-item .pic-box .pic-pc {
-    display: block;
-  }
-}
-.bannerStyle02 .banner-item .pic-box .pic-tab {
-  display: block;
-}
-@media (min-width: 768px) {
-  .bannerStyle02 .banner-item .pic-box .pic-tab {
-    display: none;
+    object-position: 0% 50%;
   }
 }
 .bannerStyle02 .banner-item .banner-item-info {

@@ -187,25 +187,10 @@
         height: calc(var(--vh, 1vh) * 100);
 
         object-fit: cover;
-        object-position: bottom;
+        object-position: 0% 100%;
 
         @media (max-width: $viewMobile) {
-          object-position: top;
-        }
-      }
-
-      .pic-pc {
-        display: none;
-
-        @media (min-width: $viewS) {
-          display: block;
-        }
-      }
-
-      .pic-tab {
-        display: block;
-        @media (min-width: $viewS) {
-          display: none;
+          object-position: 0% 50%;
         }
       }
     }
