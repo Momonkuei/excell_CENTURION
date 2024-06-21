@@ -227,16 +227,6 @@ $(function () {
 						$('header').removeClass('scroll');
 						if ($('.bannerBlock').hasClass('moveUp-banner')) {
 							$('header').addClass('finish-banner');
-							// 使 hammer.js 起作用 可以回到banner
-							$('body').css({
-								overflow: '',
-								'touch-action': 'none',
-								'-webkit-user-select': 'none',
-								'-webkit-touch-callout': 'none',
-								'-webkit-user-drag': 'none',
-								'-webkit-tap-highlight-color':
-									'rgba(0, 0, 0, 0)',
-							});
 						}
 					}
 				}
@@ -401,23 +391,10 @@ $(function () {
 		var lastScrollTop = 0;
 		var isAtLastSlide = false;
 		let img_replacement_license = true; //換圖許可
-		var swipe_to_refresh = true;
-
-		function make_screen_can_scroll() {
-			$('body').css('overflow', 'auto'); // 允许页面滚动
-			element.css({
-				'touch-action': '',
-				'-webkit-user-select': '',
-				'-webkit-touch-callout': '',
-				'-webkit-user-drag': '',
-				'-webkit-tap-highlight-color': '',
-			});
-		}
 
 		// 手機端寫法
 		var element = $('.index');
 		var mc = new Hammer(element[0]); // 將 jQuery 對象轉換為普通的 DOM 元素
-		var startY;
 		mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 
 		mc.on('swipeup', function () {
@@ -432,32 +409,33 @@ $(function () {
 				isAtLastSlide = true;
 			}
 
-			// 當最後一張時
 			if (currentSlide === slideCount - 1) {
 				$('.bannerBlock').addClass('moveUp-banner');
 				$('header').addClass('finish-banner');
-				setTimeout(make_screen_can_scroll, 500);
+				setTimeout(function () {
+					$('body').css('overflow', 'auto'); // 允许页面滚动
+					element.css({
+						'touch-action': '',
+						'-webkit-user-select': '',
+						'-webkit-touch-callout': '',
+						'-webkit-user-drag': '',
+						'-webkit-tap-highlight-color': '',
+					});
+				}, 500);
 				img_replacement_license = false;
 			}
 		});
 
-		mc.on('swipedown', function (event) {
+		mc.on('swipedown', function () {
 			// console.log('swipedown');
 			const currentSlide = $slider.slick('slickCurrentSlide');
 			const slideCount = $slider.slick('getSlick').slideCount;
-			console.log('currentSlide', currentSlide);
-			// 当在第一张幻灯片时直接返回，不执行 slickPrev
-
 			if (currentSlide > 0 && img_replacement_license) {
 				$slider.slick('slickPrev');
 				event.preventDefault();
 			}
 
-			// 當至於頂部時，使HammerJS 可以運作
-			if (
-				window.scrollY === 0 ||
-				document.documentElement.scrollTop === 0
-			) {
+			if (window.scrollY === 0) {
 				event.preventDefault();
 				$('.bannerBlock').removeClass('moveUp-banner');
 				$('header').removeClass('finish-banner');
@@ -553,6 +531,39 @@ $(function () {
 				isAtLastSlide = false;
 			}
 		});
+
+		// GSAP ScrollTrigger
+		// gsap.registerPlugin(ScrollTrigger);
+
+		// // 滚动到下一部分动画
+		// ScrollTrigger.create({
+		// 	trigger: '.bannerStyle02',
+		// 	start: 'top top',
+		// 	onUpdate: self => {
+		// 		if (isAtLastSlide && self.direction === 1) {
+		// 			gsap.to(window, {
+		// 				scrollTo: {
+		// 					y: '.homepage-product-sectionBlock',
+		// 					offsetY: 0,
+		// 				},
+		// 				duration: 0.2,
+		// 			});
+		// 			isAtLastSlide = false;
+		// 			self.kill(); // 动画完成后销毁 ScrollTrigger
+		// 		}
+		// 	},
+		// });
+
+		// // 滚动回顶部动画
+		// ScrollTrigger.create({
+		// 	trigger: '.bannerStyle02',
+		// 	start: 'bottom center',
+		// 	onEnterBack: () => {
+		// 		if (!isAtLastSlide) {
+		// 			gsap.to(window, { scrollTo: { y: 0 }, duration: 0.2 });
+		// 		}
+		// 	},
+		// });
 	}
 });
 

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>
+    <?# webTitle ?>
+  </title>
+
+  <!-- 字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="/template/jquery/jquery/jquery-3.7.1.min.js"></script>
+
+  <!-- bootstrap5 icon -->
+  <link rel="stylesheet" href="/template/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+
+
+  <!-- aos -->
+  <link rel="stylesheet" href="/template/jquery/aos/aos.css">
+
+  <!-- slick  -->
+  <link rel="stylesheet" href="/template/jquery/slick/slick.css">
+
+  <link rel="stylesheet" href="/template/jquery/slick/slick-theme.css">
+
+
+  <!-- Swiper css -->
+  <link rel="stylesheet" href="/template/jquery/swiper/swiper-bundle.min.css">
+
+
+  <!-- 客製css -->
+  <link rel="stylesheet" href="/template/css/<?# version ?>/style.css?v20240620">
+
+  <!-- hammer.js -->
+  <script type="
+        text/javascript" src="/template/jquery/hammer/hammer.min.js"></script>
+
+  <script type="
+          text/javascript" src="/template/jquery/hammer/jquery.hammer.min.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="template/jquery/sweetalert2/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="template/jquery/sweetalert2/sweetalert2.min.css">
+  <script type="text/javascript">
+    window.onload = () => {
+      if ('<?# alertMsg ?>' != '') {
+        Swal.fire({
+          title: "【系統通知】",
+          text: "<?# alertMsg ?>",
+          icon: "<?# alertIcon ?>",
+          allowOutsideClick: false
+        }).then(function (result) {
+          if (result.value) {
+            if ('<?# locationHref ?>' != '') { location.href = '<?# locationHref ?>'; }
+            if ('<?# goBack ?>' == 'Y') { history.back(); }
+          }
+        });
+      }
+    }
+  </script>
+
+</head>
+
+
+<body class="index">
+
+
+  <!-- header -->
+  <?# header ?>
+
+  <!-- banner -->
+  <div class="bannerBlock">
+    <div class="bannerStyle02">
+      <div class="bannerStyle02-banner-wrapper">
+
+
+
+        <php:repeater id="BannerList">
+          <template>
+            <div class=" banner-item">
+              <a href="<?# href ?>">
+                <div class="pic-box">
+                  <picture class="">
+                    <!-- <source media="<?# media ?>" srcset="<?# srcset ?>"> -->
+
+                    <img class="pic" src="<?# srcset ?>" alt="">
+                  </picture>
+                </div>
+              </a>
+            </div>
+          </template>
+        </php:repeater>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="body-content ">
+
+    <section class="sectionBlock homepage-product-sectionBlock mb-0">
+      <!-- <ul class="product-lists">
+                    <php:repeater id="onepageSetList">
+                      <template>
+                        <li
+                          class="product-lists-item"
+                          data-aos="fade-up"
+                        >
+
+                          <div class="itemImg square">
+                            <img
+                              class=""
+                              src="<?# Img ?>"
+                              alt=""
+                            >
+                          </div>
+                          <div class="product-lists-item-info">
+                            <div class="title">
+                              <span class="">
+                                <?# Title ?>
+                              </span>
+                            </div>
+                            <a
+                              class="product-lists-item-link"
+                              href="<?# Href ?>"
+                            >
+                              <span class="">
+                                <?# Desc ?>
+                              </span>
+                            </a>
+                          </div>
+
+
+                        </li>
+                      </template>
+                    </php:repeater>
+                  </ul> -->
+
+      <ul class="product-lists">
+        <li class="product-lists-item" data-aos="fade-up">
+          <div class="itemImg square">
+            <img class="" src="/template/image/<?# version ?>/index/product_exhibit/01.jpg" alt="">
+          </div>
+
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span class="">14吋 愛戴兒箱系列
+              </span>
+            </a>
+          </div>
+
+
+        </li>
+
+        <li class="product-lists-item" data-aos="fade-up">
+          <div class="itemImg square">
+            <img src="/template/image/<?# version ?>/index/product_exhibit/02.jpg" alt="">
+          </div>
+
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span>20吋 登機箱系列</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="product-lists-item" data-aos="fade-up">
+
+          <div class="itemImg square">
+            <img src="/template/image/<?# version ?>/index/product_exhibit/03.jpg" alt="">
+          </div>
+
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span>28吋 旅行箱系列</span>
+            </a>
+          </div>
+
+        </li>
+
+        <li class="product-lists-item" data-aos="fade-up">
+
+          <div class="itemImg square">
+            <img src="/template/image/<?# version ?>/index/product_exhibit/04.jpg" alt="">
+          </div>
+
+          <div class="product-lists-item-info">
+
+            <a class="product-lists-item-link">
+              <span>29吋 胖胖箱系列</span>
+            </a>
+          </div>
+
+        </li>
+
+
+      </ul>
+
+
+    </section>
+
+    <section class="sectionBlock sectionBlock-products-recommended my-0">
+      <div class="title-box text-center">
+        <div class="product-introduction-subTitle">
+          <span>熱銷推薦</span>
+        </div>
+      </div>
+
+      <!-- 產品導覽 -->
+      <div class="products-recommended-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/01.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>EXCELL限量版</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/02.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>九尾粉狐 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/03.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>大海魚 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/04.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>大鯨魚 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/05.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>小海豚 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/06.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>小海龜 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/07.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>牛奶糖 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+
+            </a>
+          </div>
+
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/08.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>北極熊 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/09.jpg" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>布達佩斯 旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/10.png" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>飛燕煉乳 28吋旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/11.png" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>清平調 28吋旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="swiper-slide products-recommended-item">
+            <a href="javascript:void(0);">
+              <div class="products-recommended-item-imgBox">
+                <img src="/template/image/<?# version ?>/products/12.png" alt="">
+              </div>
+              <div class="products-recommended-item-infoBox">
+                <div class="title">
+                  <span>瘋虎將軍 28吋旅行箱</span>
+                </div>
+                <div class="price">
+
+                  <span class="original-price">
+                    <del>NT$9000</del>
+                  </span>
+                  <span class="selling-price">
+                    NT$7480
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+
+      </div>
+    </section>
+
+    <section class="sectionBlock sectionBlock-introduction my-0">
+
+      <div class="bg-img-box">
+        <a href="javascript:void(0);">
+          <picture class="">
+            <source media="(min-width: 769px)"
+              srcset="/template/image/<?# version ?>/index/ABOUT_CENTURION_BN_1900x560_0.jpg">
+            <source media="(max-width: 768px)"
+              srcset="/template/image/<?# version ?>/index/ABOUT_CENTURION_650x650_0.jpg">
+            <img class="object-fit" src="#" alt="">
+          </picture>
+
+        </a>
+      </div>
+
+      <div class="introduction-info ">
+        <div class="title-box">
+          <div class="title">
+            <a href="javascript:void(0);"><span>ABOUT CENTURION</span><span>百夫長旅行箱</span></a>
+          </div>
+        </div>
+        <div class="desc-box">
+          <div class="desc">
+            <p>為自由重新定義，</p>
+            <p>美好旅遊體驗從一只驚豔的旅行箱開始。</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sectionBlock sectionBlock-slogan my-0">
+      <div class="title-box">
+        <div class="title text-center">
+          <span class="heading">CENTURION 全系列花花箱陪您環遊世界~</span>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+
+  <?# footer ?>
+
+
+  <a href="javascript:void(0);" class="goTop">
+    <i class="bi bi-chevron-up"></i>
+  </a>
+
+
+
+  <!-- popper -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/popper/popper.min.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="/template/js/<?# version ?>/bootstrap/bootstrap.js"></script>
+
+
+  <!-- swiper -->
+  <script type="text/javascript" src="/template/jquery/swiper/swiper-bundle.min.js"></script>
+
+
+  <!-- aos -->
+
+  <script type="text/javascript" src="/template/jquery/aos/aos.js"></script>
+
+  <!-- slick -->
+  <script type="text/javascript" src="/template/jquery/slick/slick.js"></script>
+
+
+
+
+  <!-- 自定義JS -->
+
+  <script type="text/javascript" src="/template/js/<?# version ?>/script.js?v20240619"></script>
+
+
+  <script>
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  </script>
+</body>
+
+</html>
