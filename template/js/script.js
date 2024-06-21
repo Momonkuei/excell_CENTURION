@@ -615,13 +615,21 @@ $(function () {
 				{
 					scrollTop: 0,
 				},
-				200
+				100,
+				'linear',
+				function () {
+					if ($('body').hasClass('index')) {
+						$('.bannerBlock').removeClass('moveUp-banner');
+						$('header').removeClass('finish-banner');
+						// 偵測手機高度
+						let vh = window.innerHeight * 0.01;
+						document.documentElement.style.setProperty(
+							'--vh',
+							`${vh}px`
+						);
+					}
+				}
 			);
-
-			if ($('body').hasClass('index')) {
-				$('.bannerBlock').removeClass('moveUp-banner');
-				$('header').removeClass('finish-banner');
-			}
 		});
 		$(window).scroll(function () {
 			if ($(this).scrollTop() > 300) {
